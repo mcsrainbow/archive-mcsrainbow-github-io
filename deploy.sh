@@ -6,6 +6,15 @@ if [[ $(git status -s) ]]; then
 fi
 
 echo -e "\033[0;32m0.Deploying updates to GitHub...\033[0m"
+git add --all
+
+msg="Rebuild blog on $(date '+%b %d, %Y')"
+if [ $# -eq 1 ]; then
+  msg="$1"
+fi
+git commit -m "$msg"
+
+git push
 
 echo -e "\033[0;32m1.Deleting old public folder...\033[0m"
 rm -rf public
@@ -34,3 +43,5 @@ git commit -m "$msg"
 git push -f origin main
 
 cd ..
+
+echo -e "\033[0;32m6.Done\033[0m"
