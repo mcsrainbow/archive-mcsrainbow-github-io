@@ -26,7 +26,7 @@ After being diagnosed with lymphoma, he gained a new understanding and appreciat
 
 At the launch of the book, Kai-Fu Lee summarized his insights into the seven death credits for remediation.
 
-1. Health is priceless. I loved food in my normal life, did not like to sleep, and I rushed to answer emails every night after I got home, after I got really sick, then I realized that once people lose their health, they have nothing. Young people should ensure that sleep, stress, exercise, diet and other four points to achieve the premise of passing, and then work hard.
+1. Health is priceless. I loved food in my normal life, did not like to sleep, and I rushed to answer emails every night after I got home, after I got really sick, then I realized that once people lose their health, they have nothing. Young people should work hard only after ensuring that sleep, stress, exercise and diet meet the basic requirements.
 2. Everything is done for a reason. Think of it as a learning opportunity, just as you would think of a disaster as a cause rather than an effect.
 3. Cherish the destiny, learn to be grateful and love.
 4. Learn how to live and live in the moment.
