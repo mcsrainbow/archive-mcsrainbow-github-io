@@ -2,8 +2,8 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://blog.heylinux.com/en/tags/beginning/</loc><lastmod>2021-10-30T20:15:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.heylinux.com/en/categories/</loc><lastmod>2021-10-30T20:15:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/tags/biography/</loc><lastmod>2021-10-31T14:34:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.heylinux.com/en/categories/</loc><lastmod>2021-10-31T14:34:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/categories/"
@@ -12,7 +12,7 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/categories/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/</loc><lastmod>2021-10-30T20:15:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/</loc><lastmod>2021-10-31T14:34:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/"
@@ -21,16 +21,17 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/2021/10/if-you-are-in-full-bloom-butterflies-will-come-naturally/</loc><lastmod>2021-10-30T20:15:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/categories/notes/</loc><lastmod>2021-10-31T14:34:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.heylinux.com/en/2021/10/notes-from-reading-living-to-die-the-death-credit-i-took/</loc><lastmod>2021-10-31T14:34:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://blog.heylinux.com/2021/10/%E4%BD%A0%E8%8B%A5%E7%9B%9B%E5%BC%80%E8%9D%B4%E8%9D%B6%E8%87%AA%E6%9D%A5/"
+                        href="https://blog.heylinux.com/2021/10/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%90%91%E6%AD%BB%E8%80%8C%E7%94%9F%E6%88%91%E4%BF%AE%E7%9A%84%E6%AD%BB%E4%BA%A1%E5%AD%A6%E5%88%86/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://blog.heylinux.com/en/2021/10/if-you-are-in-full-bloom-butterflies-will-come-naturally/"
+                    href="https://blog.heylinux.com/en/2021/10/notes-from-reading-living-to-die-the-death-credit-i-took/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/posts/</loc><lastmod>2021-10-30T20:15:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/posts/</loc><lastmod>2021-10-31T14:34:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/posts/"
@@ -39,7 +40,7 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/posts/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/tags/</loc><lastmod>2021-10-30T20:15:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/tags/</loc><lastmod>2021-10-31T14:34:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/tags/"
@@ -47,5 +48,15 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://blog.heylinux.com/en/tags/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/en/tags/beginning/</loc><lastmod>2021-10-30T20:15:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.heylinux.com/en/2021/10/if-you-are-in-full-bloom-butterflies-will-come-naturally/</loc><lastmod>2021-10-30T20:15:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://blog.heylinux.com/2021/10/%E4%BD%A0%E8%8B%A5%E7%9B%9B%E5%BC%80%E8%9D%B4%E8%9D%B6%E8%87%AA%E6%9D%A5/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://blog.heylinux.com/en/2021/10/if-you-are-in-full-bloom-butterflies-will-come-naturally/"
                     /></url><url>
             <loc>https://blog.heylinux.com/en/categories/thinking/</loc><lastmod>2021-10-30T20:15:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url></urlset>
