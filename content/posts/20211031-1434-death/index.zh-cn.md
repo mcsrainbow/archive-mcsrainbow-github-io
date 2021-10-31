@@ -7,7 +7,7 @@ categories: ["读书笔记"]
 tags: ["人物传记"]
 resources:
 - name: "featured-image"
-  src: "featured-image.png"
+  src: "featured-image.jpeg"
 
 lightgallery: true
 ---
