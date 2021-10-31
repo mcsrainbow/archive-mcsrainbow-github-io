@@ -1,7 +1,7 @@
 # Notes from reading 'Living to Die: The Death Credit I Took'
 
 
-Walk through the valley of the shadow of death and taste the nectar of life.
+Walked through the valley of the shadow of death and tasted the nectar of life.
 
 <!--more-->
 
@@ -25,5 +25,5 @@ At the launch of the book, Kai-Fu Lee summarized his insights into the seven dea
 
 ## Thinking
 
-I have followed his personal experience and felt that it was like to walk through the valley of the shadow of death and taste the nectar of life. Then I awakened myself to the fact, immediately began to pay attention to my health and family, and have already taken action which benefited greatly.
+I have followed his personal experience and felt like that walked through the valley of the shadow of death and tasted the nectar of life. Then I awakened myself to the fact, immediately began to pay attention to my health and family, and have already taken action which benefited greatly.
 
