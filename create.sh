@@ -108,7 +108,7 @@ EOF
     cat >> content/posts/${post_dir}/index.en.md <<EOF
 resources:
 - name: "featured-image"
-  src: "featured-image.jepg"
+  src: "featured-image.jpeg"
 
 EOF
   fi
