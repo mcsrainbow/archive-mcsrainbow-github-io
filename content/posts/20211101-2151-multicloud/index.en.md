@@ -7,7 +7,7 @@ categories: ["Skills"]
 tags: ["Cloud","Architect"]
 resources:
 - name: "featured-image"
-  src: "featured-image.jepg"
+  src: "featured-image.jpeg"
 
 lightgallery: true
 ---
