@@ -32,7 +32,7 @@ A multi-cloud strategy allows companies to select different cloud services from 
   
   Multi-cloud environments can help enterprises achieve the goals for governance, risk management and compliance regulations.
 
-## Structure
+## Architecture
 
 After investigated many multi-cloud platforms from different companies, then I found the following diagram of **Fully Functional Multi-Cloud Management Platform Architecture** from [OpsAny](https://www.opsany.com).
 
