@@ -1,5 +1,5 @@
 ---
-title: "Notes from reading 'Living to Die: The Death Credit I Took'"
+title: "Notes from reading 'Live for Death: My Experience on Dying'"
 date: 2021-10-31T14:34:58+08:00
 author: "Dong Guo | Damon"
 description: "Walked through the valley of the shadow of death and tasted the nectar of life."
@@ -20,7 +20,7 @@ Walked through the valley of the shadow of death and tasted the nectar of life.
 
 Having served as a senior executive at top technology companies like Apple, Microsoft and Google, Kai-Fu Lee is known as a life winner and has a significant influence on the post-80s generation in China.
 
-After being diagnosed with lymphoma, he gained a new understanding and appreciation of life. The book "Living to Die: The Death Credit I Took" is a true reproduction of what Kai-Fu Lee thought during his illness, and it shows his personality and values after his rebirth.
+After being diagnosed with lymphoma, he gained a new understanding and appreciation of life. The book "Live for Death: My Experience on Dying" is a true reproduction of what Kai-Fu Lee thought during his illness, and it shows his personality and values after his rebirth.
 
 ## Summary
 

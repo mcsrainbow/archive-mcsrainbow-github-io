@@ -36,10 +36,18 @@ enableEmoji = true
         url = "/categories/"
         weight = 3
       [[languages.zh-cn.menu.main]]
+        identifier = "about"
+        pre = "<i class='fas fa-user-circle fa-fw'></i>"
+        post = ""
+        name = ""
+        url = "/about/"
+        title = ""
+        weight = 4
+      [[languages.zh-cn.menu.main]]
         identifier = "english"
         name = "English"
         url = "/en/"
-        weight = 4
+        weight = 5
     [languages.zh-cn.params]
       # 网站描述
       description = "冬花盛开"
@@ -134,10 +142,16 @@ enableEmoji = true
         url = "/categories/"
         weight = 3
       [[languages.en.menu.main]]
+        identifier = "about"
+        pre = "<i class='fas fa-user-circle fa-fw'></i>"
+        name = ""
+        url = "/about/"
+        weight = 4
+      [[languages.en.menu.main]]
         identifier = "chinese"
         name = "简体中文"
         url = "../"
-        weight = 4
+        weight = 5
     [languages.en.params]
       # site description
       description = "About LoveIt Theme"
@@ -243,7 +257,7 @@ enableEmoji = true
       name = "Hey! Linux."
       # you can add extra information before the name (HTML format is supported), such as icons
       # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
-      pre = ""
+      pre = "<i class='fas fa-dragon'></i>"
       # you can add extra information after the name (HTML format is supported), such as icons
       # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
       post = ""

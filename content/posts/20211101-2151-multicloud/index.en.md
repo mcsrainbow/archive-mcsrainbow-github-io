@@ -34,7 +34,7 @@ A multi-cloud strategy allows companies to select different cloud services from 
 
 ## Architecture
 
-After investigated many multi-cloud platforms from different companies, then I found the following diagram of **Fully Functional Multi-Cloud Management Platform Architecture** from [OpsAny](https://www.opsany.com).
+After investigated many multi-cloud platforms from different companies, then I found the following diagram of **Fully Functional Multi-Cloud Management Platform Architecture** from [[OpsAny]^(Make Ops Perfect)](https://www.opsany.com).
 
 It shows the various service modules which need to be considered in a multi-cloud architecture, and it is easy to see that there are many difficulties and challenges in building a multi-cloud management platform.
 
