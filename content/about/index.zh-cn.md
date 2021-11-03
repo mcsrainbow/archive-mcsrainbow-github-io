@@ -19,7 +19,7 @@ math:
 
 ### [TO DO LIST]^(始于2021年10月)
 
-<i class="fas fa-tasks"></i> **核心任务**
+<i class="fas fa-tasks fa-fw"></i> **核心任务**
 - [ ] <i class="fas fa-cubes fa-fw"></i> CKA
 - [ ] <i class="fas fa-font fa-fw"></i> 英语六级
 - [ ] <i class="fas fa-graduation-cap fa-fw"></i> 论文
@@ -27,7 +27,7 @@ math:
 - [ ] <i class="fas fa-user-shield fa-fw"></i> CISSP
 - [ ] <i class="fas fa-font fa-fw"></i> 雅思7.0
 
-<i class="fas fa-book-open"></i> **读书清单**
+<i class="fas fa-book-open fa-fw"></i> **读书清单**
 
 - [x] 向死而生：我修的死亡学分
 - [ ] 自控力
