@@ -14,22 +14,24 @@ math:
 
 ### About Me
 
-+ Professional Fields：<i class="fas fa-cloud-upload-alt"></i> Hybrid Cloud，<i class="fas fa-database"></i> Big Data，<i class="fas fa-network-wired"></i> DevOps Architecture
++ <i class="fas fa-user-tie fa-fw"></i> Professional Fields: <i class="fas fa-cloud-upload-alt fa-fw"></i> Hybrid Cloud <i class="fas fa-database fa-fw"></i> Big Data <i class="fas fa-network-wired fa-fw"></i> DevOps Architecture
++ <i class="fas fa-heart fa-fw"></i> Interests: <i class="fas fa-book-reader fa-fw"></i> Reading <i class="fas fa-running fa-fw"></i> Fitness <i class="fab fa-fly fa-fw"></i> Travel <i class="fas fa-film fa-fw"></i> Movies
 
 ### [TO DO LIST]^(Since October 2021)
 
 <i class="fas fa-tasks"></i> **Core Missions**
-- [ ] <i class="fas fa-cogs"></i> CKA
-- [ ] <i class="fas fa-language"></i> CET6
-- [ ] <i class="fas fa-graduation-cap"></i> Thesis
-- [ ] <i class="fas fa-users-cog"></i> PMP
-- [ ] <i class="fas fa-shield-alt"></i> CISSP
-- [ ] <i class="fas fa-language"></i> IELTS7.0
+
+- [ ] <i class="fas fa-cubes fa-fw"></i> CKA
+- [ ] <i class="fas fa-font fa-fw"></i> CET6
+- [ ] <i class="fas fa-graduation-cap fa-fw"></i> Thesis
+- [ ] <i class="fas fa-users-cog fa-fw"></i> PMP
+- [ ] <i class="fas fa-user-shield fa-fw"></i> CISSP
+- [ ] <i class="fas fa-font fa-fw"></i> IELTS 7.0
 
 <i class="fas fa-book-open"></i> **Reading List**
 
 - [x] Live for Death: My Experience on Dying
-- [ ] THE WILLPOWER INSTINCT
+- [ ] The Willpower Instinct 
 - [ ] PEAK: Secrets from the New Science of Expertise
 - [ ] Educated: A Memoir
 - [ ] The Little Book of Lykke: Secrets of the World's Happiest People
