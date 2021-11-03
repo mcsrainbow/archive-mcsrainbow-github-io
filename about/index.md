@@ -3,7 +3,7 @@
 
 ### 关于网站
 
-<i class="fas fa-seedling"></i> 记录我人生新阶段的成长历程
+<i class="fas fa-seedling fa-fw"></i> 记录我人生新阶段的成长历程
 
 ### 关于我
 
