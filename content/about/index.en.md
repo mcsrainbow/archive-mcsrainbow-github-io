@@ -10,7 +10,7 @@ math:
 
 ### About Site
 
-<i class="fas fa-seedling"></i> Document the Growth of the New Phase of My Life
+<i class="fas fa-seedling fa-fw"></i> Document the Growth of the New Phase of My Life
 
 ### About Me
 
