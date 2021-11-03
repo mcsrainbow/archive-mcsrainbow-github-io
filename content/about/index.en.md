@@ -31,7 +31,7 @@ math:
 <i class="fas fa-book-open fa-fw"></i> **Reading List**
 
 - [x] Live for Death: My Experience on Dying
-- [ ] The Willpower Instinct 
+- [x] The Willpower Instinct 
 - [ ] PEAK: Secrets from the New Science of Expertise
 - [ ] Educated: A Memoir
 - [ ] The Little Book of Lykke: Secrets of the World's Happiest People
