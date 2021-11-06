@@ -46,6 +46,12 @@ if [ "$featured_image" == "yes" ];then
   echo "INFO: Featured image is enabled"
 fi
 
+echo -n "Enable the table of the contents? [yes|no] "
+read toc_enabled
+if [ "$toc_enabled" == "yes" ];then
+  echo "INFO: The table of contents is enabled"
+fi
+
 echo -n "Rename the Post Directory name string? By default it is Post Category: "
 read post_dir_namestr
 if [ -z "$post_dir_namestr" ];then
@@ -83,6 +89,12 @@ resources:
 EOF
 fi
 
+if [ "$toc_enabled" == "no" ];then
+  cat >> content/posts/${post_dir}/index.zh-cn.md <<EOF
+toc: false
+EOF
+fi
+
 cat >> content/posts/${post_dir}/index.zh-cn.md <<EOF
 lightgallery: true
 ---
@@ -110,6 +122,12 @@ resources:
 - name: "featured-image"
   src: "featured-image.jpeg"
 
+EOF
+  fi
+
+  if [ "$toc_enabled" == "no" ];then
+    cat >> content/posts/${post_dir}/index.zh-cn.md <<EOF
+toc: false
 EOF
   fi
 
