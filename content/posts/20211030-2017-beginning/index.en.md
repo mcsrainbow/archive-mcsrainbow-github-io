@@ -2,7 +2,7 @@
 title: "If You Are in Full Bloom, Butterflies Will Come Naturally"
 date: 2021-10-30T20:15:25+08:00
 author: "Dong Guo | Damon"
-description: ""
+description: "I have renewed the confidence and enthusiasm for learning, the courage to explore the unknown, and an ever-increasing belief in a better future."
 categories: ["Thinking"]
 tags: ["Beginning"]
 resources:
