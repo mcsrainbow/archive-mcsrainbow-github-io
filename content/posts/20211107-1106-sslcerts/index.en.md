@@ -24,7 +24,7 @@ In my current job, internal security requirements are very strict and all applic
 
 ## Generate SSL Certificates
 
-### 1. Generate root certificate and import to browser
+### 1. Generate root certificate and import to OS
 First, generate the `rootCA.heylinux.com.pem` set the encryption length to 4096 to meet Chrome's security level requirements.
 
 ```bash
