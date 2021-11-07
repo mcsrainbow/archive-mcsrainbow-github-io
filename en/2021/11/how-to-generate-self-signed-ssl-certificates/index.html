@@ -138,7 +138,7 @@
     <li><a href="#background">Background</a></li>
     <li><a href="#generate-ssl-certificates">Generate SSL Certificates</a>
       <ul>
-        <li><a href="#1-generate-root-certificate-and-import-to-browser">1. Generate root certificate and import to browser</a></li>
+        <li><a href="#1-generate-root-certificate-and-import-to-os">1. Generate root certificate and import to OS</a></li>
         <li><a href="#2-generate-server-certificate">2. Generate server certificate</a></li>
         <li><a href="#3-generate-bundled-certificates-in-different-formats">3. Generate bundled certificates in different formats</a></li>
         <li><a href="#4-convert-root-certificate-to-jks-format">4. Convert root certificate to JKS format</a></li>
@@ -161,7 +161,7 @@
 <p>Today, almost all Internet sites and applications are already running on HTTPS site-wide, but many companies still have internal applications running on insecure HTTP.</p>
 <p>In my current job, internal security requirements are very strict and all applications must support HTTPS. So I&rsquo;m sharing my notes on how to generate self-signed SSL certificates for your reference.</p>
 <h2 id="generate-ssl-certificates">Generate SSL Certificates</h2>
-<h3 id="1-generate-root-certificate-and-import-to-browser">1. Generate root certificate and import to browser</h3>
+<h3 id="1-generate-root-certificate-and-import-to-os">1. Generate root certificate and import to OS</h3>
 <p>First, generate the <code>rootCA.heylinux.com.pem</code> set the encryption length to 4096 to meet Chrome&rsquo;s security level requirements.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
