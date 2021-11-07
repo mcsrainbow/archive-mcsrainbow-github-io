@@ -185,7 +185,7 @@ Convert `star.heylinux.com.p12` to `star.heylinux.com.jks`, alias `heylinux_com`
 keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.jks -srcstorepass P_Ss0rdT -srckeystore star.heylinux.com.p12 -srcstoretype PKCS12 -alias heylinux_com
 ```
 
-### 5. View Certificates in Different Formats
+### 5. View certificates in different formats
 
 ```bash
 # View rootCA.heylinux.com.pem and star.heylinux.com.pem
