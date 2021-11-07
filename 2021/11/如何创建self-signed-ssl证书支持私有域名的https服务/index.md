@@ -182,7 +182,7 @@ keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.
 ### 5. 查看各种格式的证书
 
 ```bash
-# 查看PEM格式的证书rootCA.heylinux.com.pem
+# 查看PEM格式的证书rootCA.heylinux.com.pem和star.heylinux.com.pem
 openssl crl2pkcs7 -nocrl -certfile rootCA.heylinux.com.pem | openssl pkcs7 -print_certs -text -noout
 openssl crl2pkcs7 -nocrl -certfile star.heylinux.com.pem | openssl pkcs7 -print_certs -text -noout
 
