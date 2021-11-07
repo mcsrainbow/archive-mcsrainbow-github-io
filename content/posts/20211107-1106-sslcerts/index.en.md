@@ -116,9 +116,9 @@ Certificate:
                 DB:0D:E8:00:A4:3E:95:71:26:1A:0B:57:4C:3C:3B:33:D3:67:F0:16
 ...
 ```
-### 3. Generate bundled certificates in different formats
+### 3. Generate certificate bundles in different formats
 
-Bundled certificates usually contain multiple server certificates
+Certificate bundle usually contains multiple server certificates.
 
 Generate `star.heylinux.com.p12` in `PKCS12`, set passphrase `P_Ss0rdT`, alias `heylinux_com`. It could be used for servers such as Tomcat.
 
@@ -227,12 +227,12 @@ writing new private key to 'heylinux-ssl-keypair.key'
 Enter PEM pass phrase: P_Ss0rdT
 Verifying - Enter PEM pass phrase: P_Ss0rdT
 
-# Convert certificates to bundled certificate heylinux-ssl-keypair.p12
+# Convert certificates to certificate bundle heylinux-ssl-keypair.p12
 openssl pkcs12 -export -in heylinux-ssl-keypair.crt -inkey heylinux-ssl-keypair.key -password pass:P_Ss0rdT -name heylinux_ssl_keypair -out heylinux-ssl-keypair.p12
 
 # Input password
 Enter pass phrase for heylinux-ssl-keypair.key: P_Ss0rdT
 
-# View bundled certificate heylinux-ssl-keypair.p12
+# View certificate bundle heylinux-ssl-keypair.p12
 keytool -list -v -keystore heylinux-ssl-keypair.p12 -storepass P_Ss0rdT -storetype PKCS12
 ```

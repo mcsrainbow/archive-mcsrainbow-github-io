@@ -114,7 +114,7 @@ Certificate:
 ```
 ### 3. 生成不同格式的捆绑证书
 
-[捆绑证书]^(bundle certificates)通常包含多个服务端证书Key和服务端证书。
+[捆绑证书]^(certificate bundle)通常包含多个服务端证书Key和服务端证书。
 
 生成`PKCS12`格式的捆绑证书`star.heylinux.com.p12`，设置证书文件的[密码]^(passphrase)为`P_Ss0rdT`，文件内别名`heylinux_com`，这种证书可用于服务器软件如Tomcat。
 
