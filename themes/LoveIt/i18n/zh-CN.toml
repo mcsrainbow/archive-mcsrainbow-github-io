@@ -144,12 +144,10 @@ other = "阅读全文"
 
 # === 404.html ===
 [pageNotFound]
-#other = "页面没找到"
-other = "页面没找到 Page not found"
+other = "页面没找到"
 
 [pageNotFoundText]
-#other = "抱歉，您要查找的页面不存在。"
-other = "抱歉，您要查找的页面不存在。The page you're looking for doesn't exist. Sorry."
+other = "抱歉，您要查找的页面不存在。"
 # === 404.html ===
 
 # === shortcodes/admonition.html ===
