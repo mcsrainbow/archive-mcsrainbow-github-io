@@ -140,7 +140,7 @@
       <ul>
         <li><a href="#1-generate-root-certificate-and-import-to-os">1. Generate root certificate and import to OS</a></li>
         <li><a href="#2-generate-server-certificate">2. Generate server certificate</a></li>
-        <li><a href="#3-generate-bundled-certificates-in-different-formats">3. Generate bundled certificates in different formats</a></li>
+        <li><a href="#3-generate-certificate-bundles-in-different-formats">3. Generate certificate bundles in different formats</a></li>
         <li><a href="#4-convert-root-certificate-to-jks-format">4. Convert root certificate to JKS format</a></li>
       </ul>
     </li>
@@ -322,8 +322,8 @@ wildcard DNS names as <code>*.heylinux.com</code> and <code>*.cloud.heylinux.com
 ...
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="3-generate-bundled-certificates-in-different-formats">3. Generate bundled certificates in different formats</h3>
-<p>Bundled certificates usually contain multiple server certificates</p>
+</div><h3 id="3-generate-certificate-bundles-in-different-formats">3. Generate certificate bundles in different formats</h3>
+<p>Certificate bundle usually contains multiple server certificates.</p>
 <p>Generate <code>star.heylinux.com.p12</code> in <code>PKCS12</code>, set passphrase <code>P_Ss0rdT</code>, alias <code>heylinux_com</code>. It could be used for servers such as Tomcat.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -491,13 +491,13 @@ writing new private key to <span class="s1">&#39;heylinux-ssl-keypair.key&#39;</
 Enter PEM pass phrase: P_Ss0rdT
 Verifying - Enter PEM pass phrase: P_Ss0rdT
 
-<span class="c1"># Convert certificates to bundled certificate heylinux-ssl-keypair.p12</span>
+<span class="c1"># Convert certificates to certificate bundle heylinux-ssl-keypair.p12</span>
 openssl pkcs12 -export -in heylinux-ssl-keypair.crt -inkey heylinux-ssl-keypair.key -password pass:P_Ss0rdT -name heylinux_ssl_keypair -out heylinux-ssl-keypair.p12
 
 <span class="c1"># Input password</span>
 Enter pass phrase <span class="k">for</span> heylinux-ssl-keypair.key: P_Ss0rdT
 
-<span class="c1"># View bundled certificate heylinux-ssl-keypair.p12</span>
+<span class="c1"># View certificate bundle heylinux-ssl-keypair.p12</span>
 keytool -list -v -keystore heylinux-ssl-keypair.p12 -storepass P_Ss0rdT -storetype PKCS12
 </code></pre></td></tr></table>
 </div>
