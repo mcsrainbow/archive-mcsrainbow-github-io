@@ -9,7 +9,7 @@ It is also important to deploy HTTPS services for internal private domains.
 
 Today, almost all Internet sites and applications are already running on HTTPS site-wide, but many companies still have internal applications running on insecure HTTP.
 
-In my current job, internal security requirements are very strict and all applications must support HTTPS before they can go live. So I'm sharing my notes on creating a Self-signed SSL certificate for your reference.
+In my current job, internal security requirements are very strict and all applications must support HTTPS. So I'm sharing my notes on creating a Self-signed SSL certificate for your reference.
 
 ## Generate SSL Certificates
 
