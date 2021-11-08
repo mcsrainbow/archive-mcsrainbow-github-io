@@ -42,7 +42,7 @@ openssl req -x509 -new -nodes -key rootCA.heylinux.com.key -sha256 -days 3650 -o
 
 ### 2. 生成SSL服务端证书
 
-创建服务端证书配置文件，支持`serverAuth`和`clientAuth`，可用于两个泛域名`*.heylinux.com`和`*.cloud.heylinux.com`。
+创建服务端证书配置文件，支持`serverAuth`和`clientAuth`，可用于多个泛域名`*.heylinux.com`和`*.cloud.heylinux.com`。
 
 ```bash
 vim ssl.conf
@@ -61,7 +61,7 @@ DNS.1 = *.heylinux.com
 DNS.2 = *.cloud.heylinux.com
 ```
 
-生成服务端证书的Key,文件名`star.heylinux.com.key`，设置加密方式为`sha256`，有效期为`3650天`，机构信息设置为`/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=*.heylinux.com`。
+生成服务端证书的Key,文件名`star.heylinux.com.key`，机构信息设置为`/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=*.heylinux.com`。
 
 ```bash
 openssl req -new -nodes -out star.heylinux.com.csr -newkey rsa:4096 -keyout star.heylinux.com.key -subj "/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=*.heylinux.com"
@@ -212,7 +212,7 @@ $ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 
 ```bash
 # 生成证书Key heylinux-ssl-keypair.key和证书heylinux-ssl-keypair.crt
-openssl req -x509 -newkey rsa -keyout heylinux-ssl-keypair.key -out heylinux-ssl-keypair.crt -days 3650 -subj "/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE"
+openssl req -x509 -newkey rsa:4096 -keyout heylinux-ssl-keypair.key -out heylinux-ssl-keypair.crt -days 3650 -sha256 -subj "/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE"
 
 # 输入密码
 Generating a RSA private key
