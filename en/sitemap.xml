@@ -11,6 +11,15 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/categories/"
                     /></url><url>
+            <loc>https://blog.heylinux.com/en/</loc><lastmod>2021-11-07T11:06:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://blog.heylinux.com/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://blog.heylinux.com/en/"
+                    /></url><url>
             <loc>https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/</loc><lastmod>2021-11-07T11:06:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -86,15 +95,6 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://blog.heylinux.com/en/about/"
-                    /></url><url>
-            <loc>https://blog.heylinux.com/en/</loc><lastmod>2021-11-02T21:40:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://blog.heylinux.com/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://blog.heylinux.com/en/"
                     /></url><url>
             <loc>https://blog.heylinux.com/en/tags/architect/</loc><lastmod>2021-11-01T21:51:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://blog.heylinux.com/en/tags/cloud/</loc><lastmod>2021-11-01T21:51:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
