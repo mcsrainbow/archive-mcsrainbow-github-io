@@ -215,7 +215,7 @@ $ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 
 For applications such as NiFi, vsFTPd, the TLS/SSL certificates are mainly used for client and server verification, similar to the authentication between private and public keys in SSH, this kind of certificates could be used without the root certificate.
 
-Generate server certificates `heylinux-ssl-keypair.key` and `heylinux-ssl-keypair.crt`, set encryption `sha256`, valid days `3650`, passphrase `P_Ss0rdT256`, organization `/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE`.
+Generate server certificates `heylinux-ssl-keypair.key` and `heylinux-ssl-keypair.crt`, set encryption `sha256`, valid days `3650`, passphrase `P_Ss0rdT`, organization `/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE`.
 
 ```bash
 # Generate heylinux-ssl-keypair.key and heylinux-ssl-keypair.crt
