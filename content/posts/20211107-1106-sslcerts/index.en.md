@@ -31,6 +31,8 @@ First, generate the `rootCA.heylinux.com.pem` set the encryption length to 4096 
 openssl genrsa -out rootCA.heylinux.com.key 4096
 ```
 
+Generate `rootCA.heylinux.com.pem`, set encryption `sha256`, valid days `3650`, organization `/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE`.
+
 The `rootCA.heylinux.com.pem` will be used to generate the server key and the trusted root certification authorities of browsers such as Chrome.
 
 The `-subj` parameter is more straightforward than the interactive steps.
@@ -45,8 +47,7 @@ Import `rootCA.heylinux.com.pem` to OS via Chrome, so the Chrome could trust the
 
 ### 2. Generate server certificate
 
-Create ssl.conf, enable `serverAuth` and `clientAuth`, 
-wildcard DNS names as `*.heylinux.com` and `*.cloud.heylinux.com`.
+Create ssl.conf, enable `serverAuth` and `clientAuth`, wildcard DNS names as `*.heylinux.com` and `*.cloud.heylinux.com`.
 
 ```bash
 vim ssl.conf
@@ -65,7 +66,7 @@ DNS.1 = *.heylinux.com
 DNS.2 = *.cloud.heylinux.com
 ```
 
-Generate server certificate Key `star.heylinux.com.key`, set encryption `sha256`, valid days `3650`, organization `/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=*.heylinux.com`.
+Generate server certificate Key `star.heylinux.com.key`, organization `/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=*.heylinux.com`.
 
 ```bash
 openssl req -new -nodes -out star.heylinux.com.csr -newkey rsa:4096 -keyout star.heylinux.com.key -subj "/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=*.heylinux.com"
@@ -214,11 +215,11 @@ $ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 
 For applications such as NiFi, vsFTPd, the TLS/SSL certificates are mainly used for client and server verification, similar to the authentication between private and public keys in SSH, this kind of certificates could be used without the root certificate.
 
-Generate server certificates `heylinux-ssl-keypair.key` and `heylinux-ssl-keypair.crt`, set passphrase `P_Ss0rdT256`, valid days `3650`, organization `/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE`.
+Generate server certificates `heylinux-ssl-keypair.key` and `heylinux-ssl-keypair.crt`, set encryption `sha256`, valid days `3650`, passphrase `P_Ss0rdT256`, organization `/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE`.
 
 ```bash
 # Generate heylinux-ssl-keypair.key and heylinux-ssl-keypair.crt
-openssl req -x509 -newkey rsa -keyout heylinux-ssl-keypair.key -out heylinux-ssl-keypair.crt -days 3650 -subj "/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE"
+openssl req -x509 -newkey rsa:4096 -keyout heylinux-ssl-keypair.key -out heylinux-ssl-keypair.crt -days 3650 -sha256 -subj "/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE"
 
 # Input password
 Generating a RSA private key
