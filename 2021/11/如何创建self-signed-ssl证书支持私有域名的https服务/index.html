@@ -33,7 +33,7 @@
                             "url": "https:\/\/blog.heylinux.com\/2021\/11\/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAself-signed-ssl%E8%AF%81%E4%B9%A6%E6%94%AF%E6%8C%81%E7%A7%81%E6%9C%89%E5%9F%9F%E5%90%8D%E7%9A%84https%E6%9C%8D%E5%8A%A1\/featured-image.jpeg",
                             "width":  1000 ,
                             "height":  499 
-                        }],"genre": "posts","keywords": "SSL, TLS, HTTPS","wordcount":  3073 ,
+                        }],"genre": "posts","keywords": "SSL, TLS, HTTPS","wordcount":  3071 ,
         "url": "https:\/\/blog.heylinux.com\/2021\/11\/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAself-signed-ssl%E8%AF%81%E4%B9%A6%E6%94%AF%E6%8C%81%E7%A7%81%E6%9C%89%E5%9F%9F%E5%90%8D%E7%9A%84https%E6%9C%8D%E5%8A%A1\/","datePublished": "2021-11-07T11:06:54+08:00","dateModified": "2021-11-07T11:06:54+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "mcsrainbow","logo": {
@@ -119,7 +119,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">如何创建Self-signed SSL证书支持私有域名的HTTPS服务</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>冬花盛开</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%8A%80%E8%83%BD%E7%9F%A9%E9%98%B5/"><i class="far fa-folder fa-fw"></i>技能矩阵</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-11-07">2021-11-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3073 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-11-07">2021-11-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3071 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -447,10 +447,10 @@ openssl crl2pkcs7 -nocrl -certfile rootCA.heylinux.com.pem <span class="p">|</sp
 openssl crl2pkcs7 -nocrl -certfile star.heylinux.com.pem <span class="p">|</span> openssl pkcs7 -print_certs -text -noout
 
 <span class="c1"># 查看P12格式的证书star.heylinux.com.p12 </span>
-$ keytool -list -v -keystore star.heylinux.com.p12 -storepass P_Ss0rdT -storetype PKCS12
+keytool -list -v -keystore star.heylinux.com.p12 -storepass P_Ss0rdT -storetype PKCS12
 
 <span class="c1"># 查看JKS格式的证书star.heylinux.com.jks</span>
-$ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
+keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="无需根证书的tlsssl证书">无需根证书的TLS/SSL证书</h2>

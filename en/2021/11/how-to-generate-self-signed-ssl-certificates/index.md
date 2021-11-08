@@ -194,10 +194,10 @@ openssl crl2pkcs7 -nocrl -certfile rootCA.heylinux.com.pem | openssl pkcs7 -prin
 openssl crl2pkcs7 -nocrl -certfile star.heylinux.com.pem | openssl pkcs7 -print_certs -text -noout
 
 # View star.heylinux.com.p12 
-$ keytool -list -v -keystore star.heylinux.com.p12 -storepass P_Ss0rdT -storetype PKCS12
+keytool -list -v -keystore star.heylinux.com.p12 -storepass P_Ss0rdT -storetype PKCS12
 
 # View star.heylinux.com.jks
-$ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
+keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 ```
 
 ## TLS/SSL Certificates without Root Certificate

@@ -187,10 +187,10 @@ openssl crl2pkcs7 -nocrl -certfile rootCA.heylinux.com.pem | openssl pkcs7 -prin
 openssl crl2pkcs7 -nocrl -certfile star.heylinux.com.pem | openssl pkcs7 -print_certs -text -noout
 
 # 查看P12格式的证书star.heylinux.com.p12 
-$ keytool -list -v -keystore star.heylinux.com.p12 -storepass P_Ss0rdT -storetype PKCS12
+keytool -list -v -keystore star.heylinux.com.p12 -storepass P_Ss0rdT -storetype PKCS12
 
 # 查看JKS格式的证书star.heylinux.com.jks
-$ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
+keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 ```
 
 ## 无需根证书的TLS/SSL证书
