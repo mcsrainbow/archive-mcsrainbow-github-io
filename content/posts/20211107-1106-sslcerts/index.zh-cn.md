@@ -208,7 +208,7 @@ $ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 
 对于一些应用如NiFi、vsFTPd，主要将TLS/SSL证书直接用于客户端与服务端校验，类似于SSH的私钥与公钥间的认证关系，这类TLS/SSL证书可以不需要根证书。
 
-可通过以下方式生成，有效期为`3650天`，证书的机构信息为`/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE`，证书文件[密码]^(passphrase)为`P_Ss0rdT`。
+可通过以下方式生成，设置加密方式为`sha256`，有效期为`3650天`，证书的机构信息为`/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE`，证书文件[密码]^(passphrase)为`P_Ss0rdT`。
 
 ```bash
 # 生成证书Key heylinux-ssl-keypair.key和证书heylinux-ssl-keypair.crt
