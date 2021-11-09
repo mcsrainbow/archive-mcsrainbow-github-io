@@ -15,7 +15,7 @@ My cousin worked for the Chinese Academy of Sciences for a long time after she g
 
 She is very capable and wants to do many things, but she does not have enough time. She said: "I'm too busy, I have a lot of ideas but no enough time and energy to work on them, there are a bunch of things I need to deal with, and I have to take care of my kid."
 
-Her words reminded me of a quote from our college dean in class: "Now, my children are living abroad and my husband is very busy. I really feel so happy! Because I can finally have a lot of time to devote to the topics I want to research and keep delving into them, which also makes it easier to produce good results."
+Her words reminded me of a quote from my college dean in class: "Now my children are living abroad and my husband is very busy. I really feel so happy! Because I can finally have a lot of time to devote to the topics I want to research and keep delving into them, which also makes it easier for me to produce good results."
 
 After I forwarded it to my cousin, she said, "Haha, many people would find such days lonely, but of course I would feel very happy, I enjoy the state of being able to continue to work all day."
 
@@ -25,7 +25,7 @@ Back to myself, it has been more than two years since I left Chengdu and came to
 
 Although I kept saying it's all about being able to give my family a better life, and I felt that way inside. But I still wasted too much time and neglected my health in the past two years.
 
-I should really wake up and realize how rare it is to have a lot of free time and energy in this middle age! I should spend as much of this precious time as possible on study and exercise, to gain knowledge faster and have a healthy body, so that I can really live up to the time and family, and create a better life for my family!
+I should really wake up and realize how rare it is to have a lot of free time and energy in this middle age! I should spend as much of this precious time as possible on study and exercise, to gain knowledge faster and have a healthy body, so that I can really live up to the time, and create a better life for my family!
 
 ## Future
 
