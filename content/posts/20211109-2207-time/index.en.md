@@ -40,7 +40,7 @@ I should really wake up and realize how rare it is to have a lot of free time an
 
 ## Future
 
-![sport_park](sport_park.jpeg)
+![sports_park](sports_park.jpeg)
 
 This morning, I shared a message to my friends: "Go to bed early, wake up early, read a few pages, memorize dozens of English words, go out leisurely, breathe fresh air, feel the warm sun shining on my body, look at the blue sky and white clouds, listen to the Geek Time App, sometimes walk, sometimes jog, feel the greenery along the way, go through the sports park with a good atmosphere for exercise, enter the company in good spirits and start a brand new day!"
 
