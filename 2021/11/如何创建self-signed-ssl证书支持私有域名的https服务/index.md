@@ -14,7 +14,7 @@
 ## 生成SSL证书
 
 ### 1. 生成根证书并导入
-首先生成根证书的Key`rootCA.heylinux.com.key`，设置加密长度为`4096`以满足Chrome浏览器的安全级别要求。
+首先生成根证书的Key`rootCA.heylinux.com.key`，设置加密长度为`4096`以满足安全级别要求。
 
 ```bash
 openssl genrsa -out rootCA.heylinux.com.key 4096
@@ -264,7 +264,7 @@ sudo chmod +x /usr/local/bin/cfssl*
 
 ### 2. 生成根证书
 
-创建json配置文件rootCA.json，生成与上面配置相同的`rootCA.heylinux.com.key`和`rootCA.heylinux.com.pem`。
+创建json配置文件rootCA.json，生成与上面配置相同的`rootCA.heylinux.com.key`（cfssl不支持证书key与证书长度不一致，因此加密长度仅为2048）和`rootCA.heylinux.com.pem`。
 
 ```json
 {
@@ -369,7 +369,7 @@ cfssl-certinfo -cert rootCA.heylinux.com.pem
 
 ### 3. 生成SSL服务端证书
 
-创建json配置文件rootCA.json，生成与上面配置相同的`star.heylinux.com.key`和`star.heylinux.com.crt`。
+创建json配置文件rootCA.json，生成与上面配置相同的`star.heylinux.com.key`（cfssl不支持证书key与证书长度不一致，因此加密长度仅为2048）和`star.heylinux.com.crt`。
 
 ```bash
 vim ssl-config.json
