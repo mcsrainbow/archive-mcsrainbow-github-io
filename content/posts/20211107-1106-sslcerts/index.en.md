@@ -25,7 +25,7 @@ In my current job, internal security requirements are very strict and all applic
 ## Generate SSL Certificates
 
 ### 1. Generate root certificate and import to OS
-First, generate the `rootCA.heylinux.com.pem` set the encryption length to 4096 to meet Chrome's security level requirements.
+First, generate the `rootCA.heylinux.com.pem`, set the encryption length to 4096 to meet security level requirements.
 
 ```bash
 openssl genrsa -out rootCA.heylinux.com.key 4096
@@ -253,7 +253,7 @@ sudo chmod +x /usr/local/bin/cfssl*
 
 ### 2. Generate root certificate
 
-Create `rootCA.json`, generate the similar `rootCA.heylinux.com.key` and `rootCA.heylinux.com.pem` as above.
+Create `rootCA.json`, generate the similar `rootCA.heylinux.com.key`(encryption length is only 2048 due to cfssl cannot set the key with different encryption length) and `rootCA.heylinux.com.pem` as above.
 
 ```json
 {
@@ -358,7 +358,7 @@ cfssl-certinfo -cert rootCA.heylinux.com.pem
 
 ### 3. Generate server certificate
 
-Create `rootCA.json`, generate the similar `star.heylinux.com.key` and `star.heylinux.com.crt` as above.
+Create `rootCA.json`, generate the similar `star.heylinux.com.key`(encryption length is only 2048 due to cfssl cannot set the key with different encryption length) and `star.heylinux.com.crt` as above.
 
 ```bash
 vim ssl-config.json
