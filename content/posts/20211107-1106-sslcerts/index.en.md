@@ -75,7 +75,7 @@ openssl req -new -nodes -out star.heylinux.com.csr -newkey rsa:4096 -keyout star
 Generate `star.heylinux.com.crt`, set encryption `sha256`, valid days `3650`.
 
 ```bash
-$ openssl x509 -req -in star.heylinux.com.csr -CA rootCA.heylinux.com.pem -CAkey rootCA.heylinux.com.key -CAcreateserial -out star.heylinux.com.crt -days 3650 -sha256 -extfile ssl.conf
+openssl x509 -req -in star.heylinux.com.csr -CA rootCA.heylinux.com.pem -CAkey rootCA.heylinux.com.key -CAcreateserial -out star.heylinux.com.crt -days 3650 -sha256 -extfile ssl.conf
 ```
 
 View server certificate information
@@ -130,7 +130,7 @@ openssl pkcs12 -export -in star.heylinux.com.crt -inkey star.heylinux.com.key -p
 Convert `star.heylinux.com.p12` to `star.heylinux.com.jks` in `JKS`, set passphrase `P_Ss0rdT`, alias `heylinux_com`. It could be used for servers such as Tomcat.
 
 ```
-$ keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.jks -srcstorepass P_Ss0rdT -srckeystore star.heylinux.com.p12 -srcstoretype PKCS12
+keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.jks -srcstorepass P_Ss0rdT -srckeystore star.heylinux.com.p12 -srcstoretype PKCS12
 ```
 
 Convert `star.heylinux.com.p12` to `star.heylinux.com.pem` in `PEM`, alias `heylinux_com`,no passphrase. It could be used for servers such as Apache、Nginx、HAProxy and AWS ELB.
@@ -201,8 +201,8 @@ keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.
 
 ```bash
 # View rootCA.heylinux.com.pem and star.heylinux.com.pem
-openssl crl2pkcs7 -nocrl -certfile rootCA.heylinux.com.pem | openssl pkcs7 -print_certs -text -noout
-openssl crl2pkcs7 -nocrl -certfile star.heylinux.com.pem | openssl pkcs7 -print_certs -text -noout
+openssl x509 -noout -text -in rootCA.heylinux.com.pem 
+openssl x509 -noout -text -in star.heylinux.com.pem
 
 # View star.heylinux.com.p12 
 keytool -list -v -keystore star.heylinux.com.p12 -storepass P_Ss0rdT -storetype PKCS12
@@ -236,4 +236,251 @@ Enter pass phrase for heylinux-ssl-keypair.key: P_Ss0rdT
 
 # View certificate bundle heylinux-ssl-keypair.p12
 keytool -list -v -keystore heylinux-ssl-keypair.p12 -storepass P_Ss0rdT -storetype PKCS12
+```
+
+## Generate and View SSL Certificates by cfssl tools
+
+### 1. Install cfssl tools
+
+Download `cfssl`, `cfssljson`, `cfssl-certinfo` and grant execute permission.
+
+```bash
+sudo wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 -O /usr/local/bin/cfssl
+sudo wget https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64 -O /usr/local/bin/cfssljson
+sudo wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64 -O /usr/local/bin/cfssl-certinfo
+sudo chmod +x /usr/local/bin/cfssl*
+```
+
+### 2. Generate root certificate
+
+Create `rootCA.json`, generate the similar `rootCA.heylinux.com.key` and `rootCA.heylinux.com.pem` as above.
+
+```json
+{
+    "CA": {
+        "expiry": "87600h",
+        "pathlen": 0
+    },
+    "CN": "SRE",
+    "key": {
+        "algo": "rsa",
+        "size": 2048
+    },
+    "names": [
+        {
+            "C": "CN",
+            "ST": "Sichuan",
+            "L": "Chengdu",
+            "O": "HEYLINUX",
+            "OU": "IT"
+        }
+    ]
+}
+```
+
+```bash
+cfssl gencert -initca rootCA.json | cfssljson -bare rootCA.heylinux.com
+```
+
+```
+2021/11/13 05:11:48 [INFO] generating a new CA key and certificate from CSR
+2021/11/13 05:11:48 [INFO] generate received request
+2021/11/13 05:11:48 [INFO] received CSR
+2021/11/13 05:11:48 [INFO] generating key: rsa-2048
+2021/11/13 05:11:48 [INFO] encoded CSR
+2021/11/13 05:11:48 [INFO] signed certificate with serial number 644632230923530854661361284854682897812867573233
+```
+
+```bash
+ls -1
+```
+
+```
+rootCA.heylinux.com.csr
+rootCA.heylinux.com-key.pem
+rootCA.heylinux.com.pem
+rootCA.json
+```
+
+```bash
+mv rootCA.heylinux.com-key.pem rootCA.heylinux.com.key
+```
+
+View `rootCA.heylinux.com.pem`.
+
+```bash
+cfssl-certinfo -cert rootCA.heylinux.com.pem
+```
+
+```json
+{
+  "subject": {
+    "common_name": "SRE",
+    "country": "CN",
+    "organization": "HEYLINUX",
+    "organizational_unit": "IT",
+    "locality": "Chengdu",
+    "province": "Sichuan",
+    "names": [
+      "CN",
+      "Sichuan",
+      "Chengdu",
+      "HEYLINUX",
+      "IT",
+      "SRE"
+    ]
+  },
+  "issuer": {
+    "common_name": "SRE",
+    "country": "CN",
+    "organization": "HEYLINUX",
+    "organizational_unit": "IT",
+    "locality": "Chengdu",
+    "province": "Sichuan",
+    "names": [
+      "CN",
+      "Sichuan",
+      "Chengdu",
+      "HEYLINUX",
+      "IT",
+      "SRE"
+    ]
+  },
+  "serial_number": "644632230923530854661361284854682897812867573233",
+  "not_before": "2021-11-12T20:53:00Z",
+  "not_after": "2031-11-10T20:53:00Z",
+  "sigalg": "SHA256WithRSA",
+  "authority_key_id": "36:D1:86:6B:27:AE:24:EF:C7:B3:2B:25:E7:92:DE:F1:0:34:2B:E5",
+  "subject_key_id": "36:D1:86:6B:27:AE:24:EF:C7:B3:2B:25:E7:92:DE:F1:0:34:2B:E5",
+  "pem": "-----BEGIN CERTIFICATE-----...-----END CERTIFICATE-----\n"
+}
+```
+
+### 3. Generate server certificate
+
+Create `rootCA.json`, generate the similar `star.heylinux.com.key` and `star.heylinux.com.crt` as above.
+
+```bash
+vim ssl-config.json
+```
+
+```json
+{
+  "signing": {
+    "default": {
+      "expiry": "87600h"
+    },
+    "profiles": {
+      "server": {
+        "usages": [
+          "signing",
+          "key encipherment",
+          "server auth",
+          "client auth"
+        ],
+        "expiry": "87600h"
+      }
+    }
+  }
+}
+```
+
+```bash
+vim ssl.json
+```
+
+```json
+{
+  "CN": "*.heylinux.com",
+  "hosts": [
+    "*.heylinux.com",
+    "*.cloud.heylinux.com"
+  ],
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [{
+    "C": "CN",
+    "ST": "Sichuan",
+    "L": "Chengdu",
+    "O": "HEYLINUX",
+    "OU": "IT"
+  }]
+}
+```
+
+```bash
+cfssl gencert -ca=rootCA.heylinux.com.pem -ca-key=rootCA.heylinux.com.key -config=ssl-config.json -profile=server ssl.json | cfssljson -bare star.heylinux.com
+
+mv star.heylinux.com.pem star.heylinux.com.crt
+mv star.heylinux.com-key.pem star.heylinux.com.key
+
+ls -1
+```
+
+```
+rootCA.heylinux.com.csr
+rootCA.heylinux.com.key
+rootCA.heylinux.com.pem
+rootCA.json
+ssl-config.json
+ssl.json
+star.heylinux.com.crt
+star.heylinux.com.csr
+star.heylinux.com.key
+```
+
+View `star.heylinux.com.crt`.
+
+```bash
+cfssl-certinfo -cert star.heylinux.com.crt
+```
+
+```json
+{
+  "subject": {
+    "common_name": "*.heylinux.com",
+    "country": "CN",
+    "organization": "HEYLINUX",
+    "organizational_unit": "IT",
+    "locality": "Chengdu",
+    "province": "Sichuan",
+    "names": [
+      "CN",
+      "Sichuan",
+      "Chengdu",
+      "HEYLINUX",
+      "IT",
+      "*.heylinux.com"
+    ]
+  },
+  "issuer": {
+    "common_name": "SRE",
+    "country": "CN",
+    "organization": "HEYLINUX",
+    "organizational_unit": "IT",
+    "locality": "Chengdu",
+    "province": "Sichuan",
+    "names": [
+      "CN",
+      "Sichuan",
+      "Chengdu",
+      "HEYLINUX",
+      "IT",
+      "SRE"
+    ]
+  },
+  "serial_number": "608638693485247133136510097809090433439285866629",
+  "sans": [
+    "*.heylinux.com",
+    "*.cloud.heylinux.com"
+  ],
+  "not_before": "2021-11-12T21:20:00Z",
+  "not_after": "2031-11-10T21:20:00Z",
+  "sigalg": "SHA256WithRSA",
+  "authority_key_id": "2B:D4:44:57:4D:9:D8:9A:0:63:4C:5B:B8:78:F4:8F:45:9C:3C:F5",
+  "subject_key_id": "4E:15:55:4A:34:EA:BA:69:3E:A5:F:40:74:16:52:F0:88:C3:7D:6F",
+  "pem": "-----BEGIN CERTIFICATE-----...-----END CERTIFICATE-----\n"
+}
 ```
