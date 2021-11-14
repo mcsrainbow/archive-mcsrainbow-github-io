@@ -33,7 +33,7 @@
                             "url": "https:\/\/blog.heylinux.com\/en\/2021\/11\/how-to-generate-self-signed-ssl-certificates\/featured-image.jpeg",
                             "width":  1000 ,
                             "height":  499 
-                        }],"genre": "posts","keywords": "SSL, TLS, HTTPS","wordcount":  1018 ,
+                        }],"genre": "posts","keywords": "SSL, TLS, HTTPS","wordcount":  1580 ,
         "url": "https:\/\/blog.heylinux.com\/en\/2021\/11\/how-to-generate-self-signed-ssl-certificates\/","datePublished": "2021-11-07T11:06:54+08:00","dateModified": "2021-11-07T11:06:54+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "mcsrainbow","logo": {
@@ -119,8 +119,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">How to Generate Self-signed SSL Certificates</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/en/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dong Guo | Damon</a></span>&nbsp;<span class="post-category">included in <a href="/en/categories/skills/"><i class="far fa-folder fa-fw"></i>Skills</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-11-07">2021-11-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1018 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-11-07">2021-11-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1580 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -154,6 +154,13 @@
       </ul>
     </li>
     <li><a href="#tlsssl-certificates-without-root-certificate">TLS/SSL Certificates without Root Certificate</a></li>
+    <li><a href="#generate-and-view-ssl-certificates-by-cfssl-tools">Generate and View SSL Certificates by cfssl tools</a>
+      <ul>
+        <li><a href="#1-install-cfssl-tools">1. Install cfssl tools</a></li>
+        <li><a href="#2-generate-root-certificate">2. Generate root certificate</a></li>
+        <li><a href="#3-generate-server-certificate">3. Generate server certificate</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>It is also important to deploy HTTPS services for internal private domains.</p>
@@ -242,7 +249,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ openssl x509 -req -in star.heylinux.com.csr -CA rootCA.heylinux.com.pem -CAkey rootCA.heylinux.com.key -CAcreateserial -out star.heylinux.com.crt -days <span class="m">3650</span> -sha256 -extfile ssl.conf
+<pre class="chroma"><code class="language-bash" data-lang="bash">openssl x509 -req -in star.heylinux.com.csr -CA rootCA.heylinux.com.pem -CAkey rootCA.heylinux.com.key -CAcreateserial -out star.heylinux.com.crt -days <span class="m">3650</span> -sha256 -extfile ssl.conf
 </code></pre></td></tr></table>
 </div>
 </div><p>View server certificate information</p>
@@ -339,7 +346,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.jks -srcstorepass P_Ss0rdT -srckeystore star.heylinux.com.p12 -srcstoretype PKCS12
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.jks -srcstorepass P_Ss0rdT -srckeystore star.heylinux.com.p12 -srcstoretype PKCS12
 </code></pre></td></tr></table>
 </div>
 </div><p>Convert <code>star.heylinux.com.p12</code> to <code>star.heylinux.com.pem</code> in <code>PEM</code>, alias <code>heylinux_com</code>,no passphrase. It could be used for servers such as Apache、Nginx、HAProxy and AWS ELB.</p>
@@ -446,8 +453,8 @@ keytool -importcert -alias heylinux_com -keystore rootCA.heylinux.com.jks -store
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># View rootCA.heylinux.com.pem and star.heylinux.com.pem</span>
-openssl crl2pkcs7 -nocrl -certfile rootCA.heylinux.com.pem <span class="p">|</span> openssl pkcs7 -print_certs -text -noout
-openssl crl2pkcs7 -nocrl -certfile star.heylinux.com.pem <span class="p">|</span> openssl pkcs7 -print_certs -text -noout
+openssl x509 -noout -text -in rootCA.heylinux.com.pem 
+openssl x509 -noout -text -in star.heylinux.com.pem
 
 <span class="c1"># View star.heylinux.com.p12 </span>
 keytool -list -v -keystore star.heylinux.com.p12 -storepass P_Ss0rdT -storetype PKCS12
@@ -501,6 +508,473 @@ Enter pass phrase <span class="k">for</span> heylinux-ssl-keypair.key: P_Ss0rdT
 keytool -list -v -keystore heylinux-ssl-keypair.p12 -storepass P_Ss0rdT -storetype PKCS12
 </code></pre></td></tr></table>
 </div>
+</div><h2 id="generate-and-view-ssl-certificates-by-cfssl-tools">Generate and View SSL Certificates by cfssl tools</h2>
+<h3 id="1-install-cfssl-tools">1. Install cfssl tools</h3>
+<p>Download <code>cfssl</code>, <code>cfssljson</code>, <code>cfssl-certinfo</code> and grant execute permission.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 -O /usr/local/bin/cfssl
+sudo wget https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64 -O /usr/local/bin/cfssljson
+sudo wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64 -O /usr/local/bin/cfssl-certinfo
+sudo chmod +x /usr/local/bin/cfssl*
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2-generate-root-certificate">2. Generate root certificate</h3>
+<p>Create <code>rootCA.json</code>, generate the similar <code>rootCA.heylinux.com.key</code> and <code>rootCA.heylinux.com.pem</code> as above.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;CA&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;expiry&#34;</span><span class="p">:</span> <span class="s2">&#34;87600h&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;pathlen&#34;</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="p">},</span>
+    <span class="nt">&#34;CN&#34;</span><span class="p">:</span> <span class="s2">&#34;SRE&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;algo&#34;</span><span class="p">:</span> <span class="s2">&#34;rsa&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="mi">2048</span>
+    <span class="p">},</span>
+    <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&#34;C&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;ST&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;L&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;O&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;OU&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">cfssl gencert -initca rootCA.json <span class="p">|</span> cfssljson -bare rootCA.heylinux.com
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">2021/11/13 05:11:48 [INFO] generating a new CA key and certificate from CSR
+2021/11/13 05:11:48 [INFO] generate received request
+2021/11/13 05:11:48 [INFO] received CSR
+2021/11/13 05:11:48 [INFO] generating key: rsa-2048
+2021/11/13 05:11:48 [INFO] encoded CSR
+2021/11/13 05:11:48 [INFO] signed certificate with serial number 644632230923530854661361284854682897812867573233
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ls -1
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">rootCA.heylinux.com.csr
+rootCA.heylinux.com-key.pem
+rootCA.heylinux.com.pem
+rootCA.json
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">mv rootCA.heylinux.com-key.pem rootCA.heylinux.com.key
+</code></pre></td></tr></table>
+</div>
+</div><p>View <code>rootCA.heylinux.com.pem</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">cfssl-certinfo -cert rootCA.heylinux.com.pem
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;subject&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;common_name&#34;</span><span class="p">:</span> <span class="s2">&#34;SRE&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;country&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;organization&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;organizational_unit&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;locality&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;province&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;SRE&#34;</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;issuer&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;common_name&#34;</span><span class="p">:</span> <span class="s2">&#34;SRE&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;country&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;organization&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;organizational_unit&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;locality&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;province&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;SRE&#34;</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;serial_number&#34;</span><span class="p">:</span> <span class="s2">&#34;644632230923530854661361284854682897812867573233&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;not_before&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-11-12T20:53:00Z&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;not_after&#34;</span><span class="p">:</span> <span class="s2">&#34;2031-11-10T20:53:00Z&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;sigalg&#34;</span><span class="p">:</span> <span class="s2">&#34;SHA256WithRSA&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;authority_key_id&#34;</span><span class="p">:</span> <span class="s2">&#34;36:D1:86:6B:27:AE:24:EF:C7:B3:2B:25:E7:92:DE:F1:0:34:2B:E5&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;subject_key_id&#34;</span><span class="p">:</span> <span class="s2">&#34;36:D1:86:6B:27:AE:24:EF:C7:B3:2B:25:E7:92:DE:F1:0:34:2B:E5&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;pem&#34;</span><span class="p">:</span> <span class="s2">&#34;-----BEGIN CERTIFICATE-----...-----END CERTIFICATE-----\n&#34;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="3-generate-server-certificate">3. Generate server certificate</h3>
+<p>Create <code>rootCA.json</code>, generate the similar <code>star.heylinux.com.key</code> and <code>star.heylinux.com.crt</code> as above.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vim ssl-config.json
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;signing&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;default&#34;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&#34;expiry&#34;</span><span class="p">:</span> <span class="s2">&#34;87600h&#34;</span>
+    <span class="p">},</span>
+    <span class="nt">&#34;profiles&#34;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&#34;server&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;usages&#34;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&#34;signing&#34;</span><span class="p">,</span>
+          <span class="s2">&#34;key encipherment&#34;</span><span class="p">,</span>
+          <span class="s2">&#34;server auth&#34;</span><span class="p">,</span>
+          <span class="s2">&#34;client auth&#34;</span>
+        <span class="p">],</span>
+        <span class="nt">&#34;expiry&#34;</span><span class="p">:</span> <span class="s2">&#34;87600h&#34;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vim ssl.json
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;CN&#34;</span><span class="p">:</span> <span class="s2">&#34;*.heylinux.com&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;hosts&#34;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&#34;*.heylinux.com&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;*.cloud.heylinux.com&#34;</span>
+  <span class="p">],</span>
+  <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;algo&#34;</span><span class="p">:</span> <span class="s2">&#34;rsa&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="mi">2048</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="nt">&#34;C&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;ST&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;L&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;O&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;OU&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span>
+  <span class="p">}]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">cfssl gencert -ca<span class="o">=</span>rootCA.heylinux.com.pem -ca-key<span class="o">=</span>rootCA.heylinux.com.key -config<span class="o">=</span>ssl-config.json -profile<span class="o">=</span>server ssl.json <span class="p">|</span> cfssljson -bare star.heylinux.com
+
+mv star.heylinux.com.pem star.heylinux.com.crt
+mv star.heylinux.com-key.pem star.heylinux.com.key
+
+ls -1
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">rootCA.heylinux.com.csr
+rootCA.heylinux.com.key
+rootCA.heylinux.com.pem
+rootCA.json
+ssl-config.json
+ssl.json
+star.heylinux.com.crt
+star.heylinux.com.csr
+star.heylinux.com.key
+</code></pre></td></tr></table>
+</div>
+</div><p>View <code>star.heylinux.com.crt</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">cfssl-certinfo -cert star.heylinux.com.crt
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;subject&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;common_name&#34;</span><span class="p">:</span> <span class="s2">&#34;*.heylinux.com&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;country&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;organization&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;organizational_unit&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;locality&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;province&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;*.heylinux.com&#34;</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;issuer&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;common_name&#34;</span><span class="p">:</span> <span class="s2">&#34;SRE&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;country&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;organization&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;organizational_unit&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;locality&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;province&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;SRE&#34;</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;serial_number&#34;</span><span class="p">:</span> <span class="s2">&#34;608638693485247133136510097809090433439285866629&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;sans&#34;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&#34;*.heylinux.com&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;*.cloud.heylinux.com&#34;</span>
+  <span class="p">],</span>
+  <span class="nt">&#34;not_before&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-11-12T21:20:00Z&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;not_after&#34;</span><span class="p">:</span> <span class="s2">&#34;2031-11-10T21:20:00Z&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;sigalg&#34;</span><span class="p">:</span> <span class="s2">&#34;SHA256WithRSA&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;authority_key_id&#34;</span><span class="p">:</span> <span class="s2">&#34;2B:D4:44:57:4D:9:D8:9A:0:63:4C:5B:B8:78:F4:8F:45:9C:3C:F5&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;subject_key_id&#34;</span><span class="p">:</span> <span class="s2">&#34;4E:15:55:4A:34:EA:BA:69:3E:A5:F:40:74:16:52:F0:88:C3:7D:6F&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;pem&#34;</span><span class="p">:</span> <span class="s2">&#34;-----BEGIN CERTIFICATE-----...-----END CERTIFICATE-----\n&#34;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -541,5 +1015,5 @@ keytool -list -v -keystore heylinux-ssl-keypair.p12 -storepass P_Ss0rdT -storety
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"highlightTag":"em","lunrIndexURL":"/en/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"highlightTag":"em","lunrIndexURL":"/en/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

@@ -31,7 +31,7 @@ openssl req -x509 -new -nodes -key rootCA.heylinux.com.key -sha256 -days 3650 -o
 
 ### 2. 生成SSL服务端证书
 
-创建服务端证书配置文件，支持`serverAuth`和`clientAuth`，可用于多个泛域名`*.heylinux.com`和`*.cloud.heylinux.com`。
+创建服务端证书配置文件`ssl.conf`，支持`serverAuth`和`clientAuth`，可用于多个泛域名`*.heylinux.com`和`*.cloud.heylinux.com`。
 
 ```bash
 vim ssl.conf
@@ -59,10 +59,10 @@ openssl req -new -nodes -out star.heylinux.com.csr -newkey rsa:4096 -keyout star
 通过根证书的Key、根证书、服务端证书的Key和服务端证书配置文件`ssl.conf`，生成服务端证书，文件名`star.heylinux.com.crt`，设置加密方式为`sha256`，有效期为`3650天`。
 
 ```bash
-$ openssl x509 -req -in star.heylinux.com.csr -CA rootCA.heylinux.com.pem -CAkey rootCA.heylinux.com.key -CAcreateserial -out star.heylinux.com.crt -days 3650 -sha256 -extfile ssl.conf
+openssl x509 -req -in star.heylinux.com.csr -CA rootCA.heylinux.com.pem -CAkey rootCA.heylinux.com.key -CAcreateserial -out star.heylinux.com.crt -days 3650 -sha256 -extfile ssl.conf
 ```
 
-查看服务端证书信息
+查看服务端证书信息。
 
 ```bash
 openssl x509 -text -noout -in star.heylinux.com.crt
@@ -114,7 +114,7 @@ openssl pkcs12 -export -in star.heylinux.com.crt -inkey star.heylinux.com.key -p
 将生成好的`PKCS12`格式的捆绑证书`star.heylinux.com.p12`转换为`JKS`格式`star.heylinux.com.jks`，设置证书文件的[密码]^(passphrase)为`P_Ss0rdT`，文件内别名`heylinux_com`，这种证书可用于Java类应用的服务器软件如Tomcat。
 
 ```
-$ keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.jks -srcstorepass P_Ss0rdT -srckeystore star.heylinux.com.p12 -srcstoretype PKCS12
+keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.jks -srcstorepass P_Ss0rdT -srckeystore star.heylinux.com.p12 -srcstoretype PKCS12
 ```
 
 将生成好的`PKCS12`格式的捆绑证书`star.heylinux.com.p12`转换为`PEM`格式`star.heylinux.com.pem`，文件内别名`heylinux_com`，不设置证书文件的密码，这种证书可用于服务器软件如Apache、Nginx、HAProxy和AWS ELB。
@@ -183,8 +183,8 @@ keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.
 
 ```bash
 # 查看PEM格式的证书rootCA.heylinux.com.pem和star.heylinux.com.pem
-openssl crl2pkcs7 -nocrl -certfile rootCA.heylinux.com.pem | openssl pkcs7 -print_certs -text -noout
-openssl crl2pkcs7 -nocrl -certfile star.heylinux.com.pem | openssl pkcs7 -print_certs -text -noout
+openssl x509 -noout -text -in rootCA.heylinux.com.pem 
+openssl x509 -noout -text -in star.heylinux.com.pem
 
 # 查看P12格式的证书star.heylinux.com.p12 
 keytool -list -v -keystore star.heylinux.com.p12 -storepass P_Ss0rdT -storetype PKCS12
@@ -197,11 +197,40 @@ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 
 对于一些应用如NiFi、vsFTPd，主要将TLS/SSL证书直接用于客户端与服务端校验，类似于SSH的私钥与公钥间的认证关系，这类TLS/SSL证书可以不需要根证书。
 
-可通过以下方式生成，设置加密方式为`sha256`，有效期为`3650天`，证书的机构信息为`/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE`，证书文件[密码]^(passphrase)为`P_Ss0rdT`。
+创建服务端证书配置文件`tls.conf`，证书的机构信息为`/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE`，可用于多个IP`10.8.5.7`和`10.2.3.4`，和多个泛域名`*.heylinux.com`和`*.cloud.heylinux.com`。
+
+```bash
+vim tls.conf
+```
+
+```ini
+[req]
+prompt = no
+req_extensions = req_ext
+distinguished_name = dn
+
+[dn]
+ C = CN
+ST = Sichuan
+ L = Chengdu
+ O = HEYLINUX
+OU = IT
+CN = SRE
+
+[req_ext]
+subjectAltName = @alt_names
+
+[alt_names]
+IP.1 = 10.8.5.7
+IP.2 = 10.2.3.4
+DNS.1 = *.heylinux.com
+DNS.2 = *.cloud.heylinux.com
+```
+可通过以下方式生成，设置加密方式为`sha256`，有效期为`3650天`，证书文件[密码]^(passphrase)为`P_Ss0rdT`。
 
 ```bash
 # 生成证书Key heylinux-ssl-keypair.key和证书heylinux-ssl-keypair.crt
-openssl req -x509 -newkey rsa:4096 -keyout heylinux-ssl-keypair.key -out heylinux-ssl-keypair.crt -days 3650 -sha256 -subj "/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE"
+openssl req -x509 -newkey rsa:4096 -keyout heylinux-ssl-keypair.key -out heylinux-ssl-keypair.crt -days 3650 -sha256 -extensions req_ext -config tls.conf
 
 # 输入密码
 Generating a RSA private key
@@ -218,5 +247,252 @@ Enter pass phrase for heylinux-ssl-keypair.key: P_Ss0rdT
 
 # 查看P12格式的捆绑证书heylinux-ssl-keypair.p12
 keytool -list -v -keystore heylinux-ssl-keypair.p12 -storepass P_Ss0rdT -storetype PKCS12
+```
+
+## 使用cfssl生成和查看SSL证书
+
+### 1. 安装命令行工具
+
+下载命令行工具`cfssl`，`cfssljson`和`cfssl-certinfo`并给予执行权限。
+
+```bash
+sudo wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 -O /usr/local/bin/cfssl
+sudo wget https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64 -O /usr/local/bin/cfssljson
+sudo wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64 -O /usr/local/bin/cfssl-certinfo
+sudo chmod +x /usr/local/bin/cfssl*
+```
+
+### 2. 生成根证书
+
+创建json配置文件rootCA.json，生成与上面配置相同的`rootCA.heylinux.com.key`和`rootCA.heylinux.com.pem`。
+
+```json
+{
+    "CA": {
+        "expiry": "87600h",
+        "pathlen": 0
+    },
+    "CN": "SRE",
+    "key": {
+        "algo": "rsa",
+        "size": 2048
+    },
+    "names": [
+        {
+            "C": "CN",
+            "ST": "Sichuan",
+            "L": "Chengdu",
+            "O": "HEYLINUX",
+            "OU": "IT"
+        }
+    ]
+}
+```
+
+```bash
+cfssl gencert -initca rootCA.json | cfssljson -bare rootCA.heylinux.com
+```
+
+```
+2021/11/13 05:11:48 [INFO] generating a new CA key and certificate from CSR
+2021/11/13 05:11:48 [INFO] generate received request
+2021/11/13 05:11:48 [INFO] received CSR
+2021/11/13 05:11:48 [INFO] generating key: rsa-2048
+2021/11/13 05:11:48 [INFO] encoded CSR
+2021/11/13 05:11:48 [INFO] signed certificate with serial number 644632230923530854661361284854682897812867573233
+```
+
+```bash
+ls -1
+```
+
+```
+rootCA.heylinux.com.csr
+rootCA.heylinux.com-key.pem
+rootCA.heylinux.com.pem
+rootCA.json
+```
+
+```bash
+mv rootCA.heylinux.com-key.pem rootCA.heylinux.com.key
+```
+
+查看根证书`rootCA.heylinux.com.pem`信息。
+
+```bash
+cfssl-certinfo -cert rootCA.heylinux.com.pem
+```
+
+```json
+{
+  "subject": {
+    "common_name": "SRE",
+    "country": "CN",
+    "organization": "HEYLINUX",
+    "organizational_unit": "IT",
+    "locality": "Chengdu",
+    "province": "Sichuan",
+    "names": [
+      "CN",
+      "Sichuan",
+      "Chengdu",
+      "HEYLINUX",
+      "IT",
+      "SRE"
+    ]
+  },
+  "issuer": {
+    "common_name": "SRE",
+    "country": "CN",
+    "organization": "HEYLINUX",
+    "organizational_unit": "IT",
+    "locality": "Chengdu",
+    "province": "Sichuan",
+    "names": [
+      "CN",
+      "Sichuan",
+      "Chengdu",
+      "HEYLINUX",
+      "IT",
+      "SRE"
+    ]
+  },
+  "serial_number": "644632230923530854661361284854682897812867573233",
+  "not_before": "2021-11-12T20:53:00Z",
+  "not_after": "2031-11-10T20:53:00Z",
+  "sigalg": "SHA256WithRSA",
+  "authority_key_id": "36:D1:86:6B:27:AE:24:EF:C7:B3:2B:25:E7:92:DE:F1:0:34:2B:E5",
+  "subject_key_id": "36:D1:86:6B:27:AE:24:EF:C7:B3:2B:25:E7:92:DE:F1:0:34:2B:E5",
+  "pem": "-----BEGIN CERTIFICATE-----...-----END CERTIFICATE-----\n"
+}
+```
+
+### 3. 生成SSL服务端证书
+
+创建json配置文件rootCA.json，生成与上面配置相同的`star.heylinux.com.key`和`star.heylinux.com.crt`。
+
+```bash
+vim ssl-config.json
+```
+
+```json
+{
+  "signing": {
+    "default": {
+      "expiry": "87600h"
+    },
+    "profiles": {
+      "server": {
+        "usages": [
+          "signing",
+          "key encipherment",
+          "server auth",
+          "client auth"
+        ],
+        "expiry": "87600h"
+      }
+    }
+  }
+}
+```
+
+```bash
+vim ssl.json
+```
+
+```json
+{
+  "CN": "*.heylinux.com",
+  "hosts": [
+    "*.heylinux.com",
+    "*.cloud.heylinux.com"
+  ],
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [{
+    "C": "CN",
+    "ST": "Sichuan",
+    "L": "Chengdu",
+    "O": "HEYLINUX",
+    "OU": "IT"
+  }]
+}
+```
+
+```bash
+cfssl gencert -ca=rootCA.heylinux.com.pem -ca-key=rootCA.heylinux.com.key -config=ssl-config.json -profile=server ssl.json | cfssljson -bare star.heylinux.com
+
+mv star.heylinux.com.pem star.heylinux.com.crt
+mv star.heylinux.com-key.pem star.heylinux.com.key
+
+ls -1
+```
+
+```
+rootCA.heylinux.com.csr
+rootCA.heylinux.com.key
+rootCA.heylinux.com.pem
+rootCA.json
+ssl-config.json
+ssl.json
+star.heylinux.com.crt
+star.heylinux.com.csr
+star.heylinux.com.key
+```
+
+查看服务端证书`star.heylinux.com.crt`信息。
+
+```bash
+cfssl-certinfo -cert star.heylinux.com.crt
+```
+
+```json
+{
+  "subject": {
+    "common_name": "*.heylinux.com",
+    "country": "CN",
+    "organization": "HEYLINUX",
+    "organizational_unit": "IT",
+    "locality": "Chengdu",
+    "province": "Sichuan",
+    "names": [
+      "CN",
+      "Sichuan",
+      "Chengdu",
+      "HEYLINUX",
+      "IT",
+      "*.heylinux.com"
+    ]
+  },
+  "issuer": {
+    "common_name": "SRE",
+    "country": "CN",
+    "organization": "HEYLINUX",
+    "organizational_unit": "IT",
+    "locality": "Chengdu",
+    "province": "Sichuan",
+    "names": [
+      "CN",
+      "Sichuan",
+      "Chengdu",
+      "HEYLINUX",
+      "IT",
+      "SRE"
+    ]
+  },
+  "serial_number": "608638693485247133136510097809090433439285866629",
+  "sans": [
+    "*.heylinux.com",
+    "*.cloud.heylinux.com"
+  ],
+  "not_before": "2021-11-12T21:20:00Z",
+  "not_after": "2031-11-10T21:20:00Z",
+  "sigalg": "SHA256WithRSA",
+  "authority_key_id": "2B:D4:44:57:4D:9:D8:9A:0:63:4C:5B:B8:78:F4:8F:45:9C:3C:F5",
+  "subject_key_id": "4E:15:55:4A:34:EA:BA:69:3E:A5:F:40:74:16:52:F0:88:C3:7D:6F",
+  "pem": "-----BEGIN CERTIFICATE-----...-----END CERTIFICATE-----\n"
+}
 ```
 
