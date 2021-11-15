@@ -36,7 +36,7 @@ Import `rootCA.heylinux.com.pem` to OS via Chrome, so the Chrome could trust the
 
 ### 2. Generate server certificate
 
-Create ssl.conf, enable `serverAuth` and `clientAuth`, wildcard DNS names as `*.heylinux.com` and `*.cloud.heylinux.com`.
+Create `ssl.conf`, enable `serverAuth` and `clientAuth`, wildcard DNS names as `*.heylinux.com` and `*.cloud.heylinux.com`.
 
 ```bash
 vim ssl.conf
@@ -204,11 +204,41 @@ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 
 For applications such as NiFi, vsFTPd, the TLS/SSL certificates are mainly used for client and server verification, similar to the authentication between private and public keys in SSH, this kind of certificates could be used without the root certificate.
 
-Generate server certificates `heylinux-ssl-keypair.key` and `heylinux-ssl-keypair.crt`, set encryption `sha256`, valid days `3650`, passphrase `P_Ss0rdT`, organization `/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE`.
+Create `tls.conf`, set IPs as `10.8.5.7` and `10.2.3.4`, wildcard DNS names as `*.heylinux.com` and `*.cloud.heylinux.com`, organization `/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE`.
+
+```bash
+vim tls.conf
+```
+
+```ini
+[req]
+prompt = no
+req_extensions = req_ext
+distinguished_name = dn
+
+[dn]
+ C = CN
+ST = Sichuan
+ L = Chengdu
+ O = HEYLINUX
+OU = IT
+CN = SRE
+
+[req_ext]
+subjectAltName = @alt_names
+
+[alt_names]
+IP.1 = 10.8.5.7
+IP.2 = 10.2.3.4
+DNS.1 = *.heylinux.com
+DNS.2 = *.cloud.heylinux.com
+```
+
+Generate server certificates `heylinux-ssl-keypair.key` and `heylinux-ssl-keypair.crt`, set encryption `sha256`, valid days `3650`, passphrase `P_Ss0rdT`.
 
 ```bash
 # Generate heylinux-ssl-keypair.key and heylinux-ssl-keypair.crt
-openssl req -x509 -newkey rsa:4096 -keyout heylinux-ssl-keypair.key -out heylinux-ssl-keypair.crt -days 3650 -sha256 -subj "/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE"
+openssl req -x509 -newkey rsa:4096 -keyout heylinux-ssl-keypair.key -out heylinux-ssl-keypair.crt -days 3650 -sha256 -extensions req_ext -config tls.conf
 
 # Input password
 Generating a RSA private key
@@ -240,7 +270,7 @@ sudo wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64 -O /usr/local/bi
 sudo chmod +x /usr/local/bin/cfssl*
 ```
 
-### 2. Generate root certificate
+### 2. Generate and view root certificate
 
 Create `rootCA.json`, generate the similar `rootCA.heylinux.com.key`(encryption length is only 2048 due to cfssl cannot set the key with different encryption length) and `rootCA.heylinux.com.pem` as above.
 
@@ -345,9 +375,9 @@ cfssl-certinfo -cert rootCA.heylinux.com.pem
 }
 ```
 
-### 3. Generate server certificate
+### 3. Generate and view server certificate
 
-Create `rootCA.json`, generate the similar `star.heylinux.com.key`(encryption length is only 2048 due to cfssl cannot set the key with different encryption length) and `star.heylinux.com.crt` as above.
+Create `ssl-config.json` and `ssl.json`, generate the similar `star.heylinux.com.key`(encryption length is only 2048 due to cfssl cannot set the key with different encryption length) and `star.heylinux.com.crt` as above.
 
 ```bash
 vim ssl-config.json

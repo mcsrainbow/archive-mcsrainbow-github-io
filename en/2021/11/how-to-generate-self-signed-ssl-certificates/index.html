@@ -33,7 +33,7 @@
                             "url": "https:\/\/blog.heylinux.com\/en\/2021\/11\/how-to-generate-self-signed-ssl-certificates\/featured-image.jpeg",
                             "width":  1000 ,
                             "height":  499 
-                        }],"genre": "posts","keywords": "SSL, TLS, HTTPS","wordcount":  1609 ,
+                        }],"genre": "posts","keywords": "SSL, TLS, HTTPS","wordcount":  1702 ,
         "url": "https:\/\/blog.heylinux.com\/en\/2021\/11\/how-to-generate-self-signed-ssl-certificates\/","datePublished": "2021-11-07T11:06:54+08:00","dateModified": "2021-11-07T11:06:54+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "mcsrainbow","logo": {
@@ -119,7 +119,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">How to Generate Self-signed SSL Certificates</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/en/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dong Guo | Damon</a></span>&nbsp;<span class="post-category">included in <a href="/en/categories/skills/"><i class="far fa-folder fa-fw"></i>Skills</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-11-07">2021-11-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1609 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-11-07">2021-11-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1702 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -157,8 +157,8 @@
     <li><a href="#generate-and-view-ssl-certificates-by-cfssl-tools">Generate and View SSL Certificates by cfssl tools</a>
       <ul>
         <li><a href="#1-install-cfssl-tools">1. Install cfssl tools</a></li>
-        <li><a href="#2-generate-root-certificate">2. Generate root certificate</a></li>
-        <li><a href="#3-generate-server-certificate">3. Generate server certificate</a></li>
+        <li><a href="#2-generate-and-view-root-certificate">2. Generate and view root certificate</a></li>
+        <li><a href="#3-generate-and-view-server-certificate">3. Generate and view server certificate</a></li>
       </ul>
     </li>
   </ul>
@@ -199,7 +199,7 @@
         alt="/en/2021/11/how-to-generate-self-signed-ssl-certificates/chrome-certmanager.jpeg"
         title="Chrome CertManager" /></p>
 <h3 id="2-generate-server-certificate">2. Generate server certificate</h3>
-<p>Create ssl.conf, enable <code>serverAuth</code> and <code>clientAuth</code>, wildcard DNS names as <code>*.heylinux.com</code> and <code>*.cloud.heylinux.com</code>.</p>
+<p>Create <code>ssl.conf</code>, enable <code>serverAuth</code> and <code>clientAuth</code>, wildcard DNS names as <code>*.heylinux.com</code> and <code>*.cloud.heylinux.com</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -465,7 +465,64 @@ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 </div>
 </div><h2 id="tlsssl-certificates-without-root-certificate">TLS/SSL Certificates without Root Certificate</h2>
 <p>For applications such as NiFi, vsFTPd, the TLS/SSL certificates are mainly used for client and server verification, similar to the authentication between private and public keys in SSH, this kind of certificates could be used without the root certificate.</p>
-<p>Generate server certificates <code>heylinux-ssl-keypair.key</code> and <code>heylinux-ssl-keypair.crt</code>, set encryption <code>sha256</code>, valid days <code>3650</code>, passphrase <code>P_Ss0rdT</code>, organization <code>/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE</code>.</p>
+<p>Create <code>tls.conf</code>, set IPs as <code>10.8.5.7</code> and <code>10.2.3.4</code>, wildcard DNS names as <code>*.heylinux.com</code> and <code>*.cloud.heylinux.com</code>, organization <code>/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vim tls.conf
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ini" data-lang="ini"><span class="k">[req]</span>
+<span class="na">prompt</span> <span class="o">=</span> <span class="s">no</span>
+<span class="na">req_extensions</span> <span class="o">=</span> <span class="s">req_ext</span>
+<span class="na">distinguished_name</span> <span class="o">=</span> <span class="s">dn</span>
+
+<span class="k">[dn]</span>
+ <span class="na">C</span> <span class="o">=</span> <span class="s">CN</span>
+<span class="na">ST</span> <span class="o">=</span> <span class="s">Sichuan
+</span><span class="s"> L = Chengdu
+</span><span class="s"> O = HEYLINUX</span>
+<span class="na">OU</span> <span class="o">=</span> <span class="s">IT</span>
+<span class="na">CN</span> <span class="o">=</span> <span class="s">SRE</span>
+
+<span class="k">[req_ext]</span>
+<span class="na">subjectAltName</span> <span class="o">=</span> <span class="s">@alt_names</span>
+
+<span class="k">[alt_names]</span>
+<span class="na">IP.1</span> <span class="o">=</span> <span class="s">10.8.5.7</span>
+<span class="na">IP.2</span> <span class="o">=</span> <span class="s">10.2.3.4</span>
+<span class="na">DNS.1</span> <span class="o">=</span> <span class="s">*.heylinux.com</span>
+<span class="na">DNS.2</span> <span class="o">=</span> <span class="s">*.cloud.heylinux.com</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Generate server certificates <code>heylinux-ssl-keypair.key</code> and <code>heylinux-ssl-keypair.crt</code>, set encryption <code>sha256</code>, valid days <code>3650</code>, passphrase <code>P_Ss0rdT</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -489,7 +546,7 @@ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Generate heylinux-ssl-keypair.key and heylinux-ssl-keypair.crt</span>
-openssl req -x509 -newkey rsa:4096 -keyout heylinux-ssl-keypair.key -out heylinux-ssl-keypair.crt -days <span class="m">3650</span> -sha256 -subj <span class="s2">&#34;/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE&#34;</span>
+openssl req -x509 -newkey rsa:4096 -keyout heylinux-ssl-keypair.key -out heylinux-ssl-keypair.crt -days <span class="m">3650</span> -sha256 -extensions req_ext -config tls.conf
 
 <span class="c1"># Input password</span>
 Generating a RSA private key
@@ -525,7 +582,7 @@ sudo wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64 -O /usr/local/bi
 sudo chmod +x /usr/local/bin/cfssl*
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="2-generate-root-certificate">2. Generate root certificate</h3>
+</div><h3 id="2-generate-and-view-root-certificate">2. Generate and view root certificate</h3>
 <p>Create <code>rootCA.json</code>, generate the similar <code>rootCA.heylinux.com.key</code>(encryption length is only 2048 due to cfssl cannot set the key with different encryption length) and <code>rootCA.heylinux.com.pem</code> as above.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -726,8 +783,8 @@ rootCA.json
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="3-generate-server-certificate">3. Generate server certificate</h3>
-<p>Create <code>rootCA.json</code>, generate the similar <code>star.heylinux.com.key</code>(encryption length is only 2048 due to cfssl cannot set the key with different encryption length) and <code>star.heylinux.com.crt</code> as above.</p>
+</div><h3 id="3-generate-and-view-server-certificate">3. Generate and view server certificate</h3>
+<p>Create <code>ssl-config.json</code> and <code>ssl.json</code>, generate the similar <code>star.heylinux.com.key</code>(encryption length is only 2048 due to cfssl cannot set the key with different encryption length) and <code>star.heylinux.com.crt</code> as above.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1

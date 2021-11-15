@@ -226,6 +226,7 @@ IP.2 = 10.2.3.4
 DNS.1 = *.heylinux.com
 DNS.2 = *.cloud.heylinux.com
 ```
+
 可通过以下方式生成，设置加密方式为`sha256`，有效期为`3650天`，证书文件[密码]^(passphrase)为`P_Ss0rdT`。
 
 ```bash
@@ -262,9 +263,9 @@ sudo wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64 -O /usr/local/bi
 sudo chmod +x /usr/local/bin/cfssl*
 ```
 
-### 2. 生成根证书
+### 2. 生成和查看根证书
 
-创建json配置文件rootCA.json，生成与上面配置相同的`rootCA.heylinux.com.key`（cfssl不支持证书key与证书长度不一致，因此加密长度仅为2048）和`rootCA.heylinux.com.pem`。
+创建json配置文件`rootCA.json`，生成与上面配置相同的`rootCA.heylinux.com.key`（cfssl不支持证书key与证书长度不一致，因此加密长度仅为2048）和`rootCA.heylinux.com.pem`。
 
 ```json
 {
@@ -367,9 +368,9 @@ cfssl-certinfo -cert rootCA.heylinux.com.pem
 }
 ```
 
-### 3. 生成SSL服务端证书
+### 3. 生成和查看SSL服务端证书
 
-创建json配置文件rootCA.json，生成与上面配置相同的`star.heylinux.com.key`（cfssl不支持证书key与证书长度不一致，因此加密长度仅为2048）和`star.heylinux.com.crt`。
+创建json配置文件`ssl-config.json`和`ssl.json`，生成与上面配置相同的`star.heylinux.com.key`（cfssl不支持证书key与证书长度不一致，因此加密长度仅为2048）和`star.heylinux.com.crt`。
 
 ```bash
 vim ssl-config.json
