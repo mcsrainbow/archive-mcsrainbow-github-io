@@ -4,7 +4,14 @@
         <link>https://blog.heylinux.com/posts/</link>
         <description>所有文章 | Hey! Linux.</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
-            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 09 Nov 2021 22:07:33 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Nov 2021 12:18:14 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>DevOps CICD流水线设计实践</title>
+    <link>https://blog.heylinux.com/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/</link>
+    <pubDate>Sun, 21 Nov 2021 12:18:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog.heylinux.com/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/</guid>
+    <description><![CDATA[<p>在不同的环境中，最适合的CICD流水线会有所差异，尤其是在工具链层面，但大致的流程和思路应该是一致的。</p>]]></description>
+</item><item>
     <title>不负时光，迎接美好</title>
     <link>https://blog.heylinux.com/2021/11/%E4%B8%8D%E8%B4%9F%E6%97%B6%E5%85%89%E8%BF%8E%E6%8E%A5%E7%BE%8E%E5%A5%BD/</link>
     <pubDate>Tue, 09 Nov 2021 22:07:33 &#43;0800</pubDate>

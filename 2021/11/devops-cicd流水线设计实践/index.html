@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>DevOps CICD流水线设计实践 - Hey! Linux.</title><meta name="Description" content="在不同的环境中，最适合的CICD流水线会有所差异，尤其是在工具链层面，但大致的流程和思路应该是一致的。"><meta property="og:title" content="DevOps CICD流水线设计实践" />
+<meta property="og:description" content="在不同的环境中，最适合的CICD流水线会有所差异，尤其是在工具链层面，但大致的流程和思路应该是一致的。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.heylinux.com/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/" />
+<meta property="og:image" content="https://blog.heylinux.com/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/featured-image.jpeg"/>
+<meta property="article:published_time" content="2021-11-21T12:18:14+08:00" />
+<meta property="article:modified_time" content="2021-11-21T12:18:14+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.heylinux.com/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/featured-image.jpeg"/>
+<meta name="twitter:title" content="DevOps CICD流水线设计实践"/>
+<meta name="twitter:description" content="在不同的环境中，最适合的CICD流水线会有所差异，尤其是在工具链层面，但大致的流程和思路应该是一致的。"/>
+<meta name="application-name" content="Hey! Linux.">
+<meta name="apple-mobile-web-app-title" content="Hey! Linux."><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.heylinux.com/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/" /><link rel="prev" href="https://blog.heylinux.com/2021/11/%E4%B8%8D%E8%B4%9F%E6%97%B6%E5%85%89%E8%BF%8E%E6%8E%A5%E7%BE%8E%E5%A5%BD/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "DevOps CICD流水线设计实践",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.heylinux.com\/2021\/11\/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/blog.heylinux.com\/2021\/11\/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5\/featured-image.jpeg",
+                            "width":  1080 ,
+                            "height":  608 
+                        }],"genre": "posts","keywords": "DevOps, CICD","wordcount":  2260 ,
+        "url": "https:\/\/blog.heylinux.com\/2021\/11\/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5\/","datePublished": "2021-11-21T12:18:14+08:00","dateModified": "2021-11-21T12:18:14+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "mcsrainbow","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/blog.heylinux.com\/images\/avatar.png",
+                    "width":  400 ,
+                    "height":  400 
+                }},"author": {
+                "@type": "Person",
+                "name": "冬花盛开"
+            },"description": "在不同的环境中，最适合的CICD流水线会有所差异，尤其是在工具链层面，但大致的流程和思路应该是一致的。"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Hey! Linux.">Hey! Linux.</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"><i class='fas fa-user-circle fa-fw'></i>  </a><a class="menu-item" href="/en/"> English </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/" selected>简体中文</option><option value="/en/2021/11/devops-cicd-pipeline-in-action/">English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Hey! Linux.">Hey! Linux.</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title=""><i class='fas fa-user-circle fa-fw'></i></a><a class="menu-item" href="/en/" title="">English</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/" selected>简体中文</option><option value="/en/2021/11/devops-cicd-pipeline-in-action/">English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">DevOps CICD流水线设计实践</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>冬花盛开</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%8A%80%E8%83%BD%E7%9F%A9%E9%98%B5/"><i class="far fa-folder fa-fw"></i>技能矩阵</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-11-21">2021-11-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2260 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/featured-image.jpeg"
+        data-srcset="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/featured-image.jpeg, /2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/featured-image.jpeg 1.5x, /2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/featured-image.jpeg 2x"
+        data-sizes="auto"
+        alt="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/featured-image.jpeg"
+        title="在不同的环境中，最适合的CICD流水线会有所差异，尤其是在工具链层面，但大致的流程和思路应该是一致的。" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#背景">背景</a></li>
+    <li><a href="#什么是devops">什么是DevOps</a>
+      <ul>
+        <li><a href="#1-汽车工业">1. 汽车工业</a></li>
+        <li><a href="#2-devops是一种文化">2. DevOps是一种文化</a></li>
+        <li><a href="#3-devops工具链与生命周期">3. DevOps工具链与生命周期</a></li>
+      </ul>
+    </li>
+    <li><a href="#传统的开发模式有哪些缺点">传统的开发模式有哪些缺点</a>
+      <ul>
+        <li><a href="#1-传统制造业的七种浪费">1. 传统制造业的七种浪费</a></li>
+        <li><a href="#2-传统软件开发模式的弊端">2. 传统软件开发模式的弊端</a></li>
+      </ul>
+    </li>
+    <li><a href="#值得参考的devops-cicd最佳实践">值得参考的DevOps CICD最佳实践</a>
+      <ul>
+        <li><a href="#1-轻量级且简单">1. 轻量级且简单</a></li>
+        <li><a href="#2-all-on-kubernetes">2. All on Kubernetes</a></li>
+        <li><a href="#3-ibm-devops解决方案">3. IBM DevOps解决方案</a></li>
+        <li><a href="#4-端到端的cicd流水线">4. 端到端的CICD流水线</a></li>
+      </ul>
+    </li>
+    <li><a href="#设计最适合的devops-cicd流水线">设计最适合的DevOps CICD流水线</a>
+      <ul>
+        <li><a href="#1-devsecops">1. DevSecOps</a></li>
+        <li><a href="#2-开发与测试环境">2. 开发与测试环境</a></li>
+        <li><a href="#3-最适合的端到端devsecops-cicd流水线">3. 最适合的端到端DevSecOps CICD流水线</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>在不同的环境中，最适合的CICD流水线会有所差异，尤其是在工具链层面，但大致的流程和思路应该是一致的。</p>
+<h2 id="背景">背景</h2>
+<p>在项目建设初期，架构师要求我们设计一个<strong><ruby>DevOps CICD<rt>持续集成，持续部署/交付</rt></ruby></strong>方案，提升生产效率。</p>
+<p>通过参考一些业界的最佳实践，结合自身的特点，我们设计了一个较为通用，且能兼顾安全、审批和接管本地已有基础设施与服务的DevOps CICD流水线方案。最后成功落地实施，并在公司内的其它项目中进行了推广。</p>
+<h2 id="什么是devops">什么是DevOps</h2>
+<h3 id="1-汽车工业">1. 汽车工业</h3>
+<p>众所周知，大家都知道，大多数工厂已经有了产品的自动化生产线。</p>
+<p>特别是汽车行业，大约在一百年前，汽车是由人工制造的，经过多次演变，从手工制造的高度定制的汽车，到手工组装的自动化零件生产，再到目前完全自动化的装配流水线，汽车工业已经具备了精益的自动化制造方案。</p>
+<p>与汽车行业相比，我们的传统软件开发模式，已经落后了很多。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="car_assembly_line.jpg"
+        data-srcset="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/car_assembly_line.jpg, car_assembly_line.jpg 1.5x, /2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/car_assembly_line.jpg 2x"
+        data-sizes="auto"
+        alt="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/car_assembly_line.jpg"
+        title="car_assembly_line" /></p>
+<h3 id="2-devops是一种文化">2. DevOps是一种文化</h3>
+<p>什么是DevOps?</p>
+<p>有些人认为，DevOps就是一堆软件和工具的集合，可以用来优化开发和部署。</p>
+<p>DevOps不仅仅是这些，它更是一种文化，它更多的是关于团队和组织，是开发和运维的协同，强调的是整个团队都应该参与到开发、测试和部署的自动化流程设计中，在出现问题时共同承担责任，在出现故障和问题时互相帮助，协同处理。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="devops_culture.jpeg"
+        data-srcset="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_culture.jpeg, devops_culture.jpeg 1.5x, /2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_culture.jpeg 2x"
+        data-sizes="auto"
+        alt="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_culture.jpeg"
+        title="devops_culture" /></p>
+<h3 id="3-devops工具链与生命周期">3. DevOps工具链与生命周期</h3>
+<p>DevOps的生命周期从计划、构建、持续集成和部署开始，接着运维，然后反馈和再次计划。围绕在整个生命周期的各个部分，都有很多的应用和工具可以使用。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="devops_toolchains.jpeg"
+        data-srcset="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_toolchains.jpeg, devops_toolchains.jpeg 1.5x, /2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_toolchains.jpeg 2x"
+        data-sizes="auto"
+        alt="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_toolchains.jpeg"
+        title="devops_toolchains" /></p>
+<h2 id="传统的开发模式有哪些缺点">传统的开发模式有哪些缺点</h2>
+<h3 id="1-传统制造业的七种浪费">1. 传统制造业的七种浪费</h3>
+<p>对于传统的制造业来说，非常容易在过度生产、运输、移动、过度加工、等待、库存和产品缺陷等方面浪费大量的时间和资源。因为这些过程大多数仍然需要手工作业，缺乏持续的自动化流程进行管理。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="7_waste.jpeg"
+        data-srcset="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/7_waste.jpeg, 7_waste.jpeg 1.5x, /2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/7_waste.jpeg 2x"
+        data-sizes="auto"
+        alt="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/7_waste.jpeg"
+        title="7_waste" /></p>
+<h3 id="2-传统软件开发模式的弊端">2. 传统软件开发模式的弊端</h3>
+<p>传统的软件开发模式有以下弊端：</p>
+<ul>
+<li>
+<p>人工干预</p>
+<p>人工干预往往会导致难以重复的操作并引入人为错误，尤其是在测试和部署时。</p>
+</li>
+<li>
+<p>不一致的环境</p>
+<p>导致团队经常浪费几天甚至几周的时间来修复由环境不一致造成的问题，浪费了资源和时间。</p>
+</li>
+<li>
+<p>监测不足</p>
+<p>依赖于人工监测，很容易造成疏忽，导致部署出现问题，延迟产品的交付时间。</p>
+</li>
+<li>
+<p>缺乏共同承担责任</p>
+<p>团队成员缺乏共同承担责任的理念，导致在组织中存在各种沟通问题。</p>
+</li>
+</ul>
+<h2 id="值得参考的devops-cicd最佳实践">值得参考的DevOps CICD最佳实践</h2>
+<h3 id="1-轻量级且简单">1. 轻量级且简单</h3>
+<p>由GitLab + Docker + Ansible组成的轻量级、简单的CICD流水线解决方案，来自一家快速成长的初创公司。其中，GitLab作为源代码管理和持续集成工具，Docker用于容器，Ansible用于配置即代码。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="devops_bp_easy.jpeg"
+        data-srcset="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_bp_easy.jpeg, devops_bp_easy.jpeg 1.5x, /2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_bp_easy.jpeg 2x"
+        data-sizes="auto"
+        alt="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_bp_easy.jpeg"
+        title="devops_best_practice_easy" /></p>
+<h3 id="2-all-on-kubernetes">2. All on Kubernetes</h3>
+<p>基于云服务和Kubernetes的CICD流水线，被称为“All on Kubernetes”，比较流行。</p>
+<p>但由于“All on Kubernetes”需要确保所有的应用和服务都容器化，因此对比较复杂的环境和传统软件都不友好。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="devops_bp_k8s.jpeg"
+        data-srcset="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_bp_k8s.jpeg, devops_bp_k8s.jpeg 1.5x, /2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_bp_k8s.jpeg 2x"
+        data-sizes="auto"
+        alt="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_bp_k8s.jpeg"
+        title="devops_best_practice_all_on_k8s" /></p>
+<h3 id="3-ibm-devops解决方案">3. IBM DevOps解决方案</h3>
+<p>IBM的解决方案建议使用DevOps和云平台来帮助企业加速应用开发和交付生命周期。</p>
+<p>这个架构非常完善，包含了DevOps的必要步骤和各个方面。更多详情： <a href="https://www.ibm.com/cloud/architecture/architectures/devOpsArchitecture">https://www.ibm.com/cloud/architecture/architectures/devOpsArchitecture</a></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="devops_bp_ibm.jpeg"
+        data-srcset="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_bp_ibm.jpeg, devops_bp_ibm.jpeg 1.5x, /2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_bp_ibm.jpeg 2x"
+        data-sizes="auto"
+        alt="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_bp_ibm.jpeg"
+        title="devops_best_practice_ibm" /></p>
+<h3 id="4-端到端的cicd流水线">4. 端到端的CICD流水线</h3>
+<p>端到端的CICD持续集成和部署交付流水线，包括了IBM DevOps解决方案中的大多数步骤，并且在每个步骤中，都建议了相关的服务和工具。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="devops_bp_wati.jpeg"
+        data-srcset="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_bp_wati.jpeg, devops_bp_wati.jpeg 1.5x, /2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_bp_wati.jpeg 2x"
+        data-sizes="auto"
+        alt="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_bp_wati.jpeg"
+        title="devops_best_practice_wati" /></p>
+<h2 id="设计最适合的devops-cicd流水线">设计最适合的DevOps CICD流水线</h2>
+<h3 id="1-devsecops">1. DevSecOps</h3>
+<p>我们最关心的是安全，所以需要DevSecOps，而不仅仅是DevOps。</p>
+<p>DevSecOps并非一定要牺牲自动化流程，而是需要加入安全保障过程，在实施变化之前先进行审计。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="devsecops.jpeg"
+        data-srcset="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devsecops.jpeg, devsecops.jpeg 1.5x, /2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devsecops.jpeg 2x"
+        data-sizes="auto"
+        alt="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devsecops.jpeg"
+        title="devsecops" /></p>
+<h3 id="2-开发与测试环境">2. 开发与测试环境</h3>
+<p>为了在测试环境中进行安全的开发和部署，以及上传和下载软件包，我们设计了四个网络区域，其中：</p>
+<ul>
+<li>在A区域中，可以连接到数据中心和共享服务，如JIRA、GitLab和Nexus。</li>
+<li>在B区域中，可以创建服务器和部署服务。</li>
+<li>在C区域中，可以连接到一些受信任的官方仓库，如Maven，在Nexus中集成安全扫描，如Symantec和Nessus。</li>
+<li>在W区域中，可以在安全扫描和审计下进行开发。</li>
+</ul>
+<p>通过这些方式，我们可以确保在测试环境中的所有软件包都经过了安全扫描。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="secure_test_env.jpeg"
+        data-srcset="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/secure_test_env.jpeg, secure_test_env.jpeg 1.5x, /2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/secure_test_env.jpeg 2x"
+        data-sizes="auto"
+        alt="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/secure_test_env.jpeg"
+        title="secure_test_env" /></p>
+<h3 id="3-最适合的端到端devsecops-cicd流水线">3. 最适合的端到端DevSecOps CICD流水线</h3>
+<p>最终，我们确定了一个最适合自己的端到端DevSecOps CICD流水线方案。</p>
+<p>它包括所有必要的步骤，跨越三个不同的环境，使用最流行的自动化工具和云服务，包括基础设施即代码和配置即代码，与安全工具集成，支持基于测试报告和安全报告的人工审批。</p>
+<p>它包括以下步骤：</p>
+<ul>
+<li>
+<p>项目管理</p>
+<p>构思一个故事，在Confluence上记录，在JIRA上创建任务，将GitLab与JIRA集成。</p>
+</li>
+<li>
+<p>代码管理</p>
+<p>代码审查，将代码提交到GitLab，然后由GitLab自动触发相关的Jenkins任务，进行代码分析，构建和单元测试，并打包上传到Nexus仓库。</p>
+</li>
+<li>
+<p>制品库</p>
+<p>通过Nessus自动扫描所有上传到Nexus中的软件包。</p>
+</li>
+<li>
+<p>基础设施即代码与配置即代码</p>
+<p>检查所需的基础设置是否已经就绪，如果没有，自动创建基础设施，然后将软件包通过配置即代码部署到服务器或Kubernetes集群。</p>
+</li>
+<li>
+<p>集成测试与安全测试</p>
+<p>对应用服务的可用性和安全性进行测试。</p>
+</li>
+<li>
+<p>审计和审批</p>
+<p>对整个流水线的各个过程进行安全审计，并在部署上线时进行人为审批，审批通过后自动到下一个环境中进行部署和测试。</p>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="devops_cicd.jpeg"
+        data-srcset="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_cicd.jpeg, devops_cicd.jpeg 1.5x, /2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_cicd.jpeg 2x"
+        data-sizes="auto"
+        alt="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_cicd.jpeg"
+        title="devops_cicd" /></p>
+<p>最后设计的这个DevSecOps CICD流水线比较通用，能兼顾安全，审批和接管本地已有的基础设施与服务。</p>
+<p>在此仅供参考，实际上在不同的环境中，最适合的CICD流水线会有所差异，尤其是在工具链层面，但大致的流程和思路应该是一致的。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-11-21</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog.heylinux.com/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/" data-title="DevOps CICD流水线设计实践" data-hashtags="DevOps,CICD"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 LinkedIn" data-sharer="linkedin" data-url="https://blog.heylinux.com/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog.heylinux.com/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/" data-title="DevOps CICD流水线设计实践"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blog.heylinux.com/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/" data-title="DevOps CICD流水线设计实践"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/devops/">DevOps</a>,&nbsp;<a href="/tags/cicd/">CICD</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2021/11/%E4%B8%8D%E8%B4%9F%E6%97%B6%E5%85%89%E8%BF%8E%E6%8E%A5%E7%BE%8E%E5%A5%BD/" class="prev" rel="prev" title="不负时光，迎接美好"><i class="fas fa-angle-left fa-fw"></i>不负时光，迎接美好</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">mcsrainbow</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":30},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

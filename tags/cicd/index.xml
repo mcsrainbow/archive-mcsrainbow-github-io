@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>CICD - 标签 - Hey! Linux.</title>
+        <link>https://blog.heylinux.com/tags/cicd/</link>
+        <description>CICD - 标签 - Hey! Linux.</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
+            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Nov 2021 12:18:14 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/tags/cicd/" rel="self" type="application/rss+xml" /><item>
+    <title>DevOps CICD流水线设计实践</title>
+    <link>https://blog.heylinux.com/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/</link>
+    <pubDate>Sun, 21 Nov 2021 12:18:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog.heylinux.com/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/</guid>
+    <description><![CDATA[<p>在不同的环境中，最适合的CICD流水线会有所差异，尤其是在工具链层面，但大致的流程和思路应该是一致的。</p>]]></description>
+</item></channel>
+</rss>
