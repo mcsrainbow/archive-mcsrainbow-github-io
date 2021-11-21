@@ -21,7 +21,7 @@ math:
 
 <i class="fas fa-tasks fa-fw"></i> **Core Missions**
 
-- [ ] <i class="fas fa-cubes fa-fw"></i> CKA
+- [x] <i class="fas fa-cubes fa-fw"></i> CKA
 - [ ] <i class="fas fa-font fa-fw"></i> CET6
 - [ ] <i class="fas fa-graduation-cap fa-fw"></i> Thesis
 - [ ] <i class="fas fa-users-cog fa-fw"></i> PMP
