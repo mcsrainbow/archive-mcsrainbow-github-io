@@ -96,7 +96,7 @@ DevOps的生命周期从计划、构建、持续集成和部署开始，接着�
 
 ### 3. IBM DevOps解决方案
 
-IBM的解决方案建议使用DevOps和云平台来帮助企业加速应用开发和交付生命周期。
+IBM的解决方案建议使用DevOps和云平台来帮助企业加速应用开发和交付的生命周期。
 
 这个架构非常完善，包含了DevOps的必要步骤和各个方面。更多详情： https://www.ibm.com/cloud/architecture/architectures/devOpsArchitecture
 
@@ -104,7 +104,7 @@ IBM的解决方案建议使用DevOps和云平台来帮助企业加速应用开�
 
 ### 4. 端到端的CICD流水线
 
-端到端的CICD持续集成和部署交付流水线，包括了IBM DevOps解决方案中的大多数步骤，并且在每个步骤中，都建议了相关的服务和工具。
+端到端的CICD持续集成和部署交付流水线，包括了IBM DevOps解决方案中的大多数步骤，并且在每个步骤中，都推荐了相关服务和工具。
 
 ![devops_best_practice_wati](devops_bp_wati.jpeg)
 
