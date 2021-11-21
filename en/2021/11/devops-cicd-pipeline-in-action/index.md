@@ -1,7 +1,7 @@
 # DevOps CICD Pipeline in Action 
 
 
-There are differences in the most appropriate CICD pipelines in different environments, especially the tool chains, but the general process and thinking should be similar.
+There are differences in the most appropriate CICD pipelines in different environments, especially the toolchains, but the general process and thinking should be similar.
 
 <!--more-->
 
@@ -37,7 +37,7 @@ DevOps is more than that, DevOps is a culture, it’s more about the Team and Or
 
 ### 3. DevOps toolchains
 
-The DevOps lifecycle starts with plan, build, continuous integration, and deploy, operate, then feedback and plan again. Around every part of this lifecycle, there are lots of applications and tools could be used.
+The DevOps lifecycle starts with plan, build, continuous integration, and deploy, operate, then feedback and plan again. Around every part of this lifecycle, there are lots of applications and services.
 
 ![devops_toolchains](devops_toolchains.jpeg)
 
@@ -79,7 +79,7 @@ This is a lightweight and easy CICD pipeline solution by GitLab + Docker + Ansib
 
 ### 2. All on Kubernetes
 
-In this solution, it suggests to build the CICD pipeline based on many cloud services and Kubernetes. This is a popular solution which named "All on Kubernetes" and many internet companies use this solution.
+In this solution, it suggests to build the CICD pipeline based on cloud services and Kubernetes. This is a popular solution which named "All on Kubernetes" and many internet companies use this solution.
 
 But "All on Kubernetes" requires all applications to be containerized, it is not friendly for complex environments and the traditional software.
 
@@ -89,13 +89,13 @@ But "All on Kubernetes" requires all applications to be containerized, it is not
 
 The DevOps solution of IBM suggests to use DevOps and Cloud platform to help organizations to accelerate the applications development and delivery lifecycle.
 
-It is very good architecture to tell all the necessary steps and parts in DevOps. More details on https://www.ibm.com/cloud/architecture/architectures/devOpsArchitecture
+It is a very good architecture to tell all the necessary steps and parts in DevOps. More details on https://www.ibm.com/cloud/architecture/architectures/devOpsArchitecture
 
 ![devops_best_practice_ibm](devops_bp_ibm.jpeg)
 
 ### 4. End-to-end CICD pipeline
 
-This end-to-end delivery pipeline of continuous integration and deployment across leading cloud platforms. In each step, it suggests the popular and good services and tools, and including most steps in the IBM DevOps architecture.
+This end-to-end delivery pipeline of continuous integration and deployment across leading cloud platforms. In each step, it suggests the popular services and tools, and including most steps in the IBM DevOps architecture.
 
 ![devops_best_practice_wati](devops_bp_wati.jpeg)
 
@@ -105,13 +105,13 @@ This end-to-end delivery pipeline of continuous integration and deployment acros
 
 What we most concern is security, so we need the DevSecOps, other than DevOps.
 
-The DevSecOps does not have to sacrifice automated processes, it only needs to audit them before changes are implemented.
+The DevSecOps does not have to sacrifice automation processes, it only needs to audit them before changes are implemented.
 
 ![devsecops](devsecops.jpeg)
 
 ### 2. Deliver to Test environment
 
-To deliver objects through a secure path to a test environment, this Test environment has four networks: A, B, C and W.
+To deliver objects through a secure path to Test environment, this Test environment needs four networks: A, B, C and W.
 
 + A can connect to Data Center and shared services like JIRA, GitLab, and Nexus.
 + B can create servers and deploy services.
@@ -124,11 +124,11 @@ In this way, we could ensure that all the packages in the test environment are s
 
 ### 3. Our DevSecOps CICD pipeline
 
-This is the End-to-End continuous integration and delivery DevSecOps CICD pipeline for our own.
+This is the End-to-End DevSecOps CICD pipeline for our own.
 
-It includes all necessary steps, across three different environments, with the most popular automation tools and Cloud services, including the infrastructure as code and configurations as code, integrates with security tools, with the manual approve function during the deployment based on the tests and security reports.
+It includes all necessary steps, across three different environments, with the most popular automation tools and Cloud services, including the infrastructure as code and configurations as code, integrates with security tools, with the manual approve function based on the tests and security reports.
 
-It includes the following steps:
+It includes the following items:
 
 + Project Management
 
@@ -136,7 +136,7 @@ It includes the following steps:
 
 + Code Management
   
-  Do the Code Review, push the codes to GitLab, and GitLab will automatically trigger the related Jenkins jobs to do the Code Analysis, Build and Unit Test, then deploy the package to Nexus repository.
+  Do the Code Review, push the codes to GitLab, and GitLab will automatically trigger the related Jenkins jobs to do the Code Analysis, Build and Unit Test, then deploy the packages to Nexus repository.
 
 + Artifact Management
   
@@ -144,18 +144,18 @@ It includes the following steps:
 
 + Infrastructure as Code and Configuration as Code
 
-  Check whether the required infrastructure is ready or not, if not ready, create the infrastructure as code automatically, then deploy the packages and configurations via Ansible on the servers or Kubernetes clusters.
+  Check whether the required infrastructure is ready or not, if not ready, create the infrastructure as code automatically, then deploy the packages and configurations to the servers or Kubernetes clusters.
 
 + Integration Tests and Security Tests
 
-  Scan the applications with Security tools and JMeter policies.
+  Scan the applications with security tools and test the availability.
 
 + Audit and Approval
   
-  Audit the whole pipeline and wait for the manual review, when the release manager approved, automatically continue to run the deploy and integration tests in staging environment, then wait for another review and approval for the production release.
+  Audit the whole pipeline and wait for the manual review, when the release manager approved, automatically continue to run the deployment and integration tests in staging environment, then wait for another review and approval for the production release.
 
 ![devops_cicd](devops_cicd.jpeg)
 
 This DevSecOps CICD pipeline is more general and can balance security, audit, and the ability to take over existing on-premises infrastructure and services.
 
-For sure, there are differences in the most appropriate CICD pipelines in different environments, especially the tool chains, but the general process and thinking should be similar.
+For sure, there are differences in the most appropriate CICD pipelines in different environments, especially the toolchains, but the general process and thinking should be similar.

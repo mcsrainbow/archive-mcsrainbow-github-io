@@ -33,7 +33,7 @@
                             "url": "https:\/\/blog.heylinux.com\/2021\/11\/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5\/featured-image.jpeg",
                             "width":  1080 ,
                             "height":  608 
-                        }],"genre": "posts","keywords": "DevOps, CICD","wordcount":  2241 ,
+                        }],"genre": "posts","keywords": "DevOps, CICD","wordcount":  2221 ,
         "url": "https:\/\/blog.heylinux.com\/2021\/11\/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5\/","datePublished": "2021-11-21T12:18:14+08:00","dateModified": "2021-11-21T12:18:14+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "mcsrainbow","logo": {
@@ -119,7 +119,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">DevOps CICD流水线设计实践</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>冬花盛开</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%8A%80%E8%83%BD%E7%9F%A9%E9%98%B5/"><i class="far fa-folder fa-fw"></i>技能矩阵</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-11-21">2021-11-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2241 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-11-21">2021-11-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2221 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -173,8 +173,8 @@
 <h2 id="什么是devops">什么是DevOps</h2>
 <h3 id="1-汽车工业">1. 汽车工业</h3>
 <p>众所周知，大多数工厂都已经有了产品的自动化生产线。</p>
-<p>特别是汽车行业，大约在一百年前，汽车是由人工制造的，经过多次演变，从手工制造的高度定制的汽车，到手工组装的自动化零件生产，再到目前完全自动化的装配流水线，汽车工业已经具备了精益的自动化制造方案。</p>
-<p>与汽车行业相比，我们的传统软件开发模式，已经落后了很多。</p>
+<p>特别是汽车行业，大约在一百年前，汽车是由人手工制造的，经过多次演变，从手工制造的高度定制的汽车，到手工组装的自动化零件生产，再到目前完全自动化的装配流水线，汽车工业已经具备了精益的自动化制造方案。</p>
+<p>与汽车工业相比，我们的传统软件开发模式，已经落后了很多。</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -186,7 +186,7 @@
 <h3 id="2-devops是一种文化">2. DevOps是一种文化</h3>
 <p>什么是DevOps?</p>
 <p>有些人认为，DevOps就是一堆软件和工具的集合，可以用来优化开发和部署。</p>
-<p>DevOps不仅仅是这些，它更是一种文化，它更多的是关于团队和组织，是开发和运维的协同，强调的是整个团队都应该参与到开发、测试和部署的自动化流程设计中，在出现问题时共同承担责任，协同处理。</p>
+<p>DevOps不仅仅是这些，它更是一种文化，它更多的是关于团队和组织，强调的是整个团队都应该参与到开发、测试和部署的自动化流程设计中，在出现问题时共同承担责任，协同处理。</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -196,7 +196,7 @@
         alt="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/devops_culture.jpeg"
         title="devops_culture" /></p>
 <h3 id="3-devops工具链与生命周期">3. DevOps工具链与生命周期</h3>
-<p>DevOps的生命周期从计划、构建、持续集成和部署开始，接着运维，然后反馈和再次计划。围绕在整个生命周期的各个部分，都有很多的应用和工具可以使用。</p>
+<p>DevOps的生命周期从计划、构建、持续集成和部署开始，接着运维，然后反馈和再次计划。围绕在整个生命周期的各个部分，都有很多的应用和服务。</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -260,7 +260,7 @@
         title="devops_best_practice_all_on_k8s" /></p>
 <h3 id="3-ibm-devops解决方案">3. IBM DevOps解决方案</h3>
 <p>IBM的解决方案建议使用DevOps和云平台来帮助企业加速应用开发和交付的生命周期。</p>
-<p>这个架构非常完善，包含了DevOps的必要步骤和各个方面。更多详情： <a href="https://www.ibm.com/cloud/architecture/architectures/devOpsArchitecture">https://www.ibm.com/cloud/architecture/architectures/devOpsArchitecture</a></p>
+<p>这个架构非常完善，包含了DevOps的各个方面。更多详情： <a href="https://www.ibm.com/cloud/architecture/architectures/devOpsArchitecture">https://www.ibm.com/cloud/architecture/architectures/devOpsArchitecture</a></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -309,9 +309,9 @@
         alt="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/secure_test_env.jpeg"
         title="secure_test_env" /></p>
 <h3 id="3-最适合的端到端devsecops-cicd流水线">3. 最适合的端到端DevSecOps CICD流水线</h3>
-<p>最终，我们确定了一个最适合自己的端到端DevSecOps CICD流水线方案。</p>
+<p>最终，我们确定了一个最适合自己的端到端DevSecOps CICD流水线。</p>
 <p>它包括所有必要的步骤，跨越三个不同的环境，使用最流行的自动化工具和云服务，包括基础设施即代码和配置即代码，与安全工具集成，支持基于测试报告和安全报告的人工审批。</p>
-<p>它包括以下步骤：</p>
+<p>它包括以下内容：</p>
 <ul>
 <li>
 <p>项目管理</p>
