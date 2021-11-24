@@ -24,7 +24,7 @@ My current company has a good learning and sharing atmosphere，sometimes holds 
 
 At first, I was thinking of finding some existing codes from GitHub and just modifying some parameters. Then I tried some programs that seemed to be able to train and recognize without any feature engineering, but the actual results were terrible.
 
-During the competition, colleagues kept showing their stage results in the group, and they all did feature engineering. So I also referred to the articles in this area and finally completed successfully with a recognition rate of over 99%. 
+During the competition, colleagues kept showing their stage results in the group, and they all did feature engineering. So I also searched the articles in this area and finally completed successfully with the recognition rate over 99%. 
 
 The main processes are as follows.
 
@@ -56,7 +56,7 @@ The main processes are as follows.
 
 To prevent people from using the existing codes on the Internet and counting the results out by violence, only 100 image samples were provided to all participants.
 
-In practice, a large enough number of CAPTCHA image samples should be collected.
+In practice, a lot more CAPTCHAs samples should be collected.
 
 ![captchas_sample](captchas_sample.png)
 
