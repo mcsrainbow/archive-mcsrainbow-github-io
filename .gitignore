@@ -4,16 +4,15 @@
 # VIM
 *.swp
 
-# Pyc
+# Python
 *.pyc
 
-# .vscode directory
-.vscode
+# IDE
+.vscode/
+.idea/
+.ipynb_checkpoints/
 
-# .idea directory
-.idea
-
-# hugo
+# Hugo
+.hugo_build.lock
 public/
 resources/
-.hugo_build.lock
