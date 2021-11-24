@@ -252,7 +252,7 @@ def rek_img(model_dict,rek_dir,suffix,results_csv):
             if filesuffix in suffix:
                 # 通过特征工程处理图片并获取每个字符所在区域的信息
                 roi_dict = fix_img(filepath)
-                # get the value of each CAPTCHA character from the model
+                # 对每个字符所在区域的信息进行处理
                 for i in sorted(roi_dict.keys()):
                     # 将字符所在区域的信息转换为数据集格式
                     sample = roi_dict[i].reshape((1, 420)).astype(np.float32)

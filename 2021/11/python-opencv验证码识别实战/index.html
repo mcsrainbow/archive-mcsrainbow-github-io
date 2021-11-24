@@ -33,7 +33,7 @@
                             "url": "https:\/\/blog.heylinux.com\/2021\/11\/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98\/featured-image.jpeg",
                             "width":  2000 ,
                             "height":  1199 
-                        }],"genre": "posts","keywords": "OpenCV, Machine Learning","wordcount":  3435 ,
+                        }],"genre": "posts","keywords": "OpenCV, Machine Learning","wordcount":  3441 ,
         "url": "https:\/\/blog.heylinux.com\/2021\/11\/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98\/","datePublished": "2021-11-24T20:36:58+08:00","dateModified": "2021-11-24T20:36:58+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "mcsrainbow","logo": {
@@ -119,7 +119,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python OpenCV验证码识别实战</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>冬花盛开</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%8A%80%E8%83%BD%E7%9F%A9%E9%98%B5/"><i class="far fa-folder fa-fw"></i>技能矩阵</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-11-24">2021-11-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3435 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-11-24">2021-11-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3441 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -592,7 +592,7 @@
             <span class="k">if</span> <span class="n">filesuffix</span> <span class="ow">in</span> <span class="n">suffix</span><span class="p">:</span>
                 <span class="c1"># 通过特征工程处理图片并获取每个字符所在区域的信息</span>
                 <span class="n">roi_dict</span> <span class="o">=</span> <span class="n">fix_img</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
-                <span class="c1"># get the value of each CAPTCHA character from the model</span>
+                <span class="c1"># 对每个字符所在区域的信息进行处理</span>
                 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">roi_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
                     <span class="c1"># 将字符所在区域的信息转换为数据集格式</span>
                     <span class="n">sample</span> <span class="o">=</span> <span class="n">roi_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">420</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
