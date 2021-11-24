@@ -1,7 +1,7 @@
 # Python OpenCV CAPTCHA Recognition in Action
 
 
-The recognition principles and processes during the CAPTCHA recognition I have learned are really valuable.
+The recognition principles and processes I have learned from the CAPTCHA recognition are really valuable.
 
 <!--more-->
 
@@ -256,7 +256,7 @@ def rek_img(model_dict,rek_dir,suffix,results_csv):
 
 The CAPTCHA images in this competition were more distinctive and easier to feature engineer, so that in the end, although 10k CAPTCHA images were used as the test set, many colleagues still achieved recognition accuracy of over 90%, and the winner's accuracy even reached an incredible 100%.
 
-For me, the recognition principles and processes during the CAPTCHA recognition I have learned are really valuable.
+For me, the recognition principles and processes I have learned from the CAPTCHA recognition are really valuable.
 
 ## Reference
 
