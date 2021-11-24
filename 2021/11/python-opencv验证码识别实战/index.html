@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Python OpenCV验证码识别实战 - Hey! Linux.</title><meta name="Description" content="在通过OpenCV完成验证码识别的过程中，所学习到的识别原理和流程，还是很有价值的。"><meta property="og:title" content="Python OpenCV验证码识别实战" />
+<meta property="og:description" content="在通过OpenCV完成验证码识别的过程中，所学习到的识别原理和流程，还是很有价值的。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/" />
+<meta property="og:image" content="https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/featured-image.jpeg"/>
+<meta property="article:published_time" content="2021-11-24T20:36:58+08:00" />
+<meta property="article:modified_time" content="2021-11-24T20:36:58+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/featured-image.jpeg"/>
+<meta name="twitter:title" content="Python OpenCV验证码识别实战"/>
+<meta name="twitter:description" content="在通过OpenCV完成验证码识别的过程中，所学习到的识别原理和流程，还是很有价值的。"/>
+<meta name="application-name" content="Hey! Linux.">
+<meta name="apple-mobile-web-app-title" content="Hey! Linux."><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/" /><link rel="prev" href="https://blog.heylinux.com/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python OpenCV验证码识别实战",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.heylinux.com\/2021\/11\/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/blog.heylinux.com\/2021\/11\/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98\/featured-image.jpeg",
+                            "width":  2000 ,
+                            "height":  1199 
+                        }],"genre": "posts","keywords": "OpenCV, Machine Learning","wordcount":  3435 ,
+        "url": "https:\/\/blog.heylinux.com\/2021\/11\/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98\/","datePublished": "2021-11-24T20:36:58+08:00","dateModified": "2021-11-24T20:36:58+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "mcsrainbow","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/blog.heylinux.com\/images\/avatar.png",
+                    "width":  400 ,
+                    "height":  400 
+                }},"author": {
+                "@type": "Person",
+                "name": "冬花盛开"
+            },"description": "在通过OpenCV完成验证码识别的过程中，所学习到的识别原理和流程，还是很有价值的。"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Hey! Linux.">Hey! Linux.</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"><i class='fas fa-user-circle fa-fw'></i>  </a><a class="menu-item" href="/en/"> English </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/" selected>简体中文</option><option value="/en/2021/11/python-opencv-captcha-recognition-in-action/">English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Hey! Linux.">Hey! Linux.</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title=""><i class='fas fa-user-circle fa-fw'></i></a><a class="menu-item" href="/en/" title="">English</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/" selected>简体中文</option><option value="/en/2021/11/python-opencv-captcha-recognition-in-action/">English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python OpenCV验证码识别实战</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>冬花盛开</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%8A%80%E8%83%BD%E7%9F%A9%E9%98%B5/"><i class="far fa-folder fa-fw"></i>技能矩阵</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-11-24">2021-11-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3435 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/featured-image.jpeg"
+        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/featured-image.jpeg, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/featured-image.jpeg 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/featured-image.jpeg 2x"
+        data-sizes="auto"
+        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/featured-image.jpeg"
+        title="在通过OpenCV完成验证码识别的过程中，所学习到的识别原理和流程，还是很有价值的。" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#背景">背景</a></li>
+    <li><a href="#思路">思路</a></li>
+    <li><a href="#详解">详解</a>
+      <ul>
+        <li><a href="#1-收集样本">1. 收集样本</a></li>
+        <li><a href="#2-特征工程">2. 特征工程</a></li>
+        <li><a href="#3-人工标注">3. 人工标注</a></li>
+        <li><a href="#4-训练模型">4. 训练模型</a></li>
+        <li><a href="#5-识别图片">5. 识别图片</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>在通过OpenCV完成验证码识别的过程中，所学习到的识别原理和流程，还是很有价值的。</p>
+<h2 id="背景">背景</h2>
+<p>公司内部有着良好的学习分享氛围，不定期的会举办各种极客大赛，这次的比赛内容是验证码识别。</p>
+<p>虽然在实际工作中，我几乎没有做过数据分析相关的内容，但我之前学习过几门数据挖掘、机器学习和人工智能相关的选修课程，在理论方面算是有了一些粗浅的理解，也想借着这个机会锻炼一下自己，所以报名参加了比赛。</p>
+<h2 id="思路">思路</h2>
+<p>刚开始，我还想着从GitHub上找一些现成的代码，然后修改一下，调整一些参数就直接拿来用。在这个过程中尝试了很多看似高大上的程序，大多数都是号称无需做任何特征工程，就可以训练和识别的，但实际的结果都很差，甚至是惨不忍睹。</p>
+<p>在比赛期间，不断有同事在群里秀出自己的阶段性成果，而且他们都做了特征工程，于是我也参考了这方面的文章，最后顺利完成，识别率达到了99%以上，主要思路如下：</p>
+<ul>
+<li>
+<p>1.收集样本</p>
+<p>收集一定数量的验证码图片样本，此次的验证码识别大赛仅提供了100张图片样本给所有的参赛选手。</p>
+<blockquote>
+<p>理论上图片样本的数量越多，可以分析出的有效特征就越多，构建出的模型就越准确。数据比模型更重要，机器学习模型的表现高度依赖于数据量，选择对的模型只是其次，正所谓巧妇难为无米之炊。</p>
+</blockquote>
+<blockquote>
+<p>这个过程类似于在编写一本教科书之前，需要先收集大量的参考资料。</p>
+</blockquote>
+</li>
+<li>
+<p>2.特征工程</p>
+<p>使用OpenCV库对验证码图片样本进行分析，进行一系列有针对性的处理，去除验证码图片中的各种随机线条等噪音，突出验证码图片中的字符如5UFQ。</p>
+<blockquote>
+<p>特征工程是将原始数据转化成更好的表达问题本质的特征的过程，目的是发现重要特征。</p>
+</blockquote>
+<blockquote>
+<p>这个过程中，原始图片样本类似参考资料，最后用于机器学习的训练集数据类似教科书。编写一本教科书，需要从海量的参考资料中剔除无用的信息，反复校对，最后形成一本易于学生接受的教科书。</p>
+</blockquote>
+</li>
+<li>
+<p>3.人工标注</p>
+<p>操作方式很简单，将每个原始图片样本人工识别并重命名为验证码的字符内容如5UFQ.jpg，再将经过特征工程后的图片切割为单个字符的图片，分别保存为：5UFQ_5.jpg，5UFQ_U.jpg，5UFQ_F.jpg，5UFQ_Q.jpg，用于后面的模型训练。</p>
+<blockquote>
+<p>目前成熟的机器学习技术主要还是监督式学习，监督式学习的核心就是把已知的数据特征提供给机器进行训练。</p>
+</blockquote>
+<blockquote>
+<p>数据样本类似教课书中的段落，数据特征类似老师圈出的重点内容，机器学习程序类似学生，突出重点内容能让学生更快更好的掌握知识。</p>
+</blockquote>
+</li>
+<li>
+<p>4.训练模型</p>
+<p>将上面的所有单个字符的图片作为训练集，每个图片的字符作为标签，构造一个图片与标签的映射表，然后用OpenCV自带的KNN相似度模型进行机器学习，最终训练出可识别相似的验证码图片的有效模型。</p>
+<blockquote>
+<p>这个过程中，机器学习程序类似学生，将书中的段落和老师圈出的重点内容在脑海里进行关联，然后反复学习、理解、消化，最后触类旁通，掌握了举一反三的能力。</p>
+</blockquote>
+</li>
+<li>
+<p>5.识别图片</p>
+<p>将一定数量的原始图片样本作为测试集数据，通过特征工程去除噪音，然后直接使用训练好的模型进行匹配识别，并将识别后的结果与图片文件名（如00243af2b3545fd4c869d1c155c08d3f.png,LTEH）依次存入一个CSV文件中。</p>
+<blockquote>
+<p>类似于学生通过举一反三的能力对新知识进行归纳总结，并像老师一样圈出重点内容的过程。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="详解">详解</h2>
+<h3 id="1-收集样本">1. 收集样本</h3>
+<p>在实际的工作中，应该收集足够多数量的验证码图片样本，但此次的验证码识别大赛为了不背离初衷，防止大家直接通过网上现有的代码，通过使蛮力的方法炼丹把结果算出来，仅提供了100张图片样本给所有的参赛选手。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_sample.png"
+        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample.png, captchas_sample.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample.png 2x"
+        data-sizes="auto"
+        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample.png"
+        title="captchas_sample" /></p>
+<h3 id="2-特征工程">2. 特征工程</h3>
+<p>以字符内容为5UFQ的验证码图片为例，首先导入所需的Python库：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 用于获取本地目录与文件</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="c1"># 用于构造数据集</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span> 
+<span class="c1"># 用于显示图片</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="c1"># OpenCV库用于图片的特征工程与KNN模型训练</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>读取并显示原始图片样本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 文件路径</span>
+<span class="n">filepath</span><span class="o">=</span><span class="s1">&#39;imgs/train/5UFQ.jpg&#39;</span>
+<span class="c1"># OpenCV读取文件</span>
+<span class="n">im</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+<span class="c1"># 显示图片</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="p">[:,:,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_5UFQ_raw.png"
+        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_raw.png, captchas_5UFQ_raw.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_raw.png 2x"
+        data-sizes="auto"
+        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_raw.png"
+        title="captchas_5UFQ_raw" /></p>
+<p><a href="https://baike.baidu.com/item/RGB/342517" target="_blank" rel="noopener noreffer">RGB</a>即代表红（Red）、绿（Green）、蓝（Blue），又称为三原色光，电脑屏幕上的所有颜色，都由这三种色光按照不同的比例混合而成的，屏幕上的任何一个颜色都可以由一组RGB值来记录和表达。</p>
+<p>任何颜色都由红、绿、蓝三原色组成，而<a href="https://baike.baidu.com/item/%E7%81%B0%E5%BA%A6%E5%9B%BE/8105733" target="_blank" rel="noopener noreffer">灰度图</a>只有一个通道，有256个灰度等级，255代表全白，0表示全黑。</p>
+<p>将图片由RGB转换为灰度图，就是将图片的色彩信息去掉，转换为只有黑白信息。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 将图片转成灰度图</span>
+<span class="n">im_gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+<span class="c1"># 显示图片</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_gray</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&#34;gray&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_5UFQ_gray.png"
+        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_gray.png, captchas_5UFQ_gray.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_gray.png 2x"
+        data-sizes="auto"
+        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_gray.png"
+        title="captchas_5UFQ_gray" /></p>
+<p>图像的二值化处理就是将图像上的点的灰度置为0或255，以此呈现出明显的黑白效果。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 将图片做二值化处理，阈值设定为127，将像素值大于127的置为0，小于127的置为255</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">im_inv</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">im_gray</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY_INV</span><span class="p">)</span>
+<span class="c1"># 显示图片</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_inv</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&#34;gray&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_5UFQ_binary.png"
+        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_binary.png, captchas_5UFQ_binary.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_binary.png 2x"
+        data-sizes="auto"
+        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_binary.png"
+        title="captchas_5UFQ_binary" /></p>
+<p><a href="https://baike.baidu.com/item/%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A" target="_blank" rel="noopener noreffer">高斯模糊</a>是在图像处理软件中广泛使用的处理效果，通常用它来对图片进行降噪以及降低细节层次，其视觉效果就像是经过一个半透明的磨砂屏幕在观察图像。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 构建卷积核的数据集，实现模糊成像的效果</span>
+<span class="n">kernel</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">16</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="c1"># 使用高斯模糊对图片进行降噪</span>
+<span class="n">im_blur</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">im_inv</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">kernel</span><span class="p">)</span>
+<span class="c1"># 显示图片</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_blur</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&#34;gray&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_5UFQ_blur.png"
+        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur.png, captchas_5UFQ_blur.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur.png 2x"
+        data-sizes="auto"
+        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur.png"
+        title="captchas_5UFQ_blur" /></p>
+<p>再将经过高斯模糊后的图片进行二值化处理，消除条纹等噪音信息，通过反复测试，最终确定阈值为185时，去噪的效果最佳。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 将图片做二值化处理，阈值设定为185，将像素值大于127的置为0，小于127的置为255</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">im_res</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">im_blur</span><span class="p">,</span><span class="mi">185</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="p">)</span>
+<span class="c1"># 显示图片</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_res</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&#34;gray&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_5UFQ_blur_binary.png"
+        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur_binary.png, captchas_5UFQ_blur_binary.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur_binary.png 2x"
+        data-sizes="auto"
+        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur_binary.png"
+        title="captchas_5UFQ_blur_binary" /></p>
+<h3 id="3-人工标注">3. 人工标注</h3>
+<p>对每个原始图片样本进行人工识别，并重命名为验证码的字符内容。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_sample_label.png"
+        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label.png, captchas_sample_label.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label.png 2x"
+        data-sizes="auto"
+        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label.png"
+        title="captchas_sample_label" /></p>
+<p>通过观察发现，在所有的验证码图片样本中，每个字符在图片中所处的区域都非常一致，因此大大降低了判断字符区域并切割图片的难度。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python">    <span class="c1"># 将观察到的四个字符在图片中所处的区域信息保存到字典中</span>
+    <span class="n">roi_dict</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">im_res</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span><span class="mi">28</span><span class="p">]</span>
+    <span class="n">roi_dict</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">im_res</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="mi">38</span><span class="p">:</span><span class="mi">58</span><span class="p">]</span>
+    <span class="n">roi_dict</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">im_res</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="mi">68</span><span class="p">:</span><span class="mi">88</span><span class="p">]</span>
+    <span class="n">roi_dict</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">im_res</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="mi">98</span><span class="p">:</span><span class="mi">118</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">roi_dict</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>再将经过特征工程后的图片切割为单个字符的图片，分别保存，作为训练集样本用于后面的模型训练。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">cut_img</span><span class="p">(</span><span class="n">train_dir</span><span class="p">,</span><span class="n">cut_dir</span><span class="p">,</span><span class="n">suffix</span><span class="p">):</span>
+    <span class="c1"># 浏览训练集图片样本的目录</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span><span class="n">dirs</span><span class="p">,</span><span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">train_dir</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="c1"># 获取文件路径</span>
+            <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+            <span class="c1"># 检查文件名后缀</span>
+            <span class="n">filesuffix</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filepath</span><span class="p">)[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="k">if</span> <span class="n">filesuffix</span> <span class="ow">in</span> <span class="n">suffix</span><span class="p">:</span>
+                <span class="c1"># 通过特征工程处理图片并获取每个字符所在区域的信息</span>
+                <span class="n">roi_dict</span> <span class="o">=</span> <span class="n">fix_img</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+                <span class="c1"># 将图片按照获取到的每个字符所在区域的信息切割为不同的图片，分开保存</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">roi_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                    <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s2">&#34;{0}/{1}_{2}.jpg&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cut_dir</span><span class="p">,</span><span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">roi_dict</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    
+    <span class="c1"># 关闭OpenCV的写操作</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="bp">True</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_sample_label_cut.png"
+        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label_cut.png, captchas_sample_label_cut.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label_cut.png 2x"
+        data-sizes="auto"
+        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label_cut.png"
+        title="captchas_sample_label_cut" /></p>
+<h3 id="4-训练模型">4. 训练模型</h3>
+<p>将上面的所有单个字符的图片作为训练集，每个图片的字符作为标签，构造一个图片与标签的映射表，加载数据。再用OpenCV自带的KNN相似度模型进行机器学习，训练出可识别相似的验证码图片的模型。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">train_model</span><span class="p">(</span><span class="n">cut_dir</span><span class="p">,</span><span class="n">suffix</span><span class="p">):</span>
+    <span class="c1"># 创建一个空的数据集存放验证码的图片信息</span>
+    <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">420</span><span class="p">))</span>
+    <span class="c1"># 创建一个控的标签列表</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1"># 浏览单个字符的图片训练集的目录</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span><span class="n">dirs</span><span class="p">,</span><span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">cut_dir</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+            <span class="n">filesuffix</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filepath</span><span class="p">)[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="k">if</span> <span class="n">filesuffix</span> <span class="ow">in</span> <span class="n">suffix</span><span class="p">:</span>
+                <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+                <span class="c1"># 读取图片的标签</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;.&#34;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;_&#34;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+                <span class="c1"># 将验证码的图片信息存放到数据集中</span>
+                <span class="n">im</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+                <span class="n">sample</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">420</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+                <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">sample</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">samples</span> <span class="o">=</span> <span class="n">samples</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="c1"># 将数据集与标签进行映射</span>
+    <span class="n">unique_labels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
+    <span class="n">unique_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_labels</span><span class="p">)))</span>
+    <span class="n">label_id_map</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">unique_labels</span><span class="p">,</span> <span class="n">unique_ids</span><span class="p">))</span>
+    <span class="n">id_label_map</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">unique_ids</span><span class="p">,</span> <span class="n">unique_labels</span><span class="p">))</span>
+    <span class="n">label_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">label_id_map</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">labels</span><span class="p">))</span>
+    <span class="n">label_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">label_ids</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="c1"># 使用OpenCV自带的KNN相似度模型进行机器学习</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">KNearest_create</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">ROW_SAMPLE</span><span class="p">,</span> <span class="n">label_ids</span><span class="p">)</span>
+    
+    <span class="c1"># 返回训练好的模型，数据ID与标签的映射字典</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;model&#39;</span><span class="p">:</span><span class="n">model</span><span class="p">,</span><span class="s1">&#39;id_label_map&#39;</span><span class="p">:</span><span class="n">id_label_map</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="5-识别图片">5. 识别图片</h3>
+<p>读取测试集图片样本，通过特征工程去除噪音，然后使用训练好的模型进行匹配识别，并将识别后的结果与图片文件名依次存入一个CSV文件中。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">rek_img</span><span class="p">(</span><span class="n">model_dict</span><span class="p">,</span><span class="n">rek_dir</span><span class="p">,</span><span class="n">suffix</span><span class="p">,</span><span class="n">results_csv</span><span class="p">):</span>
+    <span class="c1"># 获取训练好的模型</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">model_dict</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span>
+    <span class="c1"># 获取模型中的数据ID与标签的映射字典</span>
+    <span class="n">id_label_map</span> <span class="o">=</span> <span class="n">model_dict</span><span class="p">[</span><span class="s1">&#39;id_label_map&#39;</span><span class="p">]</span>
+    <span class="n">label_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="c1"># 浏览测试集图片的目录</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span><span class="n">dirs</span><span class="p">,</span><span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">rek_dir</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+            <span class="n">filesuffix</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filepath</span><span class="p">)[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="k">if</span> <span class="n">filesuffix</span> <span class="ow">in</span> <span class="n">suffix</span><span class="p">:</span>
+                <span class="c1"># 通过特征工程处理图片并获取每个字符所在区域的信息</span>
+                <span class="n">roi_dict</span> <span class="o">=</span> <span class="n">fix_img</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+                <span class="c1"># get the value of each CAPTCHA character from the model</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">roi_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                    <span class="c1"># 将字符所在区域的信息转换为数据集格式</span>
+                    <span class="n">sample</span> <span class="o">=</span> <span class="n">roi_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">420</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+                    <span class="c1"># 通过训练好的模型匹配识别出最相似的数据集，并返回数据ID</span>
+                    <span class="n">ret</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="n">neighbours</span><span class="p">,</span> <span class="n">distances</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">findNearest</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+                    <span class="c1"># 通过数据ID查询出对应的标签，并写入到字典中</span>
+                    <span class="n">label_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+                    <span class="n">label</span> <span class="o">=</span> <span class="n">id_label_map</span><span class="p">[</span><span class="n">label_id</span><span class="p">]</span>               
+                    <span class="n">label_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">label</span>
+                
+                <span class="c1"># 将标签字典中的值依次取出，显示为验证码图片中的四个字符</span>
+                <span class="n">result_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">label_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+                <span class="c1"># 将测试集图片的文件名与识别出的字符以逗号分割存入到CSV中</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">results_csv</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">myfile</span><span class="p">:</span>
+                    <span class="n">myfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;{0},{1}</span><span class="se">\n</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">result_str</span><span class="p">))</span>
+                <span class="n">myfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="bp">True</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_results.png"
+        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_results.png, captchas_results.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_results.png 2x"
+        data-sizes="auto"
+        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_results.png"
+        title="captchas_results" /></p>
+<h2 id="总结">总结</h2>
+<p>由于此次比赛给出的验证码图片样本特征都比较明显，比较容易进行特征工程，到最后，即使用了一万张验证码图片作为测试集，很多同事的识别准确率也都达到了90%以上，而第一名的正确率甚至达到了令人发指的100%。</p>
+<p>对我来说，在通过OpenCV完成验证码识别的过程中，所学习到的识别原理和流程，还是很有价值的。</p>
+<h2 id="参考">参考</h2>
+<p>源码地址：<a href="https://github.com/mcsrainbow/captchas_opencv_rek" target="_blank" rel="noopener noreffer">captchas_opencv_rek</a></p>
+<p>参考文章：<a href="https://www.cnblogs.com/lizm166/p/9969647.html" target="_blank" rel="noopener noreffer">Python3 识别验证码（opencv-python）</a></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-11-24</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/" data-title="Python OpenCV验证码识别实战" data-hashtags="OpenCV,Machine Learning"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 LinkedIn" data-sharer="linkedin" data-url="https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/" data-title="Python OpenCV验证码识别实战"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/" data-title="Python OpenCV验证码识别实战"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/opencv/">OpenCV</a>,&nbsp;<a href="/tags/machine-learning/">Machine Learning</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/" class="prev" rel="prev" title="DevOps CICD流水线设计实践"><i class="fas fa-angle-left fa-fw"></i>DevOps CICD流水线设计实践</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">mcsrainbow</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

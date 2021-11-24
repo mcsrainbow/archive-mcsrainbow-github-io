@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://blog.heylinux.com/categories/</loc><lastmod>2021-11-21T12:18:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/categories/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://blog.heylinux.com/en/categories/"
@@ -11,6 +11,61 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/categories/"
                     /></url><url>
+            <loc>https://blog.heylinux.com/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://blog.heylinux.com/en/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://blog.heylinux.com/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/tags/machine-learning/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://blog.heylinux.com/en/tags/machine-learning/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://blog.heylinux.com/tags/machine-learning/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/tags/opencv/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://blog.heylinux.com/en/tags/opencv/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://blog.heylinux.com/tags/opencv/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/posts/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://blog.heylinux.com/en/posts/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://blog.heylinux.com/posts/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/tags/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://blog.heylinux.com/en/tags/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://blog.heylinux.com/tags/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/categories/%E6%8A%80%E8%83%BD%E7%9F%A9%E9%98%B5/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://blog.heylinux.com/tags/cicd/</loc><lastmod>2021-11-21T12:18:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -38,34 +93,6 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/</loc><lastmod>2021-11-21T12:18:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://blog.heylinux.com/en/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://blog.heylinux.com/"
-                    /></url><url>
-            <loc>https://blog.heylinux.com/posts/</loc><lastmod>2021-11-21T12:18:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://blog.heylinux.com/en/posts/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://blog.heylinux.com/posts/"
-                    /></url><url>
-            <loc>https://blog.heylinux.com/tags/</loc><lastmod>2021-11-21T12:18:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://blog.heylinux.com/en/tags/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://blog.heylinux.com/tags/"
-                    /></url><url>
-            <loc>https://blog.heylinux.com/categories/%E6%8A%80%E8%83%BD%E7%9F%A9%E9%98%B5/</loc><lastmod>2021-11-21T12:18:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://blog.heylinux.com/2021/11/%E4%B8%8D%E8%B4%9F%E6%97%B6%E5%85%89%E8%BF%8E%E6%8E%A5%E7%BE%8E%E5%A5%BD/</loc><lastmod>2021-11-09T22:07:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"

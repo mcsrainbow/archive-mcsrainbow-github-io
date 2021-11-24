@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Python OpenCV CAPTCHA Recognition in Action - Hey! Linux.</title><meta name="Description" content="The recognition principles and processes during the CAPTCHA recognition I have learned are really valuable."><meta property="og:title" content="Python OpenCV CAPTCHA Recognition in Action" />
+<meta property="og:description" content="The recognition principles and processes during the CAPTCHA recognition I have learned are really valuable." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/" />
+<meta property="og:image" content="https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/featured-image.jpeg"/>
+<meta property="article:published_time" content="2021-11-24T20:36:58+08:00" />
+<meta property="article:modified_time" content="2021-11-24T20:36:58+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/featured-image.jpeg"/>
+<meta name="twitter:title" content="Python OpenCV CAPTCHA Recognition in Action"/>
+<meta name="twitter:description" content="The recognition principles and processes during the CAPTCHA recognition I have learned are really valuable."/>
+<meta name="application-name" content="Hey! Linux.">
+<meta name="apple-mobile-web-app-title" content="Hey! Linux."><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/" /><link rel="prev" href="https://blog.heylinux.com/en/2021/11/devops-cicd-pipeline-in-action/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python OpenCV CAPTCHA Recognition in Action",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.heylinux.com\/en\/2021\/11\/python-opencv-captcha-recognition-in-action\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/blog.heylinux.com\/en\/2021\/11\/python-opencv-captcha-recognition-in-action\/featured-image.jpeg",
+                            "width":  2000 ,
+                            "height":  1199 
+                        }],"genre": "posts","keywords": "OpenCV, Machine Learning","wordcount":  1185 ,
+        "url": "https:\/\/blog.heylinux.com\/en\/2021\/11\/python-opencv-captcha-recognition-in-action\/","datePublished": "2021-11-24T20:36:58+08:00","dateModified": "2021-11-24T20:36:58+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "mcsrainbow","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/blog.heylinux.com\/images\/avatar.png",
+                    "width":  400 ,
+                    "height":  400 
+                }},"author": {
+                "@type": "Person",
+                "name": "Dong Guo | Damon"
+            },"description": "The recognition principles and processes during the CAPTCHA recognition I have learned are really valuable."
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/en/" title="Hey! Linux.">Hey! Linux.</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/en/posts/"> Posts </a><a class="menu-item" href="/en/tags/"> Tags </a><a class="menu-item" href="/en/categories/"> Categories </a><a class="menu-item" href="/en/about/"><i class='fas fa-user-circle fa-fw'></i>  </a><a class="menu-item" href="/./"> 简体中文 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/">简体中文</option><option value="/en/2021/11/python-opencv-captcha-recognition-in-action/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/en/" title="Hey! Linux.">Hey! Linux.</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/en/posts/" title="">Posts</a><a class="menu-item" href="/en/tags/" title="">Tags</a><a class="menu-item" href="/en/categories/" title="">Categories</a><a class="menu-item" href="/en/about/" title=""><i class='fas fa-user-circle fa-fw'></i></a><a class="menu-item" href="/./" title="">简体中文</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/">简体中文</option><option value="/en/2021/11/python-opencv-captcha-recognition-in-action/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python OpenCV CAPTCHA Recognition in Action</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/en/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dong Guo | Damon</a></span>&nbsp;<span class="post-category">included in <a href="/en/categories/skills/"><i class="far fa-folder fa-fw"></i>Skills</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-11-24">2021-11-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1185 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/featured-image.jpeg"
+        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/featured-image.jpeg, /en/2021/11/python-opencv-captcha-recognition-in-action/featured-image.jpeg 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/featured-image.jpeg 2x"
+        data-sizes="auto"
+        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/featured-image.jpeg"
+        title="The recognition principles and processes during the CAPTCHA recognition I have learned are really valuable." /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#background">Background</a></li>
+    <li><a href="#processes">Processes</a></li>
+    <li><a href="#details">Details</a>
+      <ul>
+        <li><a href="#1-collect-samples">1. Collect samples</a></li>
+        <li><a href="#2-feature-engineering">2. Feature engineering</a></li>
+        <li><a href="#3-manual-labeling">3. Manual labeling</a></li>
+        <li><a href="#4-train-the-model">4. Train the model</a></li>
+        <li><a href="#5-recognition">5. Recognition</a></li>
+      </ul>
+    </li>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>The recognition principles and processes during the CAPTCHA recognition I have learned are really valuable.</p>
+<h2 id="background">Background</h2>
+<p>My current company has a good learning and sharing atmosphere，sometimes holds various geek competitions, this one is about CAPTCHA recognition.</p>
+<h2 id="processes">Processes</h2>
+<p>At first, I was thinking of finding some existing codes from GitHub and just modifying some parameters. Then I tried some programs that seemed to be able to train and recognize without any feature engineering, but the actual results were terrible.</p>
+<p>During the competition, colleagues kept showing their stage results in the group, and they all did feature engineering. So I also referred to the articles in this area and finally completed successfully with a recognition rate of over 99%.</p>
+<p>The main processes are as follows.</p>
+<ul>
+<li>
+<p>1.Collect samples</p>
+<p>Only 100 sample CAPTCHAs were provided to all participants in this CAPTCHA recognition contest.</p>
+</li>
+<li>
+<p>2.Feature engineering</p>
+<p>Using the OpenCV library to analyze the CAPTCHA samples, remove the noise such as various random lines, and highlight the characters in the CAPTCHA such as 5UFQ.</p>
+</li>
+<li>
+<p>3.Manual labeling</p>
+<p>Manually recognize and rename each original CAPTCHA as its characters such as 5UFQ.jpg, then cut the CAPTCHAs into individual character images after feature engineering and saved as: 5UFQ_5.jpg, 5UFQ_U.jpg, 5UFQ_F.jpg, 5UFQ_Q.jpg.</p>
+</li>
+<li>
+<p>4.Train the model</p>
+<p>Use the above images with single characters as training set, and the characters of each image as labels, build a mapping table of images to labels.</p>
+<p>Perform the OpenCV&rsquo;s built-in KNN similarity model for Machine learning, to train a model that can recognize similar CAPTCHAs.</p>
+</li>
+<li>
+<p>5.Recognition</p>
+<p>Use some original CAPTCHAs samples as the test dataset, remove the noise by feature engineering, then use the trained model to recognize them and save the results in a CSV file.</p>
+</li>
+</ul>
+<h2 id="details">Details</h2>
+<h3 id="1-collect-samples">1. Collect samples</h3>
+<p>To prevent people from using the existing codes on the Internet and counting the results out by violence, only 100 image samples were provided to all participants.</p>
+<p>In practice, a large enough number of CAPTCHA image samples should be collected.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_sample.png"
+        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample.png, captchas_sample.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample.png 2x"
+        data-sizes="auto"
+        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample.png"
+        title="captchas_sample" /></p>
+<h3 id="2-feature-engineering">2. Feature engineering</h3>
+<p>Use the CAPTCHA with characters of 5UFQ as an example.</p>
+<p>Import the libraries.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span> 
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Read and display the original sample.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">filepath</span><span class="o">=</span><span class="s1">&#39;imgs/train/5UFQ.jpg&#39;</span>
+<span class="n">im</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="p">[:,:,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_5UFQ_raw.png"
+        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_raw.png, captchas_5UFQ_raw.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_raw.png 2x"
+        data-sizes="auto"
+        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_raw.png"
+        title="captchas_5UFQ_raw" /></p>
+<p>Convert the image from RGB to grayscale, to remove the color information.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># convert the image from BGR into gray</span>
+<span class="n">im_gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_gray</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&#34;gray&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_5UFQ_gray.png"
+        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_gray.png, captchas_5UFQ_gray.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_gray.png 2x"
+        data-sizes="auto"
+        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_gray.png"
+        title="captchas_5UFQ_gray" /></p>
+<p>Binarize the image to give a distinct black and white effect.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># image binarization, the default threshold is 127</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">im_inv</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">im_gray</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY_INV</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_inv</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&#34;gray&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_5UFQ_binary.png"
+        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_binary.png, captchas_5UFQ_binary.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_binary.png 2x"
+        data-sizes="auto"
+        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_binary.png"
+        title="captchas_5UFQ_binary" /></p>
+<p>Use the Gaussian Blur to reduce noise and details, with the visual effect as looking at the image through a translucent frosted screen.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># image denoising using the gaussian blur </span>
+<span class="n">kernel</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">16</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">im_blur</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">im_inv</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">kernel</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_blur</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&#34;gray&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_5UFQ_blur.png"
+        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur.png, captchas_5UFQ_blur.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur.png 2x"
+        data-sizes="auto"
+        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur.png"
+        title="captchas_5UFQ_blur" /></p>
+<p>Then Binarize again to eliminate the noise such as streaks</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># image binarization, after debugging, found that 185 is a better value for the blurred CAPTCHAs</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">im_res</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">im_blur</span><span class="p">,</span><span class="mi">185</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_res</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&#34;gray&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_5UFQ_blur_binary.png"
+        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur_binary.png, captchas_5UFQ_blur_binary.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur_binary.png 2x"
+        data-sizes="auto"
+        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur_binary.png"
+        title="captchas_5UFQ_blur_binary" /></p>
+<h3 id="3-manual-labeling">3. Manual labeling</h3>
+<p>Manually identify each original sample and rename it as the characters.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_sample_label.png"
+        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label.png, captchas_sample_label.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label.png 2x"
+        data-sizes="auto"
+        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label.png"
+        title="captchas_sample_label" /></p>
+<p>By looking at all the sample CAPTCHA images, it is easy to see that each character is in a very consistent area in the image, which greatly reduces the difficulty of determining the character regions and cutting the images.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python">    <span class="c1"># after debugging, found that all CAPTCHAs characters are same size and positions are quite fit</span>
+    <span class="c1"># so just find out the position values of each CAPTCHA character and get the images data</span>
+    <span class="n">roi_dict</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">im_res</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span><span class="mi">28</span><span class="p">]</span>
+    <span class="n">roi_dict</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">im_res</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="mi">38</span><span class="p">:</span><span class="mi">58</span><span class="p">]</span>
+    <span class="n">roi_dict</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">im_res</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="mi">68</span><span class="p">:</span><span class="mi">88</span><span class="p">]</span>
+    <span class="n">roi_dict</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">im_res</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="mi">98</span><span class="p">:</span><span class="mi">118</span><span class="p">]</span>
+    
+    <span class="c1"># return all CAPTCHAs characters as a dictionary</span>
+    <span class="k">return</span> <span class="n">roi_dict</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Cut images that have been feature engineered into individual character images.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">cut_img</span><span class="p">(</span><span class="n">train_dir</span><span class="p">,</span><span class="n">cut_dir</span><span class="p">,</span><span class="n">suffix</span><span class="p">):</span>
+    <span class="c1"># walk through the directory</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span><span class="n">dirs</span><span class="p">,</span><span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">train_dir</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="c1"># get the file path</span>
+            <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+            <span class="c1"># check the file suffix</span>
+            <span class="n">filesuffix</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filepath</span><span class="p">)[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="k">if</span> <span class="n">filesuffix</span> <span class="ow">in</span> <span class="n">suffix</span><span class="p">:</span>
+                <span class="c1"># get the images data of each CAPTCHA character</span>
+                <span class="n">roi_dict</span> <span class="o">=</span> <span class="n">fix_img</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+                <span class="c1"># cut each CAPTCHA character with the filename incluing the label</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">roi_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                    <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s2">&#34;{0}/{1}_{2}.jpg&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cut_dir</span><span class="p">,</span><span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">roi_dict</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    
+    <span class="c1"># close cv2 write operation</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="bp">True</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_sample_label_cut.png"
+        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label_cut.png, captchas_sample_label_cut.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label_cut.png 2x"
+        data-sizes="auto"
+        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label_cut.png"
+        title="captchas_sample_label_cut" /></p>
+<h3 id="4-train-the-model">4. Train the model</h3>
+<p>Perform the OpenCV&rsquo;s built-in KNN similarity model to train a model that can recognize similar CAPTCHAs.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">train_model</span><span class="p">(</span><span class="n">cut_dir</span><span class="p">,</span><span class="n">suffix</span><span class="p">):</span>
+    <span class="c1"># create an empty dataset to store the information of CAPTCHAs characters</span>
+    <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">420</span><span class="p">))</span>
+    <span class="c1"># create an empty lables list</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1"># walk through the directory</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span><span class="n">dirs</span><span class="p">,</span><span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">cut_dir</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+            <span class="n">filesuffix</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filepath</span><span class="p">)[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="k">if</span> <span class="n">filesuffix</span> <span class="ow">in</span> <span class="n">suffix</span><span class="p">:</span>
+                <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+                <span class="c1"># read the label of each CAPTCHA character</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;.&#34;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;_&#34;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+                <span class="c1"># store the CAPTCHA character data into samples dataset</span>
+                <span class="n">im</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+                <span class="n">sample</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">420</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+                <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">sample</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">samples</span> <span class="o">=</span> <span class="n">samples</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="c1"># labels-label_id mapping</span>
+    <span class="n">unique_labels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
+    <span class="n">unique_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_labels</span><span class="p">)))</span>
+    <span class="n">label_id_map</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">unique_labels</span><span class="p">,</span> <span class="n">unique_ids</span><span class="p">))</span>
+    <span class="n">id_label_map</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">unique_ids</span><span class="p">,</span> <span class="n">unique_labels</span><span class="p">))</span>
+    <span class="n">label_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">label_id_map</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">labels</span><span class="p">))</span>
+    <span class="n">label_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">label_ids</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    
+    <span class="c1"># train the model with KNN</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">KNearest_create</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">ROW_SAMPLE</span><span class="p">,</span> <span class="n">label_ids</span><span class="p">)</span>
+    
+    <span class="c1"># return the model and labels-label_id mapping</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;model&#39;</span><span class="p">:</span><span class="n">model</span><span class="p">,</span><span class="s1">&#39;id_label_map&#39;</span><span class="p">:</span><span class="n">id_label_map</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="5-recognition">5. Recognition</h3>
+<p>Load test dataset, remove the noise by feature engineering, then use the trained model to recognize CAPTCHAs and save the results in a CSV file.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">rek_img</span><span class="p">(</span><span class="n">model_dict</span><span class="p">,</span><span class="n">rek_dir</span><span class="p">,</span><span class="n">suffix</span><span class="p">,</span><span class="n">results_csv</span><span class="p">):</span>
+    <span class="c1"># get the model and labels-label_id mapping </span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">model_dict</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span>
+    <span class="n">id_label_map</span> <span class="o">=</span> <span class="n">model_dict</span><span class="p">[</span><span class="s1">&#39;id_label_map&#39;</span><span class="p">]</span>
+    <span class="n">label_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="c1"># walk through the directory</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span><span class="n">dirs</span><span class="p">,</span><span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">rek_dir</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+            <span class="n">filesuffix</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filepath</span><span class="p">)[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="k">if</span> <span class="n">filesuffix</span> <span class="ow">in</span> <span class="n">suffix</span><span class="p">:</span>
+                <span class="c1"># get the images data of each CAPTCHA character</span>
+                <span class="n">roi_dict</span> <span class="o">=</span> <span class="n">fix_img</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+                <span class="c1"># get the value of each CAPTCHA character from the model</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">roi_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                    <span class="n">sample</span> <span class="o">=</span> <span class="n">roi_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">420</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+                    <span class="n">ret</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="n">neighbours</span><span class="p">,</span> <span class="n">distances</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">findNearest</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+                    <span class="n">label_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+                    <span class="n">label</span> <span class="o">=</span> <span class="n">id_label_map</span><span class="p">[</span><span class="n">label_id</span><span class="p">]</span>               
+                    <span class="n">label_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">label</span>
+                
+                <span class="c1"># convert all CAPTCHA characters values into a string</span>
+                <span class="n">result_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">label_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+                <span class="c1"># append the result into a csv</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">results_csv</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">myfile</span><span class="p">:</span>
+                    <span class="n">myfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;{0},{1}</span><span class="se">\n</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">result_str</span><span class="p">))</span>
+                <span class="n">myfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="bp">True</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="captchas_results.png"
+        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_results.png, captchas_results.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_results.png 2x"
+        data-sizes="auto"
+        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_results.png"
+        title="captchas_results" /></p>
+<h2 id="summary">Summary</h2>
+<p>The CAPTCHA images in this competition were more distinctive and easier to feature engineer, so that in the end, although 10k CAPTCHA images were used as the test set, many colleagues still achieved recognition accuracy of over 90%, and the winner&rsquo;s accuracy even reached an incredible 100%.</p>
+<p>For me, the recognition principles and processes during the CAPTCHA recognition I have learned are really valuable.</p>
+<h2 id="reference">Reference</h2>
+<p>Source code: <a href="https://github.com/mcsrainbow/captchas_opencv_rek" target="_blank" rel="noopener noreffer">captchas_opencv_rek</a></p>
+<p>Inspired by: <a href="https://www.cnblogs.com/lizm166/p/9969647.html">https://www.cnblogs.com/lizm166/p/9969647.html</a></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-11-24</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/en/2021/11/python-opencv-captcha-recognition-in-action/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/" data-title="Python OpenCV CAPTCHA Recognition in Action" data-hashtags="OpenCV,Machine Learning"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on LinkedIn" data-sharer="linkedin" data-url="https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/" data-title="Python OpenCV CAPTCHA Recognition in Action"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/" data-title="Python OpenCV CAPTCHA Recognition in Action"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/en/tags/opencv/">OpenCV</a>,&nbsp;<a href="/en/tags/machine-learning/">Machine Learning</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/en/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/en/2021/11/devops-cicd-pipeline-in-action/" class="prev" rel="prev" title="DevOps CICD Pipeline in Action "><i class="fas fa-angle-left fa-fw"></i>DevOps CICD Pipeline in Action </a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank">mcsrainbow</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"highlightTag":"em","lunrIndexURL":"/en/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
