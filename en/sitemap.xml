@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://blog.heylinux.com/en/categories/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/categories/</loc><lastmod>2021-12-11T21:05:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/categories/"
@@ -11,7 +11,8 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/categories/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/tags/growth/</loc><lastmod>2021-12-11T21:05:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.heylinux.com/en/</loc><lastmod>2021-12-11T21:05:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/"
@@ -20,25 +21,17 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/tags/machine-learning/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/categories/notes/</loc><lastmod>2021-12-11T21:05:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.heylinux.com/en/2021/12/notes-from-reading-peak-secrets-from-the-new-science-of-expertise/</loc><lastmod>2021-12-11T21:05:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://blog.heylinux.com/tags/machine-learning/"
+                        href="https://blog.heylinux.com/2021/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://blog.heylinux.com/en/tags/machine-learning/"
+                    href="https://blog.heylinux.com/en/2021/12/notes-from-reading-peak-secrets-from-the-new-science-of-expertise/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/tags/opencv/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://blog.heylinux.com/tags/opencv/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://blog.heylinux.com/en/tags/opencv/"
-                    /></url><url>
-            <loc>https://blog.heylinux.com/en/posts/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/posts/</loc><lastmod>2021-12-11T21:05:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/posts/"
@@ -47,17 +40,8 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/posts/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/"
-                    /></url><url>
-            <loc>https://blog.heylinux.com/en/categories/skills/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.heylinux.com/en/tags/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/tags/self-management/</loc><lastmod>2021-12-11T21:05:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.heylinux.com/en/tags/</loc><lastmod>2021-12-11T21:05:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/tags/"
@@ -66,7 +50,35 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/tags/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/tags/cicd/</loc><lastmod>2021-11-21T12:18:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/tags/machine-learning/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://blog.heylinux.com/tags/machine-learning/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://blog.heylinux.com/en/tags/machine-learning/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/en/tags/opencv/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://blog.heylinux.com/tags/opencv/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://blog.heylinux.com/en/tags/opencv/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/en/categories/skills/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://blog.heylinux.com/en/tags/cicd/</loc><lastmod>2021-11-21T12:18:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/tags/cicd/"
@@ -75,7 +87,7 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/tags/cicd/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/tags/devops/</loc><lastmod>2021-11-21T12:18:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/tags/devops/</loc><lastmod>2021-11-21T12:18:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/tags/devops/"
@@ -84,7 +96,7 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/tags/devops/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/2021/11/devops-cicd-pipeline-in-action/</loc><lastmod>2021-11-21T12:18:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/2021/11/devops-cicd-pipeline-in-action/</loc><lastmod>2021-11-21T12:18:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/2021/11/devops-cicd%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/"
@@ -93,7 +105,7 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/2021/11/devops-cicd-pipeline-in-action/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/2021/11/cherish-the-time-to-meet-a-bright-future/</loc><lastmod>2021-11-09T22:07:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/2021/11/cherish-the-time-to-meet-a-bright-future/</loc><lastmod>2021-11-09T22:07:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/2021/11/%E4%B8%8D%E8%B4%9F%E6%97%B6%E5%85%89%E8%BF%8E%E6%8E%A5%E7%BE%8E%E5%A5%BD/"
@@ -102,10 +114,9 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/2021/11/cherish-the-time-to-meet-a-bright-future/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/tags/family/</loc><lastmod>2021-11-09T22:07:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://blog.heylinux.com/en/tags/growth/</loc><lastmod>2021-11-09T22:07:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://blog.heylinux.com/en/categories/thinking/</loc><lastmod>2021-11-09T22:07:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/</loc><lastmod>2021-11-07T11:06:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/tags/family/</loc><lastmod>2021-11-09T22:07:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://blog.heylinux.com/en/categories/thinking/</loc><lastmod>2021-11-09T22:07:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/</loc><lastmod>2021-11-07T11:06:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/2021/11/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAself-signed-ssl%E8%AF%81%E4%B9%A6%E6%94%AF%E6%8C%81%E7%A7%81%E6%9C%89%E5%9F%9F%E5%90%8D%E7%9A%84https%E6%9C%8D%E5%8A%A1/"
@@ -114,7 +125,7 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/tags/https/</loc><lastmod>2021-11-07T11:06:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/tags/https/</loc><lastmod>2021-11-07T11:06:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/tags/https/"
@@ -123,7 +134,7 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/tags/https/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/tags/ssl/</loc><lastmod>2021-11-07T11:06:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/tags/ssl/</loc><lastmod>2021-11-07T11:06:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/tags/ssl/"
@@ -132,7 +143,7 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/tags/ssl/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/tags/tls/</loc><lastmod>2021-11-07T11:06:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/tags/tls/</loc><lastmod>2021-11-07T11:06:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/tags/tls/"
@@ -141,8 +152,7 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/tags/tls/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/categories/notes/</loc><lastmod>2021-11-06T07:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://blog.heylinux.com/en/2021/11/notes-from-reading-the-willpower-instinct/</loc><lastmod>2021-11-06T07:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/2021/11/notes-from-reading-the-willpower-instinct/</loc><lastmod>2021-11-06T07:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/2021/11/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E8%87%AA%E6%8E%A7%E5%8A%9B/"
@@ -151,9 +161,8 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/2021/11/notes-from-reading-the-willpower-instinct/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/tags/psychology/</loc><lastmod>2021-11-06T07:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://blog.heylinux.com/en/tags/self-management/</loc><lastmod>2021-11-06T07:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://blog.heylinux.com/en/about/</loc><lastmod>2021-11-02T21:40:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/tags/psychology/</loc><lastmod>2021-11-06T07:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.heylinux.com/en/about/</loc><lastmod>2021-11-02T21:40:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/about/"
@@ -162,9 +171,9 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/about/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/tags/architect/</loc><lastmod>2021-11-01T21:51:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://blog.heylinux.com/en/tags/cloud/</loc><lastmod>2021-11-01T21:51:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://blog.heylinux.com/en/2021/11/why-use-a-multi-cloud-strategy/</loc><lastmod>2021-11-01T21:51:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/tags/architect/</loc><lastmod>2021-11-01T21:51:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.heylinux.com/en/tags/cloud/</loc><lastmod>2021-11-01T21:51:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.heylinux.com/en/2021/11/why-use-a-multi-cloud-strategy/</loc><lastmod>2021-11-01T21:51:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/2021/11/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%87%E7%94%A8%E5%A4%9A%E4%BA%91%E6%9E%B6%E6%9E%84/"
@@ -173,8 +182,8 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/2021/11/why-use-a-multi-cloud-strategy/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/tags/biography/</loc><lastmod>2021-10-31T14:34:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://blog.heylinux.com/en/2021/10/notes-from-reading-live-for-death-my-experience-on-dying/</loc><lastmod>2021-10-31T14:34:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/tags/biography/</loc><lastmod>2021-10-31T14:34:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.heylinux.com/en/2021/10/notes-from-reading-live-for-death-my-experience-on-dying/</loc><lastmod>2021-10-31T14:34:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/2021/10/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%90%91%E6%AD%BB%E8%80%8C%E7%94%9F%E6%88%91%E4%BF%AE%E7%9A%84%E6%AD%BB%E4%BA%A1%E5%AD%A6%E5%88%86/"
@@ -183,8 +192,8 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/2021/10/notes-from-reading-live-for-death-my-experience-on-dying/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/tags/beginning/</loc><lastmod>2021-10-30T20:15:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://blog.heylinux.com/en/2021/10/if-you-are-in-full-bloom-butterflies-will-come-naturally/</loc><lastmod>2021-10-30T20:15:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/tags/beginning/</loc><lastmod>2021-10-30T20:15:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.heylinux.com/en/2021/10/if-you-are-in-full-bloom-butterflies-will-come-naturally/</loc><lastmod>2021-10-30T20:15:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/2021/10/%E4%BD%A0%E8%8B%A5%E7%9B%9B%E5%BC%80%E8%9D%B4%E8%9D%B6%E8%87%AA%E6%9D%A5/"
