@@ -32,7 +32,7 @@ math:
 
 - [x] Live for Death: My Experience on Dying
 - [x] The Willpower Instinct 
-- [ ] PEAK: Secrets from the New Science of Expertise
+- [x] PEAK: Secrets from the New Science of Expertise
 - [ ] Educated: A Memoir
 - [ ] The Little Book of Lykke: Secrets of the World's Happiest People
 - [ ] Influence: The Psychology of Persuasion
