@@ -96,7 +96,7 @@ enableEmoji = true
           # 主页显示的网站标题 (支持 HTML 格式)
           title = "冬花盛开"
           # 主页显示的网站副标题
-          subtitle = "会点英文口语的八零后技术宅"
+          subtitle = "终身学习的自嗨型技术宅"
           # 是否为副标题显示打字机动画
           typeit = true
           # 是否显示社交账号
@@ -200,7 +200,7 @@ enableEmoji = true
           # title shown in home page (HTML format is supported)
           title = "Dong Guo | Damon"
           # subtitle shown in home page
-          subtitle = "A SRE Lead, a Solutions Architect and a Troubleshooter"
+          subtitle = "A SRE Lead, a Solutions Architect and a Lifelong Learner"
           # whether to use typeit animation for subtitle
           typeit = true
           # whether to show social links
