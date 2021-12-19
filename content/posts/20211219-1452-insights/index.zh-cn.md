@@ -21,7 +21,7 @@ lightgallery: true
 
 刚加入数据湖仓项目时，我们这群技术宅脑子里都有一堆关于架构师的疑问，为什么他总能找到一些很新的技术和工具让我们去研究？他从哪里找到的各种商业软件？为什么他对各个领域的技术栈都了解？为什么他总能选择出合适的技术和工具来不断地优化整个架构？
 
-经过一段时间的接触，我发现这些都源自于他大量的持续学习，他收藏了很多关于解决方案和技术前瞻的网站，各个行业的都有，也是咨询公司的付费会员，他每天的日程都被会议塞满了，他的邮箱里有严格分类的文件夹，每天都会收到各种订阅信息和付费报告，但他仍然会抽出时间来阅读那些资料，包括商业软件的技术文档和用户文档。甚至有的时候，在一些比较具体的技术难点和软件功能方面，他都能指出我们的错误。很惭愧的是，其中大多数都是由于我们没有认真阅读和理解文档造成的。
+经过一段时间的接触，我发现这些都源自于他大量的持续学习。他收藏了很多专业网站，各个行业的都有，他也是咨询公司的付费会员，他每天的日程都被会议塞满了，邮箱里经常收到各种订阅信息和付费报告，但他仍然会抽出时间来阅读那些资料，包括技术文档和用户文档。甚至有的时候，在一些具体的技术难点和软件功能方面，他都能指出我们的问题。很惭愧的是，其中大多数都是由于我们没有认真阅读和理解文档造成的。
 
 ## 寻找最佳实践
 
@@ -49,13 +49,15 @@ lightgallery: true
 
 + AWS Solutions Library - https://aws.amazon.com/solutions/
 
+   CI/CD Pipeline - https://aws.amazon.com/getting-started/hands-on/set-up-ci-cd-pipeline/
+
    Data Lake House - https://aws.amazon.com/big-data/datalakes-and-analytics/data-lake-house/
 
 + CNCF End User Technology Radar - https://radar.cncf.io
 
 + Databricks Solutions - https://databricks.com/solutions
    
-   Migrate to Databricks Lakehouse Platform - https://databricks.com/solutions/migration
+   Migrate to Lakehouse Platform - https://databricks.com/solutions/migration
 
 + Matt Turck - https://mattturck.com
 

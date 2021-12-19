@@ -39,14 +39,17 @@ Here are some of my personal bookmarks about technology solutions and insights.
 
 + AWS Solutions Library - https://aws.amazon.com/solutions/
 
+   CI/CD Pipeline - https://aws.amazon.com/getting-started/hands-on/set-up-ci-cd-pipeline/
+
    Data Lake House - https://aws.amazon.com/big-data/datalakes-and-analytics/data-lake-house/
 
 + CNCF End User Technology Radar - https://radar.cncf.io
 
 + Databricks Solutions - https://databricks.com/solutions
    
-   Migrate to Databricks Lakehouse Platform - https://databricks.com/solutions/migration
+   Migrate to Lakehouse Platform - https://databricks.com/solutions/migration
 
 + Matt Turck - https://mattturck.com
 
    The 2021 Machine Learning, AI and Data Landscape - https://mattturck.com/data2021/
+
