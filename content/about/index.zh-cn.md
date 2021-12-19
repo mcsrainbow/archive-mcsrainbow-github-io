@@ -21,7 +21,7 @@ math:
 
 <i class="fas fa-tasks fa-fw"></i> **核心任务**
 - [x] <i class="fas fa-cubes fa-fw"></i> CKA
-- [ ] <i class="fas fa-font fa-fw"></i> 英语六级
+- [x] <i class="fas fa-font fa-fw"></i> 英语六级
 - [ ] <i class="fas fa-graduation-cap fa-fw"></i> 论文
 - [ ] <i class="fas fa-users-cog fa-fw"></i> PMP
 - [ ] <i class="fas fa-user-shield fa-fw"></i> CISSP
