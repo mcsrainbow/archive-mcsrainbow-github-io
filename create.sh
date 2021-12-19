@@ -126,7 +126,7 @@ EOF
   fi
 
   if [ "$toc_enabled" == "no" ];then
-    cat >> content/posts/${post_dir}/index.zh-cn.md <<EOF
+    cat >> content/posts/${post_dir}/index.en.md <<EOF
 toc: false
 EOF
   fi
