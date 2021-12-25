@@ -188,7 +188,7 @@ systemctl disable postfix
 mkdir -p /opt/k8s/{bin,work} /etc/{kubernetes,etcd}/cert
 ```
 
-## 搭建集群
+## 集群搭建
 
 > 注：以下步骤需要在不同节点上操作完成（根据实际情况替换1.22.1为需要的版本）
 
