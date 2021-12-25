@@ -177,7 +177,7 @@ mkdir -p /opt/k8s/{bin,work} /etc/{kubernetes,etcd}/cert
 
 > Note: Replace the version 1.22.1 as required
 
-Install kubeadm, kubelet and kubectl 
+Install kubeadm, kubelet and kubectl on all Nodes
 
 ```
 cat > /etc/yum.repos.d/kubernetes.repo <<EOF
@@ -195,7 +195,7 @@ systemctl enable kubelet
 systemctl start kubelet
 ```
 
-Pull required Docker images
+Pull required Docker images on all Nodes
 
 ```
 kubeadm config images pull --kubernetes-version v1.22.1
@@ -273,7 +273,7 @@ This node has joined the cluster:
 Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 ```
 
-Check all Nodes status
+Check all Nodes status on kubeadm01
 
 ```
 [centos@kubeadm01 ~]$ kubectl get nodes 
@@ -319,7 +319,7 @@ Fix scheduler and controller-manager on kubeadm01
 [centos@kubeadm01 ~]$ sudo systemctl restart kubelet
 ```
 
-Check clusterservice status
+Check clusterservice status on kubeadm01
 
 ```
 [centos@kubeadm01 ~]$ kubectl get cs
@@ -332,8 +332,7 @@ controller-manager   Healthy   ok
 etcd-0               Healthy   {"health":"true","reason":""} 
 ```
 
-
-Check all Pods status
+Check all Pods status on kubeadm01
 
 ```
 [centos@kubeadm01 flannel]$ kubectl get pod --all-namespaces
