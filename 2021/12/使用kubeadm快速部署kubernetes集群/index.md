@@ -181,7 +181,7 @@ mkdir -p /opt/k8s/{bin,work} /etc/{kubernetes,etcd}/cert
 
 > 注：以下步骤需要在不同节点上操作完成（根据实际情况替换1.22.1为需要的版本）
 
-安装kubeadm，kubelet和kubectl
+在所有节点上安装kubeadm，kubelet和kubectl
 
 ```
 cat > /etc/yum.repos.d/kubernetes.repo << EOF
@@ -199,7 +199,7 @@ systemctl enable kubelet
 systemctl start kubelet
 ```
 
-拉取Docker镜像
+在所有节点上拉取Docker镜像
 
 ```
 kubeadm config images pull --image-repository registry.aliyuncs.com/google_containers --kubernetes-version v1.22.1
@@ -231,7 +231,7 @@ k8s.gcr.io/etcd:3.5.0-0
 k8s.gcr.io/coredns/coredns:v1.8.4
 ```
 
-修改已拉取的镜像的Tag
+在所有节点上修改已拉取的镜像的Tag
 
 ```bash
 # 将除了coredns以外的镜像Tag为k8s.gcr.io镜像源
@@ -314,7 +314,7 @@ This node has joined the cluster:
 Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 ```
 
-查看节点状态
+在kubeadm01上查看节点状态
 
 ```
 [centos@kubeadm01 ~]$ kubectl get nodes 
@@ -360,7 +360,7 @@ kubeadm03   Ready    <none>                 9m      v1.22.1
 [centos@kubeadm01 ~]$ sudo systemctl restart kubelet
 ```
 
-查看clusterservice状态
+在kubeadm01上查看clusterservice状态
 
 ```
 [centos@kubeadm01 ~]$ kubectl get cs
@@ -373,8 +373,7 @@ controller-manager   Healthy   ok
 etcd-0               Healthy   {"health":"true","reason":""} 
 ```
 
-
-查看所有Pod的状态
+在kubeadm01上查看所有Pod的状态
 
 ```
 [centos@kubeadm01 flannel]$ kubectl get pod --all-namespaces
