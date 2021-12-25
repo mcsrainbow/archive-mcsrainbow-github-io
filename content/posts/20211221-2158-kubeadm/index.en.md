@@ -186,6 +186,8 @@ mkdir -p /opt/k8s/{bin,work} /etc/{kubernetes,etcd}/cert
 
 ## Setup the Cluster
 
+> Note: Replace the version 1.22.1 as required
+
 Install kubeadm, kubelet and kubectl 
 
 ```
@@ -198,7 +200,7 @@ gpgcheck=0
 repo_gpgcheck=0
 EOF
 
-yum install -y kubelet kubeadm kubectl
+yum install -y kubelet-1.22.1 kubeadm-1.22.1 kubectl-1.22.1
 
 systemctl enable kubelet
 systemctl start kubelet
@@ -207,7 +209,7 @@ systemctl start kubelet
 Pull required Docker images
 
 ```
-kubeadm config images pull
+kubeadm config images pull --kubernetes-version v1.22.1
 ```
 
 Run init on kubeadm01(replace the CIDR of Node, Pod and Service networks as required)
