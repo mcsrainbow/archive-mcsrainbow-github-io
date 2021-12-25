@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Setup Kubernetes Cluster Using kubeadm - Hey! Linux.</title><meta name="Description" content="kubeadm performs the actions necessary to get a minimum viable cluster up and running."><meta property="og:title" content="Setup Kubernetes Cluster Using kubeadm" />
+<meta property="og:description" content="kubeadm performs the actions necessary to get a minimum viable cluster up and running." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.heylinux.com/en/2021/12/setup-kubernetes-cluster-using-kubeadm/" />
+<meta property="og:image" content="https://blog.heylinux.com/en/2021/12/setup-kubernetes-cluster-using-kubeadm/featured-image.jpeg"/>
+<meta property="article:published_time" content="2021-12-21T21:58:24+08:00" />
+<meta property="article:modified_time" content="2021-12-21T21:58:24+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.heylinux.com/en/2021/12/setup-kubernetes-cluster-using-kubeadm/featured-image.jpeg"/>
+<meta name="twitter:title" content="Setup Kubernetes Cluster Using kubeadm"/>
+<meta name="twitter:description" content="kubeadm performs the actions necessary to get a minimum viable cluster up and running."/>
+<meta name="application-name" content="Hey! Linux.">
+<meta name="apple-mobile-web-app-title" content="Hey! Linux."><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.heylinux.com/en/2021/12/setup-kubernetes-cluster-using-kubeadm/" /><link rel="prev" href="https://blog.heylinux.com/en/2021/12/solutions-and-insights/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Setup Kubernetes Cluster Using kubeadm",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.heylinux.com\/en\/2021\/12\/setup-kubernetes-cluster-using-kubeadm\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/blog.heylinux.com\/en\/2021\/12\/setup-kubernetes-cluster-using-kubeadm\/featured-image.jpeg",
+                            "width":  2400 ,
+                            "height":  800 
+                        }],"genre": "posts","keywords": "kubeadm, Kubernetes","wordcount":  1055 ,
+        "url": "https:\/\/blog.heylinux.com\/en\/2021\/12\/setup-kubernetes-cluster-using-kubeadm\/","datePublished": "2021-12-21T21:58:24+08:00","dateModified": "2021-12-21T21:58:24+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "mcsrainbow","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/blog.heylinux.com\/images\/avatar.png",
+                    "width":  400 ,
+                    "height":  400 
+                }},"author": {
+                "@type": "Person",
+                "name": "Dong Guo | Damon"
+            },"description": "kubeadm performs the actions necessary to get a minimum viable cluster up and running."
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/en/" title="Hey! Linux.">Hey! Linux.</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/en/posts/"> Posts </a><a class="menu-item" href="/en/tags/"> Tags </a><a class="menu-item" href="/en/categories/"> Categories </a><a class="menu-item" href="/en/about/"><i class='fas fa-user-circle fa-fw'></i>  </a><a class="menu-item" href="/./"> 简体中文 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/2021/12/%E4%BD%BF%E7%94%A8kubeadm%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2kubernetes%E9%9B%86%E7%BE%A4/">简体中文</option><option value="/en/2021/12/setup-kubernetes-cluster-using-kubeadm/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/en/" title="Hey! Linux.">Hey! Linux.</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/en/posts/" title="">Posts</a><a class="menu-item" href="/en/tags/" title="">Tags</a><a class="menu-item" href="/en/categories/" title="">Categories</a><a class="menu-item" href="/en/about/" title=""><i class='fas fa-user-circle fa-fw'></i></a><a class="menu-item" href="/./" title="">简体中文</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/2021/12/%E4%BD%BF%E7%94%A8kubeadm%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2kubernetes%E9%9B%86%E7%BE%A4/">简体中文</option><option value="/en/2021/12/setup-kubernetes-cluster-using-kubeadm/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Setup Kubernetes Cluster Using kubeadm</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/en/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dong Guo | Damon</a></span>&nbsp;<span class="post-category">included in <a href="/en/categories/skills/"><i class="far fa-folder fa-fw"></i>Skills</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-21">2021-12-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1055 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/en/2021/12/setup-kubernetes-cluster-using-kubeadm/featured-image.jpeg"
+        data-srcset="/en/2021/12/setup-kubernetes-cluster-using-kubeadm/featured-image.jpeg, /en/2021/12/setup-kubernetes-cluster-using-kubeadm/featured-image.jpeg 1.5x, /en/2021/12/setup-kubernetes-cluster-using-kubeadm/featured-image.jpeg 2x"
+        data-sizes="auto"
+        alt="/en/2021/12/setup-kubernetes-cluster-using-kubeadm/featured-image.jpeg"
+        title="kubeadm performs the actions necessary to get a minimum viable cluster up and running." /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#prepare-the-nodes">Prepare the Nodes</a></li>
+    <li><a href="#setup-the-cluster">Setup the Cluster</a></li>
+    <li><a href="#optimize-the-cluster">Optimize the Cluster</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>kubeadm performs the actions necessary to get a minimum viable cluster up and running.</p>
+<h2 id="prepare-the-nodes">Prepare the Nodes</h2>
+<blockquote>
+<p>Note: root user by default on all Nodes</p>
+</blockquote>
+<p>Prepare the EC2 instances(replace the IP addresses as required)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">OS: CentOS 7.9 x86_64
+CPU: 2 vCores
+Memory: 4 Gi
+
+kubeadm01: 172.31.8.8
+kubeadm02: 172.31.5.5
+kubeadm03: 172.31.7.7
+</code></pre></td></tr></table>
+</div>
+</div><p>Upgrade kernel and packages</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">yum install -y http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
+yum install --enablerepo=elrepo-kernel -y kernel-lt
+
+kernel_str=$(grep -E &#39;menuentry.*elrepo&#39; /boot/grub2/grub.cfg | cut -d\&#39; -f2)
+
+grub2-set-default &#34;${kernel_str}&#34;
+grub2-editenv list
+
+yum -y update
+</code></pre></td></tr></table>
+</div>
+</div><p>Configure /etc/hostname</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@kubeadm01 ~]# cat &gt; /etc/hostname &lt;&lt;EOF
+kubeadm01
+EOF
+[root@kubeadm01 ~]# hostname kubeadm01
+
+[root@kubeadm02 ~]# cat &gt; /etc/hostname &lt;&lt;EOF
+kubeadm02
+EOF
+[root@kubeadm02 ~]# hostname kubeadm02
+
+[root@kubeadm01 ~]# cat &gt; /etc/hostname &lt;&lt;EOF
+kubeadm03
+EOF
+[root@kubeadm03 ~]# hostname kubeadm03
+</code></pre></td></tr></table>
+</div>
+</div><p>Configure /etc/hosts</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cat &gt;&gt; /etc/hosts &lt;&lt;EOF
+172.31.8.8 kubeadm01
+172.31.5.5 kubeadm02
+172.31.7.7 kubeadm03
+EO
+</code></pre></td></tr></table>
+</div>
+</div><p>Configure /etc/sysctl.conf</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cat &gt; /etc/sysctl.d/sysctl.conf &lt;&lt;EOF
+net.bridge.bridge-nf-call-iptables=1
+net.bridge.bridge-nf-call-ip6tables=1
+net.ipv4.ip_forward=1
+net.ipv4.tcp_tw_recycle=0
+vm.swappiness=0
+vm.overcommit_memory=1
+vm.panic_on_oom=0
+fs.inotify.max_user_instances=8192
+fs.inotify.max_user_watches=1048576
+fs.file-max=52706963
+fs.nr_open=52706963
+net.ipv6.conf.all.disable_ipv6=1
+net.netfilter.nf_conntrack_max=2310720
+EOF
+
+sysctl -p /etc/sysctl.d/sysctl.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>Install required packages</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">yum install -y epel-release
+yum install -y chrony conntrack ipvsadm ipset jq iptables curl sysstat libseccomp wget socat git vim lrzsz wget man tree rsync gcc gcc-c++ cmake telnet
+</code></pre></td></tr></table>
+</div>
+</div><p>Enable Chrony service</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">systemctl start chronyd
+systemctl enable chronyd
+</code></pre></td></tr></table>
+</div>
+</div><p>Disable Firewalld, Swap and SELinux</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">systemctl stop firewalld
+systemctl disable firewalld
+
+swapoff -a
+sed -i &#39;/ swap / s/^\(.*\)$/#\1/g&#39; /etc/fstab
+
+setenforce 0
+sed -i &#39;s/^SELINUX=.*/SELINUX=disabled/&#39; /etc/selinux/config
+</code></pre></td></tr></table>
+</div>
+</div><p>Configure /etc/modules-load.d/kubernetes.conf and reboot</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cat &gt; /etc/modules-load.d/kubernetes.conf &lt;&lt;EOF
+ip_vs_dh
+ip_vs_ftp
+ip_vs
+ip_vs_lblc
+ip_vs_lblcr
+ip_vs_lc
+ip_vs_nq
+ip_vs_pe_sip
+ip_vs_rr
+ip_vs_sed
+ip_vs_sh
+ip_vs_wlc
+ip_vs_wrr
+nf_conntrack_ipv4
+overlay
+br_netfilter
+EOF
+
+systemctl enable systemd-modules-load.service
+
+sync
+reboot
+</code></pre></td></tr></table>
+</div>
+</div><p>Verify the kernel modules after reboot</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">lsmod | grep -e ip_vs -e nf_conntrack_ipv4
+</code></pre></td></tr></table>
+</div>
+</div><p>Install Docker</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum -y install docker-ce-20.10.8
+
+cat &gt; /etc/docker/daemon.json &lt;&lt;EOF
+{&#34;exec-opts&#34;: [&#34;native.cgroupdriver=systemd&#34;]}
+EOF
+
+usermod -G centos,adm,wheel,systemd-journal,docker,root centos
+
+systemctl start  docker
+systemctl enable docker
+</code></pre></td></tr></table>
+</div>
+</div><p>Disable postfix and create required directories</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">systemctl stop postfix
+systemctl disable postfix
+
+mkdir -p /opt/k8s/{bin,work} /etc/{kubernetes,etcd}/cert
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="setup-the-cluster">Setup the Cluster</h2>
+<p>Install kubeadm, kubelet and kubectl</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cat &gt; /etc/yum.repos.d/kubernetes.repo &lt;&lt;EOF
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+EOF
+
+yum install -y kubelet kubeadm kubectl
+
+systemctl enable kubelet
+systemctl start kubelet
+</code></pre></td></tr></table>
+</div>
+</div><p>Pull required Docker images</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">kubeadm config images pull
+</code></pre></td></tr></table>
+</div>
+</div><p>Run init on kubeadm01(replace the CIDR of Node, Pod and Service networks as required)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># Networks:
+# Node: 172.31.0.0/16
+# Pod: 10.192.0.0/16
+# Service: 10.254.0.0/16
+
+[root@kubeadm01 ~]# kubeadm init --apiserver-advertise-address=0.0.0.0 \
+--apiserver-bind-port=6443 \
+--kubernetes-version=v1.22.1 \
+--pod-network-cidr=10.192.0.0/16 \
+--service-cidr=10.254.0.0/16 \
+--image-repository=k8s.gcr.io \
+--ignore-preflight-errors=swap \
+--token-ttl=0
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run &#34;kubectl apply -f [podnetwork].yaml&#34; with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 172.31.8.8:6443 --token 2333y7.y7xev857t8n4w5em \
+        --discovery-token-ca-cert-hash sha256:df7857bdae645dad4072db71ae9e92efd248ead2d8fb184edd1720a4cddc5049
+</code></pre></td></tr></table>
+</div>
+</div><p>Create .kube/config on kubeadm01</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@kubeadm01 ~]# mkdir -p $HOME/.kube
+[root@kubeadm01 ~]# cp /etc/kubernetes/admin.conf $HOME/.kube/config
+
+[centos@kubeadm01 ~]$ mkdir -p $HOME/.kube
+[centos@kubeadm01 ~]$ sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
+[centos@kubeadm01 ~]$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
+</code></pre></td></tr></table>
+</div>
+</div><p>Join the cluster via command on kubeadm02 and kubeadm03</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@kubeadm02 ~]# kubeadm join 172.31.8.8:6443 --ignore-preflight-errors=swap \
+        --token 2333y7.y7xev857t8n4w5em \
+        --discovery-token-ca-cert-hash sha256:df7857bdae645dad4072db71ae9e92efd248ead2d8fb184edd1720a4cddc5049
+
+[root@kubeadm03 ~]# kubeadm join 172.31.8.8:6443 --ignore-preflight-errors=swap \
+        --token 2333y7.y7xev857t8n4w5em \
+        --discovery-token-ca-cert-hash sha256:df7857bdae645dad4072db71ae9e92efd248ead2d8fb184edd1720a4cddc5049
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">This node has joined the cluster:
+* Certificate signing request was sent to apiserver and a response was received.
+* The Kubelet was informed of the new secure connection details.
+
+Run &#39;kubectl get nodes&#39; on the control-plane to see this node join the cluster.
+</code></pre></td></tr></table>
+</div>
+</div><p>Check all Nodes status</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[centos@kubeadm01 ~]$ kubectl get nodes 
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">NAME        STATUS   ROLES                  AGE     VERSION
+kubeadm01   Ready    control-plane,master   5m      v1.22.1
+kubeadm02   Ready    &lt;none&gt;                 7m      v1.22.1
+kubeadm03   Ready    &lt;none&gt;                 9m      v1.22.1
+</code></pre></td></tr></table>
+</div>
+</div><p>Install Flannel on kubeadm01(replace the CIDR of Pod network as required)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[centos@kubeadm01 ~]$ mkdir flannel 
+[centos@kubeadm01 ~]$ cd flannel
+[centos@kubeadm01 flannel]$ wget https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+[centos@kubeadm01 flannel]$ vim kube-flannel.yml
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="w"> </span><span class="nt">net-conf.json</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span><span class="sd">    {
+</span><span class="sd">      &#34;Network&#34;: &#34;10.192.0.0/16&#34;,
+</span><span class="sd">      &#34;Backend&#34;: {
+</span><span class="sd">        &#34;Type&#34;: &#34;vxlan&#34;
+</span><span class="sd">      }
+</span><span class="sd">    }</span><span class="w">    
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[centos@kubeadm01 flannel]$ kubectl create -f kube-flannel.yml
+</code></pre></td></tr></table>
+</div>
+</div><p>Fix scheduler and controller-manager on kubeadm01</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[centos@kubeadm01 ~]$ sudo cp -rpa /etc/kubernetes/manifests/etc/kubernetes/manifests.default
+[centos@kubeadm01 ~]$ sudo sed -i &#39;/port=0/d&#39; /etc/kubernetes/manifests/kube-scheduler.yaml
+[centos@kubeadm01 ~]$ sudo sed -i &#39;/port=0/d&#39; /etc/kubernetes/manifests/kube-controller-manager.yaml
+
+[centos@kubeadm01 ~]$ sudo systemctl restart kubelet
+</code></pre></td></tr></table>
+</div>
+</div><p>Check clusterservice status</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[centos@kubeadm01 ~]$ kubectl get cs
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">NAME                 STATUS    MESSAGE                         ERROR
+scheduler            Healthy   ok                              
+controller-manager   Healthy   ok                              
+etcd-0               Healthy   {&#34;health&#34;:&#34;true&#34;,&#34;reason&#34;:&#34;&#34;} 
+</code></pre></td></tr></table>
+</div>
+</div><p>Check all Pods status</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[centos@kubeadm01 flannel]$ kubectl get pod --all-namespaces
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">NAMESPACE              NAME                                        READY   STATUS      RESTARTS   AGE
+kube-system            coredns-78fcd69978-99vcx                    1/1     Running     0          5m
+kube-system            coredns-78fcd69978-lm5bt                    1/1     Running     0          5m
+kube-system            etcd-kubeadm01                              1/1     Running     0          5m
+kube-system            kube-apiserver-kubeadm01                    1/1     Running     0          5m
+kube-system            kube-controller-manager-kubeadm01           1/1     Running     0          5m
+kube-system            kube-flannel-ds-b6c49                       1/1     Running     0          5m
+kube-system            kube-flannel-ds-nspjx                       1/1     Running     0          7m
+kube-system            kube-flannel-ds-sl5l2                       1/1     Running     0          9m
+kube-system            kube-proxy-7r755                            1/1     Running     0          5m
+kube-system            kube-proxy-nxz8c                            1/1     Running     0          7m
+kube-system            kube-proxy-w8v6s                            1/1     Running     0          9m
+kube-system            kube-scheduler-kubeadm01                    1/1     Running     0          5m
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="optimize-the-cluster">Optimize the Cluster</h2>
+<p>Change the kube-proxy mode to ipvs, by default it&rsquo;s iptables</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl edit configmap kube-proxy -n kube-system
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;ipvs&#34;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl get pods -n kube-system | grep kube-proxy | awk &#39;{print $2}&#39; | xargs kubectl -n kube-system delete pods
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-12-21</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/en/2021/12/setup-kubernetes-cluster-using-kubeadm/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.heylinux.com/en/2021/12/setup-kubernetes-cluster-using-kubeadm/" data-title="Setup Kubernetes Cluster Using kubeadm" data-hashtags="kubeadm,Kubernetes"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on LinkedIn" data-sharer="linkedin" data-url="https://blog.heylinux.com/en/2021/12/setup-kubernetes-cluster-using-kubeadm/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://blog.heylinux.com/en/2021/12/setup-kubernetes-cluster-using-kubeadm/" data-title="Setup Kubernetes Cluster Using kubeadm"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://blog.heylinux.com/en/2021/12/setup-kubernetes-cluster-using-kubeadm/" data-title="Setup Kubernetes Cluster Using kubeadm"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/en/tags/kubeadm/">kubeadm</a>,&nbsp;<a href="/en/tags/kubernetes/">Kubernetes</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/en/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/en/2021/12/solutions-and-insights/" class="prev" rel="prev" title="Solutions and Insights"><i class="fas fa-angle-left fa-fw"></i>Solutions and Insights</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank">mcsrainbow</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"highlightTag":"em","lunrIndexURL":"/en/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

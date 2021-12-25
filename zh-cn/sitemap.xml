@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://blog.heylinux.com/categories/</loc><lastmod>2021-12-19T14:52:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/categories/</loc><lastmod>2021-12-21T21:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://blog.heylinux.com/en/categories/"
@@ -11,7 +11,7 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/categories/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/</loc><lastmod>2021-12-19T14:52:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/</loc><lastmod>2021-12-21T21:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://blog.heylinux.com/en/"
@@ -20,7 +20,25 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/posts/</loc><lastmod>2021-12-19T14:52:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/tags/kubeadm/</loc><lastmod>2021-12-21T21:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://blog.heylinux.com/en/tags/kubeadm/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://blog.heylinux.com/tags/kubeadm/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/tags/kubernetes/</loc><lastmod>2021-12-21T21:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://blog.heylinux.com/en/tags/kubernetes/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://blog.heylinux.com/tags/kubernetes/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/posts/</loc><lastmod>2021-12-21T21:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://blog.heylinux.com/en/posts/"
@@ -29,7 +47,7 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/posts/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/tags/</loc><lastmod>2021-12-19T14:52:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/tags/</loc><lastmod>2021-12-21T21:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://blog.heylinux.com/en/tags/"
@@ -38,8 +56,17 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/tags/"
                     /></url><url>
+            <loc>https://blog.heylinux.com/2021/12/%E4%BD%BF%E7%94%A8kubeadm%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2kubernetes%E9%9B%86%E7%BE%A4/</loc><lastmod>2021-12-21T21:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://blog.heylinux.com/en/2021/12/setup-kubernetes-cluster-using-kubeadm/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://blog.heylinux.com/2021/12/%E4%BD%BF%E7%94%A8kubeadm%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2kubernetes%E9%9B%86%E7%BE%A4/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/categories/%E6%8A%80%E8%83%BD%E7%9F%A9%E9%98%B5/</loc><lastmod>2021-12-21T21:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://blog.heylinux.com/tags/%E6%8A%80%E6%9C%AF%E5%89%8D%E7%9E%BB/</loc><lastmod>2021-12-19T14:52:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.heylinux.com/categories/%E6%8A%80%E8%83%BD%E7%9F%A9%E9%98%B5/</loc><lastmod>2021-12-19T14:52:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://blog.heylinux.com/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc><lastmod>2021-12-19T14:52:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://blog.heylinux.com/2021/12/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%8E%E6%8A%80%E6%9C%AF%E5%89%8D%E7%9E%BB/</loc><lastmod>2021-12-19T14:52:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
@@ -62,7 +89,7 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/2021/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/tags/machine-learning/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
+            <loc>https://blog.heylinux.com/tags/machine-learning/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://blog.heylinux.com/en/tags/machine-learning/"
@@ -71,7 +98,7 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/tags/machine-learning/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/tags/opencv/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
+            <loc>https://blog.heylinux.com/tags/opencv/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://blog.heylinux.com/en/tags/opencv/"
@@ -80,7 +107,7 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/tags/opencv/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
+            <loc>https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/"

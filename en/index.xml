@@ -4,9 +4,16 @@
         <link>https://blog.heylinux.com/en/</link>
         <description>About LoveIt Theme</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
-            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 19 Dec 2021 14:52:49 &#43;0800</lastBuildDate>
+            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 21 Dec 2021 21:58:24 &#43;0800</lastBuildDate>
             <atom:link href="https://blog.heylinux.com/en/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Setup Kubernetes Cluster Using kubeadm</title>
+    <link>https://blog.heylinux.com/en/2021/12/setup-kubernetes-cluster-using-kubeadm/</link>
+    <pubDate>Tue, 21 Dec 2021 21:58:24 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://blog.heylinux.com/en/2021/12/setup-kubernetes-cluster-using-kubeadm/</guid>
+    <description><![CDATA[<p>kubeadm performs the actions necessary to get a minimum viable cluster up and running.</p>]]></description>
+</item><item>
     <title>Solutions and Insights</title>
     <link>https://blog.heylinux.com/en/2021/12/solutions-and-insights/</link>
     <pubDate>Sun, 19 Dec 2021 14:52:49 &#43;0800</pubDate>
@@ -69,12 +76,5 @@
     <author>Author</author>
     <guid>https://blog.heylinux.com/en/2021/10/notes-from-reading-live-for-death-my-experience-on-dying/</guid>
     <description><![CDATA[<p>Walked through the valley of the shadow of death and tasted the nectar of life.</p>]]></description>
-</item><item>
-    <title>If You Are in Full Bloom, Butterflies Will Come Naturally</title>
-    <link>https://blog.heylinux.com/en/2021/10/if-you-are-in-full-bloom-butterflies-will-come-naturally/</link>
-    <pubDate>Sat, 30 Oct 2021 20:15:25 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://blog.heylinux.com/en/2021/10/if-you-are-in-full-bloom-butterflies-will-come-naturally/</guid>
-    <description><![CDATA[<p>I have renewed the confidence and enthusiasm for learning, the courage to explore the unknown, and an ever-increasing belief in a better future.</p>]]></description>
 </item></channel>
 </rss>
