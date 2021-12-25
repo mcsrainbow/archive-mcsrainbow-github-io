@@ -16,8 +16,8 @@
 - [x] <i class="fas fa-cubes fa-fw"></i> CKA
 - [x] <i class="fas fa-font fa-fw"></i> 英语六级
 - [ ] <i class="fas fa-graduation-cap fa-fw"></i> 论文
-- [ ] <i class="fas fa-users-cog fa-fw"></i> PMP
 - [ ] <i class="fas fa-user-shield fa-fw"></i> CISSP
+- [ ] <i class="fas fa-users-cog fa-fw"></i> PMP
 - [ ] <i class="fas fa-font fa-fw"></i> 雅思7.0
 
 <i class="fas fa-book-open fa-fw"></i> **读书清单**

@@ -17,8 +17,8 @@
 - [x] <i class="fas fa-cubes fa-fw"></i> CKA
 - [x] <i class="fas fa-font fa-fw"></i> CET6
 - [ ] <i class="fas fa-graduation-cap fa-fw"></i> Thesis
-- [ ] <i class="fas fa-users-cog fa-fw"></i> PMP
 - [ ] <i class="fas fa-user-shield fa-fw"></i> CISSP
+- [ ] <i class="fas fa-users-cog fa-fw"></i> PMP
 - [ ] <i class="fas fa-font fa-fw"></i> IELTS 7.0
 
 <i class="fas fa-book-open fa-fw"></i> **Reading List**
