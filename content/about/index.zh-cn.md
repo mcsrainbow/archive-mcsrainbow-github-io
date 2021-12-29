@@ -14,7 +14,7 @@ math:
 
 ### 关于我
 
-+ <i class="fas fa-user-tie fa-fw"></i>领域：<i class="fas fa-cloud-upload-alt fa-fw"></i> 混合云 <i class="fas fa-database fa-fw"></i> 大数据 <i class="fas fa-network-wired fa-fw"></i> 运维架构
++ <i class="fas fa-user-tie fa-fw"></i>领域：<i class="fas fa-cloud-upload-alt fa-fw"></i> 混合云 <i class="fas fa-file-medical-alt fa-fw"></i> 大数据 <i class="fas fa-sitemap fa-fw"></i> 运维架构 <i class="fas fa-user-shield fa-fw"></i> 网络安全
 + <i class="fas fa-heart fa-fw"></i>爱好：<i class="fas fa-book-reader fa-fw"></i> 阅读 <i class="fas fa-running fa-fw"></i> 健身 <i class="fab fa-fly fa-fw"></i> 旅游 <i class="fas fa-film fa-fw"></i> 电影
 
 ### [TO DO LIST]^(始于2021年10月)
@@ -32,8 +32,8 @@ math:
 - [x] 向死而生：我修的死亡学分
 - [x] 自控力
 - [x] 刻意练习：如何从新手到大师
+- [x] 刻意放手：向最幸福的人学习幸福
 - [ ] 你当像鸟飞往你的山
-- [ ] 刻意放手：向最幸福的人学习幸福
 - [ ] 影响力
 - [ ] 精益创业
 - [ ] 时间简史
