@@ -50,7 +50,7 @@ enableEmoji = true
         weight = 5
     [languages.zh-cn.params]
       # 网站描述
-      description = "冬花盛开"
+      description = "冬去来兮"
       # 网站关键词
       keywords = ["heylinux", "mcsrainbow", "damondguo"]
       # 应用图标配置
@@ -94,7 +94,7 @@ enableEmoji = true
           # 主页显示头像的 URL
           avatarURL = "/images/avatar.png"
           # 主页显示的网站标题 (支持 HTML 格式)
-          title = "冬花盛开"
+          title = "冬去来兮"
           # 主页显示的网站副标题
           subtitle = "终身学习的自嗨型技术宅"
           # 是否为副标题显示打字机动画

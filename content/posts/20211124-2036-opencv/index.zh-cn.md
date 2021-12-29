@@ -1,7 +1,7 @@
 ---
 title: "Python OpenCV验证码识别实战"
 date: 2021-11-24T20:36:58+08:00
-author: "冬花盛开"
+author: "冬去来兮"
 description: "在通过OpenCV完成验证码识别的过程中，所学习到的识别原理和流程，还是很有价值的。"
 categories: ["技能矩阵"]
 tags: ["OpenCV","Machine Learning"]
