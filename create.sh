@@ -74,7 +74,7 @@ cat > content/posts/${post_dir}/index.zh-cn.md <<EOF
 ---
 title: "${post_title}"
 date: ${post_date_str}
-author: "暖寒冬"
+author: "冬花盛开"
 description: "${post_description}"
 categories: ["${post_category}"]
 tags: ["${post_tags_formatted}"]
