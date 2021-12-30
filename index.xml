@@ -2,7 +2,7 @@
     <channel>
         <title>Hey! Linux.</title>
         <link>https://blog.heylinux.com/</link>
-        <description>冬去来兮</description>
+        <description>韧笑冬</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
             <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 21 Dec 2021 21:58:24 &#43;0800</lastBuildDate>
             <atom:link href="https://blog.heylinux.com/index.xml" rel="self" type="application/rss+xml" />
