@@ -8,10 +8,10 @@
         <title>How to Generate Self-signed SSL Certificates - Hey! Linux.</title><meta name="Description" content="It is also important to deploy HTTPS services for internal private domains."><meta property="og:title" content="How to Generate Self-signed SSL Certificates" />
 <meta property="og:description" content="It is also important to deploy HTTPS services for internal private domains." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/" />
-<meta property="og:image" content="https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/featured-image.jpeg"/>
+<meta property="og:url" content="https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/" /><meta property="og:image" content="https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/featured-image.jpeg"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-11-07T11:06:54+08:00" />
 <meta property="article:modified_time" content="2021-11-07T11:06:54+08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/featured-image.jpeg"/>
 <meta name="twitter:title" content="How to Generate Self-signed SSL Certificates"/>
@@ -172,10 +172,10 @@
 <p>First, generate the <code>rootCA.heylinux.com.pem</code>, set the encryption length to 4096 to meet security level requirements.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">openssl genrsa -out rootCA.heylinux.com.key <span class="m">4096</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">openssl genrsa -out rootCA.heylinux.com.key <span class="m">4096</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Generate <code>rootCA.heylinux.com.pem</code>, set encryption <code>sha256</code>, valid days <code>3650</code>, organization <code>/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE</code>.</p>
@@ -183,10 +183,10 @@
 <p>The <code>-subj</code> parameter is more straightforward than the interactive steps.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">openssl req -x509 -new -nodes -key rootCA.heylinux.com.key -sha256 -days <span class="m">3650</span> -out rootCA.heylinux.com.pem -subj <span class="s2">&#34;/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">openssl req -x509 -new -nodes -key rootCA.heylinux.com.key -sha256 -days <span class="m">3650</span> -out rootCA.heylinux.com.pem -subj <span class="s2">&#34;/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Import <code>rootCA.heylinux.com.pem</code> to OS via Chrome, so the Chrome could trust the server certificate generated based on the root certificate.</p>
@@ -202,15 +202,15 @@
 <p>Create <code>ssl.conf</code>, enable <code>serverAuth</code> and <code>clientAuth</code>, wildcard DNS names as <code>*.heylinux.com</code> and <code>*.cloud.heylinux.com</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">vim ssl.conf
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim ssl.conf
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -222,7 +222,7 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">subjectAltName</span> <span class="o">=</span> <span class="s">@alt_names</span>
+<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="na">subjectAltName</span> <span class="o">=</span> <span class="s">@alt_names</span>
 <span class="na">authorityKeyIdentifier</span> <span class="o">=</span> <span class="s">keyid,issuer</span>
 <span class="na">keyUsage</span> <span class="o">=</span> <span class="s">digitalSignature,keyEncipherment,nonRepudiation,dataEncipherment</span>
 <span class="na">extendedKeyUsage</span> <span class="o">=</span> <span class="s">serverAuth,clientAuth</span>
@@ -237,33 +237,33 @@
 </div><p>Generate server certificate Key <code>star.heylinux.com.key</code>, organization <code>/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=*.heylinux.com</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">openssl req -new -nodes -out star.heylinux.com.csr -newkey rsa:4096 -keyout star.heylinux.com.key -subj <span class="s2">&#34;/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=*.heylinux.com&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">openssl req -new -nodes -out star.heylinux.com.csr -newkey rsa:4096 -keyout star.heylinux.com.key -subj <span class="s2">&#34;/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=*.heylinux.com&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Generate <code>star.heylinux.com.crt</code>, set encryption <code>sha256</code>, valid days <code>3650</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">openssl x509 -req -in star.heylinux.com.csr -CA rootCA.heylinux.com.pem -CAkey rootCA.heylinux.com.key -CAcreateserial -out star.heylinux.com.crt -days <span class="m">3650</span> -sha256 -extfile ssl.conf
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">openssl x509 -req -in star.heylinux.com.csr -CA rootCA.heylinux.com.pem -CAkey rootCA.heylinux.com.key -CAcreateserial -out star.heylinux.com.crt -days <span class="m">3650</span> -sha256 -extfile ssl.conf
 </code></pre></td></tr></table>
 </div>
 </div><p>View server certificate information</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">openssl x509 -text -noout -in star.heylinux.com.crt
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">openssl x509 -text -noout -in star.heylinux.com.crt
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -296,7 +296,7 @@
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">Certificate:
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">Certificate:
     Data:
         Version: 3 (0x2)
         Serial Number:
@@ -334,28 +334,28 @@
 <p>Generate <code>star.heylinux.com.p12</code> in <code>PKCS12</code>, set passphrase <code>P_Ss0rdT</code>, alias <code>heylinux_com</code>. It could be used for servers such as Tomcat.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">openssl pkcs12 -export -in star.heylinux.com.crt -inkey star.heylinux.com.key -password pass:P_Ss0rdT -name heylinux_com -out star.heylinux.com.p12
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">openssl pkcs12 -export -in star.heylinux.com.crt -inkey star.heylinux.com.key -password pass:P_Ss0rdT -name heylinux_com -out star.heylinux.com.p12
 </code></pre></td></tr></table>
 </div>
 </div><p>Convert <code>star.heylinux.com.p12</code> to <code>star.heylinux.com.jks</code> in <code>JKS</code>, set passphrase <code>P_Ss0rdT</code>, alias <code>heylinux_com</code>. It could be used for servers such as Tomcat.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.jks -srcstorepass P_Ss0rdT -srckeystore star.heylinux.com.p12 -srcstoretype PKCS12
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.jks -srcstorepass P_Ss0rdT -srckeystore star.heylinux.com.p12 -srcstoretype PKCS12
 </code></pre></td></tr></table>
 </div>
 </div><p>Convert <code>star.heylinux.com.p12</code> to <code>star.heylinux.com.pem</code> in <code>PEM</code>, alias <code>heylinux_com</code>,no passphrase. It could be used for servers such as Apache、Nginx、HAProxy and AWS ELB.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">openssl pkcs12 -password pass:P_Ss0rdT -in star.heylinux.com.p12 -out star.heylinux.com.pem -nodes
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">openssl pkcs12 -password pass:P_Ss0rdT -in star.heylinux.com.p12 -out star.heylinux.com.pem -nodes
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="4-convert-root-certificate-to-jks-format">4. Convert root certificate to JKS format</h3>
@@ -363,7 +363,7 @@
 <p>The principle is similar to the above &ldquo;import the root certificate to OS via Chrome, so the Chrome could trust the server certificate generated based on the root certificate&rdquo;.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -376,7 +376,7 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Convert rootCA.heylinux.com.pem to rootCA.heylinux.com.der</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Convert rootCA.heylinux.com.pem to rootCA.heylinux.com.der</span>
 openssl x509 -in rootCA.heylinux.com.pem -out rootCA.heylinux.com.der -outform der
 
 <span class="c1"># View rootCA.heylinux.com.der</span>
@@ -394,24 +394,24 @@ keytool -keystore rootCA.heylinux.com.jks -storepass P_Ss0rdT -list
 <p>Convert <code>SubCA_2.p7b</code> to <code>rootCA.heylinux.com.pem</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">openssl pkcs7 -inform DER -print_certs -in SubCA_2.p7b -out rootCA.heylinux.com.pem
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">openssl pkcs7 -inform DER -print_certs -in SubCA_2.p7b -out rootCA.heylinux.com.pem
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="2-from-pem-to-jks">2. From PEM to JKS</h3>
 <p>Convert <code>rootCA.heylinux.com.pem</code> to <code>rootCA.heylinux.com.jks</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Convert rootCA.heylinux.com.pem to rootCA.heylinux.com.der</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Convert rootCA.heylinux.com.pem to rootCA.heylinux.com.der</span>
 openssl x509 -in rootCA.heylinux.com.pem -out rootCA.heylinux.com.der -outform der
 
 <span class="c1"># Convert rootCA.heylinux.com.der to rootCA.heylinux.com.jks, alias heylinux_com</span>
@@ -422,26 +422,26 @@ keytool -importcert -alias heylinux_com -keystore rootCA.heylinux.com.jks -store
 <p>Convert <code>star.heylinux.com.pfx</code> to <code>star.heylinux.com.pem</code>, which including the items of <code>star.heylinux.com.key</code> and <code>star.heylinux.com.crt</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">openssl pkcs12 -password pass:P_Ss0rdT -nodes -in star.heylinux.com.pfx -out star.heylinux.com.pem
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">openssl pkcs12 -password pass:P_Ss0rdT -nodes -in star.heylinux.com.pfx -out star.heylinux.com.pem
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="4-from-p12-to-jks">4. From P12 to JKS</h3>
 <p>Convert <code>star.heylinux.com.p12</code> to <code>star.heylinux.com.jks</code>, alias <code>heylinux_com</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.jks -srcstorepass P_Ss0rdT -srckeystore star.heylinux.com.p12 -srcstoretype PKCS12 -alias heylinux_com
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.jks -srcstorepass P_Ss0rdT -srckeystore star.heylinux.com.p12 -srcstoretype PKCS12 -alias heylinux_com
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="5-view-certificates-in-different-formats">5. View certificates in different formats</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -452,7 +452,7 @@ keytool -importcert -alias heylinux_com -keystore rootCA.heylinux.com.jks -store
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># View rootCA.heylinux.com.pem and star.heylinux.com.pem</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># View rootCA.heylinux.com.pem and star.heylinux.com.pem</span>
 openssl x509 -noout -text -in rootCA.heylinux.com.pem 
 openssl x509 -noout -text -in star.heylinux.com.pem
 
@@ -468,15 +468,15 @@ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 <p>Create <code>tls.conf</code>, set IPs as <code>10.8.5.7</code> and <code>10.2.3.4</code>, wildcard DNS names as <code>*.heylinux.com</code> and <code>*.cloud.heylinux.com</code>, organization <code>/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">vim tls.conf
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim tls.conf
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -499,7 +499,7 @@ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ini" data-lang="ini"><span class="k">[req]</span>
+<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="k">[req]</span>
 <span class="na">prompt</span> <span class="o">=</span> <span class="s">no</span>
 <span class="na">req_extensions</span> <span class="o">=</span> <span class="s">req_ext</span>
 <span class="na">distinguished_name</span> <span class="o">=</span> <span class="s">dn</span>
@@ -525,7 +525,7 @@ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 </div><p>Generate server certificates <code>heylinux-ssl-keypair.key</code> and <code>heylinux-ssl-keypair.crt</code>, set encryption <code>sha256</code>, valid days <code>3650</code>, passphrase <code>P_Ss0rdT</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -545,7 +545,7 @@ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Generate heylinux-ssl-keypair.key and heylinux-ssl-keypair.crt</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Generate heylinux-ssl-keypair.key and heylinux-ssl-keypair.crt</span>
 openssl req -x509 -newkey rsa:4096 -keyout heylinux-ssl-keypair.key -out heylinux-ssl-keypair.crt -days <span class="m">3650</span> -sha256 -extensions req_ext -config tls.conf
 
 <span class="c1"># Input password</span>
@@ -570,13 +570,13 @@ keytool -list -v -keystore heylinux-ssl-keypair.p12 -storepass P_Ss0rdT -storety
 <p>Download <code>cfssl</code>, <code>cfssljson</code>, <code>cfssl-certinfo</code> and grant execute permission.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">sudo wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 -O /usr/local/bin/cfssl
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 -O /usr/local/bin/cfssl
 sudo wget https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64 -O /usr/local/bin/cfssljson
 sudo wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64 -O /usr/local/bin/cfssl-certinfo
 sudo chmod +x /usr/local/bin/cfssl*
@@ -586,7 +586,7 @@ sudo chmod +x /usr/local/bin/cfssl*
 <p>Create <code>rootCA.json</code>, generate the similar <code>rootCA.heylinux.com.key</code>(encryption length is only 2048 due to cfssl cannot set the key with different encryption length) and <code>rootCA.heylinux.com.pem</code> as above.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -608,7 +608,7 @@ sudo chmod +x /usr/local/bin/cfssl*
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;CA&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;expiry&#34;</span><span class="p">:</span> <span class="s2">&#34;87600h&#34;</span><span class="p">,</span>
         <span class="nt">&#34;pathlen&#34;</span><span class="p">:</span> <span class="mi">0</span>
@@ -632,15 +632,15 @@ sudo chmod +x /usr/local/bin/cfssl*
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">cfssl gencert -initca rootCA.json <span class="p">|</span> cfssljson -bare rootCA.heylinux.com
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cfssl gencert -initca rootCA.json <span class="p">|</span> cfssljson -bare rootCA.heylinux.com
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -648,7 +648,7 @@ sudo chmod +x /usr/local/bin/cfssl*
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">2021/11/13 05:11:48 [INFO] generating a new CA key and certificate from CSR
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">2021/11/13 05:11:48 [INFO] generating a new CA key and certificate from CSR
 2021/11/13 05:11:48 [INFO] generate received request
 2021/11/13 05:11:48 [INFO] received CSR
 2021/11/13 05:11:48 [INFO] generating key: rsa-2048
@@ -658,21 +658,21 @@ sudo chmod +x /usr/local/bin/cfssl*
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">ls -1
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ls -1
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">rootCA.heylinux.com.csr
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">rootCA.heylinux.com.csr
 rootCA.heylinux.com-key.pem
 rootCA.heylinux.com.pem
 rootCA.json
@@ -680,24 +680,24 @@ rootCA.json
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">mv rootCA.heylinux.com-key.pem rootCA.heylinux.com.key
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mv rootCA.heylinux.com-key.pem rootCA.heylinux.com.key
 </code></pre></td></tr></table>
 </div>
 </div><p>View <code>rootCA.heylinux.com.pem</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">cfssl-certinfo -cert rootCA.heylinux.com.pem
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cfssl-certinfo -cert rootCA.heylinux.com.pem
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -740,7 +740,7 @@ rootCA.json
 </span><span class="lnt">41
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;subject&#34;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&#34;common_name&#34;</span><span class="p">:</span> <span class="s2">&#34;SRE&#34;</span><span class="p">,</span>
     <span class="nt">&#34;country&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
@@ -787,15 +787,15 @@ rootCA.json
 <p>Create <code>ssl-config.json</code> and <code>ssl.json</code>, generate the similar <code>star.heylinux.com.key</code>(encryption length is only 2048 due to cfssl cannot set the key with different encryption length) and <code>star.heylinux.com.crt</code> as above.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">vim ssl-config.json
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim ssl-config.json
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -815,7 +815,7 @@ rootCA.json
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;signing&#34;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&#34;default&#34;</span><span class="p">:</span> <span class="p">{</span>
       <span class="nt">&#34;expiry&#34;</span><span class="p">:</span> <span class="s2">&#34;87600h&#34;</span>
@@ -837,15 +837,15 @@ rootCA.json
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">vim ssl.json
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim ssl.json
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -865,7 +865,7 @@ rootCA.json
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;CN&#34;</span><span class="p">:</span> <span class="s2">&#34;*.heylinux.com&#34;</span><span class="p">,</span>
   <span class="nt">&#34;hosts&#34;</span><span class="p">:</span> <span class="p">[</span>
     <span class="s2">&#34;*.heylinux.com&#34;</span><span class="p">,</span>
@@ -887,7 +887,7 @@ rootCA.json
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -895,7 +895,7 @@ rootCA.json
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">cfssl gencert -ca<span class="o">=</span>rootCA.heylinux.com.pem -ca-key<span class="o">=</span>rootCA.heylinux.com.key -config<span class="o">=</span>ssl-config.json -profile<span class="o">=</span>server ssl.json <span class="p">|</span> cfssljson -bare star.heylinux.com
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cfssl gencert -ca<span class="o">=</span>rootCA.heylinux.com.pem -ca-key<span class="o">=</span>rootCA.heylinux.com.key -config<span class="o">=</span>ssl-config.json -profile<span class="o">=</span>server ssl.json <span class="p">|</span> cfssljson -bare star.heylinux.com
 
 mv star.heylinux.com.pem star.heylinux.com.crt
 mv star.heylinux.com-key.pem star.heylinux.com.key
@@ -905,7 +905,7 @@ ls -1
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -916,7 +916,7 @@ ls -1
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">rootCA.heylinux.com.csr
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">rootCA.heylinux.com.csr
 rootCA.heylinux.com.key
 rootCA.heylinux.com.pem
 rootCA.json
@@ -930,15 +930,15 @@ star.heylinux.com.key
 </div><p>View <code>star.heylinux.com.crt</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">cfssl-certinfo -cert star.heylinux.com.crt
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cfssl-certinfo -cert star.heylinux.com.crt
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -985,7 +985,7 @@ star.heylinux.com.key
 </span><span class="lnt">45
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;subject&#34;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&#34;common_name&#34;</span><span class="p">:</span> <span class="s2">&#34;*.heylinux.com&#34;</span><span class="p">,</span>
     <span class="nt">&#34;country&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
@@ -1062,7 +1062,7 @@ star.heylinux.com.key
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank">mcsrainbow</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
