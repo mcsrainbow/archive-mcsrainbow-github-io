@@ -1,7 +1,7 @@
 ---
 title: "使用kubeadm快速部署Kubernetes集群"
 date: 2021-12-21T21:58:24+08:00
-author: "冬去来兮"
+author: "韧笑冬"
 description: "kubeadm是Kubernetes官方提供的用于快速部署集群的工具"
 categories: ["技能矩阵"]
 tags: ["kubeadm","Kubernetes"]
