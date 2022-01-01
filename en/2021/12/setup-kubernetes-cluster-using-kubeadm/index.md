@@ -54,7 +54,7 @@ EOF
 [root@kubeadm03 ~]# hostname kubeadm03
 ```
 
-Configure /etc/hosts
+Configure /etc/hosts(replace the IP addresses as required)
 
 ```
 cat >> /etc/hosts <<EOF
