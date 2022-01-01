@@ -305,7 +305,7 @@ kubeadm join 172.31.8.8:6443 --token 2333y7.y7xev857t8n4w5em \
 [centos@kubeadm01 ~]$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-在kubeadm02和kubeadm03上执行join（根据实际情况替换Master节点的IP）
+在kubeadm02和kubeadm03上执行join（根据实际情况替换参数的值）
 
 ```
 [root@kubeadm02 ~]# kubeadm join 172.31.8.8:6443 --ignore-preflight-errors=swap \
