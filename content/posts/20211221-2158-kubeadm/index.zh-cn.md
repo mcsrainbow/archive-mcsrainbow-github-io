@@ -69,7 +69,7 @@ EOF
 [root@kubeadm03 ~]# hostname kubeadm03
 ```
 
-配置主机名解析
+配置主机名解析（根据实际情况替换为真实IP）
 
 ```
 cat >> /etc/hosts <<EOF
