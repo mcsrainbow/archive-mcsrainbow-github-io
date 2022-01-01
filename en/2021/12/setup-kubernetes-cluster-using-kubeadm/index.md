@@ -253,7 +253,7 @@ Create .kube/config on kubeadm01
 [centos@kubeadm01 ~]$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-Join the cluster via command on kubeadm02 and kubeadm03(repace the IP address of master node as required)
+Join the cluster via command on kubeadm02 and kubeadm03(repace the values as required)
 
 ```
 [root@kubeadm02 ~]# kubeadm join 172.31.8.8:6443 --ignore-preflight-errors=swap \
