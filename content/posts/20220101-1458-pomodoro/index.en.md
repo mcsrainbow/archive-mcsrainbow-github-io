@@ -2,7 +2,7 @@
 title: "Notes from reading 'Pomodoro Technique Illustrated'"
 date: 2022-01-01T14:58:41+08:00
 author: "Dong Guo | Damon"
-description: "The Pomodoro Technique is designed to help maintaining focus and prevent burnout."
+description: "The Pomodoro Technique is designed to maintain focus and prevent burnout."
 categories: ["Notes"]
 tags: ["Pomodoro Technique","Time Management"]
 resources:
@@ -12,7 +12,7 @@ resources:
 lightgallery: true
 ---
 
-The Pomodoro Technique is designed to help maintaining focus and prevent burnout.
+The Pomodoro Technique is designed to maintain focus and prevent burnout.
 
 <!--more-->
 
