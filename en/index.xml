@@ -4,9 +4,16 @@
         <link>https://blog.heylinux.com/en/</link>
         <description>About LoveIt Theme</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
-            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 21 Dec 2021 21:58:24 &#43;0800</lastBuildDate>
+            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 01 Jan 2022 14:58:41 &#43;0800</lastBuildDate>
             <atom:link href="https://blog.heylinux.com/en/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Notes from reading &#39;Pomodoro Technique Illustrated&#39;</title>
+    <link>https://blog.heylinux.com/en/2022/01/notes-from-reading-pomodoro-technique-illustrated/</link>
+    <pubDate>Sat, 01 Jan 2022 14:58:41 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://blog.heylinux.com/en/2022/01/notes-from-reading-pomodoro-technique-illustrated/</guid>
+    <description><![CDATA[<p>The Pomodoro Technique is designed to help maintaining focus and prevent burnout.</p>]]></description>
+</item><item>
     <title>Setup Kubernetes Cluster Using kubeadm</title>
     <link>https://blog.heylinux.com/en/2021/12/setup-kubernetes-cluster-using-kubeadm/</link>
     <pubDate>Tue, 21 Dec 2021 21:58:24 &#43;0800</pubDate>
@@ -69,12 +76,5 @@
     <author>Author</author>
     <guid>https://blog.heylinux.com/en/2021/11/why-use-a-multi-cloud-strategy/</guid>
     <description><![CDATA[<p>A multi-cloud strategy allows companies to select different cloud services from different providers.</p>]]></description>
-</item><item>
-    <title>Notes from reading &#39;Live for Death: My Experience on Dying&#39;</title>
-    <link>https://blog.heylinux.com/en/2021/10/notes-from-reading-live-for-death-my-experience-on-dying/</link>
-    <pubDate>Sun, 31 Oct 2021 14:34:58 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://blog.heylinux.com/en/2021/10/notes-from-reading-live-for-death-my-experience-on-dying/</guid>
-    <description><![CDATA[<p>Walked through the valley of the shadow of death and tasted the nectar of life.</p>]]></description>
 </item></channel>
 </rss>
