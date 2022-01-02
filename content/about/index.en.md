@@ -38,3 +38,6 @@ math:
 - [ ] Educated: A Memoir
 - [ ] Influence: The Psychology of Persuasion
 - [ ] The Lean Startup
+- [ ] The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future
+- [ ] Noise: A Flaw in Human Judgment
+- [ ] Out of Control: The New Biology of Machines, Social Systems, and the Economic World
