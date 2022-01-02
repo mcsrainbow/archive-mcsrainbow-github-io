@@ -38,7 +38,7 @@ The Pomodoro Technique gets us to focus on execution. It could mean that we igno
 
 ## Thinking
 
-From this book, I've learned about the Pomodoro Technique's 25/5/15 time management method, understood the scientific theory of the daily PDCA Cycle, and how to handle interruptions and customize my own process.
+From this book, I've learned about the 25/5/15 time management method, the scientific theory of the daily Pomodoro Technique PDCA Cycle, how to handle interruptions and customize my own process.
 
 I plan every morning and review in the evening, concentrate on a single activity in a Pomodoro. No longer fell anxious, because all tasks just become the activities made up of Pomodoros. 
 
