@@ -1,7 +1,7 @@
 # Notes from reading 'Pomodoro Technique Illustrated'
 
 
-The Pomodoro Technique is designed to help maintaining focus and prevent burnout.
+The Pomodoro Technique is designed to maintain focus and prevent burnout.
 
 <!--more-->
 
