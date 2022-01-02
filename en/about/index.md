@@ -26,9 +26,11 @@
 - [x] Live for Death: My Experience on Dying
 - [x] The Willpower Instinct 
 - [x] PEAK: Secrets from the New Science of Expertise
+- [x] Pomodoro Technique Illustrated: The Easy Way to Do More in Less Time
 - [x] The Little Book of Lykke: Secrets of the World's Happiest People
 - [ ] Educated: A Memoir
 - [ ] Influence: The Psychology of Persuasion
 - [ ] The Lean Startup
-- [ ] A Brief History of Time
-
+- [ ] The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future
+- [ ] Noise: A Flaw in Human Judgment
+- [ ] Out of Control: The New Biology of Machines, Social Systems, and the Economic World
