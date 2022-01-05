@@ -52,7 +52,7 @@ enableEmoji = true
       # 网站描述
       description = "冬花盛开"
       # 网站关键词
-      keywords = ["heylinux", "mcsrainbow", "damondguo"]
+      keywords = ["heylinux", "mcsrainbow", "damonguo"]
       # 应用图标配置
       [languages.zh-cn.params.app]
         # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
@@ -111,7 +111,7 @@ enableEmoji = true
       # 主页的社交信息设置
       [languages.zh-cn.params.social]
         GitHub = "mcsrainbow"
-        LinkedIn = "damondguo"
+        LinkedIn = "damonguo"
         RSS = true
   [languages.en]
     weight = 2
@@ -156,7 +156,7 @@ enableEmoji = true
       # site description
       description = "About LoveIt Theme"
       # site keywords
-      keywords = ["heylinux", "mcsrainbow", "damondguo"]
+      keywords = ["heylinux", "mcsrainbow", "damonguo"]
       # App icon config
       [languages.en.params.app]
         # optional site title override for the app when added to an iOS home screen or Android launcher
@@ -215,7 +215,7 @@ enableEmoji = true
       # Social config in home page
       [languages.en.params.social]
         GitHub = "mcsrainbow"
-        LinkedIn = "damondguo"
+        LinkedIn = "damonguo"
         RSS = true
 [params]
   # LoveIt theme version
