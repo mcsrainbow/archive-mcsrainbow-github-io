@@ -1,6 +1,6 @@
 ---
 title: "Notes from reading 'Secrets of the World’s Happiest People'"
-date: 2022-01-03T18:00:37+08:00
+date: 2022-01-08T18:00:37+08:00
 author: "Dong Guo | Damon"
 description: "The six factors of happiness are togetherness, money, health, freedom, trust and kindness."
 categories: ["Notes"]
