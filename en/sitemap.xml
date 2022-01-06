@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://blog.heylinux.com/en/categories/</loc><lastmod>2022-01-01T14:58:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/categories/</loc><lastmod>2022-01-06T21:48:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/categories/"
@@ -11,7 +11,8 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/categories/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/</loc><lastmod>2022-01-01T14:58:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/tags/growth/</loc><lastmod>2022-01-06T21:48:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.heylinux.com/en/</loc><lastmod>2022-01-06T21:48:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/"
@@ -20,6 +21,35 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/"
                     /></url><url>
+            <loc>https://blog.heylinux.com/en/2022/01/my-2021-year-in-review/</loc><lastmod>2022-01-06T21:48:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://blog.heylinux.com/2022/01/%E6%88%91%E7%9A%842021%E5%B9%B4%E7%BB%88%E5%9B%9E%E9%A1%BE/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://blog.heylinux.com/en/2022/01/my-2021-year-in-review/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/en/posts/</loc><lastmod>2022-01-06T21:48:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://blog.heylinux.com/posts/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://blog.heylinux.com/en/posts/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/en/tags/</loc><lastmod>2022-01-06T21:48:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://blog.heylinux.com/tags/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://blog.heylinux.com/en/tags/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/en/categories/thinking/</loc><lastmod>2022-01-06T21:48:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.heylinux.com/en/tags/year-in-review/</loc><lastmod>2022-01-06T21:48:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://blog.heylinux.com/en/categories/notes/</loc><lastmod>2022-01-01T14:58:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://blog.heylinux.com/en/2022/01/notes-from-reading-pomodoro-technique-illustrated/</loc><lastmod>2022-01-01T14:58:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
@@ -31,24 +61,6 @@
                     href="https://blog.heylinux.com/en/2022/01/notes-from-reading-pomodoro-technique-illustrated/"
                     /></url><url>
             <loc>https://blog.heylinux.com/en/tags/pomodoro-technique/</loc><lastmod>2022-01-01T14:58:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.heylinux.com/en/posts/</loc><lastmod>2022-01-01T14:58:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://blog.heylinux.com/posts/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://blog.heylinux.com/en/posts/"
-                    /></url><url>
-            <loc>https://blog.heylinux.com/en/tags/</loc><lastmod>2022-01-01T14:58:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://blog.heylinux.com/tags/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://blog.heylinux.com/en/tags/"
-                    /></url><url>
             <loc>https://blog.heylinux.com/en/tags/time-management/</loc><lastmod>2022-01-01T14:58:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://blog.heylinux.com/en/tags/kubeadm/</loc><lastmod>2021-12-21T21:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
@@ -89,7 +101,6 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/2021/12/solutions-and-insights/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/tags/growth/</loc><lastmod>2021-12-11T21:05:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://blog.heylinux.com/en/2021/12/notes-from-reading-peak-secrets-from-the-new-science-of-expertise/</loc><lastmod>2021-12-11T21:05:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -164,7 +175,6 @@
                     href="https://blog.heylinux.com/en/2021/11/cherish-the-time-to-meet-a-bright-future/"
                     /></url><url>
             <loc>https://blog.heylinux.com/en/tags/family/</loc><lastmod>2021-11-09T22:07:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://blog.heylinux.com/en/categories/thinking/</loc><lastmod>2021-11-09T22:07:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/</loc><lastmod>2021-11-07T11:06:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
