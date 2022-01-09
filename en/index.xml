@@ -4,9 +4,16 @@
         <link>https://blog.heylinux.com/en/</link>
         <description>About LoveIt Theme</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
-            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 06 Jan 2022 21:48:08 &#43;0800</lastBuildDate>
+            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 09 Jan 2022 18:00:37 &#43;0800</lastBuildDate>
             <atom:link href="https://blog.heylinux.com/en/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Notes from reading &#39;Secrets of the World&#39;s Happiest People&#39;</title>
+    <link>https://blog.heylinux.com/en/2022/01/notes-from-reading-secrets-of-the-worlds-happiest-people/</link>
+    <pubDate>Sun, 09 Jan 2022 18:00:37 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://blog.heylinux.com/en/2022/01/notes-from-reading-secrets-of-the-worlds-happiest-people/</guid>
+    <description><![CDATA[<p>The six ingredients of happiness are togetherness, money, health, freedom, trust and kindness.</p>]]></description>
+</item><item>
     <title>My 2021 Year in Review</title>
     <link>https://blog.heylinux.com/en/2022/01/my-2021-year-in-review/</link>
     <pubDate>Thu, 06 Jan 2022 21:48:08 &#43;0800</pubDate>
@@ -69,12 +76,5 @@
     <author>Author</author>
     <guid>https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/</guid>
     <description><![CDATA[<p>It is also important to deploy HTTPS services for internal private domains.</p>]]></description>
-</item><item>
-    <title>Notes from reading &#39;The Willpower Instinct&#39;</title>
-    <link>https://blog.heylinux.com/en/2021/11/notes-from-reading-the-willpower-instinct/</link>
-    <pubDate>Sat, 06 Nov 2021 07:58:24 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://blog.heylinux.com/en/2021/11/notes-from-reading-the-willpower-instinct/</guid>
-    <description><![CDATA[<p>The lack of self-control is not only a psychological problem, but also influenced by physiology, psychological traps and various social factors.</p>]]></description>
 </item></channel>
 </rss>
