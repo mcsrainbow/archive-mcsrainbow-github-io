@@ -67,7 +67,7 @@ Here are the six ingredients as outlined in the book.
 
 ## Thinking
 
-Our real life is always not so good, but we can try some of the practices in the book to enhance our happiness and start making some changes to try to make ourselves happier.
+Our real life is always not so good, but we can try some of the practices in the book to make us happier. 
 
-In the future, I will travel to northern Europe with my family to experience the kind of happy life in the book.
+I'm looking forward to travel to northern Europe with my family to experience the kind of happy life in the book.
 
