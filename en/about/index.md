@@ -28,7 +28,7 @@
 - [x] PEAK: Secrets from the New Science of Expertise
 - [x] Pomodoro Technique Illustrated: The Easy Way to Do More in Less Time
 - [x] The Little Book of Lykke: Secrets of the World's Happiest People
-- [ ] Educated: A Memoir
+- [x] Educated: A Memoir
 - [ ] Influence: The Psychology of Persuasion
 - [ ] The Lean Startup
 - [ ] The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future

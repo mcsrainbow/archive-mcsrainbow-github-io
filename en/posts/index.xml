@@ -4,7 +4,14 @@
         <link>https://blog.heylinux.com/en/posts/</link>
         <description>All Posts | Hey! Linux.</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
-            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 09 Jan 2022 18:00:37 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/en/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 16 Jan 2022 07:44:45 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/en/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Notes from reading &#39;Educated: A Memoir&#39;</title>
+    <link>https://blog.heylinux.com/en/2022/01/notes-from-reading-educated-a-memoir/</link>
+    <pubDate>Sun, 16 Jan 2022 07:44:45 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://blog.heylinux.com/en/2022/01/notes-from-reading-educated-a-memoir/</guid>
+    <description><![CDATA[<p>Flee as a bird to your mountain.</p>]]></description>
+</item><item>
     <title>Notes from reading &#39;Secrets of the World&#39;s Happiest People&#39;</title>
     <link>https://blog.heylinux.com/en/2022/01/notes-from-reading-secrets-of-the-worlds-happiest-people/</link>
     <pubDate>Sun, 09 Jan 2022 18:00:37 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>Author</author>
     <guid>https://blog.heylinux.com/en/2021/11/cherish-the-time-to-meet-a-bright-future/</guid>
     <description><![CDATA[<p>I will keep this state, no more slacking off, and be positive for every beautiful day ahead.</p>]]></description>
-</item><item>
-    <title>How to Generate Self-signed SSL Certificates</title>
-    <link>https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/</link>
-    <pubDate>Sun, 07 Nov 2021 11:06:54 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/</guid>
-    <description><![CDATA[<p>It is also important to deploy HTTPS services for internal private domains.</p>]]></description>
 </item></channel>
 </rss>
