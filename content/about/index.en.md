@@ -37,7 +37,10 @@ math:
 - [x] The Little Book of Lykke: Secrets of the World's Happiest People
 - [x] Educated: A Memoir
 - [ ] Influence: The Psychology of Persuasion
-- [ ] The Lean Startup
+- [ ] Nonviolent Communication: A Language of Life
+- [ ] How an Economy Grows and Why It Crashes
+- [ ] Tiny Habits
 - [ ] The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future
 - [ ] Noise: A Flaw in Human Judgment
 - [ ] Out of Control: The New Biology of Machines, Social Systems, and the Economic World
+- [ ] The Lean Startup
