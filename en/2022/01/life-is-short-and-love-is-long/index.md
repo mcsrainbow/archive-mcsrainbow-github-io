@@ -1,7 +1,7 @@
 # Life is Short and Love is Long
 
 
-The rest of life is precious and the world is unpredictable, don't let the regrets be too long.
+The rest of life is precious and unpredictable, don't let the regrets be too long.
 
 <!--more-->
 
