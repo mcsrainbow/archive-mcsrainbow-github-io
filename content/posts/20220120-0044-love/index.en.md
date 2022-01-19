@@ -2,7 +2,7 @@
 title: "Life is Short and Love is Long"
 date: 2022-01-20T00:44:01+08:00
 author: "Dong Guo | Damon"
-description: "The rest of life is precious and the world is unpredictable, don't let the regrets be too long."
+description: "The rest of life is precious and unpredictable, don't let the regrets be too long."
 categories: ["Thinking"]
 tags: ["Love","Happiness","Family"]
 resources:
@@ -13,7 +13,7 @@ toc: false
 lightgallery: true
 ---
 
-The rest of life is precious and the world is unpredictable, don't let the regrets be too long.
+The rest of life is precious and unpredictable, don't let the regrets be too long.
 
 <!--more-->
 
