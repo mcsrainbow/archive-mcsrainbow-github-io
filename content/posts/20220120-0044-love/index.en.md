@@ -23,9 +23,9 @@ Be not afraid. Do it best. Keep doing and stop worrying about results.
 
 ## Love and Happiness
 
-When parents alive, we know where we came from.
+When parents are alive, we know where we came from.
 
-But if parents passed away, the only way we have left in our life towards the death.
+When parents are gone, the only way we have left in our life towards the death.
 
 Love my parents, love my wife's parents.
 
