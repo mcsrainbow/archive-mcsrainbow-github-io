@@ -7,7 +7,7 @@
 
 ### About Me
 
-+ <i class="fas fa-user-tie fa-fw"></i> Professional Fields: <i class="fas fa-cloud-upload-alt fa-fw"></i> Hybrid Cloud <i class="fas fa-file-medical-alt fa-fw"></i> Big Data <i class="fas fa-sitemap fa-fw"></i> DevOps Architecture <i class="fas fa-user-shield fa-fw"></i> Cybersecurity
++ <i class="fas fa-user-tie fa-fw"></i> Specialties: <i class="fas fa-cloud-upload-alt fa-fw"></i> Hybrid Cloud <i class="fas fa-layer-group"></i> Big Data <i class="fas fa-sitemap fa-fw"></i> DevOps <i class="fas fa-user-shield fa-fw"></i> Cybersecurity
 + <i class="fas fa-heart fa-fw"></i> Interests: <i class="fas fa-book-reader fa-fw"></i> Reading <i class="fas fa-running fa-fw"></i> Fitness <i class="fab fa-fly fa-fw"></i> Travel <i class="fas fa-film fa-fw"></i> Movies
 
 ### [TO DO LIST]^(Since October 2021)
