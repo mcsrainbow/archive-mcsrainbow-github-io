@@ -27,6 +27,8 @@ Get out and get some exercise! You'll be back in full spirit!
 
 Focus now! You'll experience the happiness of flow!
 
+Keep it tidy and clean! You'll be easeful and clear!
+
 ## Love and Happiness
 
 When parents are alive, we know where we came from.
