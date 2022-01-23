@@ -5,9 +5,15 @@ The rest of life is precious and unpredictable, don't let the regrets be too lon
 
 <!--more-->
 
-## Be open-minded
+## Be Open-minded
 
 Be not afraid. Do it best. Keep doing and stop worrying about results.
+
+## Be Positive
+
+Get out and get some exercise! You'll be back in full spirit!
+
+Focus now! You'll experience the happiness of flow!
 
 ## Love and Happiness
 
