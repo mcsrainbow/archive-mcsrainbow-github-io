@@ -17,6 +17,8 @@ math:
 + <i class="fas fa-user-tie fa-fw"></i>领域：<i class="fas fa-cloud-upload-alt fa-fw"></i> 混合云 <i class="fas fa-layer-group"></i> 大数据 <i class="fas fa-sitemap fa-fw"></i> 运维架构 <i class="fas fa-user-shield fa-fw"></i> 网络安全
 + <i class="fas fa-heart fa-fw"></i>爱好：<i class="fas fa-book-reader fa-fw"></i> 阅读 <i class="fas fa-running fa-fw"></i> 健身 <i class="fab fa-fly fa-fw"></i> 旅游 <i class="fas fa-film fa-fw"></i> 电影
 
+![skills](skills.png)
+
 ### [TO DO LIST]^(始于2021年10月)
 
 <i class="fas fa-tasks fa-fw"></i> **核心任务**
