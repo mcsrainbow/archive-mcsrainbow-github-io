@@ -4,7 +4,14 @@
         <link>https://blog.heylinux.com/en/posts/</link>
         <description>All Posts | Hey! Linux.</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
-            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 20 Jan 2022 00:44:01 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/en/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 06 Mar 2022 23:09:45 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/en/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Notes from reading &#39;Influence: The Psychology of Persuasion&#39;</title>
+    <link>https://blog.heylinux.com/en/2022/03/notes-from-reading-influence-the-psychology-of-persuasion/</link>
+    <pubDate>Sun, 06 Mar 2022 23:09:45 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://blog.heylinux.com/en/2022/03/notes-from-reading-influence-the-psychology-of-persuasion/</guid>
+    <description><![CDATA[<p>The 6 principles of persuasion are Reciprocation, Commitment and Consistency, Social Proof, Liking, Authority, Scarcity.</p>]]></description>
+</item><item>
     <title>Life is Short and Love is Long</title>
     <link>https://blog.heylinux.com/en/2022/01/life-is-short-and-love-is-long/</link>
     <pubDate>Thu, 20 Jan 2022 00:44:01 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>Author</author>
     <guid>https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/</guid>
     <description><![CDATA[<p>The recognition principles and processes I have learned from the CAPTCHA recognition are really valuable.</p>]]></description>
-</item><item>
-    <title>DevOps CICD Pipeline in Action </title>
-    <link>https://blog.heylinux.com/en/2021/11/devops-cicd-pipeline-in-action/</link>
-    <pubDate>Sun, 21 Nov 2021 12:18:14 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://blog.heylinux.com/en/2021/11/devops-cicd-pipeline-in-action/</guid>
-    <description><![CDATA[<p>There are differences in the most appropriate CICD pipelines in different environments, especially the toolchains, but the general process and thinking should be similar.</p>]]></description>
 </item></channel>
 </rss>
