@@ -39,7 +39,7 @@ math:
 - [x] The Little Book of Lykke: Secrets of the World's Happiest People
 - [x] Educated: A Memoir
 - [x] Influence: The Psychology of Persuasion
-- [ ] Nonviolent Communication: A Language of Life
+- [x] Nonviolent Communication: A Language of Life
 - [ ] How an Economy Grows and Why It Crashes
 - [ ] Tiny Habits
 - [ ] The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future
