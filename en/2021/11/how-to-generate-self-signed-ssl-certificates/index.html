@@ -175,8 +175,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">openssl genrsa -out rootCA.heylinux.com.key <span class="m">4096</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">openssl genrsa -out rootCA.heylinux.com.key <span class="m">4096</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Generate <code>rootCA.heylinux.com.pem</code>, set encryption <code>sha256</code>, valid days <code>3650</code>, organization <code>/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE</code>.</p>
 <p>The <code>rootCA.heylinux.com.pem</code> will be used to generate the server key and the trusted root certification authorities of browsers such as Chrome.</p>
@@ -186,8 +186,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">openssl req -x509 -new -nodes -key rootCA.heylinux.com.key -sha256 -days <span class="m">3650</span> -out rootCA.heylinux.com.pem -subj <span class="s2">&#34;/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">openssl req -x509 -new -nodes -key rootCA.heylinux.com.key -sha256 -days <span class="m">3650</span> -out rootCA.heylinux.com.pem -subj <span class="s2">&#34;/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=SRE&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Import <code>rootCA.heylinux.com.pem</code> to OS via Chrome, so the Chrome could trust the server certificate generated based on the root certificate.</p>
 <p><img
@@ -205,8 +205,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim ssl.conf
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim ssl.conf
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -222,17 +222,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="na">subjectAltName</span> <span class="o">=</span> <span class="s">@alt_names</span>
-<span class="na">authorityKeyIdentifier</span> <span class="o">=</span> <span class="s">keyid,issuer</span>
-<span class="na">keyUsage</span> <span class="o">=</span> <span class="s">digitalSignature,keyEncipherment,nonRepudiation,dataEncipherment</span>
-<span class="na">extendedKeyUsage</span> <span class="o">=</span> <span class="s">serverAuth,clientAuth</span>
-<span class="na">basicConstraints</span> <span class="o">=</span> <span class="s">CA:FALSE</span>
-<span class="na">subjectKeyIdentifier</span> <span class="o">=</span> <span class="s">hash</span>
-
-<span class="k">[alt_names]</span>
-<span class="na">DNS.1</span> <span class="o">=</span> <span class="s">*.heylinux.com</span>
-<span class="na">DNS.2</span> <span class="o">=</span> <span class="s">*.cloud.heylinux.com</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="na">subjectAltName</span> <span class="o">=</span> <span class="s">@alt_names</span>
+</span></span><span class="line"><span class="cl"><span class="na">authorityKeyIdentifier</span> <span class="o">=</span> <span class="s">keyid,issuer</span>
+</span></span><span class="line"><span class="cl"><span class="na">keyUsage</span> <span class="o">=</span> <span class="s">digitalSignature,keyEncipherment,nonRepudiation,dataEncipherment</span>
+</span></span><span class="line"><span class="cl"><span class="na">extendedKeyUsage</span> <span class="o">=</span> <span class="s">serverAuth,clientAuth</span>
+</span></span><span class="line"><span class="cl"><span class="na">basicConstraints</span> <span class="o">=</span> <span class="s">CA:FALSE</span>
+</span></span><span class="line"><span class="cl"><span class="na">subjectKeyIdentifier</span> <span class="o">=</span> <span class="s">hash</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">[alt_names]</span>
+</span></span><span class="line"><span class="cl"><span class="na">DNS.1</span> <span class="o">=</span> <span class="s">*.heylinux.com</span>
+</span></span><span class="line"><span class="cl"><span class="na">DNS.2</span> <span class="o">=</span> <span class="s">*.cloud.heylinux.com</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Generate server certificate Key <code>star.heylinux.com.key</code>, organization <code>/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=*.heylinux.com</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -240,8 +240,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">openssl req -new -nodes -out star.heylinux.com.csr -newkey rsa:4096 -keyout star.heylinux.com.key -subj <span class="s2">&#34;/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=*.heylinux.com&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">openssl req -new -nodes -out star.heylinux.com.csr -newkey rsa:4096 -keyout star.heylinux.com.key -subj <span class="s2">&#34;/C=CN/ST=Sichuan/L=Chengdu/O=HEYLINUX/OU=IT/CN=*.heylinux.com&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Generate <code>star.heylinux.com.crt</code>, set encryption <code>sha256</code>, valid days <code>3650</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -249,8 +249,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">openssl x509 -req -in star.heylinux.com.csr -CA rootCA.heylinux.com.pem -CAkey rootCA.heylinux.com.key -CAcreateserial -out star.heylinux.com.crt -days <span class="m">3650</span> -sha256 -extfile ssl.conf
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">openssl x509 -req -in star.heylinux.com.csr -CA rootCA.heylinux.com.pem -CAkey rootCA.heylinux.com.key -CAcreateserial -out star.heylinux.com.crt -days <span class="m">3650</span> -sha256 -extfile ssl.conf
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>View server certificate information</p>
 <div class="highlight"><div class="chroma">
@@ -258,8 +258,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">openssl x509 -text -noout -in star.heylinux.com.crt
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">openssl x509 -text -noout -in star.heylinux.com.crt
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -296,38 +296,38 @@
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">Certificate:
-    Data:
-        Version: 3 (0x2)
-        Serial Number:
-            10:f8:04:91:06:d8:4a:eb:46:ee:90:80:b4:9c:94:4e:ac:60:7b:3e
-        Signature Algorithm: sha256WithRSAEncryption
-        Issuer: C = CN, ST = Sichuan, L = Chengdu, O = HEYLINUX, OU = IT, CN = SRE
-        Validity
-            Not Before: Nov  7 04:38:21 2021 GMT
-            Not After : Nov  5 04:38:21 2031 GMT
-        Subject: C = CN, ST = Sichuan, L = Chengdu, O = HEYLINUX, OU = IT, CN = *.heylinux.com
-        Subject Public Key Info:
-            Public Key Algorithm: rsaEncryption
-                RSA Public-Key: (4096 bit)
-...
-                Exponent: 65537 (0x10001)
-        X509v3 extensions:
-            X509v3 Subject Alternative Name:
-                DNS:*.heylinux.com, DNS:*.cloud.heylinux.com
-            X509v3 Authority Key Identifier:
-                keyid:36:20:25:BA:1A:D9:36:A3:5C:E7:94:30:7F:76:D5:DF:5D:03:99:C9
-
-            X509v3 Key Usage:
-                Digital Signature, Non Repudiation, Key Encipherment, Data Encipherment
-            X509v3 Extended Key Usage:
-                TLS Web Server Authentication, TLS Web Client Authentication
-            X509v3 Basic Constraints:
-                CA:FALSE
-            X509v3 Subject Key Identifier:
-                DB:0D:E8:00:A4:3E:95:71:26:1A:0B:57:4C:3C:3B:33:D3:67:F0:16
-...
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Certificate:
+</span></span><span class="line"><span class="cl">    Data:
+</span></span><span class="line"><span class="cl">        Version: 3 (0x2)
+</span></span><span class="line"><span class="cl">        Serial Number:
+</span></span><span class="line"><span class="cl">            10:f8:04:91:06:d8:4a:eb:46:ee:90:80:b4:9c:94:4e:ac:60:7b:3e
+</span></span><span class="line"><span class="cl">        Signature Algorithm: sha256WithRSAEncryption
+</span></span><span class="line"><span class="cl">        Issuer: C = CN, ST = Sichuan, L = Chengdu, O = HEYLINUX, OU = IT, CN = SRE
+</span></span><span class="line"><span class="cl">        Validity
+</span></span><span class="line"><span class="cl">            Not Before: Nov  7 04:38:21 2021 GMT
+</span></span><span class="line"><span class="cl">            Not After : Nov  5 04:38:21 2031 GMT
+</span></span><span class="line"><span class="cl">        Subject: C = CN, ST = Sichuan, L = Chengdu, O = HEYLINUX, OU = IT, CN = *.heylinux.com
+</span></span><span class="line"><span class="cl">        Subject Public Key Info:
+</span></span><span class="line"><span class="cl">            Public Key Algorithm: rsaEncryption
+</span></span><span class="line"><span class="cl">                RSA Public-Key: (4096 bit)
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">                Exponent: 65537 (0x10001)
+</span></span><span class="line"><span class="cl">        X509v3 extensions:
+</span></span><span class="line"><span class="cl">            X509v3 Subject Alternative Name:
+</span></span><span class="line"><span class="cl">                DNS:*.heylinux.com, DNS:*.cloud.heylinux.com
+</span></span><span class="line"><span class="cl">            X509v3 Authority Key Identifier:
+</span></span><span class="line"><span class="cl">                keyid:36:20:25:BA:1A:D9:36:A3:5C:E7:94:30:7F:76:D5:DF:5D:03:99:C9
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            X509v3 Key Usage:
+</span></span><span class="line"><span class="cl">                Digital Signature, Non Repudiation, Key Encipherment, Data Encipherment
+</span></span><span class="line"><span class="cl">            X509v3 Extended Key Usage:
+</span></span><span class="line"><span class="cl">                TLS Web Server Authentication, TLS Web Client Authentication
+</span></span><span class="line"><span class="cl">            X509v3 Basic Constraints:
+</span></span><span class="line"><span class="cl">                CA:FALSE
+</span></span><span class="line"><span class="cl">            X509v3 Subject Key Identifier:
+</span></span><span class="line"><span class="cl">                DB:0D:E8:00:A4:3E:95:71:26:1A:0B:57:4C:3C:3B:33:D3:67:F0:16
+</span></span><span class="line"><span class="cl">...
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="3-generate-certificate-bundles-in-different-formats">3. Generate certificate bundles in different formats</h3>
 <p>Certificate bundle usually contains multiple server certificates.</p>
@@ -337,8 +337,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">openssl pkcs12 -export -in star.heylinux.com.crt -inkey star.heylinux.com.key -password pass:P_Ss0rdT -name heylinux_com -out star.heylinux.com.p12
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">openssl pkcs12 -export -in star.heylinux.com.crt -inkey star.heylinux.com.key -password pass:P_Ss0rdT -name heylinux_com -out star.heylinux.com.p12
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Convert <code>star.heylinux.com.p12</code> to <code>star.heylinux.com.jks</code> in <code>JKS</code>, set passphrase <code>P_Ss0rdT</code>, alias <code>heylinux_com</code>. It could be used for servers such as Tomcat.</p>
 <div class="highlight"><div class="chroma">
@@ -346,8 +346,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.jks -srcstorepass P_Ss0rdT -srckeystore star.heylinux.com.p12 -srcstoretype PKCS12
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.jks -srcstorepass P_Ss0rdT -srckeystore star.heylinux.com.p12 -srcstoretype PKCS12
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Convert <code>star.heylinux.com.p12</code> to <code>star.heylinux.com.pem</code> in <code>PEM</code>, alias <code>heylinux_com</code>,no passphrase. It could be used for servers such as Apache、Nginx、HAProxy and AWS ELB.</p>
 <div class="highlight"><div class="chroma">
@@ -355,8 +355,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">openssl pkcs12 -password pass:P_Ss0rdT -in star.heylinux.com.p12 -out star.heylinux.com.pem -nodes
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">openssl pkcs12 -password pass:P_Ss0rdT -in star.heylinux.com.p12 -out star.heylinux.com.pem -nodes
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="4-convert-root-certificate-to-jks-format">4. Convert root certificate to JKS format</h3>
 <p>Convert <code>rootCA.heylinux.com.pem</code> to <code>rootCA.heylinux.com.jks</code>, alias <code>heylinux_com</code>, for Java applications to verify server certificate.</p>
@@ -376,18 +376,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Convert rootCA.heylinux.com.pem to rootCA.heylinux.com.der</span>
-openssl x509 -in rootCA.heylinux.com.pem -out rootCA.heylinux.com.der -outform der
-
-<span class="c1"># View rootCA.heylinux.com.der</span>
-keytool -v -printcert -file rootCA.heylinux.com.der
-
-<span class="c1"># Convert rootCA.heylinux.com.der to rootCA.heylinux.com.jks, alias heylinux_com</span>
-keytool -importcert -alias heylinux_com -keystore rootCA.heylinux.com.jks -storepass P_Ss0rdT -file rootCA.heylinux.com.der
-
-<span class="c1"># View rootCA.heylinux.com.jks</span>
-keytool -keystore rootCA.heylinux.com.jks -storepass P_Ss0rdT -list
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Convert rootCA.heylinux.com.pem to rootCA.heylinux.com.der</span>
+</span></span><span class="line"><span class="cl">openssl x509 -in rootCA.heylinux.com.pem -out rootCA.heylinux.com.der -outform der
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># View rootCA.heylinux.com.der</span>
+</span></span><span class="line"><span class="cl">keytool -v -printcert -file rootCA.heylinux.com.der
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Convert rootCA.heylinux.com.der to rootCA.heylinux.com.jks, alias heylinux_com</span>
+</span></span><span class="line"><span class="cl">keytool -importcert -alias heylinux_com -keystore rootCA.heylinux.com.jks -storepass P_Ss0rdT -file rootCA.heylinux.com.der
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># View rootCA.heylinux.com.jks</span>
+</span></span><span class="line"><span class="cl">keytool -keystore rootCA.heylinux.com.jks -storepass P_Ss0rdT -list
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="convert-and-view-ssl-certificates">Convert and View SSL Certificates</h2>
 <h3 id="1-from-p7b-to-pem">1. From P7B to PEM</h3>
@@ -397,8 +397,8 @@ keytool -keystore rootCA.heylinux.com.jks -storepass P_Ss0rdT -list
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">openssl pkcs7 -inform DER -print_certs -in SubCA_2.p7b -out rootCA.heylinux.com.pem
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">openssl pkcs7 -inform DER -print_certs -in SubCA_2.p7b -out rootCA.heylinux.com.pem
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="2-from-pem-to-jks">2. From PEM to JKS</h3>
 <p>Convert <code>rootCA.heylinux.com.pem</code> to <code>rootCA.heylinux.com.jks</code>.</p>
@@ -411,12 +411,12 @@ keytool -keystore rootCA.heylinux.com.jks -storepass P_Ss0rdT -list
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Convert rootCA.heylinux.com.pem to rootCA.heylinux.com.der</span>
-openssl x509 -in rootCA.heylinux.com.pem -out rootCA.heylinux.com.der -outform der
-
-<span class="c1"># Convert rootCA.heylinux.com.der to rootCA.heylinux.com.jks, alias heylinux_com</span>
-keytool -importcert -alias heylinux_com -keystore rootCA.heylinux.com.jks -storepass P_Ss0rdT -file rootCA.heylinux.com.der
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Convert rootCA.heylinux.com.pem to rootCA.heylinux.com.der</span>
+</span></span><span class="line"><span class="cl">openssl x509 -in rootCA.heylinux.com.pem -out rootCA.heylinux.com.der -outform der
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Convert rootCA.heylinux.com.der to rootCA.heylinux.com.jks, alias heylinux_com</span>
+</span></span><span class="line"><span class="cl">keytool -importcert -alias heylinux_com -keystore rootCA.heylinux.com.jks -storepass P_Ss0rdT -file rootCA.heylinux.com.der
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="3-from-pfxp12-to-pem">3. From PFX(P12) to PEM</h3>
 <p>Convert <code>star.heylinux.com.pfx</code> to <code>star.heylinux.com.pem</code>, which including the items of <code>star.heylinux.com.key</code> and <code>star.heylinux.com.crt</code>.</p>
@@ -425,8 +425,8 @@ keytool -importcert -alias heylinux_com -keystore rootCA.heylinux.com.jks -store
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">openssl pkcs12 -password pass:P_Ss0rdT -nodes -in star.heylinux.com.pfx -out star.heylinux.com.pem
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">openssl pkcs12 -password pass:P_Ss0rdT -nodes -in star.heylinux.com.pfx -out star.heylinux.com.pem
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="4-from-p12-to-jks">4. From P12 to JKS</h3>
 <p>Convert <code>star.heylinux.com.p12</code> to <code>star.heylinux.com.jks</code>, alias <code>heylinux_com</code>.</p>
@@ -435,8 +435,8 @@ keytool -importcert -alias heylinux_com -keystore rootCA.heylinux.com.jks -store
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.jks -srcstorepass P_Ss0rdT -srckeystore star.heylinux.com.p12 -srcstoretype PKCS12 -alias heylinux_com
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">keytool -importkeystore -deststorepass P_Ss0rdT -destkeystore star.heylinux.com.jks -srcstorepass P_Ss0rdT -srckeystore star.heylinux.com.p12 -srcstoretype PKCS12 -alias heylinux_com
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="5-view-certificates-in-different-formats">5. View certificates in different formats</h3>
 <div class="highlight"><div class="chroma">
@@ -452,16 +452,16 @@ keytool -importcert -alias heylinux_com -keystore rootCA.heylinux.com.jks -store
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># View rootCA.heylinux.com.pem and star.heylinux.com.pem</span>
-openssl x509 -noout -text -in rootCA.heylinux.com.pem 
-openssl x509 -noout -text -in star.heylinux.com.pem
-
-<span class="c1"># View star.heylinux.com.p12 </span>
-keytool -list -v -keystore star.heylinux.com.p12 -storepass P_Ss0rdT -storetype PKCS12
-
-<span class="c1"># View star.heylinux.com.jks</span>
-keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># View rootCA.heylinux.com.pem and star.heylinux.com.pem</span>
+</span></span><span class="line"><span class="cl">openssl x509 -noout -text -in rootCA.heylinux.com.pem 
+</span></span><span class="line"><span class="cl">openssl x509 -noout -text -in star.heylinux.com.pem
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># View star.heylinux.com.p12 </span>
+</span></span><span class="line"><span class="cl">keytool -list -v -keystore star.heylinux.com.p12 -storepass P_Ss0rdT -storetype PKCS12
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># View star.heylinux.com.jks</span>
+</span></span><span class="line"><span class="cl">keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="tlsssl-certificates-without-root-certificate">TLS/SSL Certificates without Root Certificate</h2>
 <p>For applications such as NiFi, vsFTPd, the TLS/SSL certificates are mainly used for client and server verification, similar to the authentication between private and public keys in SSH, this kind of certificates could be used without the root certificate.</p>
@@ -471,8 +471,8 @@ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim tls.conf
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim tls.conf
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -499,28 +499,28 @@ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="k">[req]</span>
-<span class="na">prompt</span> <span class="o">=</span> <span class="s">no</span>
-<span class="na">req_extensions</span> <span class="o">=</span> <span class="s">req_ext</span>
-<span class="na">distinguished_name</span> <span class="o">=</span> <span class="s">dn</span>
-
-<span class="k">[dn]</span>
- <span class="na">C</span> <span class="o">=</span> <span class="s">CN</span>
-<span class="na">ST</span> <span class="o">=</span> <span class="s">Sichuan
-</span><span class="s"> L = Chengdu
-</span><span class="s"> O = HEYLINUX</span>
-<span class="na">OU</span> <span class="o">=</span> <span class="s">IT</span>
-<span class="na">CN</span> <span class="o">=</span> <span class="s">SRE</span>
-
-<span class="k">[req_ext]</span>
-<span class="na">subjectAltName</span> <span class="o">=</span> <span class="s">@alt_names</span>
-
-<span class="k">[alt_names]</span>
-<span class="na">IP.1</span> <span class="o">=</span> <span class="s">10.8.5.7</span>
-<span class="na">IP.2</span> <span class="o">=</span> <span class="s">10.2.3.4</span>
-<span class="na">DNS.1</span> <span class="o">=</span> <span class="s">*.heylinux.com</span>
-<span class="na">DNS.2</span> <span class="o">=</span> <span class="s">*.cloud.heylinux.com</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[req]</span>
+</span></span><span class="line"><span class="cl"><span class="na">prompt</span> <span class="o">=</span> <span class="s">no</span>
+</span></span><span class="line"><span class="cl"><span class="na">req_extensions</span> <span class="o">=</span> <span class="s">req_ext</span>
+</span></span><span class="line"><span class="cl"><span class="na">distinguished_name</span> <span class="o">=</span> <span class="s">dn</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">[dn]</span>
+</span></span><span class="line"><span class="cl"> <span class="na">C</span> <span class="o">=</span> <span class="s">CN</span>
+</span></span><span class="line"><span class="cl"><span class="na">ST</span> <span class="o">=</span> <span class="s">Sichuan
+</span></span></span><span class="line"><span class="cl"><span class="s"> L = Chengdu
+</span></span></span><span class="line"><span class="cl"><span class="s"> O = HEYLINUX</span>
+</span></span><span class="line"><span class="cl"><span class="na">OU</span> <span class="o">=</span> <span class="s">IT</span>
+</span></span><span class="line"><span class="cl"><span class="na">CN</span> <span class="o">=</span> <span class="s">SRE</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">[req_ext]</span>
+</span></span><span class="line"><span class="cl"><span class="na">subjectAltName</span> <span class="o">=</span> <span class="s">@alt_names</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">[alt_names]</span>
+</span></span><span class="line"><span class="cl"><span class="na">IP.1</span> <span class="o">=</span> <span class="s">10.8.5.7</span>
+</span></span><span class="line"><span class="cl"><span class="na">IP.2</span> <span class="o">=</span> <span class="s">10.2.3.4</span>
+</span></span><span class="line"><span class="cl"><span class="na">DNS.1</span> <span class="o">=</span> <span class="s">*.heylinux.com</span>
+</span></span><span class="line"><span class="cl"><span class="na">DNS.2</span> <span class="o">=</span> <span class="s">*.cloud.heylinux.com</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Generate server certificates <code>heylinux-ssl-keypair.key</code> and <code>heylinux-ssl-keypair.crt</code>, set encryption <code>sha256</code>, valid days <code>3650</code>, passphrase <code>P_Ss0rdT</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -545,25 +545,25 @@ keytool -list -v -keystore star.heylinux.com.jks -storepass P_Ss0rdT
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Generate heylinux-ssl-keypair.key and heylinux-ssl-keypair.crt</span>
-openssl req -x509 -newkey rsa:4096 -keyout heylinux-ssl-keypair.key -out heylinux-ssl-keypair.crt -days <span class="m">3650</span> -sha256 -extensions req_ext -config tls.conf
-
-<span class="c1"># Input password</span>
-Generating a RSA private key
-....................................+++++
-writing new private key to <span class="s1">&#39;heylinux-ssl-keypair.key&#39;</span>
-Enter PEM pass phrase: P_Ss0rdT
-Verifying - Enter PEM pass phrase: P_Ss0rdT
-
-<span class="c1"># Convert certificates to certificate bundle heylinux-ssl-keypair.p12</span>
-openssl pkcs12 -export -in heylinux-ssl-keypair.crt -inkey heylinux-ssl-keypair.key -password pass:P_Ss0rdT -name heylinux_ssl_keypair -out heylinux-ssl-keypair.p12
-
-<span class="c1"># Input password</span>
-Enter pass phrase <span class="k">for</span> heylinux-ssl-keypair.key: P_Ss0rdT
-
-<span class="c1"># View certificate bundle heylinux-ssl-keypair.p12</span>
-keytool -list -v -keystore heylinux-ssl-keypair.p12 -storepass P_Ss0rdT -storetype PKCS12
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Generate heylinux-ssl-keypair.key and heylinux-ssl-keypair.crt</span>
+</span></span><span class="line"><span class="cl">openssl req -x509 -newkey rsa:4096 -keyout heylinux-ssl-keypair.key -out heylinux-ssl-keypair.crt -days <span class="m">3650</span> -sha256 -extensions req_ext -config tls.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Input password</span>
+</span></span><span class="line"><span class="cl">Generating a RSA private key
+</span></span><span class="line"><span class="cl">....................................+++++
+</span></span><span class="line"><span class="cl">writing new private key to <span class="s1">&#39;heylinux-ssl-keypair.key&#39;</span>
+</span></span><span class="line"><span class="cl">Enter PEM pass phrase: P_Ss0rdT
+</span></span><span class="line"><span class="cl">Verifying - Enter PEM pass phrase: P_Ss0rdT
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Convert certificates to certificate bundle heylinux-ssl-keypair.p12</span>
+</span></span><span class="line"><span class="cl">openssl pkcs12 -export -in heylinux-ssl-keypair.crt -inkey heylinux-ssl-keypair.key -password pass:P_Ss0rdT -name heylinux_ssl_keypair -out heylinux-ssl-keypair.p12
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Input password</span>
+</span></span><span class="line"><span class="cl">Enter pass phrase <span class="k">for</span> heylinux-ssl-keypair.key: P_Ss0rdT
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># View certificate bundle heylinux-ssl-keypair.p12</span>
+</span></span><span class="line"><span class="cl">keytool -list -v -keystore heylinux-ssl-keypair.p12 -storepass P_Ss0rdT -storetype PKCS12
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="generate-and-view-ssl-certificates-by-cfssl-tools">Generate and View SSL Certificates by cfssl tools</h2>
 <h3 id="1-install-cfssl-tools">1. Install cfssl tools</h3>
@@ -576,11 +576,11 @@ keytool -list -v -keystore heylinux-ssl-keypair.p12 -storepass P_Ss0rdT -storety
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 -O /usr/local/bin/cfssl
-sudo wget https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64 -O /usr/local/bin/cfssljson
-sudo wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64 -O /usr/local/bin/cfssl-certinfo
-sudo chmod +x /usr/local/bin/cfssl*
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 -O /usr/local/bin/cfssl
+</span></span><span class="line"><span class="cl">sudo wget https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64 -O /usr/local/bin/cfssljson
+</span></span><span class="line"><span class="cl">sudo wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64 -O /usr/local/bin/cfssl-certinfo
+</span></span><span class="line"><span class="cl">sudo chmod +x /usr/local/bin/cfssl*
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="2-generate-and-view-root-certificate">2. Generate and view root certificate</h3>
 <p>Create <code>rootCA.json</code>, generate the similar <code>rootCA.heylinux.com.key</code>(encryption length is only 2048 due to cfssl cannot set the key with different encryption length) and <code>rootCA.heylinux.com.pem</code> as above.</p>
@@ -608,35 +608,35 @@ sudo chmod +x /usr/local/bin/cfssl*
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;CA&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;expiry&#34;</span><span class="p">:</span> <span class="s2">&#34;87600h&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;pathlen&#34;</span><span class="p">:</span> <span class="mi">0</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;CN&#34;</span><span class="p">:</span> <span class="s2">&#34;SRE&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;algo&#34;</span><span class="p">:</span> <span class="s2">&#34;rsa&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="mi">2048</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;C&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;ST&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;L&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;O&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;OU&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;CA&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;expiry&#34;</span><span class="p">:</span> <span class="s2">&#34;87600h&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;pathlen&#34;</span><span class="p">:</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;CN&#34;</span><span class="p">:</span> <span class="s2">&#34;SRE&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;algo&#34;</span><span class="p">:</span> <span class="s2">&#34;rsa&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="mi">2048</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;C&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;ST&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;L&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;O&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;OU&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cfssl gencert -initca rootCA.json <span class="p">|</span> cfssljson -bare rootCA.heylinux.com
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cfssl gencert -initca rootCA.json <span class="p">|</span> cfssljson -bare rootCA.heylinux.com
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -648,21 +648,21 @@ sudo chmod +x /usr/local/bin/cfssl*
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">2021/11/13 05:11:48 [INFO] generating a new CA key and certificate from CSR
-2021/11/13 05:11:48 [INFO] generate received request
-2021/11/13 05:11:48 [INFO] received CSR
-2021/11/13 05:11:48 [INFO] generating key: rsa-2048
-2021/11/13 05:11:48 [INFO] encoded CSR
-2021/11/13 05:11:48 [INFO] signed certificate with serial number 644632230923530854661361284854682897812867573233
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">2021/11/13 05:11:48 [INFO] generating a new CA key and certificate from CSR
+</span></span><span class="line"><span class="cl">2021/11/13 05:11:48 [INFO] generate received request
+</span></span><span class="line"><span class="cl">2021/11/13 05:11:48 [INFO] received CSR
+</span></span><span class="line"><span class="cl">2021/11/13 05:11:48 [INFO] generating key: rsa-2048
+</span></span><span class="line"><span class="cl">2021/11/13 05:11:48 [INFO] encoded CSR
+</span></span><span class="line"><span class="cl">2021/11/13 05:11:48 [INFO] signed certificate with serial number 644632230923530854661361284854682897812867573233
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ls -1
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -1
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -672,19 +672,19 @@ sudo chmod +x /usr/local/bin/cfssl*
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">rootCA.heylinux.com.csr
-rootCA.heylinux.com-key.pem
-rootCA.heylinux.com.pem
-rootCA.json
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">rootCA.heylinux.com.csr
+</span></span><span class="line"><span class="cl">rootCA.heylinux.com-key.pem
+</span></span><span class="line"><span class="cl">rootCA.heylinux.com.pem
+</span></span><span class="line"><span class="cl">rootCA.json
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mv rootCA.heylinux.com-key.pem rootCA.heylinux.com.key
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mv rootCA.heylinux.com-key.pem rootCA.heylinux.com.key
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>View <code>rootCA.heylinux.com.pem</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -692,8 +692,8 @@ rootCA.json
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cfssl-certinfo -cert rootCA.heylinux.com.pem
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cfssl-certinfo -cert rootCA.heylinux.com.pem
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -740,48 +740,48 @@ rootCA.json
 </span><span class="lnt">41
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&#34;subject&#34;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&#34;common_name&#34;</span><span class="p">:</span> <span class="s2">&#34;SRE&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;country&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;organization&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;organizational_unit&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;locality&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;province&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;SRE&#34;</span>
-    <span class="p">]</span>
-  <span class="p">},</span>
-  <span class="nt">&#34;issuer&#34;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&#34;common_name&#34;</span><span class="p">:</span> <span class="s2">&#34;SRE&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;country&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;organization&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;organizational_unit&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;locality&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;province&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;SRE&#34;</span>
-    <span class="p">]</span>
-  <span class="p">},</span>
-  <span class="nt">&#34;serial_number&#34;</span><span class="p">:</span> <span class="s2">&#34;644632230923530854661361284854682897812867573233&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;not_before&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-11-12T20:53:00Z&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;not_after&#34;</span><span class="p">:</span> <span class="s2">&#34;2031-11-10T20:53:00Z&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;sigalg&#34;</span><span class="p">:</span> <span class="s2">&#34;SHA256WithRSA&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;authority_key_id&#34;</span><span class="p">:</span> <span class="s2">&#34;36:D1:86:6B:27:AE:24:EF:C7:B3:2B:25:E7:92:DE:F1:0:34:2B:E5&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;subject_key_id&#34;</span><span class="p">:</span> <span class="s2">&#34;36:D1:86:6B:27:AE:24:EF:C7:B3:2B:25:E7:92:DE:F1:0:34:2B:E5&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;pem&#34;</span><span class="p">:</span> <span class="s2">&#34;-----BEGIN CERTIFICATE-----...-----END CERTIFICATE-----\n&#34;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;subject&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;common_name&#34;</span><span class="p">:</span> <span class="s2">&#34;SRE&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;country&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;organization&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;organizational_unit&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;locality&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;province&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;SRE&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;issuer&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;common_name&#34;</span><span class="p">:</span> <span class="s2">&#34;SRE&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;country&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;organization&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;organizational_unit&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;locality&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;province&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;SRE&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;serial_number&#34;</span><span class="p">:</span> <span class="s2">&#34;644632230923530854661361284854682897812867573233&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;not_before&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-11-12T20:53:00Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;not_after&#34;</span><span class="p">:</span> <span class="s2">&#34;2031-11-10T20:53:00Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;sigalg&#34;</span><span class="p">:</span> <span class="s2">&#34;SHA256WithRSA&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;authority_key_id&#34;</span><span class="p">:</span> <span class="s2">&#34;36:D1:86:6B:27:AE:24:EF:C7:B3:2B:25:E7:92:DE:F1:0:34:2B:E5&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;subject_key_id&#34;</span><span class="p">:</span> <span class="s2">&#34;36:D1:86:6B:27:AE:24:EF:C7:B3:2B:25:E7:92:DE:F1:0:34:2B:E5&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;pem&#34;</span><span class="p">:</span> <span class="s2">&#34;-----BEGIN CERTIFICATE-----...-----END CERTIFICATE-----\n&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="3-generate-and-view-server-certificate">3. Generate and view server certificate</h3>
 <p>Create <code>ssl-config.json</code> and <code>ssl.json</code>, generate the similar <code>star.heylinux.com.key</code>(encryption length is only 2048 due to cfssl cannot set the key with different encryption length) and <code>star.heylinux.com.crt</code> as above.</p>
@@ -790,8 +790,8 @@ rootCA.json
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim ssl-config.json
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim ssl-config.json
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -815,33 +815,33 @@ rootCA.json
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&#34;signing&#34;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&#34;default&#34;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&#34;expiry&#34;</span><span class="p">:</span> <span class="s2">&#34;87600h&#34;</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;profiles&#34;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&#34;server&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;usages&#34;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&#34;signing&#34;</span><span class="p">,</span>
-          <span class="s2">&#34;key encipherment&#34;</span><span class="p">,</span>
-          <span class="s2">&#34;server auth&#34;</span><span class="p">,</span>
-          <span class="s2">&#34;client auth&#34;</span>
-        <span class="p">],</span>
-        <span class="nt">&#34;expiry&#34;</span><span class="p">:</span> <span class="s2">&#34;87600h&#34;</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;signing&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;default&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;expiry&#34;</span><span class="p">:</span> <span class="s2">&#34;87600h&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;profiles&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;server&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;usages&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">          <span class="s2">&#34;signing&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="s2">&#34;key encipherment&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="s2">&#34;server auth&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="s2">&#34;client auth&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">],</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;expiry&#34;</span><span class="p">:</span> <span class="s2">&#34;87600h&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim ssl.json
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim ssl.json
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -865,25 +865,25 @@ rootCA.json
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&#34;CN&#34;</span><span class="p">:</span> <span class="s2">&#34;*.heylinux.com&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;hosts&#34;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="s2">&#34;*.heylinux.com&#34;</span><span class="p">,</span>
-    <span class="s2">&#34;*.cloud.heylinux.com&#34;</span>
-  <span class="p">],</span>
-  <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&#34;algo&#34;</span><span class="p">:</span> <span class="s2">&#34;rsa&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="mi">2048</span>
-  <span class="p">},</span>
-  <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[{</span>
-    <span class="nt">&#34;C&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;ST&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;L&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;O&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;OU&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span>
-  <span class="p">}]</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;CN&#34;</span><span class="p">:</span> <span class="s2">&#34;*.heylinux.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;hosts&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;*.heylinux.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;*.cloud.heylinux.com&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;algo&#34;</span><span class="p">:</span> <span class="s2">&#34;rsa&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="mi">2048</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;C&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ST&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;L&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;O&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;OU&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -895,13 +895,13 @@ rootCA.json
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cfssl gencert -ca<span class="o">=</span>rootCA.heylinux.com.pem -ca-key<span class="o">=</span>rootCA.heylinux.com.key -config<span class="o">=</span>ssl-config.json -profile<span class="o">=</span>server ssl.json <span class="p">|</span> cfssljson -bare star.heylinux.com
-
-mv star.heylinux.com.pem star.heylinux.com.crt
-mv star.heylinux.com-key.pem star.heylinux.com.key
-
-ls -1
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cfssl gencert -ca<span class="o">=</span>rootCA.heylinux.com.pem -ca-key<span class="o">=</span>rootCA.heylinux.com.key -config<span class="o">=</span>ssl-config.json -profile<span class="o">=</span>server ssl.json <span class="p">|</span> cfssljson -bare star.heylinux.com
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mv star.heylinux.com.pem star.heylinux.com.crt
+</span></span><span class="line"><span class="cl">mv star.heylinux.com-key.pem star.heylinux.com.key
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ls -1
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -916,16 +916,16 @@ ls -1
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">rootCA.heylinux.com.csr
-rootCA.heylinux.com.key
-rootCA.heylinux.com.pem
-rootCA.json
-ssl-config.json
-ssl.json
-star.heylinux.com.crt
-star.heylinux.com.csr
-star.heylinux.com.key
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">rootCA.heylinux.com.csr
+</span></span><span class="line"><span class="cl">rootCA.heylinux.com.key
+</span></span><span class="line"><span class="cl">rootCA.heylinux.com.pem
+</span></span><span class="line"><span class="cl">rootCA.json
+</span></span><span class="line"><span class="cl">ssl-config.json
+</span></span><span class="line"><span class="cl">ssl.json
+</span></span><span class="line"><span class="cl">star.heylinux.com.crt
+</span></span><span class="line"><span class="cl">star.heylinux.com.csr
+</span></span><span class="line"><span class="cl">star.heylinux.com.key
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>View <code>star.heylinux.com.crt</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -933,8 +933,8 @@ star.heylinux.com.key
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cfssl-certinfo -cert star.heylinux.com.crt
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cfssl-certinfo -cert star.heylinux.com.crt
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -985,52 +985,52 @@ star.heylinux.com.key
 </span><span class="lnt">45
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&#34;subject&#34;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&#34;common_name&#34;</span><span class="p">:</span> <span class="s2">&#34;*.heylinux.com&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;country&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;organization&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;organizational_unit&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;locality&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;province&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;*.heylinux.com&#34;</span>
-    <span class="p">]</span>
-  <span class="p">},</span>
-  <span class="nt">&#34;issuer&#34;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&#34;common_name&#34;</span><span class="p">:</span> <span class="s2">&#34;SRE&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;country&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;organization&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;organizational_unit&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;locality&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;province&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;SRE&#34;</span>
-    <span class="p">]</span>
-  <span class="p">},</span>
-  <span class="nt">&#34;serial_number&#34;</span><span class="p">:</span> <span class="s2">&#34;608638693485247133136510097809090433439285866629&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;sans&#34;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="s2">&#34;*.heylinux.com&#34;</span><span class="p">,</span>
-    <span class="s2">&#34;*.cloud.heylinux.com&#34;</span>
-  <span class="p">],</span>
-  <span class="nt">&#34;not_before&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-11-12T21:20:00Z&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;not_after&#34;</span><span class="p">:</span> <span class="s2">&#34;2031-11-10T21:20:00Z&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;sigalg&#34;</span><span class="p">:</span> <span class="s2">&#34;SHA256WithRSA&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;authority_key_id&#34;</span><span class="p">:</span> <span class="s2">&#34;2B:D4:44:57:4D:9:D8:9A:0:63:4C:5B:B8:78:F4:8F:45:9C:3C:F5&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;subject_key_id&#34;</span><span class="p">:</span> <span class="s2">&#34;4E:15:55:4A:34:EA:BA:69:3E:A5:F:40:74:16:52:F0:88:C3:7D:6F&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;pem&#34;</span><span class="p">:</span> <span class="s2">&#34;-----BEGIN CERTIFICATE-----...-----END CERTIFICATE-----\n&#34;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;subject&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;common_name&#34;</span><span class="p">:</span> <span class="s2">&#34;*.heylinux.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;country&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;organization&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;organizational_unit&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;locality&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;province&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;*.heylinux.com&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;issuer&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;common_name&#34;</span><span class="p">:</span> <span class="s2">&#34;SRE&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;country&#34;</span><span class="p">:</span> <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;organization&#34;</span><span class="p">:</span> <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;organizational_unit&#34;</span><span class="p">:</span> <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;locality&#34;</span><span class="p">:</span> <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;province&#34;</span><span class="p">:</span> <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;CN&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;Sichuan&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;Chengdu&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;HEYLINUX&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;IT&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;SRE&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;serial_number&#34;</span><span class="p">:</span> <span class="s2">&#34;608638693485247133136510097809090433439285866629&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;sans&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;*.heylinux.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;*.cloud.heylinux.com&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;not_before&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-11-12T21:20:00Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;not_after&#34;</span><span class="p">:</span> <span class="s2">&#34;2031-11-10T21:20:00Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;sigalg&#34;</span><span class="p">:</span> <span class="s2">&#34;SHA256WithRSA&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;authority_key_id&#34;</span><span class="p">:</span> <span class="s2">&#34;2B:D4:44:57:4D:9:D8:9A:0:63:4C:5B:B8:78:F4:8F:45:9C:3C:F5&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;subject_key_id&#34;</span><span class="p">:</span> <span class="s2">&#34;4E:15:55:4A:34:EA:BA:69:3E:A5:F:40:74:16:52:F0:88:C3:7D:6F&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;pem&#34;</span><span class="p">:</span> <span class="s2">&#34;-----BEGIN CERTIFICATE-----...-----END CERTIFICATE-----\n&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -1062,7 +1062,7 @@ star.heylinux.com.key
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.93.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank">mcsrainbow</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
