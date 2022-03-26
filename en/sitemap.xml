@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://blog.heylinux.com/en/categories/</loc><lastmod>2022-03-06T23:09:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/categories/</loc><lastmod>2022-03-24T08:14:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/categories/"
@@ -11,7 +11,7 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/categories/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/</loc><lastmod>2022-03-06T23:09:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/</loc><lastmod>2022-03-24T08:14:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/"
@@ -20,17 +20,17 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/categories/notes/</loc><lastmod>2022-03-06T23:09:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://blog.heylinux.com/en/2022/03/notes-from-reading-influence-the-psychology-of-persuasion/</loc><lastmod>2022-03-06T23:09:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/categories/notes/</loc><lastmod>2022-03-24T08:14:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.heylinux.com/en/2022/03/notes-from-reading-nonviolent-communication-a-language-of-life/</loc><lastmod>2022-03-24T08:14:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://blog.heylinux.com/2022/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%BD%B1%E5%93%8D%E5%8A%9B/"
+                        href="https://blog.heylinux.com/2022/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://blog.heylinux.com/en/2022/03/notes-from-reading-influence-the-psychology-of-persuasion/"
+                    href="https://blog.heylinux.com/en/2022/03/notes-from-reading-nonviolent-communication-a-language-of-life/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/posts/</loc><lastmod>2022-03-06T23:09:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/posts/</loc><lastmod>2022-03-24T08:14:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/posts/"
@@ -39,8 +39,8 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/posts/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/tags/psychology/</loc><lastmod>2022-03-06T23:09:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://blog.heylinux.com/en/tags/</loc><lastmod>2022-03-06T23:09:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/tags/psychology/</loc><lastmod>2022-03-24T08:14:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.heylinux.com/en/tags/</loc><lastmod>2022-03-24T08:14:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/tags/"
@@ -48,6 +48,15 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://blog.heylinux.com/en/tags/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/en/2022/03/notes-from-reading-influence-the-psychology-of-persuasion/</loc><lastmod>2022-03-06T23:09:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://blog.heylinux.com/2022/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%BD%B1%E5%93%8D%E5%8A%9B/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://blog.heylinux.com/en/2022/03/notes-from-reading-influence-the-psychology-of-persuasion/"
                     /></url><url>
             <loc>https://blog.heylinux.com/en/tags/family/</loc><lastmod>2022-01-20T00:44:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/en/tags/happiness/</loc><lastmod>2022-01-20T00:44:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

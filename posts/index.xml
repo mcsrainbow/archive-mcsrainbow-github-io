@@ -4,7 +4,14 @@
         <link>https://blog.heylinux.com/posts/</link>
         <description>所有文章 | Hey! Linux.</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
-            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 06 Mar 2022 23:09:45 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 24 Mar 2022 08:14:42 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>读书笔记之《非暴力沟通》</title>
+    <link>https://blog.heylinux.com/2022/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/</link>
+    <pubDate>Thu, 24 Mar 2022 08:14:42 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog.heylinux.com/2022/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/</guid>
+    <description><![CDATA[<p>非暴力沟通的四要素：观察、感受、需要、请求。</p>]]></description>
+</item><item>
     <title>读书笔记之《影响力》</title>
     <link>https://blog.heylinux.com/2022/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%BD%B1%E5%93%8D%E5%8A%9B/</link>
     <pubDate>Sun, 06 Mar 2022 23:09:45 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://blog.heylinux.com/2021/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/</guid>
     <description><![CDATA[<p>刻意练习的核心元素包括专注沉浸、有目标、有计划、及时反馈并纠正、走出舒适区但不用力过度、大量的训练和导师指引。</p>]]></description>
-</item><item>
-    <title>Python OpenCV验证码识别实战</title>
-    <link>https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/</link>
-    <pubDate>Wed, 24 Nov 2021 20:36:58 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/</guid>
-    <description><![CDATA[<p>在通过OpenCV完成验证码识别的过程中，所学习到的识别原理和流程，还是很有价值的。</p>]]></description>
 </item></channel>
 </rss>

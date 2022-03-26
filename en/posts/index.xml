@@ -4,7 +4,14 @@
         <link>https://blog.heylinux.com/en/posts/</link>
         <description>All Posts | Hey! Linux.</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
-            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 06 Mar 2022 23:09:45 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/en/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 24 Mar 2022 08:14:42 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/en/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Notes from reading &#39;Nonviolent Communication: A Language of Life&#39;</title>
+    <link>https://blog.heylinux.com/en/2022/03/notes-from-reading-nonviolent-communication-a-language-of-life/</link>
+    <pubDate>Thu, 24 Mar 2022 08:14:42 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://blog.heylinux.com/en/2022/03/notes-from-reading-nonviolent-communication-a-language-of-life/</guid>
+    <description><![CDATA[<p>Four steps of Nonviolent Communication: observe, identify and state feelings, identify and state needs, and make requests.</p>]]></description>
+</item><item>
     <title>Notes from reading &#39;Influence: The Psychology of Persuasion&#39;</title>
     <link>https://blog.heylinux.com/en/2022/03/notes-from-reading-influence-the-psychology-of-persuasion/</link>
     <pubDate>Sun, 06 Mar 2022 23:09:45 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>Author</author>
     <guid>https://blog.heylinux.com/en/2021/12/notes-from-reading-peak-secrets-from-the-new-science-of-expertise/</guid>
     <description><![CDATA[<p>The core elements of deliberate practice include focus, feedback and fix, stepping out of the comfort zone, extensive training, and mentorship.</p>]]></description>
-</item><item>
-    <title>Python OpenCV CAPTCHA Recognition in Action</title>
-    <link>https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/</link>
-    <pubDate>Wed, 24 Nov 2021 20:36:58 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/</guid>
-    <description><![CDATA[<p>The recognition principles and processes I have learned from the CAPTCHA recognition are really valuable.</p>]]></description>
 </item></channel>
 </rss>
