@@ -44,6 +44,7 @@ math:
 - [x] Influence: The Psychology of Persuasion
 - [x] Nonviolent Communication: A Language of Life
 - [ ] How an Economy Grows and Why It Crashes
+- [ ] Rich Dad, Poor Dad
 - [ ] Tiny Habits
 - [ ] The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future
 - [ ] Noise: A Flaw in Human Judgment
