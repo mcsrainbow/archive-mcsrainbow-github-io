@@ -58,4 +58,4 @@ Nonviolence means integrating love into our life. Leading life with respect, und
 
 Nonviolent communication reminds us that listening to the different voices within, and the needs they reflect, can promote self-understanding and inner harmony. By developing a good communication through a pattern of observations, feelings, needs, and requests, it makes life more harmonious and beautiful.
 
-I will try to practice the Nonviolent Communication to make life full of love and happiness.
+I will practice the Nonviolent Communication to make life full of love and happiness.
