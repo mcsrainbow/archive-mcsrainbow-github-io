@@ -23,7 +23,7 @@ Four steps of Nonviolent Communication: observe, identify and state feelings, id
 
 2. Feelings: Identify your feelings about it, anger, joy, hopeful, inspired, lonely?
 
-3. Needs: igure out what need you have that is driving that feeling.
+3. Needs: Figure out what need you have that is driving that feeling.
 
 4. Requests: Ask for what you need (explicitly).
 
