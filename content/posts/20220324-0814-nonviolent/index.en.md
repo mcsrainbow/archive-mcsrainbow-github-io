@@ -44,13 +44,13 @@ Expressing our own observations, feelings, needs and requests to others is one p
 
 When we use NVC to connect empathically, we use the same four components in the form of a question, since we can never know what is going on inside the other. The other person will always be the ultimate authority on what is going on for them. Our empathy may meet other people’s needs for understanding, or it may spark their own self-discovery. We may ask something like:
 
-1. [When you [see, hear, etc…] ….]
+1. When you [see, hear, etc…] ….
 
 2. Are you feeling …..
 
 3. Because you need …..
 
-4. [And would you like …..?]
+4. And would you like …..?
 
 ## Thinking
 
