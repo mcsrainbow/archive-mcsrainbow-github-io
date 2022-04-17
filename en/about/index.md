@@ -18,7 +18,7 @@
 
 - [x] <i class="fas fa-dharmachakra fa-fw"></i> CKA
 - [x] <i class="fas fa-language fa-fw"></i> CET6
-- [ ] <i class="fas fa-graduation-cap fa-fw"></i> Thesis
+- [x] <i class="fas fa-graduation-cap fa-fw"></i> Thesis
 - [ ] <i class="fas fa-user-shield fa-fw"></i> CISSP
 - [ ] <i class="fas fa-users-cog fa-fw"></i> PMP
 - [ ] <i class="fas fa-language fa-fw"></i> IELTS 7.0
@@ -36,7 +36,7 @@
 - [x] Educated: A Memoir
 - [x] Influence: The Psychology of Persuasion
 - [x] Nonviolent Communication: A Language of Life
-- [ ] How an Economy Grows and Why It Crashes
+- [x] How an Economy Grows and Why It Crashes
 - [ ] Rich Dad, Poor Dad
 - [ ] Tiny Habits
 - [ ] The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future

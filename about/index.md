@@ -17,7 +17,7 @@
 <i class="fas fa-tasks fa-fw"></i> **核心任务**
 - [x] <i class="fas fa-dharmachakra fa-fw"></i> CKA
 - [x] <i class="fas fa-language fa-fw"></i> 英语六级
-- [ ] <i class="fas fa-graduation-cap fa-fw"></i> 论文
+- [x] <i class="fas fa-graduation-cap fa-fw"></i> 论文
 - [ ] <i class="fas fa-user-shield fa-fw"></i> CISSP
 - [ ] <i class="fas fa-users-cog fa-fw"></i> PMP
 - [ ] <i class="fas fa-language fa-fw"></i> 雅思7.0
@@ -35,7 +35,7 @@
 - [x] 你当像鸟飞往你的山
 - [x] 影响力
 - [x] 非暴力沟通
-- [ ] 小岛经济学：鱼、美元和经济的故事
+- [x] 小岛经济学：鱼、美元和经济的故事
 - [ ] 穷爸爸，富爸爸
 - [ ] 福格行为模型
 - [ ] 必然
