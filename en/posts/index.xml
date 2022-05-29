@@ -4,7 +4,14 @@
         <link>https://blog.heylinux.com/en/posts/</link>
         <description>All Posts | Hey! Linux.</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
-            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 08 Apr 2022 21:54:47 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/en/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 29 May 2022 18:57:58 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/en/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Notes from reading &#39;Rich Dad Poor Dad&#39;</title>
+    <link>https://blog.heylinux.com/en/2022/05/notes-from-reading-rich-dad-poor-dad/</link>
+    <pubDate>Sun, 29 May 2022 18:57:58 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://blog.heylinux.com/en/2022/05/notes-from-reading-rich-dad-poor-dad/</guid>
+    <description><![CDATA[<p>The rich buy assets. The poor only have expenses. The middle class buy liabilities they think are assets.</p>]]></description>
+</item><item>
     <title>Notes from reading &#39;How an Economy Grows and Why It Crashes&#39;</title>
     <link>https://blog.heylinux.com/en/2022/04/notes-from-reading-how-an-economy-grows-and-why-it-crashes/</link>
     <pubDate>Fri, 08 Apr 2022 21:54:47 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>Author</author>
     <guid>https://blog.heylinux.com/en/2021/12/setup-kubernetes-cluster-using-kubeadm/</guid>
     <description><![CDATA[<p>kubeadm performs the actions necessary to get a minimum viable cluster up and running.</p>]]></description>
-</item><item>
-    <title>Solutions and Insights</title>
-    <link>https://blog.heylinux.com/en/2021/12/solutions-and-insights/</link>
-    <pubDate>Sun, 19 Dec 2021 14:52:49 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://blog.heylinux.com/en/2021/12/solutions-and-insights/</guid>
-    <description><![CDATA[<p>Here are some of my personal bookmarks about technology solutions and insights.</p>]]></description>
 </item></channel>
 </rss>
