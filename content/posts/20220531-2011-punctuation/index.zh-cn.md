@@ -2,7 +2,7 @@
 title: "常用标点符号中英文名称对照"
 date: 2022-05-31T20:11:52+08:00
 author: "冬花盛开"
-description: "用英文正确表示常用标点符号。"
+description: "正确表示常用标点符号的中英文名称。"
 categories: ["技能矩阵"]
 tags: ["English"]
 resources:
