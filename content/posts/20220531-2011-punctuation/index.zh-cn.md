@@ -17,6 +17,8 @@ lightgallery: true
 
 <!--more-->
 
+参考资料：[List of typographical symbols and punctuation marks](https://en.wikipedia.org/wiki/List_of_typographical_symbols_and_punctuation_marks)
+
 | 标点符号 | 英文名 | 中文名 |
 | - | ----- | ----- |
 | ~	| tilde | 波浪符 |
