@@ -29,6 +29,7 @@ math:
 - [x] <i class="fas fa-graduation-cap fa-fw"></i> **论文** - 硕士学位
 - [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - 安全
 - [ ] <i class="fas fa-users-cog fa-fw"></i> **PMP** - 项目管理
+- [ ] <i class="fab fa-google fa-fw"></i> **GCP** - 公有云
 - [ ] <i class="fas fa-language fa-fw"></i> **雅思7.0** - 英语
 - [ ] <i class="fas fa-hand-holding-usd fa-fw"></i> **CFA** - 金融
 - [ ] <i class="fas fa-user-tag fa-fw"></i> **CDMP** - 数据管理

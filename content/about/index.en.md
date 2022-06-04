@@ -29,6 +29,7 @@ math:
 - [x] <i class="fas fa-graduation-cap fa-fw"></i> **Thesis** - Master of Engineering Management
 - [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - Security
 - [ ] <i class="fas fa-users-cog fa-fw"></i> **PMP** - Project Management
+- [ ] <i class="fab fa-google fa-fw"></i> **GCP** - Cloud Architect
 - [ ] <i class="fas fa-language fa-fw"></i> **IELTS 7.0** - English
 - [ ] <i class="fas fa-hand-holding-usd fa-fw"></i> **CFA** - Finance
 - [ ] <i class="fas fa-user-tag fa-fw"></i> **CDMP** - Data Management
