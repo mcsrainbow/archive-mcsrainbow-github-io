@@ -210,9 +210,9 @@
 
 > 一个番茄钟是25分钟的周期；多个番茄钟组成更大的每日周期；每天早晨进行计划，傍晚进行回顾；在一个番茄钟内，专心致志于单个活动。
 
-作者在书中绘制了番茄工作法的每日周期，整个流程如下：
+网友[佐依｜理想生活設計](https://www.pinterest.at/zoeykco/)根据书中的内容，绘制了精美的番茄工作法的每日周期，整个流程如下：
 
-![pomodoro_process](pomodoro_process.jpeg)
+![pomodoro_process](pomodoro_process.png)
 
 我将每日周期进一步按照PDCA流程归纳分解后，思维导图如下：
 
