@@ -48,8 +48,8 @@ math:
 - [x] Nonviolent Communication: A Language of Life
 - [x] How an Economy Grows and Why It Crashes
 - [x] Rich Dad Poor Dad
-- [x] Tiny Habits
-- [ ] The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future
+- [x] Tiny Habits: The Small Changes That Change Everything
+- [x] The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future
 - [ ] Noise: A Flaw in Human Judgment
 - [ ] Out of Control: The New Biology of Machines, Social Systems, and the Economic World
 - [ ] The Lean Startup
