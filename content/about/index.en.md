@@ -27,7 +27,7 @@ math:
 - [x] <i class="fas fa-dharmachakra fa-fw"></i> **CKA** - Kubernetes
 - [x] <i class="fas fa-language fa-fw"></i> **CET6** - English
 - [x] <i class="fas fa-graduation-cap fa-fw"></i> **Thesis** - Master of Engineering Management
-- [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - Security
+- [x] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - Security
 - [ ] <i class="fas fa-users-cog fa-fw"></i> **PMP** - Project Management
 - [ ] <i class="fab fa-google fa-fw"></i> **GCP** - Cloud Architect
 - [ ] <i class="fas fa-language fa-fw"></i> **IELTS 7.0** - English
@@ -50,6 +50,6 @@ math:
 - [x] Rich Dad Poor Dad
 - [x] Tiny Habits: The Small Changes That Change Everything
 - [x] The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future
-- [ ] Noise: A Flaw in Human Judgment
+- [x] Noise: A Flaw in Human Judgment
 - [ ] Out of Control: The New Biology of Machines, Social Systems, and the Economic World
 - [ ] The Lean Startup
