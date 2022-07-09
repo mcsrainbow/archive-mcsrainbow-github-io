@@ -29,3 +29,6 @@ Love my wife, love our children.
 
 Love myself, love our relatives and friends.
 
+## Choices
+
+The wisest and most rewarding choice is to maintain our positive mental state by observing our inner emotional changes and doing more behaviors that contribute to good emotions and reduce emotional internal conflict.
