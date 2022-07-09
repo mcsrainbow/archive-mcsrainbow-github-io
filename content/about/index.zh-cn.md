@@ -27,7 +27,7 @@ math:
 - [x] <i class="fas fa-dharmachakra fa-fw"></i> **CKA** - Kubernetes
 - [x] <i class="fas fa-language fa-fw"></i> **英语六级** - 英语
 - [x] <i class="fas fa-graduation-cap fa-fw"></i> **论文** - 硕士学位
-- [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - 安全
+- [x] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - 安全
 - [ ] <i class="fas fa-users-cog fa-fw"></i> **PMP** - 项目管理
 - [ ] <i class="fab fa-google fa-fw"></i> **GCP** - 公有云
 - [ ] <i class="fas fa-language fa-fw"></i> **雅思7.0** - 英语
