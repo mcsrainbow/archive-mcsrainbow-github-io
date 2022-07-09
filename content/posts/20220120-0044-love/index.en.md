@@ -21,6 +21,8 @@ The rest of life is precious and unpredictable, don't let the regrets be too lon
 
 Be not afraid. Do it best. Keep doing and stop worrying about results.
 
+Be honest with myself. Keep a real record of my life, use real data for analysis, decision making and continuous improvement.
+
 ## Be Positive
 
 Get out and get some exercise! You'll be back in full spirit!
