@@ -358,7 +358,7 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 将图片做二值化处理，阈值设定为185，将像素值大于127的置为0，小于127的置为255</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 将图片做二值化处理，阈值设定为185，将像素值大于185的置为0，小于185的置为255</span>
 </span></span><span class="line"><span class="cl"><span class="n">ret</span><span class="p">,</span> <span class="n">im_res</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">im_blur</span><span class="p">,</span><span class="mi">185</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 显示图片</span>
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_res</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&#34;gray&#34;</span><span class="p">)</span>
