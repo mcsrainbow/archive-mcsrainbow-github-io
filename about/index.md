@@ -28,7 +28,7 @@
 - [ ] <i class="fas fa-language fa-fw"></i> **雅思7.0** - 英语
 - [ ] <i class="fas fa-hand-holding-usd fa-fw"></i> **CFA** - 金融
 - [ ] <i class="fas fa-user-tag fa-fw"></i> **CDMP** - 数据管理
-- [ ] <i class="fas fa-dharmachakra fa-fw"></i> **CKS** - Kubernetes
+- [ ] <i class="fas fa-dharmachakra fa-fw"></i> **CKS** - Kubernetes安全
 - [ ] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 MP** - IT服务管理
 
 <i class="fas fa-book-open fa-fw"></i> **读书清单**
