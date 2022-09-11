@@ -16,18 +16,20 @@
 
 <i class="fas fa-tasks fa-fw"></i> **核心任务**
 - [x] <i class="fab fa-aws fa-fw"></i> **AWS SAP** - 公有云
-- [x] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 Foundation** - ITSM
+- [x] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 Foundation** - IT服务管理
 - [x] <i class="fas fa-dharmachakra fa-fw"></i> **CKA** - Kubernetes
 - [x] <i class="fas fa-language fa-fw"></i> **英语六级** - 英语
 - [x] <i class="fas fa-graduation-cap fa-fw"></i> **论文** - 硕士学位
-- [x] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - 安全
+- [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - 安全
+- [ ] <i class="fas fa-cloud-rain fa-fw"></i> **CCSP** - 云安全
 - [ ] <i class="fas fa-users-cog fa-fw"></i> **PMP** - 项目管理
+- [ ] <i class="fas fa-cloud fa-fw"></i> **ACP** - 公有云
 - [ ] <i class="fab fa-google fa-fw"></i> **GCP** - 公有云
 - [ ] <i class="fas fa-language fa-fw"></i> **雅思7.0** - 英语
 - [ ] <i class="fas fa-hand-holding-usd fa-fw"></i> **CFA** - 金融
 - [ ] <i class="fas fa-user-tag fa-fw"></i> **CDMP** - 数据管理
 - [ ] <i class="fas fa-dharmachakra fa-fw"></i> **CKS** - Kubernetes
-- [ ] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 MP** - ITSM
+- [ ] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 MP** - IT服务管理
 
 <i class="fas fa-book-open fa-fw"></i> **读书清单**
 

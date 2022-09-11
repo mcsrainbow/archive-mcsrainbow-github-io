@@ -16,18 +16,20 @@
 
 <i class="fas fa-tasks fa-fw"></i> **Core Missions**
 - [x] <i class="fab fa-aws fa-fw"></i> **AWS SAP** - Cloud Architect
-- [x] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 Foundation** - ITSM
+- [x] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 Foundation** - IT Service Management
 - [x] <i class="fas fa-dharmachakra fa-fw"></i> **CKA** - Kubernetes
 - [x] <i class="fas fa-language fa-fw"></i> **CET6** - English
 - [x] <i class="fas fa-graduation-cap fa-fw"></i> **Thesis** - Master of Engineering Management
-- [x] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - Security
+- [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - Security
+- [ ] <i class="fas fa-cloud-rain fa-fw"></i> **CCSP** - Cloud Security
 - [ ] <i class="fas fa-users-cog fa-fw"></i> **PMP** - Project Management
+- [ ] <i class="fas fa-cloud fa-fw"></i> **ACP** - Cloud Architect
 - [ ] <i class="fab fa-google fa-fw"></i> **GCP** - Cloud Architect
 - [ ] <i class="fas fa-language fa-fw"></i> **IELTS 7.0** - English
 - [ ] <i class="fas fa-hand-holding-usd fa-fw"></i> **CFA** - Finance
 - [ ] <i class="fas fa-user-tag fa-fw"></i> **CDMP** - Data Management
 - [ ] <i class="fas fa-dharmachakra fa-fw"></i> **CKS** - Kubernetes
-- [ ] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 MP** - ITSM
+- [ ] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 MP** - IT Service Management
 
 <i class="fas fa-book-open fa-fw"></i> **Reading List**
 
