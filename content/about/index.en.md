@@ -35,7 +35,7 @@ math:
 - [ ] <i class="fas fa-language fa-fw"></i> **IELTS 7.0** - English
 - [ ] <i class="fas fa-hand-holding-usd fa-fw"></i> **CFA** - Finance
 - [ ] <i class="fas fa-user-tag fa-fw"></i> **CDMP** - Data Management
-- [ ] <i class="fas fa-dharmachakra fa-fw"></i> **CKS** - Kubernetes
+- [ ] <i class="fas fa-dharmachakra fa-fw"></i> **CKS** - Kubernetes Security
 - [ ] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 MP** - IT Service Management
 
 <i class="fas fa-book-open fa-fw"></i> **Reading List**
