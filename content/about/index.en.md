@@ -53,5 +53,5 @@ math:
 - [x] Tiny Habits: The Small Changes That Change Everything
 - [x] The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future
 - [x] Noise: A Flaw in Human Judgment
-- [ ] Out of Control: The New Biology of Machines, Social Systems, and the Economic World
+- [x] Out of Control: The New Biology of Machines, Social Systems, and the Economic World
 - [ ] The Lean Startup
