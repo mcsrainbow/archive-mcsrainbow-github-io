@@ -36,20 +36,16 @@ math:
 - [ ] <i class="fas fa-dharmachakra fa-fw"></i> **CKS** - Kubernetes Security
 - [ ] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 MP** - IT Service Management
 
-<i class="fas fa-book-open fa-fw"></i> **Reading List**
+<i class="fas fa-book-open fa-fw"></i> **Private Booklist**
 
 - [x] Live for Death: My Experience on Dying
 - [x] The Willpower Instinct 
 - [x] PEAK: Secrets from the New Science of Expertise
 - [x] Pomodoro Technique Illustrated: The Easy Way to Do More in Less Time
 - [x] The Little Book of Lykke: Secrets of the World's Happiest People
-- [x] Educated: A Memoir
 - [x] Influence: The Psychology of Persuasion
 - [x] Nonviolent Communication: A Language of Life
 - [x] How an Economy Grows and Why It Crashes
 - [x] Rich Dad Poor Dad
 - [x] Tiny Habits: The Small Changes That Change Everything
-- [x] The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future
-- [x] Noise: A Flaw in Human Judgment
-- [x] Out of Control: The New Biology of Machines, Social Systems, and the Economic World
 - [ ] The Lean Startup

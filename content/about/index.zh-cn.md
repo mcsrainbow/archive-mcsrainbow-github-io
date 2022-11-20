@@ -36,7 +36,7 @@ math:
 - [ ] <i class="fas fa-dharmachakra fa-fw"></i> **CKS** - Kubernetes安全
 - [ ] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 MP** - IT服务管理
 
-<i class="fas fa-book-open fa-fw"></i> **读书清单**
+<i class="fas fa-book-open fa-fw"></i> **私藏书单**
 
 - [x] 向死而生：我修的死亡学分
 - [x] 自控力
@@ -49,7 +49,4 @@ math:
 - [x] 小岛经济学：鱼、美元和经济的故事
 - [x] 富爸爸穷爸爸
 - [x] 福格行为模型
-- [x] 必然：了解塑造未来30年的12种科技力量
-- [x] 噪声：人类判断的缺陷
-- [x] 失控：机器、社会与经济的新生物学
 - [ ] 精益创业
