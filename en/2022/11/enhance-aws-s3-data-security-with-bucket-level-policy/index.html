@@ -34,7 +34,7 @@
                             "url": "https:\/\/blog.heylinux.com\/en\/2022\/11\/enhance-aws-s3-data-security-with-bucket-level-policy\/featured-image.png",
                             "width":  1440 ,
                             "height":  800 
-                        }],"genre": "posts","keywords": "AWS, Security","wordcount":  381 ,
+                        }],"genre": "posts","keywords": "AWS, Security","wordcount":  382 ,
         "url": "https:\/\/blog.heylinux.com\/en\/2022\/11\/enhance-aws-s3-data-security-with-bucket-level-policy\/","datePublished": "2022-11-20T22:31:30+08:00","dateModified": "2022-11-20T22:31:30+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "mcsrainbow","logo": {
@@ -116,7 +116,7 @@
     </div><main class="main">
                 <div class="container"><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Enhance AWS S3 Data Security with Bucket Level Policy</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/about/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Dong Guo | Damon</a></span>&nbsp;<span class="post-category">included in <a href="/en/categories/skills/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Skills</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-20">2022-11-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;381 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-20">2022-11-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;382 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -128,7 +128,7 @@
         title="After restricted the source of S3 Bucket access requests through Bucket Level Policy, the data in AWS S3 Bucket can still be secured even if AKSK is compromised." /></div><div class="content" id="content"><p>After restricted the source of S3 Bucket access requests through Bucket Level Policy, the data in AWS S3 Bucket can still be secured even if AKSK is compromised.</p>
 <h2 id="background">Background</h2>
 <p>Due to weak security awareness, many people prefer to access resources through AKSK (Access Key and Secret Key). AKSK contains only two strings and the user permissions can be obtained via command line tools or API codes.</p>
-<p>Take AWS as an example, a simple <code>aws sync</code> command can drag away all the data stored in S3 Bucket. After restricted the source of S3 Bucket access requests through Bucket Level Policy, the data in AWS S3 Bucket can still be secured even if AKSK is compromised.</p>
+<p>Take AWS as an example, a simple <code>aws s3 sync</code> command can drag away all the data stored in S3 Bucket. After restricted the source of S3 Bucket access requests through Bucket Level Policy, the data in AWS S3 Bucket can still be secured even if AKSK is compromised.</p>
 <h2 id="policy-example">Policy example</h2>
 <p>The following policy uses the <code>Deny</code> by default, only allows the following types of requests.</p>
 <ol>
