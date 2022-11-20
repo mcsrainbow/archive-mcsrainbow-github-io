@@ -68,7 +68,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
         url = "/en/"
     [languages.zh-cn.params]
       # 网站描述, 用于 RSS, SEO, Open Graph 和 Twitter Cards
-      description = "冬花盛开"
+      description = "郭冬的博客"
       # 网站关键词
       keywords = ["heylinux", "mcsrainbow", "damonguo"]
       # 应用图标配置
@@ -114,7 +114,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
           # 主页显示头像的 URL
           avatarURL = "/images/avatar.png"
           # 主页显示的网站标题 (支持 HTML 格式)
-          title = "冬花盛开"
+          title = "郭冬"
           # 主页显示的网站副标题
           subtitle = "实操型运维负责人、解决方案架构师、终身学习者"
           # 是否为副标题显示打字机动画
@@ -182,7 +182,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
         url = "../"
     [languages.en.params]
       # site description
-      description = "About LoveIt Theme"
+      description = "Damon Guo's Blog"
       # site keywords
       keywords = ["heylinux", "mcsrainbow", "damonguo"]
       # App icon config

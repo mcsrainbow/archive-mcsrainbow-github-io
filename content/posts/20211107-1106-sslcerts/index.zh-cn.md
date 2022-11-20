@@ -1,7 +1,7 @@
 ---
 title: "如何创建自签名SSL证书支持私有域名的HTTPS服务"
 date: 2021-11-07T11:06:54+08:00
-author: "冬花盛开"
+author: "郭冬"
 description: "在互联网全站HTTPS的时代，内部私有域名的HTTPS服务部署也尤为重要。"
 categories: ["技能矩阵"]
 tags: ["SSL","TLS","HTTPS"]
