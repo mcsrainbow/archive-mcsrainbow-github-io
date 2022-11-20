@@ -25,7 +25,7 @@ Take AWS as an example, a simple `aws sync` command can drag away all the data s
 
 ## Policy example
 
-The following policy uses the `Deny` by default, only allow the following types of requests.
+The following policy uses the `Deny` by default, only allows the following types of requests.
 
 1. When requests come directly from AWS services.
 2. When requests come from the specified VPC IDs.
