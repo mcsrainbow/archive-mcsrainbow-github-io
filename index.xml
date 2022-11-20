@@ -4,9 +4,17 @@
         <link>https://blog.heylinux.com/</link>
         <description>郭冬的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
-            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 31 May 2022 20:11:52 &#43;0800</lastBuildDate>
+            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 20 Nov 2022 22:31:30 &#43;0800</lastBuildDate>
             <atom:link href="https://blog.heylinux.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>通过Bucket Level Policy加强AWS S3数据安全防护</title>
+    <link>https://blog.heylinux.com/2022/11/%E9%80%9A%E8%BF%87bucket-level-policy%E5%8A%A0%E5%BC%BAaws-s3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/</link>
+    <pubDate>Sun, 20 Nov 2022 22:31:30 &#43;0800</pubDate>
+    <author>郭冬</author>
+    <guid>https://blog.heylinux.com/2022/11/%E9%80%9A%E8%BF%87bucket-level-policy%E5%8A%A0%E5%BC%BAaws-s3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/</guid>
+    <description><![CDATA[<p>通过Bucket Level Policy合理限制S3 Bucket访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket中的数据安全。</p>]]></description>
+</item>
+<item>
     <title>常用标点符号中英文名称对照</title>
     <link>https://blog.heylinux.com/2022/05/%E5%B8%B8%E7%94%A8%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7%E4%B8%AD%E8%8B%B1%E6%96%87%E5%90%8D%E7%A7%B0%E5%AF%B9%E7%85%A7/</link>
     <pubDate>Tue, 31 May 2022 20:11:52 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
     <author>郭冬</author>
     <guid>https://blog.heylinux.com/2022/01/%E6%88%91%E7%9A%842021%E5%B9%B4%E7%BB%88%E5%9B%9E%E9%A1%BE/</guid>
     <description><![CDATA[<p>我重新燃起了对知识的渴望和不断学习的热情。</p>]]></description>
-</item>
-<item>
-    <title>读书笔记之《番茄工作法图解》</title>
-    <link>https://blog.heylinux.com/2022/01/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%95%AA%E8%8C%84%E5%B7%A5%E4%BD%9C%E6%B3%95%E5%9B%BE%E8%A7%A3/</link>
-    <pubDate>Sat, 01 Jan 2022 14:58:41 &#43;0800</pubDate>
-    <author>郭冬</author>
-    <guid>https://blog.heylinux.com/2022/01/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%95%AA%E8%8C%84%E5%B7%A5%E4%BD%9C%E6%B3%95%E5%9B%BE%E8%A7%A3/</guid>
-    <description><![CDATA[<p>番茄工作法是一种简单易行的时间管理方法，有张有弛，能够减轻时间焦虑、提升专注力和减少中断。</p>]]></description>
 </item>
 </channel>
 </rss>

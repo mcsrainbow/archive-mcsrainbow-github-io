@@ -2,7 +2,16 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://blog.heylinux.com/en/categories/</loc><lastmod>2022-05-31T20:11:52&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://blog.heylinux.com/en/tags/aws/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://blog.heylinux.com/tags/aws/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://blog.heylinux.com/en/tags/aws/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/en/categories/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://blog.heylinux.com/categories/"
@@ -10,6 +19,44 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://blog.heylinux.com/en/categories/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/en/2022/11/enhance-aws-s3-data-security-with-bucket-level-policy/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://blog.heylinux.com/2022/11/%E9%80%9A%E8%BF%87bucket-level-policy%E5%8A%A0%E5%BC%BAaws-s3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://blog.heylinux.com/en/2022/11/enhance-aws-s3-data-security-with-bucket-level-policy/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/en/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://blog.heylinux.com/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://blog.heylinux.com/en/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/en/posts/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://blog.heylinux.com/posts/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://blog.heylinux.com/en/posts/"
+                    /></url><url>
+            <loc>https://blog.heylinux.com/en/tags/security/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.heylinux.com/en/categories/skills/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.heylinux.com/en/tags/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://blog.heylinux.com/tags/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://blog.heylinux.com/en/tags/"
                     /></url><url>
             <loc>https://blog.heylinux.com/en/tags/english/</loc><lastmod>2022-05-31T20:11:52&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
@@ -20,24 +67,6 @@
                     hreflang="en"
                     href="https://blog.heylinux.com/en/tags/english/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/en/</loc><lastmod>2022-05-31T20:11:52&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://blog.heylinux.com/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://blog.heylinux.com/en/"
-                    /></url><url>
-            <loc>https://blog.heylinux.com/en/posts/</loc><lastmod>2022-05-31T20:11:52&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://blog.heylinux.com/posts/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://blog.heylinux.com/en/posts/"
-                    /></url><url>
             <loc>https://blog.heylinux.com/en/2022/05/punctuation-marks/</loc><lastmod>2022-05-31T20:11:52&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -46,16 +75,6 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://blog.heylinux.com/en/2022/05/punctuation-marks/"
-                    /></url><url>
-            <loc>https://blog.heylinux.com/en/categories/skills/</loc><lastmod>2022-05-31T20:11:52&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://blog.heylinux.com/en/tags/</loc><lastmod>2022-05-31T20:11:52&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://blog.heylinux.com/tags/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://blog.heylinux.com/en/tags/"
                     /></url><url>
             <loc>https://blog.heylinux.com/en/tags/finance/</loc><lastmod>2022-05-29T18:57:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/en/categories/notes/</loc><lastmod>2022-05-29T18:57:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

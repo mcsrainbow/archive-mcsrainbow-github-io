@@ -4,9 +4,17 @@
         <link>https://blog.heylinux.com/en/</link>
         <description>Damon Guo&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
-            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 31 May 2022 20:11:52 &#43;0800</lastBuildDate>
+            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 20 Nov 2022 22:31:30 &#43;0800</lastBuildDate>
             <atom:link href="https://blog.heylinux.com/en/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Enhance AWS S3 Data Security with Bucket Level Policy</title>
+    <link>https://blog.heylinux.com/en/2022/11/enhance-aws-s3-data-security-with-bucket-level-policy/</link>
+    <pubDate>Sun, 20 Nov 2022 22:31:30 &#43;0800</pubDate>
+    <author>Dong Guo | Damon</author>
+    <guid>https://blog.heylinux.com/en/2022/11/enhance-aws-s3-data-security-with-bucket-level-policy/</guid>
+    <description><![CDATA[<p>After restricted the source of S3 Bucket access requests through Bucket Level Policy, the data in AWS S3 Bucket can still be secured even if AKSK is compromised.</p>]]></description>
+</item>
+<item>
     <title>Punctuation Marks</title>
     <link>https://blog.heylinux.com/en/2022/05/punctuation-marks/</link>
     <pubDate>Tue, 31 May 2022 20:11:52 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
     <author>Dong Guo | Damon</author>
     <guid>https://blog.heylinux.com/en/2022/01/my-2021-year-in-review/</guid>
     <description><![CDATA[<p>The most important is that I have unlocked my thirst of knowledge and could not stop learning.</p>]]></description>
-</item>
-<item>
-    <title>Notes from reading &#39;Pomodoro Technique Illustrated&#39;</title>
-    <link>https://blog.heylinux.com/en/2022/01/notes-from-reading-pomodoro-technique-illustrated/</link>
-    <pubDate>Sat, 01 Jan 2022 14:58:41 &#43;0800</pubDate>
-    <author>Dong Guo | Damon</author>
-    <guid>https://blog.heylinux.com/en/2022/01/notes-from-reading-pomodoro-technique-illustrated/</guid>
-    <description><![CDATA[<p>The Pomodoro Technique is designed to maintain focus and prevent burnout.</p>]]></description>
 </item>
 </channel>
 </rss>
