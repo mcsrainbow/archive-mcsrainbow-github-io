@@ -45,8 +45,8 @@ lightgallery: true
             "Principal": "*",
             "Action": "s3:*",
             "Resource": [
-                "arn:aws:s3:::BUCKET_NAME",
-                "arn:aws:s3:::BUCKET_NAME/*"
+                "arn:aws:s3:::bucket-name",
+                "arn:aws:s3:::bucket-name/*"
             ],
             "Condition": {
                 "Bool": {
@@ -60,10 +60,10 @@ lightgallery: true
                 },
                 "ArnNotLikeIfExists": {
                     "aws:PrincipalArn": [
-                        "arn:aws:iam::857857857857:role/RoleName",
-                        "arn:aws:iam::361361361361:role/RoleName",
-                        "arn:aws:iam::857857857857:role/Role*",
-                        "arn:aws:iam::361361361361:role/Role*"
+                        "arn:aws:iam::857857857857:role/role-name",
+                        "arn:aws:iam::361361361361:role/role-name",
+                        "arn:aws:iam::857857857857:role/role*",
+                        "arn:aws:iam::361361361361:role/role*"
                     ]
                 },
                 "NotIpAddressIfExists": {
