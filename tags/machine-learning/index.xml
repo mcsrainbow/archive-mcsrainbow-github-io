@@ -8,8 +8,9 @@
     <title>Python OpenCV验证码识别实战</title>
     <link>https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/</link>
     <pubDate>Wed, 24 Nov 2021 20:36:58 &#43;0800</pubDate>
-    <author>作者</author>
+    <author>冬花盛开</author>
     <guid>https://blog.heylinux.com/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/</guid>
     <description><![CDATA[<p>在通过OpenCV完成验证码识别的过程中，所学习到的识别原理和流程，还是很有价值的。</p>]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>
