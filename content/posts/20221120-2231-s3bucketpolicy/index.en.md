@@ -78,6 +78,8 @@ The following policy uses the `Deny` by default, only allows the following types
 
 ## Better solution
 
+Here are some strong protection mechanisms for the data in Amazon S3, including least privilege access, encryption of data at rest, blocking public access, logging, monitoring, and configuration checks.
+
 1. Block public S3 buckets at the organization level
 2. Use bucket policies to verify all access granted is restricted and specific
 3. Enable S3 protection in GuardDuty to detect suspicious activities
