@@ -14,8 +14,8 @@ math:
 
 ### 关于我
 
-+ <i class="fas fa-user-tie fa-fw"></i>领域：<i class="fas fa-cloud-upload-alt fa-fw"></i> 混合云 <i class="fas fa-layer-group"></i> 大数据 <i class="far fa-object-group fa-fw"></i> 运维架构 <i class="fas fa-user-shield fa-fw"></i> 网络安全
-+ <i class="fas fa-heart fa-fw"></i>爱好：<i class="fas fa-book-reader fa-fw"></i> 阅读 <i class="fas fa-running fa-fw"></i> 健身 <i class="fab fa-fly fa-fw"></i> 旅游 <i class="fas fa-film fa-fw"></i> 电影
++ <i class="fa-solid fa-info fa-fw"></i>**简介**：实操型运维负责人、解决方案架构师、终身学习者
++ <i class="fas fa-user-tie fa-fw"></i>**领域**：<i class="fas fa-cloud-upload-alt fa-fw"></i> 混合云 <i class="fas fa-layer-group"></i> 大数据 <i class="far fa-object-group fa-fw"></i> 运维架构 <i class="fas fa-user-shield fa-fw"></i> 网络安全
 
 ### [TO DO LIST]^(始于2021年2月)
 
@@ -26,7 +26,6 @@ math:
 - [x] <i class="fas fa-language fa-fw"></i> **英语六级** - 英语
 - [x] <i class="fas fa-graduation-cap fa-fw"></i> **论文** - 硕士学位
 - [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - 安全
-- [ ] <i class="fas fa-cloud-rain fa-fw"></i> **CCSP** - 云安全
 - [ ] <i class="fas fa-users-cog fa-fw"></i> **PMP** - 项目管理
 - [ ] <i class="fas fa-cloud fa-fw"></i> **ACP** - 公有云
 - [ ] <i class="fab fa-google fa-fw"></i> **GCP** - 公有云
@@ -43,7 +42,6 @@ math:
 - [x] 刻意练习：如何从新手到大师
 - [x] 番茄工作法图解：简单易行的时间管理方法
 - [x] 刻意放手：向最幸福的人学习幸福
-- [x] 你当像鸟飞往你的山
 - [x] 影响力
 - [x] 非暴力沟通
 - [x] 小岛经济学：鱼、美元和经济的故事

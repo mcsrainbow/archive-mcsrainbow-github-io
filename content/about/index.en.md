@@ -14,8 +14,8 @@ math:
 
 ### About Me
 
-+ <i class="fas fa-user-tie fa-fw"></i> Specialties: <i class="fas fa-cloud-upload-alt fa-fw"></i> Hybrid Cloud <i class="fas fa-layer-group"></i> Big Data <i class="far fa-object-group fa-fw"></i> DevOps <i class="fas fa-user-shield fa-fw"></i> Cybersecurity
-+ <i class="fas fa-heart fa-fw"></i> Interests: <i class="fas fa-book-reader fa-fw"></i> Reading <i class="fas fa-running fa-fw"></i> Fitness <i class="fab fa-fly fa-fw"></i> Travel <i class="fas fa-film fa-fw"></i> Movies
++ <i class="fa-solid fa-info fa-fw"></i> **Bio**: A Hands-On SRE Lead, a Solutions Architect, and a Lifelong Learner
++ <i class="fas fa-user-tie fa-fw"></i> **Specialties**: <i class="fas fa-cloud-upload-alt fa-fw"></i> Hybrid Cloud <i class="fas fa-layer-group"></i> Big Data <i class="far fa-object-group fa-fw"></i> DevOps <i class="fas fa-user-shield fa-fw"></i> Cybersecurity
 
 ### [TO DO LIST]^(Since Feburary 2021)
 
@@ -26,7 +26,6 @@ math:
 - [x] <i class="fas fa-language fa-fw"></i> **CET6** - English
 - [x] <i class="fas fa-graduation-cap fa-fw"></i> **Thesis** - Master of Engineering Management
 - [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - Security
-- [ ] <i class="fas fa-cloud-rain fa-fw"></i> **CCSP** - Cloud Security
 - [ ] <i class="fas fa-users-cog fa-fw"></i> **PMP** - Project Management
 - [ ] <i class="fas fa-cloud fa-fw"></i> **ACP** - Cloud Architect
 - [ ] <i class="fab fa-google fa-fw"></i> **GCP** - Cloud Architect

@@ -500,7 +500,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 [author]
   name = "mcsrainbow"
   email = "guosuiyu@gmail.com"
-  link = ""
+  link = "/about/"
 
 # 网站地图配置
 [sitemap]
