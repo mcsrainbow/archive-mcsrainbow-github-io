@@ -116,7 +116,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
           # 主页显示的网站标题 (支持 HTML 格式)
           title = "郭冬"
           # 主页显示的网站副标题
-          subtitle = "实操型运维负责人、解决方案架构师、终身学习者"
+          subtitle = "实操型解决方案架构师"
           # 是否为副标题显示打字机动画
           typeit = true
           # 是否显示社交账号
