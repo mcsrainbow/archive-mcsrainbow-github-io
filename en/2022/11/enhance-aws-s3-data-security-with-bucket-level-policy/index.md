@@ -80,9 +80,6 @@ Here are some strong protection mechanisms for the data in Amazon S3, including 
 
 ## Reference
 
-Articles:
-
 https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html
 
 https://aws.amazon.com/cn/blogs/security/top-10-security-best-practices-for-securing-data-in-amazon-s3/
-
