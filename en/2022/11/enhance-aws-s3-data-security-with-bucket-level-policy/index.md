@@ -31,8 +31,8 @@ The following policy uses the `Deny` by default, only allows the following types
             "Principal": "*",
             "Action": "s3:*",
             "Resource": [
-                "arn:aws:s3:::BUCKET_NAME",
-                "arn:aws:s3:::BUCKET_NAME/*"
+                "arn:aws:s3:::bucket-name",
+                "arn:aws:s3:::bucket-name/*"
             ],
             "Condition": {
                 "Bool": {
@@ -46,10 +46,10 @@ The following policy uses the `Deny` by default, only allows the following types
                 },
                 "ArnNotLikeIfExists": {
                     "aws:PrincipalArn": [
-                        "arn:aws:iam::857857857857:role/RoleName",
-                        "arn:aws:iam::361361361361:role/RoleName",
-                        "arn:aws:iam::857857857857:role/Role*",
-                        "arn:aws:iam::361361361361:role/Role*"
+                        "arn:aws:iam::857857857857:role/role-name",
+                        "arn:aws:iam::361361361361:role/role-name",
+                        "arn:aws:iam::857857857857:role/role*",
+                        "arn:aws:iam::361361361361:role/role*"
                     ]
                 },
                 "NotIpAddressIfExists": {

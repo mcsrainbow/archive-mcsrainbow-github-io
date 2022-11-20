@@ -192,8 +192,8 @@
 </span></span><span class="line"><span class="cl">            <span class="nt">&#34;Principal&#34;</span><span class="p">:</span> <span class="s2">&#34;*&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">            <span class="nt">&#34;Action&#34;</span><span class="p">:</span> <span class="s2">&#34;s3:*&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">            <span class="nt">&#34;Resource&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">                <span class="s2">&#34;arn:aws:s3:::BUCKET_NAME&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                <span class="s2">&#34;arn:aws:s3:::BUCKET_NAME/*&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;arn:aws:s3:::bucket-name&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;arn:aws:s3:::bucket-name/*&#34;</span>
 </span></span><span class="line"><span class="cl">            <span class="p">],</span>
 </span></span><span class="line"><span class="cl">            <span class="nt">&#34;Condition&#34;</span><span class="p">:</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">                <span class="nt">&#34;Bool&#34;</span><span class="p">:</span> <span class="p">{</span>
@@ -207,10 +207,10 @@
 </span></span><span class="line"><span class="cl">                <span class="p">},</span>
 </span></span><span class="line"><span class="cl">                <span class="nt">&#34;ArnNotLikeIfExists&#34;</span><span class="p">:</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">                    <span class="nt">&#34;aws:PrincipalArn&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">                        <span class="s2">&#34;arn:aws:iam::857857857857:role/RoleName&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                        <span class="s2">&#34;arn:aws:iam::361361361361:role/RoleName&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                        <span class="s2">&#34;arn:aws:iam::857857857857:role/Role*&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                        <span class="s2">&#34;arn:aws:iam::361361361361:role/Role*&#34;</span>
+</span></span><span class="line"><span class="cl">                        <span class="s2">&#34;arn:aws:iam::857857857857:role/role-name&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                        <span class="s2">&#34;arn:aws:iam::361361361361:role/role-name&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                        <span class="s2">&#34;arn:aws:iam::857857857857:role/role*&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                        <span class="s2">&#34;arn:aws:iam::361361361361:role/role*&#34;</span>
 </span></span><span class="line"><span class="cl">                    <span class="p">]</span>
 </span></span><span class="line"><span class="cl">                <span class="p">},</span>
 </span></span><span class="line"><span class="cl">                <span class="nt">&#34;NotIpAddressIfExists&#34;</span><span class="p">:</span> <span class="p">{</span>
