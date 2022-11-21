@@ -84,7 +84,7 @@ lightgallery: true
 
 1. 通过SCP从组织账号级别限制S3的访问来源
 2. 通过Bucket Level Policy限制具体的S3 Action
-3. 启用GuardDuty服务监测可疑的S3访问活动
+3. 启用GuardDuty监测可疑的S3访问活动
 4. 使用Macie扫描S3中的敏感数据
 5. 启用KMS加密S3中的数据
 6. 启用S3 Versioning保留数据副本避免误删除，或启用S3 Object Lock禁用数据删除功能
