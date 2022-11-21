@@ -1,7 +1,7 @@
 # 通过Bucket Level Policy加强AWS S3数据安全防护
 
 
-通过Bucket Level Policy合理限制S3 Bucket访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket中的数据安全。
+通过Bucket Level Policy合理限制S3 Bucket访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket的数据安全。
 
 <!--more-->
 
@@ -9,9 +9,9 @@
 
 随着公有云的不断发展，越来越多的企业通过云服务来构建基础设施，并采用对象存储作为企业的数据底座。
 
-由于安全意识较弱，大量的技术人员为了方便，喜欢通过AKSK（Access Key and Secret Key）的授权方式对资源进行访问。AKSK由两串字符构成，通过AKSK能够直接用命令行工具或API代码获取到对应用户的权限。以AWS为例，对于存储在S3 Bucket中的数据，通过一个简单的`aws s3 sync`命令就可以全部拖走。
+由于安全意识较弱，大量的技术人员为了方便，喜欢通过AKSK（Access Key and Secret Key）的授权方式对资源进行访问。AKSK由两串字符构成，通过AKSK能够直接用命令行工具或API代码获取到对应用户的权限。以AWS为例，通过一个简单的`aws s3 sync`命令就可以将S3 Bucket的数据全部拖走。
 
-由于AKSK泄露造成对象存储中数据被拖走的案例，可谓是屡见不鲜，部分案例所造成的影响甚至可以用骇人听闻来形容。采用技术手段规避掉这类风险是很有必要的，以AWS为例，通过Bucket Level Policy合理限制S3 Bucket的访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket中的数据安全。
+由于AKSK泄露造成对象存储中数据被拖走的案例，可谓是屡见不鲜，部分案例所造成的影响甚至可以用骇人听闻来形容。采用技术手段规避掉这类风险是很有必要的，以AWS为例，通过Bucket Level Policy合理限制S3 Bucket的访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket的数据安全。
 
 ## Policy示例
 
@@ -68,7 +68,7 @@
 
 ## 更完善的方案
 
-为了更加完善地保障S3 Bucket的数据安全，可以通过访问来源、最小访问权限、安全监测、日志监控、数据加密、配置检查、数据副本等方面开展：
+更加完善地保障S3 Bucket的数据安全，可以通过访问来源、最小访问权限、安全监测、日志监控、数据加密、配置检查、数据副本等方面开展：
 
 1. 通过SCP从组织账号级别限制S3的访问来源
 2. 通过Bucket Level Policy限制具体的S3 Action

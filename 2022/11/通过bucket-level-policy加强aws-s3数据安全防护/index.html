@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>通过Bucket Level Policy加强AWS S3数据安全防护 - Hey! Linux.</title><meta name="Description" content="通过Bucket Level Policy合理限制S3 Bucket的访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket中的数据安全。"><meta property="og:title" content="通过Bucket Level Policy加强AWS S3数据安全防护" />
-<meta property="og:description" content="通过Bucket Level Policy合理限制S3 Bucket的访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket中的数据安全。" />
+        <title>通过Bucket Level Policy加强AWS S3数据安全防护 - Hey! Linux.</title><meta name="Description" content="通过Bucket Level Policy合理限制S3 Bucket的访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket的数据安全。"><meta property="og:title" content="通过Bucket Level Policy加强AWS S3数据安全防护" />
+<meta property="og:description" content="通过Bucket Level Policy合理限制S3 Bucket的访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket的数据安全。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.heylinux.com/2022/11/%E9%80%9A%E8%BF%87bucket-level-policy%E5%8A%A0%E5%BC%BAaws-s3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/" /><meta property="og:image" content="https://blog.heylinux.com/2022/11/%E9%80%9A%E8%BF%87bucket-level-policy%E5%8A%A0%E5%BC%BAaws-s3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/featured-image.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-20T22:31:30+08:00" />
@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://blog.heylinux.com/2022/11/%E9%80%9A%E8%BF%87bucket-level-policy%E5%8A%A0%E5%BC%BAaws-s3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/featured-image.png"/>
 <meta name="twitter:title" content="通过Bucket Level Policy加强AWS S3数据安全防护"/>
-<meta name="twitter:description" content="通过Bucket Level Policy合理限制S3 Bucket的访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket中的数据安全。"/>
+<meta name="twitter:description" content="通过Bucket Level Policy合理限制S3 Bucket的访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket的数据安全。"/>
 <meta name="application-name" content="Hey! Linux.">
 <meta name="apple-mobile-web-app-title" content="Hey! Linux."><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -34,7 +34,7 @@
                             "url": "https:\/\/blog.heylinux.com\/2022\/11\/%E9%80%9A%E8%BF%87bucket-level-policy%E5%8A%A0%E5%BC%BAaws-s3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4\/featured-image.png",
                             "width":  1440 ,
                             "height":  800 
-                        }],"genre": "posts","keywords": "AWS, 安全","wordcount":  932 ,
+                        }],"genre": "posts","keywords": "AWS, 安全","wordcount":  922 ,
         "url": "https:\/\/blog.heylinux.com\/2022\/11\/%E9%80%9A%E8%BF%87bucket-level-policy%E5%8A%A0%E5%BC%BAaws-s3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4\/","datePublished": "2022-11-20T22:31:30+08:00","dateModified": "2022-11-20T22:31:30+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "mcsrainbow","logo": {
@@ -45,7 +45,7 @@
                 }},"author": {
                 "@type": "Person",
                 "name": "郭冬"
-            },"description": "通过Bucket Level Policy合理限制S3 Bucket的访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket中的数据安全。"
+            },"description": "通过Bucket Level Policy合理限制S3 Bucket的访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket的数据安全。"
     }
     </script></head>
     <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -116,7 +116,7 @@
     </div><main class="main">
                 <div class="container"><article class="page single"><h1 class="single-title animate__animated animate__flipInX">通过Bucket Level Policy加强AWS S3数据安全防护</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/about/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>郭冬</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%8A%80%E8%83%BD%E7%9F%A9%E9%98%B5/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>技能矩阵</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-20">2022-11-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 932 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-20">2022-11-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 922 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -125,11 +125,11 @@
         data-srcset="/2022/11/%E9%80%9A%E8%BF%87bucket-level-policy%E5%8A%A0%E5%BC%BAaws-s3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/featured-image.png, /2022/11/%E9%80%9A%E8%BF%87bucket-level-policy%E5%8A%A0%E5%BC%BAaws-s3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/featured-image.png 1.5x, /2022/11/%E9%80%9A%E8%BF%87bucket-level-policy%E5%8A%A0%E5%BC%BAaws-s3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/featured-image.png 2x"
         data-sizes="auto"
         alt="/2022/11/%E9%80%9A%E8%BF%87bucket-level-policy%E5%8A%A0%E5%BC%BAaws-s3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/featured-image.png"
-        title="通过Bucket Level Policy合理限制S3 Bucket的访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket中的数据安全。" /></div><div class="content" id="content"><p>通过Bucket Level Policy合理限制S3 Bucket访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket中的数据安全。</p>
+        title="通过Bucket Level Policy合理限制S3 Bucket的访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket的数据安全。" /></div><div class="content" id="content"><p>通过Bucket Level Policy合理限制S3 Bucket访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket的数据安全。</p>
 <h2 id="背景">背景</h2>
 <p>随着公有云的不断发展，越来越多的企业通过云服务来构建基础设施，并采用对象存储作为企业的数据底座。</p>
-<p>由于安全意识较弱，大量的技术人员为了方便，喜欢通过AKSK（Access Key and Secret Key）的授权方式对资源进行访问。AKSK由两串字符构成，通过AKSK能够直接用命令行工具或API代码获取到对应用户的权限。以AWS为例，对于存储在S3 Bucket中的数据，通过一个简单的<code>aws s3 sync</code>命令就可以全部拖走。</p>
-<p>由于AKSK泄露造成对象存储中数据被拖走的案例，可谓是屡见不鲜，部分案例所造成的影响甚至可以用骇人听闻来形容。采用技术手段规避掉这类风险是很有必要的，以AWS为例，通过Bucket Level Policy合理限制S3 Bucket的访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket中的数据安全。</p>
+<p>由于安全意识较弱，大量的技术人员为了方便，喜欢通过AKSK（Access Key and Secret Key）的授权方式对资源进行访问。AKSK由两串字符构成，通过AKSK能够直接用命令行工具或API代码获取到对应用户的权限。以AWS为例，通过一个简单的<code>aws s3 sync</code>命令就可以将S3 Bucket的数据全部拖走。</p>
+<p>由于AKSK泄露造成对象存储中数据被拖走的案例，可谓是屡见不鲜，部分案例所造成的影响甚至可以用骇人听闻来形容。采用技术手段规避掉这类风险是很有必要的，以AWS为例，通过Bucket Level Policy合理限制S3 Bucket的访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket的数据安全。</p>
 <h2 id="policy示例">Policy示例</h2>
 <p>以下Policy示例代码默认采用了Deny（禁用）策略，仅对以下几种请求放行：</p>
 <ol>
@@ -227,7 +227,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="更完善的方案">更完善的方案</h2>
-<p>为了更加完善地保障S3 Bucket的数据安全，可以通过访问来源、最小访问权限、安全监测、日志监控、数据加密、配置检查、数据副本等方面开展：</p>
+<p>更加完善地保障S3 Bucket的数据安全，可以通过访问来源、最小访问权限、安全监测、日志监控、数据加密、配置检查、数据副本等方面开展：</p>
 <ol>
 <li>通过SCP从组织账号级别限制S3的访问来源</li>
 <li>通过Bucket Level Policy限制具体的S3 Action</li>

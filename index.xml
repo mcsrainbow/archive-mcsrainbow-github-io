@@ -12,7 +12,7 @@
     <pubDate>Sun, 20 Nov 2022 22:31:30 &#43;0800</pubDate>
     <author>郭冬</author>
     <guid>https://blog.heylinux.com/2022/11/%E9%80%9A%E8%BF%87bucket-level-policy%E5%8A%A0%E5%BC%BAaws-s3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/</guid>
-    <description><![CDATA[<p>通过Bucket Level Policy合理限制S3 Bucket访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket中的数据安全。</p>]]></description>
+    <description><![CDATA[<p>通过Bucket Level Policy合理限制S3 Bucket访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket的数据安全。</p>]]></description>
 </item>
 <item>
     <title>常用标点符号中英文名称对照</title>
