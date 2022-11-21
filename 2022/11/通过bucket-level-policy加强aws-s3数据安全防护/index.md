@@ -78,7 +78,7 @@
 6. 启用S3 Versioning保留数据副本避免误删除，或启用S3 Object Lock禁用数据删除功能
 7. 启用S3访问日志和CloudTrail日志监控
 8. 通过Security Hub检查S3设置，对CloudWatch日志进行自定义分析和报警
-9. 采用S3复制功能自动跨区域同步备份
+9. 采用S3跨区域复制功能自动同步备份
 
 ## 参考
 
