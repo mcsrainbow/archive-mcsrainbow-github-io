@@ -14,26 +14,28 @@ math:
 
 ### 关于我
 
-+ <i class="fa-solid fa-info fa-fw"></i>**简介**：实操型运维负责人、解决方案架构师、终身学习者
-+ <i class="fas fa-user-tie fa-fw"></i>**领域**：<i class="fas fa-cloud-upload-alt fa-fw"></i> 混合云 <i class="fas fa-layer-group"></i> 大数据 <i class="far fa-object-group fa-fw"></i> 运维架构 <i class="fas fa-user-shield fa-fw"></i> 网络安全
++ <i class="fas fa-user fa-fw"></i>**简介**：实操型运维负责人、解决方案架构师、终身学习者
++ <i class="fas fa-user-tie fa-fw"></i>**领域**：<i class="fas fa-cloud-upload-alt fa-fw"></i> 混合云 <i class="fas fa-layer-group"></i> 大数据 <i class="fas fa-code-branch fa-fw"></i> 运维开发 <i class="fas fa-user-shield fa-fw"></i> 网络安全
 
 ### [TO DO LIST]^(始于2021年2月)
 
 <i class="fas fa-tasks fa-fw"></i> **核心任务**
-- [x] <i class="fab fa-aws fa-fw"></i> **AWS SAP** - 公有云
-- [x] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 Foundation** - IT服务管理
-- [x] <i class="fas fa-dharmachakra fa-fw"></i> **CKA** - Kubernetes
-- [x] <i class="fas fa-language fa-fw"></i> **英语六级** - 英语
-- [x] <i class="fas fa-graduation-cap fa-fw"></i> **论文** - 硕士学位
-- [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - 安全
-- [ ] <i class="fas fa-users-cog fa-fw"></i> **PMP** - 项目管理
-- [ ] <i class="fas fa-cloud fa-fw"></i> **ACP** - 公有云
-- [ ] <i class="fab fa-google fa-fw"></i> **GCP** - 公有云
-- [ ] <i class="fas fa-language fa-fw"></i> **雅思7.0** - 英语
-- [ ] <i class="fas fa-hand-holding-usd fa-fw"></i> **CFA** - 金融
-- [ ] <i class="fas fa-user-tag fa-fw"></i> **CDMP** - 数据管理
-- [ ] <i class="fas fa-dharmachakra fa-fw"></i> **CKS** - Kubernetes安全
-- [ ] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 MP** - IT服务管理
+
+- [x] <i class="fab fa-aws fa-fw"></i> **AWS SAP** - AWS解决方案架构师专家级
+- [x] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 Foundation** - IT服务管理基础级
+- [x] <i class="fas fa-dharmachakra fa-fw"></i> **CKA** - Kubernetes管理员认证
+- [x] <i class="fas fa-language fa-fw"></i> **CET6** - 英语六级
+- [x] <i class="fas fa-graduation-cap fa-fw"></i> **Thesis** - 工程管理硕士
+- [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - 信息系统安全认证专家
+- [ ] <i class="fas fa-cloud fa-fw"></i> **ACP** - 阿里云云计算专业认证
+- [ ] <i class="fab fa-google fa-fw"></i> **GCP** - 谷歌云架构师专家级
+- [ ] <i class="fas fa-user-tag fa-fw"></i> **CDMP** - 数据管理专业认证
+- [ ] <i class="fas fa-users-cog fa-fw"></i> **PMP** - 项目管理专业认证
+- [ ] <i class="fas fa-language fa-fw"></i> **IELTS 7** - 雅思7分
+- [ ] <i class="fas fa-hand-holding-usd fa-fw"></i> **CFA** - 特许金融分析师
+- [ ] <i class="fas fa-cloud fa-fw"></i> **CCSP** - 云安全专家认证
+- [ ] <i class="fas fa-dharmachakra fa-fw"></i> **CKS** - Kubernetes安全专家认证
+- [ ] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 MP** - IT服务管理专家级
 
 <i class="fas fa-book-open fa-fw"></i> **私藏书单**
 

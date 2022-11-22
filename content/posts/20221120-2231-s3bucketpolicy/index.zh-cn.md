@@ -25,6 +25,8 @@ lightgallery: true
 
 由于AKSK泄露造成对象存储中数据被拖走的案例，可谓是屡见不鲜，部分案例所造成的影响甚至可以用骇人听闻来形容。采用技术手段规避掉这类风险是很有必要的，以AWS为例，通过Bucket Level Policy合理限制S3 Bucket的访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket的数据安全。
 
+当然，这里还有一个前提，就是泄露的AKSK对应用户的权限不能太大，比如具备管理员权限或包含其它服务如IAM、EC2、Lambda等服务的完整权限。否则仍然可能通过其它服务绕过Bucket Level Policy的合理限制或修改重置Bucket Level Policy，造成权限蔓延。对于这类情况，就需要通过SCP从组织账号级别对各种服务进行限制了，Policy也会更复杂一些。
+
 ## Policy示例
 
 以下Policy示例代码默认采用了Deny（禁用）策略，仅对以下几种请求放行：
@@ -82,7 +84,7 @@ lightgallery: true
 
 更加完善地保障S3 Bucket的数据安全，可以通过访问来源、最小访问权限、安全监测、日志监控、数据加密、配置检查、数据副本等方面开展：
 
-1. 通过SCP从组织账号级别限制S3的访问来源
+1. 通过SCP从组织账号级别限制S3以及其它AWS Service的访问来源
 2. 通过Bucket Level Policy限制具体的S3 Action
 3. 启用GuardDuty监测可疑的S3访问活动
 4. 使用Macie扫描S3中的敏感数据
