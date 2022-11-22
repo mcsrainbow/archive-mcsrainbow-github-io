@@ -17,7 +17,7 @@
 
 ## Policy示例
 
-以下Policy示例代码默认采用了Deny（禁用）策略，仅对以下几种请求放行：
+以下Bucket Level Policy示例代码默认采用了Deny（禁用）策略，仅对以下几种请求放行：
 
 1. 当请求直接来自于AWS Service；
 2. 当请求来自于指定的VPC ID；

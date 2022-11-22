@@ -15,7 +15,7 @@ One prerequisite is that the compromised AKSK should not have administrator priv
 
 ## Policy example
 
-The following policy uses the `Deny` by default, only allows the following types of requests.
+The following Bucket Level Policy uses the `Deny` by default, only allows the following types of requests.
 
 1. When requests come directly from AWS services.
 2. When requests come from the specified VPC IDs.

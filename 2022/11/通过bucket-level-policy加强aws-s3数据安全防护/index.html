@@ -34,7 +34,7 @@
                             "url": "https:\/\/blog.heylinux.com\/2022\/11\/%E9%80%9A%E8%BF%87bucket-level-policy%E5%8A%A0%E5%BC%BAaws-s3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4\/featured-image.png",
                             "width":  1440 ,
                             "height":  800 
-                        }],"genre": "posts","keywords": "AWS, 安全","wordcount":  1110 ,
+                        }],"genre": "posts","keywords": "AWS, 安全","wordcount":  1117 ,
         "url": "https:\/\/blog.heylinux.com\/2022\/11\/%E9%80%9A%E8%BF%87bucket-level-policy%E5%8A%A0%E5%BC%BAaws-s3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4\/","datePublished": "2022-11-20T22:31:30+08:00","dateModified": "2022-11-20T22:31:30+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "mcsrainbow","logo": {
@@ -116,7 +116,7 @@
     </div><main class="main">
                 <div class="container"><article class="page single"><h1 class="single-title animate__animated animate__flipInX">通过Bucket Level Policy加强AWS S3数据安全防护</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/about/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>郭冬</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%8A%80%E8%83%BD%E7%9F%A9%E9%98%B5/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>技能矩阵</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-20">2022-11-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1110 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-20">2022-11-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1117 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -132,7 +132,7 @@
 <p>由于AKSK泄露造成对象存储中数据被拖走的案例，可谓是屡见不鲜，部分案例所造成的影响甚至可以用骇人听闻来形容。采用技术手段规避掉这类风险是很有必要的，以AWS为例，通过Bucket Level Policy合理限制S3 Bucket的访问请求来源后，能够在AKSK泄露的情况下仍然保障AWS S3 Bucket的数据安全。</p>
 <p>当然，这里还有一个前提，就是泄露的AKSK对应用户的权限不能太大，比如具备管理员权限或包含其它服务如IAM、EC2、Lambda等服务的完整权限。否则仍然可能通过其它服务绕过Bucket Level Policy的合理限制或修改重置Bucket Level Policy，造成权限蔓延。对于这类情况，可以通过SCP从组织账号级别对各种服务进行限制，Policy也会更复杂一些。</p>
 <h2 id="policy示例">Policy示例</h2>
-<p>以下Policy示例代码默认采用了Deny（禁用）策略，仅对以下几种请求放行：</p>
+<p>以下Bucket Level Policy示例代码默认采用了Deny（禁用）策略，仅对以下几种请求放行：</p>
 <ol>
 <li>当请求直接来自于AWS Service；</li>
 <li>当请求来自于指定的VPC ID；</li>
