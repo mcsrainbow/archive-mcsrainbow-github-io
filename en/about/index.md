@@ -7,26 +7,28 @@
 
 ### About Me
 
-+ <i class="fa-solid fa-info fa-fw"></i> **Bio**: A Hands-On SRE Lead, a Solutions Architect, and a Lifelong Learner
-+ <i class="fas fa-user-tie fa-fw"></i> **Specialties**: <i class="fas fa-cloud-upload-alt fa-fw"></i> Hybrid Cloud <i class="fas fa-layer-group"></i> Big Data <i class="far fa-object-group fa-fw"></i> DevOps <i class="fas fa-user-shield fa-fw"></i> Cybersecurity
++ <i class="fas fa-user fa-fw"></i> **Bio**: A Hands-On SRE Lead, a Solutions Architect, and a Lifelong Learner
++ <i class="fas fa-user-tie fa-fw"></i> **Specialties**: <i class="fas fa-cloud-upload-alt fa-fw"></i> Hybrid Cloud <i class="fas fa-layer-group"></i> Big Data <i class="fas fa-code-branch fa-fw"></i> DevOps <i class="fas fa-user-shield fa-fw"></i> Cybersecurity
 
 ### [TO DO LIST]^(Since Feburary 2021)
 
 <i class="fas fa-tasks fa-fw"></i> **Core Missions**
-- [x] <i class="fab fa-aws fa-fw"></i> **AWS SAP** - Cloud Architect
+
+- [x] <i class="fab fa-aws fa-fw"></i> **AWS SAP** - AWS Certified Solutions Architect Professional
 - [x] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 Foundation** - IT Service Management
-- [x] <i class="fas fa-dharmachakra fa-fw"></i> **CKA** - Kubernetes
-- [x] <i class="fas fa-language fa-fw"></i> **CET6** - English
+- [x] <i class="fas fa-dharmachakra fa-fw"></i> **CKA** - Certified Kubernetes Administrator
+- [x] <i class="fas fa-language fa-fw"></i> **CET6** - College English Test Band 6
 - [x] <i class="fas fa-graduation-cap fa-fw"></i> **Thesis** - Master of Engineering Management
-- [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - Security
-- [ ] <i class="fas fa-users-cog fa-fw"></i> **PMP** - Project Management
-- [ ] <i class="fas fa-cloud fa-fw"></i> **ACP** - Cloud Architect
-- [ ] <i class="fab fa-google fa-fw"></i> **GCP** - Cloud Architect
-- [ ] <i class="fas fa-language fa-fw"></i> **IELTS 7.0** - English
-- [ ] <i class="fas fa-hand-holding-usd fa-fw"></i> **CFA** - Finance
-- [ ] <i class="fas fa-user-tag fa-fw"></i> **CDMP** - Data Management
-- [ ] <i class="fas fa-dharmachakra fa-fw"></i> **CKS** - Kubernetes Security
-- [ ] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 MP** - IT Service Management
+- [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - Certified Information Systems Security Professional
+- [ ] <i class="fas fa-cloud fa-fw"></i> **ACP** - Alibaba Cloud Certified Professional
+- [ ] <i class="fab fa-google fa-fw"></i> **GCP** - Google Certified Professional Cloud Architect
+- [ ] <i class="fas fa-user-tag fa-fw"></i> **CDMP** - Certified Data Management Professional
+- [ ] <i class="fas fa-users-cog fa-fw"></i> **PMP** - Project Management Professional
+- [ ] <i class="fas fa-language fa-fw"></i> **IELTS 7** - International English Language Testing System Band Score 7
+- [ ] <i class="fas fa-hand-holding-usd fa-fw"></i> **CFA** - Chartered Financial Analyst
+- [ ] <i class="fas fa-cloud fa-fw"></i> **CCSP** - Certified Cloud Security Professional
+- [ ] <i class="fas fa-dharmachakra fa-fw"></i> **CKS** - Certified Kubernetes Security Specialist
+- [ ] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 MP** - ITIL 4 Managing Professional
 
 <i class="fas fa-book-open fa-fw"></i> **Private Booklist**
 

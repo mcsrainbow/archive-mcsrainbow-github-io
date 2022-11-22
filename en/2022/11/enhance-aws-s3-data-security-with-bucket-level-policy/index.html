@@ -34,7 +34,7 @@
                             "url": "https:\/\/blog.heylinux.com\/en\/2022\/11\/enhance-aws-s3-data-security-with-bucket-level-policy\/featured-image.png",
                             "width":  1440 ,
                             "height":  800 
-                        }],"genre": "posts","keywords": "AWS, Security","wordcount":  382 ,
+                        }],"genre": "posts","keywords": "AWS, Security","wordcount":  446 ,
         "url": "https:\/\/blog.heylinux.com\/en\/2022\/11\/enhance-aws-s3-data-security-with-bucket-level-policy\/","datePublished": "2022-11-20T22:31:30+08:00","dateModified": "2022-11-20T22:31:30+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "mcsrainbow","logo": {
@@ -116,8 +116,8 @@
     </div><main class="main">
                 <div class="container"><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Enhance AWS S3 Data Security with Bucket Level Policy</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/about/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Dong Guo | Damon</a></span>&nbsp;<span class="post-category">included in <a href="/en/categories/skills/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Skills</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-20">2022-11-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;382 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-20">2022-11-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;446 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -129,6 +129,7 @@
 <h2 id="background">Background</h2>
 <p>Due to weak security awareness, many people prefer to access resources through AKSK (Access Key and Secret Key). AKSK contains only two strings and the user permissions can be obtained via command line tools or API codes.</p>
 <p>Take AWS as an example, a simple <code>aws s3 sync</code> command can drag away all the data stored in S3 Bucket. After restricted the source of S3 Bucket access requests through Bucket Level Policy, the data in AWS S3 Bucket can still be secured even if AKSK is compromised.</p>
+<p>One prerequisite is that the compromised AKSK should not have administrator privileges or full privileges of services such as IAM, EC2, Lambda, etc. Otherwise, it may bypass the Bucket Level Policy restrictions or modify the Bucket Level Policy through those services. For such cases, restrictions could be imposed on various services from the organization account level by SCP.</p>
 <h2 id="policy-example">Policy example</h2>
 <p>The following policy uses the <code>Deny</code> by default, only allows the following types of requests.</p>
 <ol>
@@ -226,9 +227,9 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="better-solution">Better solution</h2>
-<p>Here are some strong protection mechanisms for the data in Amazon S3, including least privilege access, encryption of data at rest, blocking public access, logging, monitoring, and configuration checks.</p>
+<p>Here are some strong protection mechanisms for the data in Amazon S3, including least privilege access, encryption of data at rest, restricted sources, logging, monitoring, and configuration checks.</p>
 <ol>
-<li>Block public S3 buckets at the organization level</li>
+<li>Restrict the sources of requests at the organization level for S3 and other AWS services</li>
 <li>Use bucket policies to verify all access granted is restricted and specific</li>
 <li>Enable S3 protection in GuardDuty to detect suspicious activities</li>
 <li>Use Macie to scan for sensitive data outside of designated areas</li>

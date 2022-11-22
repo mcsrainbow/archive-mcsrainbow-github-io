@@ -11,6 +11,8 @@ Due to weak security awareness, many people prefer to access resources through A
 
 Take AWS as an example, a simple `aws s3 sync` command can drag away all the data stored in S3 Bucket. After restricted the source of S3 Bucket access requests through Bucket Level Policy, the data in AWS S3 Bucket can still be secured even if AKSK is compromised.
 
+One prerequisite is that the compromised AKSK should not have administrator privileges or full privileges of services such as IAM, EC2, Lambda, etc. Otherwise, it may bypass the Bucket Level Policy restrictions or modify the Bucket Level Policy through those services. For such cases, restrictions could be imposed on various services from the organization account level by SCP.
+
 ## Policy example
 
 The following policy uses the `Deny` by default, only allows the following types of requests.
@@ -66,9 +68,9 @@ The following policy uses the `Deny` by default, only allows the following types
 
 ## Better solution
 
-Here are some strong protection mechanisms for the data in Amazon S3, including least privilege access, encryption of data at rest, blocking public access, logging, monitoring, and configuration checks.
+Here are some strong protection mechanisms for the data in Amazon S3, including least privilege access, encryption of data at rest, restricted sources, logging, monitoring, and configuration checks.
 
-1. Block public S3 buckets at the organization level
+1. Restrict the sources of requests at the organization level for S3 and other AWS services 
 2. Use bucket policies to verify all access granted is restricted and specific
 3. Enable S3 protection in GuardDuty to detect suspicious activities
 4. Use Macie to scan for sensitive data outside of designated areas
