@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://blog.heylinux.com/tags/aws/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/tags/aws/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://blog.heylinux.com/en/tags/aws/"
@@ -11,7 +11,7 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/tags/aws/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/categories/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/categories/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://blog.heylinux.com/en/categories/"
@@ -20,7 +20,7 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/categories/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://blog.heylinux.com/en/"
@@ -29,7 +29,7 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/posts/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/posts/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://blog.heylinux.com/en/posts/"
@@ -38,7 +38,7 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/posts/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/tags/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/tags/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://blog.heylinux.com/en/tags/"
@@ -47,9 +47,9 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/tags/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/tags/%E5%AE%89%E5%85%A8/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.heylinux.com/categories/%E6%8A%80%E8%83%BD%E7%9F%A9%E9%98%B5/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.heylinux.com/2022/11/%E9%80%9A%E8%BF%87bucket-level-policy%E5%8A%A0%E5%BC%BAaws-s3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://blog.heylinux.com/tags/%E5%AE%89%E5%85%A8/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.heylinux.com/categories/%E6%8A%80%E8%83%BD%E7%9F%A9%E9%98%B5/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.heylinux.com/2022/11/%E9%80%9A%E8%BF%87bucket-level-policy%E5%8A%A0%E5%BC%BAaws-s3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/</loc><lastmod>2022-11-20T22:31:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://blog.heylinux.com/en/2022/11/enhance-aws-s3-data-security-with-bucket-level-policy/"
@@ -87,7 +87,6 @@
                     href="https://blog.heylinux.com/2022/05/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AF%8C%E7%88%B8%E7%88%B8%E7%A9%B7%E7%88%B8%E7%88%B8/"
                     /></url><url>
             <loc>https://blog.heylinux.com/tags/%E9%87%91%E8%9E%8D/</loc><lastmod>2022-05-29T18:57:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://blog.heylinux.com/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/</loc><lastmod>2022-04-08T21:54:47&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/2022/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%B0%8F%E5%B2%9B%E7%BB%8F%E6%B5%8E%E5%AD%A6/</loc><lastmod>2022-04-08T21:54:47&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -97,7 +96,7 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/2022/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%B0%8F%E5%B2%9B%E7%BB%8F%E6%B5%8E%E5%AD%A6/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/</loc><lastmod>2022-03-24T08:14:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.heylinux.com/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/</loc><lastmod>2022-04-08T21:54:47&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/2022/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/</loc><lastmod>2022-03-24T08:14:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -107,6 +106,7 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/2022/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/"
                     /></url><url>
+            <loc>https://blog.heylinux.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/</loc><lastmod>2022-03-24T08:14:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/2022/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%BD%B1%E5%93%8D%E5%8A%9B/</loc><lastmod>2022-03-06T23:09:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -116,6 +116,8 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/2022/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%BD%B1%E5%93%8D%E5%8A%9B/"
                     /></url><url>
+            <loc>https://blog.heylinux.com/tags/%E7%88%B1/</loc><lastmod>2022-01-20T00:44:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.heylinux.com/tags/%E5%AE%B6%E5%BA%AD/</loc><lastmod>2022-01-20T00:44:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/2022/01/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD%E7%88%B1%E6%84%8F%E7%BB%B5%E9%95%BF/</loc><lastmod>2022-01-20T00:44:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -125,11 +127,8 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/2022/01/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD%E7%88%B1%E6%84%8F%E7%BB%B5%E9%95%BF/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/tags/%E5%AE%B6%E5%BA%AD/</loc><lastmod>2022-01-20T00:44:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://blog.heylinux.com/tags/%E5%B9%B8%E7%A6%8F/</loc><lastmod>2022-01-20T00:44:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://blog.heylinux.com/tags/%E7%88%B1/</loc><lastmod>2022-01-20T00:44:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/</loc><lastmod>2022-01-20T00:44:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://blog.heylinux.com/tags/%E4%BA%BA%E7%89%A9%E4%BC%A0%E8%AE%B0/</loc><lastmod>2022-01-16T07:44:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.heylinux.com/tags/%E5%B9%B8%E7%A6%8F/</loc><lastmod>2022-01-20T00:44:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/2022/01/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E4%BD%A0%E5%BD%93%E5%83%8F%E9%B8%9F%E9%A3%9E%E5%BE%80%E4%BD%A0%E7%9A%84%E5%B1%B1/</loc><lastmod>2022-01-16T07:44:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -139,6 +138,7 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/2022/01/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E4%BD%A0%E5%BD%93%E5%83%8F%E9%B8%9F%E9%A3%9E%E5%BE%80%E4%BD%A0%E7%9A%84%E5%B1%B1/"
                     /></url><url>
+            <loc>https://blog.heylinux.com/tags/%E4%BA%BA%E7%89%A9%E4%BC%A0%E8%AE%B0/</loc><lastmod>2022-01-16T07:44:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/2022/01/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%88%BB%E6%84%8F%E6%94%BE%E6%89%8B%E5%90%91%E6%9C%80%E5%B9%B8%E7%A6%8F%E7%9A%84%E4%BA%BA%E5%AD%A6%E4%B9%A0%E5%B9%B8%E7%A6%8F/</loc><lastmod>2022-01-09T18:00:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -148,8 +148,8 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/2022/01/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%88%BB%E6%84%8F%E6%94%BE%E6%89%8B%E5%90%91%E6%9C%80%E5%B9%B8%E7%A6%8F%E7%9A%84%E4%BA%BA%E5%AD%A6%E4%B9%A0%E5%B9%B8%E7%A6%8F/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/tags/%E5%B9%B4%E7%BB%88%E5%9B%9E%E9%A1%BE/</loc><lastmod>2022-01-06T21:48:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/tags/%E6%88%90%E9%95%BF/</loc><lastmod>2022-01-06T21:48:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.heylinux.com/tags/%E5%B9%B4%E7%BB%88%E5%9B%9E%E9%A1%BE/</loc><lastmod>2022-01-06T21:48:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/2022/01/%E6%88%91%E7%9A%842021%E5%B9%B4%E7%BB%88%E5%9B%9E%E9%A1%BE/</loc><lastmod>2022-01-06T21:48:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -159,8 +159,6 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/2022/01/%E6%88%91%E7%9A%842021%E5%B9%B4%E7%BB%88%E5%9B%9E%E9%A1%BE/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/tags/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/</loc><lastmod>2022-01-01T14:58:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://blog.heylinux.com/tags/%E7%95%AA%E8%8C%84%E5%B7%A5%E4%BD%9C%E6%B3%95/</loc><lastmod>2022-01-01T14:58:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/2022/01/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%95%AA%E8%8C%84%E5%B7%A5%E4%BD%9C%E6%B3%95%E5%9B%BE%E8%A7%A3/</loc><lastmod>2022-01-01T14:58:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -170,6 +168,8 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/2022/01/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%95%AA%E8%8C%84%E5%B7%A5%E4%BD%9C%E6%B3%95%E5%9B%BE%E8%A7%A3/"
                     /></url><url>
+            <loc>https://blog.heylinux.com/tags/%E7%95%AA%E8%8C%84%E5%B7%A5%E4%BD%9C%E6%B3%95/</loc><lastmod>2022-01-01T14:58:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.heylinux.com/tags/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/</loc><lastmod>2022-01-01T14:58:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/tags/kubeadm/</loc><lastmod>2021-12-21T21:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -208,7 +208,6 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/2021/12/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%8E%E6%8A%80%E6%9C%AF%E5%89%8D%E7%9E%BB/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/tags/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/</loc><lastmod>2021-12-11T21:05:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/2021/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/</loc><lastmod>2021-12-11T21:05:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -218,6 +217,7 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/2021/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/"
                     /></url><url>
+            <loc>https://blog.heylinux.com/tags/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/</loc><lastmod>2021-12-11T21:05:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/tags/machine-learning/</loc><lastmod>2021-11-24T20:36:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -335,6 +335,7 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/about/"
                     /></url><url>
+            <loc>https://blog.heylinux.com/tags/%E6%9E%B6%E6%9E%84/</loc><lastmod>2021-11-01T21:51:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/2021/11/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%87%E7%94%A8%E5%A4%9A%E4%BA%91%E6%9E%B6%E6%9E%84/</loc><lastmod>2021-11-01T21:51:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -344,7 +345,6 @@
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/2021/11/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%87%E7%94%A8%E5%A4%9A%E4%BA%91%E6%9E%B6%E6%9E%84/"
                     /></url><url>
-            <loc>https://blog.heylinux.com/tags/%E6%9E%B6%E6%9E%84/</loc><lastmod>2021-11-01T21:51:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/2021/10/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%90%91%E6%AD%BB%E8%80%8C%E7%94%9F%E6%88%91%E4%BF%AE%E7%9A%84%E6%AD%BB%E4%BA%A1%E5%AD%A6%E5%88%86/</loc><lastmod>2021-10-31T14:34:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
