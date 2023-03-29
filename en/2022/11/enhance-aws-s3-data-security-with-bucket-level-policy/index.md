@@ -80,7 +80,7 @@ Here are some strong protection mechanisms for the data in Amazon S3, including 
 8. Monitor S3 using Security Hub and CloudWatch Logs
 9. Use Cross-region replicatio to backup data in S3
 
-## Reference
+## References
 
 https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html
 

@@ -258,7 +258,7 @@ The CAPTCHA images in this competition were more distinctive and easier to featu
 
 For me, the recognition principles and processes I have learned from the CAPTCHA recognition are really valuable.
 
-## Reference
+## References
 
 Source code: [captchas_opencv_rek](https://github.com/mcsrainbow/captchas_opencv_rek)
 
