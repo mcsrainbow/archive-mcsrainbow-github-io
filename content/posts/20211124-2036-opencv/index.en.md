@@ -271,6 +271,5 @@ For me, the recognition principles and processes I have learned from the CAPTCHA
 
 ## References
 
-Source code: [captchas_opencv_rek](https://github.com/mcsrainbow/captchas_opencv_rek)
-
+Source code: [captchas_opencv_rek](https://github.com/mcsrainbow/captchas_opencv_rek)  
 Inspired by: https://www.cnblogs.com/lizm166/p/9969647.html
