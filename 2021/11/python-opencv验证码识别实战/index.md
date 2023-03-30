@@ -283,6 +283,6 @@ def rek_img(model_dict,rek_dir,suffix,results_csv):
 
 ## 参考
 
-源码地址：[captchas_opencv_rek](https://github.com/mcsrainbow/captchas_opencv_rek)
-
+源码地址：[captchas_opencv_rek](https://github.com/mcsrainbow/captchas_opencv_rek)  
 参考文章：[Python3 识别验证码（opencv-python）](https://www.cnblogs.com/lizm166/p/9969647.html)
+
