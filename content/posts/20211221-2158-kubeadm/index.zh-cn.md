@@ -4,7 +4,7 @@ date: 2021-12-21T21:58:24+08:00
 author: "郭冬"
 description: "kubeadm是Kubernetes官方提供的用于快速部署集群的工具"
 categories: ["技能矩阵"]
-tags: ["kubeadm","Kubernetes"]
+tags: ["Kubernetes"]
 resources:
 - name: "featured-image"
   src: "featured-image.jpeg"

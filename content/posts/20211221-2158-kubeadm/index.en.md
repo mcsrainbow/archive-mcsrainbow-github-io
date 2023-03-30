@@ -4,7 +4,7 @@ date: 2021-12-21T21:58:24+08:00
 author: "Dong Guo | Damon"
 description: "kubeadm performs the actions necessary to get a minimum viable cluster up and running."
 categories: ["Skills"]
-tags: ["kubeadm","Kubernetes"]
+tags: ["Kubernetes"]
 resources:
 - name: "featured-image"
   src: "featured-image.jpeg"

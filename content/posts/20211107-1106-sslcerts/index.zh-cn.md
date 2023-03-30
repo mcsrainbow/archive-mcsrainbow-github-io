@@ -4,7 +4,7 @@ date: 2021-11-07T11:06:54+08:00
 author: "郭冬"
 description: "在互联网全站HTTPS的时代，内部私有域名的HTTPS服务部署也尤为重要。"
 categories: ["技能矩阵"]
-tags: ["SSL","TLS","HTTPS"]
+tags: ["安全","SSL","TLS"]
 resources:
 - name: "featured-image"
   src: "featured-image.jpeg"
