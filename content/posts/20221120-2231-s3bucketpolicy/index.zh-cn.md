@@ -7,7 +7,7 @@ categories: ["技能矩阵"]
 tags: ["AWS","安全"]
 resources:
 - name: "featured-image"
-  src: "featured-image.png"
+  src: "featured-image.jpeg"
 
 toc: false
 lightgallery: true

@@ -7,7 +7,7 @@ categories: ["Skills"]
 tags: ["AWS","Security"]
 resources:
 - name: "featured-image"
-  src: "featured-image.png"
+  src: "featured-image.jpeg"
 
 toc: false
 lightgallery: true
