@@ -180,15 +180,6 @@
                     /></url><url>
             <loc>https://blog.heylinux.com/en/tags/pomodoro-technique/</loc><lastmod>2022-01-01T14:58:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/en/tags/time-management/</loc><lastmod>2022-01-01T14:58:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://blog.heylinux.com/en/tags/kubeadm/</loc><lastmod>2021-12-21T21:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://blog.heylinux.com/tags/kubeadm/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://blog.heylinux.com/en/tags/kubeadm/"
-                    /></url><url>
             <loc>https://blog.heylinux.com/en/tags/kubernetes/</loc><lastmod>2021-12-21T21:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -299,15 +290,6 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/"
-                    /></url><url>
-            <loc>https://blog.heylinux.com/en/tags/https/</loc><lastmod>2021-11-07T11:06:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://blog.heylinux.com/tags/https/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://blog.heylinux.com/en/tags/https/"
                     /></url><url>
             <loc>https://blog.heylinux.com/en/tags/ssl/</loc><lastmod>2021-11-07T11:06:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"

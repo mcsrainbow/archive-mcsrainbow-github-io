@@ -180,15 +180,6 @@
                     /></url><url>
             <loc>https://blog.heylinux.com/tags/%E7%95%AA%E8%8C%84%E5%B7%A5%E4%BD%9C%E6%B3%95/</loc><lastmod>2022-01-01T14:58:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.heylinux.com/tags/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/</loc><lastmod>2022-01-01T14:58:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://blog.heylinux.com/tags/kubeadm/</loc><lastmod>2021-12-21T21:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://blog.heylinux.com/en/tags/kubeadm/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://blog.heylinux.com/tags/kubeadm/"
-                    /></url><url>
             <loc>https://blog.heylinux.com/tags/kubernetes/</loc><lastmod>2021-12-21T21:58:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -290,15 +281,6 @@
                     rel="alternate"
                     hreflang="zh-cn"
                     href="https://blog.heylinux.com/2021/11/%E4%B8%8D%E8%B4%9F%E6%97%B6%E5%85%89%E8%BF%8E%E6%8E%A5%E7%BE%8E%E5%A5%BD/"
-                    /></url><url>
-            <loc>https://blog.heylinux.com/tags/https/</loc><lastmod>2021-11-07T11:06:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://blog.heylinux.com/en/tags/https/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://blog.heylinux.com/tags/https/"
                     /></url><url>
             <loc>https://blog.heylinux.com/tags/ssl/</loc><lastmod>2021-11-07T11:06:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
