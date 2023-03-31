@@ -5,7 +5,7 @@ In the Internet addressing architecture, the Internet Engineering Task Force (IE
 
 <!--more-->
 
-# Misunderstandings about Private IP Addresses
+## Misunderstandings about Private IP Addresses
 
 The concepts of internal and external IP addresses are not fixed, but relative. It's easier to understand them as private and public IP addresses or local area network and internet IP addresses.
 
@@ -17,13 +17,13 @@ Almost all textbooks tell us that there are three types of private IP addresses:
 
 But in fact, private IP addresses are more than these. From the Wikipedia page [Reserved_IP_addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses), in the Internet addressing architecture, the Internet Engineering Task Force (IETF) and the Internet Assigned Numbers Authority (IANA) have reserved various IP addresses for special purposes.
 
-# List of Reserved IPv4 Addresses
+## List of Reserved IPv4 Addresses
 
 The IPv4 addresses are shown below:
 
 
-| Address block CIDR | Address range                 | Number of addresses | Scope           | RFC             | Description|
-| ------------------ | ----------------------------- | ------------------- | --------------- | --------------- | --------------------------------------------- |
+| Address block CIDR | Address range                 | Number of addresses | Scope           | RFC             | Description             |
+| ------------------ | ----------------------------- | ------------------- | --------------- | --------------- | ----------------------- |
 | 0.0.0.0/8          | 0.0.0.0 – 0.255.255.255       | 16,777,216          | Software        | RFC791          | Current network|
 | 10.0.0.0/8         | 10.0.0.0 – 10.255.255.255     | 16,777,216          | Private network | RFC1918         | Used for local communications within a private network|
 | 100.64.0.0/10      | 100.64.0.0 – 100.127.255.255  | 4,194,304           | Private network | RFC6598         | Shared address space for communications between a service provider and its subscribers when using a carrier-grade NAT|
@@ -43,7 +43,7 @@ The IPv4 addresses are shown below:
 | 240.0.0.0/4        | 240.0.0.0 – 255.255.255.254   | 268,435,455         | Internet        | RFC1112         | Reserved for future use|
 | 255.255.255.255/32 | 255.255.255.255               | 1                   | Subnet          | RFC8190, RFC919 | Reserved for the "limited broadcast" destination address|
 
-# References
+## References
 
 https://en.wikipedia.org/wiki/Reserved_IP_addresse  
 https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml  
