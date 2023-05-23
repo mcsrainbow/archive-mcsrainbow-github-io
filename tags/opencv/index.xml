@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>OpenCV - 标签 - Hey! Linux.</title>
+        <title>OpenCV - 标签 - Hey! Linux</title>
         <link>https://blog.heylinux.com/tags/opencv/</link>
-        <description>OpenCV - 标签 - Hey! Linux.</description>
+        <description>OpenCV - 标签 - Hey! Linux</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
             <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 24 Nov 2021 20:36:58 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/tags/opencv/" rel="self" type="application/rss+xml" /><item>
     <title>Python OpenCV验证码识别实战</title>

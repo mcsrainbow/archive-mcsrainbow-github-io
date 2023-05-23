@@ -1,6 +1,6 @@
 {
-    "name": "Hey! Linux.",
-    "short_name": "Hey! Linux.",
+    "name": "Hey! Linux",
+    "short_name": "Hey! Linux",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
