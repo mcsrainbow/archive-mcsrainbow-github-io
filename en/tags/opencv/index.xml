@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>OpenCV - Tag - Hey! Linux</title>
+        <link>https://blog.heylinux.com/en/tags/opencv/</link>
+        <description>OpenCV - Tag - Hey! Linux</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
+            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 24 Nov 2021 20:36:58 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/en/tags/opencv/" rel="self" type="application/rss+xml" /><item>
+    <title>Python OpenCV CAPTCHA Recognition in Action</title>
+    <link>https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/</link>
+    <pubDate>Wed, 24 Nov 2021 20:36:58 &#43;0800</pubDate>
+    <author>Dong Guo | Damon</author>
+    <guid>https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/</guid>
+    <description><![CDATA[<p>The recognition principles and processes I have learned from the CAPTCHA recognition are really valuable.</p>]]></description>
+</item>
+</channel>
+</rss>

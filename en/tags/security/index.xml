@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Security - Tag - Hey! Linux</title>
+        <link>https://blog.heylinux.com/en/tags/security/</link>
+        <description>Security - Tag - Hey! Linux</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
+            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 20 Nov 2022 22:31:30 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/en/tags/security/" rel="self" type="application/rss+xml" /><item>
+    <title>Enhance AWS S3 Data Security with Bucket Level Policy</title>
+    <link>https://blog.heylinux.com/en/2022/11/enhance-aws-s3-data-security-with-bucket-level-policy/</link>
+    <pubDate>Sun, 20 Nov 2022 22:31:30 &#43;0800</pubDate>
+    <author>Dong Guo | Damon</author>
+    <guid>https://blog.heylinux.com/en/2022/11/enhance-aws-s3-data-security-with-bucket-level-policy/</guid>
+    <description><![CDATA[<p>After restricted the source of S3 Bucket access requests through Bucket Level Policy, the data in AWS S3 Bucket can still be secured even if AKSK is compromised.</p>]]></description>
+</item>
+<item>
+    <title>How to Generate Self-signed SSL Certificates</title>
+    <link>https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/</link>
+    <pubDate>Sun, 07 Nov 2021 11:06:54 &#43;0800</pubDate>
+    <author>Dong Guo | Damon</author>
+    <guid>https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/</guid>
+    <description><![CDATA[<p>It is also important to deploy HTTPS services for internal private domains.</p>]]></description>
+</item>
+</channel>
+</rss>

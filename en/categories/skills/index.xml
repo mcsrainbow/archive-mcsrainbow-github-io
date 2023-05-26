@@ -1,0 +1,80 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Skills - Category - Hey! Linux</title>
+        <link>https://blog.heylinux.com/en/categories/skills/</link>
+        <description>Skills - Category - Hey! Linux</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
+            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 29 Mar 2023 20:41:35 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/en/categories/skills/" rel="self" type="application/rss+xml" /><item>
+    <title>What are private IP addresses</title>
+    <link>https://blog.heylinux.com/en/2023/03/what-are-private-ip-addresses/</link>
+    <pubDate>Wed, 29 Mar 2023 20:41:35 &#43;0800</pubDate>
+    <author>Dong Guo | Damon</author>
+    <guid>https://blog.heylinux.com/en/2023/03/what-are-private-ip-addresses/</guid>
+    <description><![CDATA[<p>In the Internet addressing architecture, the Internet Engineering Task Force (IETF) and the Internet Assigned Numbers Authority (IANA) have reserved various IP addresses for special purposes.</p>]]></description>
+</item>
+<item>
+    <title>Enhance AWS S3 Data Security with Bucket Level Policy</title>
+    <link>https://blog.heylinux.com/en/2022/11/enhance-aws-s3-data-security-with-bucket-level-policy/</link>
+    <pubDate>Sun, 20 Nov 2022 22:31:30 &#43;0800</pubDate>
+    <author>Dong Guo | Damon</author>
+    <guid>https://blog.heylinux.com/en/2022/11/enhance-aws-s3-data-security-with-bucket-level-policy/</guid>
+    <description><![CDATA[<p>After restricted the source of S3 Bucket access requests through Bucket Level Policy, the data in AWS S3 Bucket can still be secured even if AKSK is compromised.</p>]]></description>
+</item>
+<item>
+    <title>Punctuation Marks</title>
+    <link>https://blog.heylinux.com/en/2022/05/punctuation-marks/</link>
+    <pubDate>Tue, 31 May 2022 20:11:52 &#43;0800</pubDate>
+    <author>Dong Guo | Damon</author>
+    <guid>https://blog.heylinux.com/en/2022/05/punctuation-marks/</guid>
+    <description><![CDATA[<p>Every puctuation mark has a name.</p>]]></description>
+</item>
+<item>
+    <title>Setup Kubernetes Cluster Using kubeadm</title>
+    <link>https://blog.heylinux.com/en/2021/12/setup-kubernetes-cluster-using-kubeadm/</link>
+    <pubDate>Tue, 21 Dec 2021 21:58:24 &#43;0800</pubDate>
+    <author>Dong Guo | Damon</author>
+    <guid>https://blog.heylinux.com/en/2021/12/setup-kubernetes-cluster-using-kubeadm/</guid>
+    <description><![CDATA[<p>kubeadm performs the actions necessary to get a minimum viable cluster up and running.</p>]]></description>
+</item>
+<item>
+    <title>Solutions and Insights</title>
+    <link>https://blog.heylinux.com/en/2021/12/solutions-and-insights/</link>
+    <pubDate>Sun, 19 Dec 2021 14:52:49 &#43;0800</pubDate>
+    <author>Dong Guo | Damon</author>
+    <guid>https://blog.heylinux.com/en/2021/12/solutions-and-insights/</guid>
+    <description><![CDATA[<p>Here are some of my personal bookmarks about technology solutions and insights.</p>]]></description>
+</item>
+<item>
+    <title>Python OpenCV CAPTCHA Recognition in Action</title>
+    <link>https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/</link>
+    <pubDate>Wed, 24 Nov 2021 20:36:58 &#43;0800</pubDate>
+    <author>Dong Guo | Damon</author>
+    <guid>https://blog.heylinux.com/en/2021/11/python-opencv-captcha-recognition-in-action/</guid>
+    <description><![CDATA[<p>The recognition principles and processes I have learned from the CAPTCHA recognition are really valuable.</p>]]></description>
+</item>
+<item>
+    <title>DevOps CICD Pipeline in Action </title>
+    <link>https://blog.heylinux.com/en/2021/11/devops-cicd-pipeline-in-action/</link>
+    <pubDate>Sun, 21 Nov 2021 12:18:14 &#43;0800</pubDate>
+    <author>Dong Guo | Damon</author>
+    <guid>https://blog.heylinux.com/en/2021/11/devops-cicd-pipeline-in-action/</guid>
+    <description><![CDATA[<p>There are differences in the most appropriate CICD pipelines in different environments, especially the toolchains, but the general process and thinking should be similar.</p>]]></description>
+</item>
+<item>
+    <title>How to Generate Self-signed SSL Certificates</title>
+    <link>https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/</link>
+    <pubDate>Sun, 07 Nov 2021 11:06:54 &#43;0800</pubDate>
+    <author>Dong Guo | Damon</author>
+    <guid>https://blog.heylinux.com/en/2021/11/how-to-generate-self-signed-ssl-certificates/</guid>
+    <description><![CDATA[<p>It is also important to deploy HTTPS services for internal private domains.</p>]]></description>
+</item>
+<item>
+    <title>Why Use a Multi-Cloud Strategy</title>
+    <link>https://blog.heylinux.com/en/2021/11/why-use-a-multi-cloud-strategy/</link>
+    <pubDate>Mon, 01 Nov 2021 21:51:17 &#43;0800</pubDate>
+    <author>Dong Guo | Damon</author>
+    <guid>https://blog.heylinux.com/en/2021/11/why-use-a-multi-cloud-strategy/</guid>
+    <description><![CDATA[<p>A multi-cloud strategy allows companies to select different cloud services from different providers.</p>]]></description>
+</item>
+</channel>
+</rss>

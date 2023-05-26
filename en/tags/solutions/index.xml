@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Solutions - Tag - Hey! Linux</title>
+        <link>https://blog.heylinux.com/en/tags/solutions/</link>
+        <description>Solutions - Tag - Hey! Linux</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>guosuiyu@gmail.com (mcsrainbow)</managingEditor>
+            <webMaster>guosuiyu@gmail.com (mcsrainbow)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 19 Dec 2021 14:52:49 &#43;0800</lastBuildDate><atom:link href="https://blog.heylinux.com/en/tags/solutions/" rel="self" type="application/rss+xml" /><item>
+    <title>Solutions and Insights</title>
+    <link>https://blog.heylinux.com/en/2021/12/solutions-and-insights/</link>
+    <pubDate>Sun, 19 Dec 2021 14:52:49 &#43;0800</pubDate>
+    <author>Dong Guo | Damon</author>
+    <guid>https://blog.heylinux.com/en/2021/12/solutions-and-insights/</guid>
+    <description><![CDATA[<p>Here are some of my personal bookmarks about technology solutions and insights.</p>]]></description>
+</item>
+</channel>
+</rss>
