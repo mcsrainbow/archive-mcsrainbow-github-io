@@ -29,8 +29,6 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     hasCJKLanguage = true
     # 默认每页列表显示的文章数目
     paginate = 12
-    # 谷歌分析代号 [UA-XXXXXXXX-X]
-    googleAnalytics = ""
     # 版权描述，仅仅用于 SEO
     copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
     # 菜单配置
@@ -76,6 +74,8 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       description = "郭冬的博客"
       # 网站关键词
       keywords = ["heylinux", "mcsrainbow", "damonguo"]
+      # 谷歌分析代号 [UA-XXXXXXXX-X]
+      googleAnalytics = ""
       # 应用图标配置
       [languages.zh-cn.params.app]
         # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
@@ -148,8 +148,6 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     hasCJKLanguage = false
     # default amount of posts in each pages
     paginate = 12
-    # google analytics code [UA-XXXXXXXX-X]
-    googleAnalytics = ""
     # copyright description used only for seo schema
     copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
     # Menu config
@@ -195,6 +193,8 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       description = "Damon Guo's Blog"
       # site keywords
       keywords = ["heylinux", "mcsrainbow", "damonguo"]
+      # google analytics code [UA-XXXXXXXX-X]
+      googleAnalytics = ""
       # App icon config
       [languages.en.params.app]
         # optional site title override for the app when added to an iOS home screen or Android launcher
