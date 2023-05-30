@@ -29,9 +29,9 @@ math:
 - [x] <i class="fa-brands fa-gitlab fa-fw"></i> **GitLab** - JiHu GitLab DevOps Expert
 - [ ] <i class="fas fa-cloud fa-fw"></i> **ACP** - Alibaba Cloud Certified Professional
 - [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - Certified Information Systems Security Professional
+- [ ] <i class="fas fa-users-cog fa-fw"></i> **PMP** - Project Management Professional
 - [ ] <i class="fab fa-google fa-fw"></i> **GCP** - Google Certified Professional Cloud Architect
 - [ ] <i class="fas fa-user-tag fa-fw"></i> **CDMP** - Certified Data Management Professional
-- [ ] <i class="fas fa-users-cog fa-fw"></i> **PMP** - Project Management Professional
 - [ ] <i class="fas fa-language fa-fw"></i> **IELTS 7** - International English Language Testing System Band Score 7
 - [ ] <i class="fas fa-hand-holding-usd fa-fw"></i> **CFA** - Chartered Financial Analyst
 - [ ] <i class="fas fa-cloud fa-fw"></i> **CCSP** - Certified Cloud Security Professional
