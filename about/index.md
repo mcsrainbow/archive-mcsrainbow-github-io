@@ -19,8 +19,9 @@
 - [x] <i class="fas fa-dharmachakra fa-fw"></i> **CKA** - Kubernetes管理员认证
 - [x] <i class="fas fa-language fa-fw"></i> **CET6** - 英语六级
 - [x] <i class="fas fa-graduation-cap fa-fw"></i> **Thesis** - 工程管理硕士
-- [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - 信息系统安全认证专家
+- [x] <i class="fa-brands fa-gitlab fa-fw"></i> **GitLab** - 极狐GitLab DevOps高级专家
 - [ ] <i class="fas fa-cloud fa-fw"></i> **ACP** - 阿里云云计算专业认证
+- [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - 信息系统安全认证专家
 - [ ] <i class="fab fa-google fa-fw"></i> **GCP** - 谷歌云架构师专家级
 - [ ] <i class="fas fa-user-tag fa-fw"></i> **CDMP** - 数据管理专业认证
 - [ ] <i class="fas fa-users-cog fa-fw"></i> **PMP** - 项目管理专业认证
