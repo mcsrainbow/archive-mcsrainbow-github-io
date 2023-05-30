@@ -26,8 +26,9 @@ math:
 - [x] <i class="fas fa-dharmachakra fa-fw"></i> **CKA** - Certified Kubernetes Administrator
 - [x] <i class="fas fa-language fa-fw"></i> **CET6** - College English Test Band 6
 - [x] <i class="fas fa-graduation-cap fa-fw"></i> **Thesis** - Master of Engineering Management
-- [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - Certified Information Systems Security Professional
+- [x] <i class="fa-brands fa-gitlab fa-fw"></i> **GitLab** - JiHu GitLab DevOps Expert
 - [ ] <i class="fas fa-cloud fa-fw"></i> **ACP** - Alibaba Cloud Certified Professional
+- [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - Certified Information Systems Security Professional
 - [ ] <i class="fab fa-google fa-fw"></i> **GCP** - Google Certified Professional Cloud Architect
 - [ ] <i class="fas fa-user-tag fa-fw"></i> **CDMP** - Certified Data Management Professional
 - [ ] <i class="fas fa-users-cog fa-fw"></i> **PMP** - Project Management Professional
