@@ -17,7 +17,7 @@
 4. 短暂休息5分钟
 5. 每4个番茄钟后，阶段性休息15-30分钟
 
-![pomodoro_technique](pomodoro_technique.png)
+{{< image src="pomodoro_technique.png" alt="pomodoro_technique" width=1000 >}}
 
 整个流程的确比较简单，但不假思索就直接使用、缺乏对每日周期的理解、不会处理中断、不会调整和定制番茄钟时间长度的话，实施的效果可能会很差。
 

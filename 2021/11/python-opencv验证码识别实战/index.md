@@ -60,7 +60,7 @@
 
 在实际的工作中，应该收集足够多数量的验证码图片样本，但此次的验证码识别大赛为了不背离初衷，防止大家直接通过网上现有的代码，通过使蛮力的方法炼丹把结果算出来，仅提供了100张图片样本给所有的参赛选手。
 
-![captchas_sample](captchas_sample.png)
+{{< image src="captchas_sample.png" alt="captchas_sample" width=1000 >}}
 
 ### 2. 特征工程
 
@@ -89,7 +89,7 @@ plt.imshow(im[:,:,[2,1,0]])
 plt.show()
 ```
 
-![captchas_5UFQ_raw](captchas_5UFQ_raw.png)
+{{< image src="captchas_5UFQ_raw.png" alt="captchas_5UFQ_raw" width=400 >}}
 
 [RGB](https://baike.baidu.com/item/RGB/342517)即代表红（Red）、绿（Green）、蓝（Blue），又称为三原色光，电脑屏幕上的所有颜色，都由这三种色光按照不同的比例混合而成的，屏幕上的任何一个颜色都可以由一组RGB值来记录和表达。
 
@@ -105,7 +105,7 @@ plt.imshow(im_gray,cmap="gray")
 plt.show()
 ```
 
-![captchas_5UFQ_gray](captchas_5UFQ_gray.png)
+{{< image src="captchas_5UFQ_gray.png" alt="captchas_5UFQ_gray" width=400 >}}
 
 图像的二值化处理就是将图像上的点的灰度置为0或255，以此呈现出明显的黑白效果。
 
@@ -117,7 +117,7 @@ plt.imshow(im_inv,cmap="gray")
 plt.show()
 ```
 
-![captchas_5UFQ_binary](captchas_5UFQ_binary.png)
+{{< image src="captchas_5UFQ_binary.png" alt="captchas_5UFQ_binary" width=400 >}}
 
 [高斯模糊](https://baike.baidu.com/item/%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A)是在图像处理软件中广泛使用的处理效果，通常用它来对图片进行降噪以及降低细节层次，其视觉效果就像是经过一个半透明的磨砂屏幕在观察图像。
 
@@ -131,7 +131,7 @@ plt.imshow(im_blur,cmap="gray")
 plt.show()
 ```
 
-![captchas_5UFQ_blur](captchas_5UFQ_blur.png)
+{{< image src="captchas_5UFQ_blur.png" alt="captchas_5UFQ_blur" width=400 >}}
 
 再将经过高斯模糊后的图片进行二值化处理，消除条纹等噪音信息，通过反复测试，最终确定阈值为185时，去噪的效果最佳。
 
@@ -143,13 +143,13 @@ plt.imshow(im_res,cmap="gray")
 plt.show() 
 ```
 
-![captchas_5UFQ_blur_binary](captchas_5UFQ_blur_binary.png)
+{{< image src="captchas_5UFQ_blur_binary.png" alt="captchas_5UFQ_blur_binary" width=400 >}}
 
 ### 3. 人工标注
 
 对每个原始图片样本进行人工识别，并重命名为验证码的字符内容。
 
-![captchas_sample_label](captchas_sample_label.png)
+{{< image src="captchas_sample_label.png" alt="captchas_sample_label" width=800 >}}
 
 通过观察发现，在所有的验证码图片样本中，每个字符在图片中所处的区域都非常一致，因此大大降低了判断字符区域并切割图片的难度。
 
@@ -187,7 +187,7 @@ def cut_img(train_dir,cut_dir,suffix):
     return True
 ```
 
-![captchas_sample_label_cut](captchas_sample_label_cut.png)
+{{< image src="captchas_sample_label_cut.png" alt="captchas_sample_label_cut" width=600 >}}
 
 ### 4. 训练模型
 
@@ -273,7 +273,7 @@ def rek_img(model_dict,rek_dir,suffix,results_csv):
     return True
 ```
 
-![captchas_results](captchas_results.png)
+{{< image src="captchas_results.png" alt="captchas_results" width=600 >}}
 
 ## 总结
 

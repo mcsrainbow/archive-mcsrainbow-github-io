@@ -205,14 +205,15 @@
 <h2 id="详解">详解</h2>
 <h3 id="1-收集样本">1. 收集样本</h3>
 <p>在实际的工作中，应该收集足够多数量的验证码图片样本，但此次的验证码识别大赛为了不背离初衷，防止大家直接通过网上现有的代码，通过使蛮力的方法炼丹把结果算出来，仅提供了100张图片样本给所有的参赛选手。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample.png"
-        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample.png 2x"
-        data-sizes="auto"
-        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample.png"
-        title="captchas_sample" width="1122" height="424" /></p>
+<a class="lightgallery" href="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample.png" title="captchas_sample" data-thumbnail="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample.png"
+            data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample.png 2x"
+            data-sizes="auto"
+            alt="captchas_sample" width="1000" height="424" />
+    </a>
 <h3 id="2-特征工程">2. 特征工程</h3>
 <p>以字符内容为5UFQ的验证码图片为例，首先导入所需的Python库：</p>
 <div class="highlight"><div class="chroma">
@@ -258,14 +259,15 @@
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_raw.png"
-        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_raw.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_raw.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_raw.png 2x"
-        data-sizes="auto"
-        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_raw.png"
-        title="captchas_5UFQ_raw" width="754" height="238" /></p>
+</div><a class="lightgallery" href="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_raw.png" title="captchas_5UFQ_raw" data-thumbnail="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_raw.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_raw.png"
+            data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_raw.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_raw.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_raw.png 2x"
+            data-sizes="auto"
+            alt="captchas_5UFQ_raw" width="400" height="238" />
+    </a>
 <p><a href="https://baike.baidu.com/item/RGB/342517" target="_blank" rel="noopener noreffer ">RGB</a>即代表红（Red）、绿（Green）、蓝（Blue），又称为三原色光，电脑屏幕上的所有颜色，都由这三种色光按照不同的比例混合而成的，屏幕上的任何一个颜色都可以由一组RGB值来记录和表达。</p>
 <p>任何颜色都由红、绿、蓝三原色组成，而<a href="https://baike.baidu.com/item/%E7%81%B0%E5%BA%A6%E5%9B%BE/8105733" target="_blank" rel="noopener noreffer ">灰度图</a>只有一个通道，有256个灰度等级，255代表全白，0表示全黑。</p>
 <p>将图片由RGB转换为灰度图，就是将图片的色彩信息去掉，转换为只有黑白信息。</p>
@@ -285,14 +287,15 @@
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_gray.png"
-        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_gray.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_gray.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_gray.png 2x"
-        data-sizes="auto"
-        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_gray.png"
-        title="captchas_5UFQ_gray" width="752" height="246" /></p>
+</div><a class="lightgallery" href="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_gray.png" title="captchas_5UFQ_gray" data-thumbnail="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_gray.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_gray.png"
+            data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_gray.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_gray.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_gray.png 2x"
+            data-sizes="auto"
+            alt="captchas_5UFQ_gray" width="400" height="246" />
+    </a>
 <p>图像的二值化处理就是将图像上的点的灰度置为0或255，以此呈现出明显的黑白效果。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -310,14 +313,15 @@
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_binary.png"
-        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_binary.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_binary.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_binary.png 2x"
-        data-sizes="auto"
-        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_binary.png"
-        title="captchas_5UFQ_binary" width="752" height="252" /></p>
+</div><a class="lightgallery" href="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_binary.png" title="captchas_5UFQ_binary" data-thumbnail="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_binary.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_binary.png"
+            data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_binary.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_binary.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_binary.png 2x"
+            data-sizes="auto"
+            alt="captchas_5UFQ_binary" width="400" height="252" />
+    </a>
 <p><a href="https://baike.baidu.com/item/%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A" target="_blank" rel="noopener noreffer ">高斯模糊</a>是在图像处理软件中广泛使用的处理效果，通常用它来对图片进行降噪以及降低细节层次，其视觉效果就像是经过一个半透明的磨砂屏幕在观察图像。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -339,14 +343,15 @@
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur.png"
-        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur.png 2x"
-        data-sizes="auto"
-        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur.png"
-        title="captchas_5UFQ_blur" width="756" height="246" /></p>
+</div><a class="lightgallery" href="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur.png" title="captchas_5UFQ_blur" data-thumbnail="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur.png"
+            data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur.png 2x"
+            data-sizes="auto"
+            alt="captchas_5UFQ_blur" width="400" height="246" />
+    </a>
 <p>再将经过高斯模糊后的图片进行二值化处理，消除条纹等噪音信息，通过反复测试，最终确定阈值为185时，去噪的效果最佳。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -364,24 +369,26 @@
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur_binary.png"
-        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur_binary.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur_binary.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur_binary.png 2x"
-        data-sizes="auto"
-        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur_binary.png"
-        title="captchas_5UFQ_blur_binary" width="754" height="242" /></p>
+</div><a class="lightgallery" href="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur_binary.png" title="captchas_5UFQ_blur_binary" data-thumbnail="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur_binary.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur_binary.png"
+            data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur_binary.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur_binary.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_5UFQ_blur_binary.png 2x"
+            data-sizes="auto"
+            alt="captchas_5UFQ_blur_binary" width="400" height="242" />
+    </a>
 <h3 id="3-人工标注">3. 人工标注</h3>
 <p>对每个原始图片样本进行人工识别，并重命名为验证码的字符内容。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label.png"
-        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label.png 2x"
-        data-sizes="auto"
-        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label.png"
-        title="captchas_sample_label" width="1042" height="608" /></p>
+<a class="lightgallery" href="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label.png" title="captchas_sample_label" data-thumbnail="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label.png"
+            data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label.png 2x"
+            data-sizes="auto"
+            alt="captchas_sample_label" width="800" height="608" />
+    </a>
 <p>通过观察发现，在所有的验证码图片样本中，每个字符在图片中所处的区域都非常一致，因此大大降低了判断字符区域并切割图片的难度。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -448,14 +455,15 @@
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">True</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label_cut.png"
-        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label_cut.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label_cut.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label_cut.png 2x"
-        data-sizes="auto"
-        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label_cut.png"
-        title="captchas_sample_label_cut" width="864" height="652" /></p>
+</div><a class="lightgallery" href="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label_cut.png" title="captchas_sample_label_cut" data-thumbnail="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label_cut.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label_cut.png"
+            data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label_cut.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label_cut.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_sample_label_cut.png 2x"
+            data-sizes="auto"
+            alt="captchas_sample_label_cut" width="600" height="652" />
+    </a>
 <h3 id="4-训练模型">4. 训练模型</h3>
 <p>将上面的所有单个字符的图片作为训练集，每个图片的字符作为标签，构造一个图片与标签的映射表，加载数据。再用OpenCV自带的KNN相似度模型进行机器学习，训练出可识别相似的验证码图片的模型。</p>
 <div class="highlight"><div class="chroma">
@@ -612,14 +620,15 @@
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">True</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_results.png"
-        data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_results.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_results.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_results.png 2x"
-        data-sizes="auto"
-        alt="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_results.png"
-        title="captchas_results" width="926" height="456" /></p>
+</div><a class="lightgallery" href="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_results.png" title="captchas_results" data-thumbnail="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_results.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_results.png"
+            data-srcset="/2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_results.png, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_results.png 1.5x, /2021/11/python-opencv%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E5%AE%9E%E6%88%98/captchas_results.png 2x"
+            data-sizes="auto"
+            alt="captchas_results" width="600" height="456" />
+    </a>
 <h2 id="总结">总结</h2>
 <p>由于此次比赛给出的验证码图片样本特征都比较明显，比较容易进行特征工程，到最后，即使用了一万张验证码图片作为测试集，很多同事的识别准确率也都达到了90%以上，而第一名的正确率甚至达到了令人发指的100%。</p>
 <p>对我来说，在通过OpenCV完成验证码识别的过程中，所学习到的识别原理和流程，还是很有价值的。</p>

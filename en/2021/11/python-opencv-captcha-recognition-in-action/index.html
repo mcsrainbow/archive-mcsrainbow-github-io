@@ -183,14 +183,15 @@
 <h3 id="1-collect-samples">1. Collect samples</h3>
 <p>To prevent people from using the existing codes on the Internet and counting the results out by violence, only 100 image samples were provided to all participants.</p>
 <p>In practice, a lot more CAPTCHAs samples should be collected.</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample.png"
-        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample.png 2x"
-        data-sizes="auto"
-        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample.png"
-        title="captchas_sample" width="1122" height="424" /></p>
+<a class="lightgallery" href="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample.png" title="captchas_sample" data-thumbnail="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample.png"
+            data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample.png 2x"
+            data-sizes="auto"
+            alt="captchas_sample" width="1000" height="424" />
+    </a>
 <h3 id="2-feature-engineering">2. Feature engineering</h3>
 <p>Use the CAPTCHA with characters of 5UFQ as an example.</p>
 <p>Import the libraries.</p>
@@ -225,14 +226,15 @@
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_raw.png"
-        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_raw.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_raw.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_raw.png 2x"
-        data-sizes="auto"
-        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_raw.png"
-        title="captchas_5UFQ_raw" width="754" height="238" /></p>
+</div><a class="lightgallery" href="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_raw.png" title="captchas_5UFQ_raw" data-thumbnail="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_raw.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_raw.png"
+            data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_raw.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_raw.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_raw.png 2x"
+            data-sizes="auto"
+            alt="captchas_5UFQ_raw" width="400" height="238" />
+    </a>
 <p>Convert the image from RGB to grayscale, to remove the color information.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -250,14 +252,15 @@
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_gray.png"
-        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_gray.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_gray.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_gray.png 2x"
-        data-sizes="auto"
-        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_gray.png"
-        title="captchas_5UFQ_gray" width="752" height="246" /></p>
+</div><a class="lightgallery" href="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_gray.png" title="captchas_5UFQ_gray" data-thumbnail="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_gray.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_gray.png"
+            data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_gray.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_gray.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_gray.png 2x"
+            data-sizes="auto"
+            alt="captchas_5UFQ_gray" width="400" height="246" />
+    </a>
 <p>Binarize the image to give a distinct black and white effect.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -275,14 +278,15 @@
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_binary.png"
-        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_binary.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_binary.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_binary.png 2x"
-        data-sizes="auto"
-        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_binary.png"
-        title="captchas_5UFQ_binary" width="752" height="252" /></p>
+</div><a class="lightgallery" href="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_binary.png" title="captchas_5UFQ_binary" data-thumbnail="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_binary.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_binary.png"
+            data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_binary.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_binary.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_binary.png 2x"
+            data-sizes="auto"
+            alt="captchas_5UFQ_binary" width="400" height="252" />
+    </a>
 <p>Use the Gaussian Blur to reduce noise and details, with the visual effect as looking at the image through a translucent frosted screen.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -302,14 +306,15 @@
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur.png"
-        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur.png 2x"
-        data-sizes="auto"
-        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur.png"
-        title="captchas_5UFQ_blur" width="756" height="246" /></p>
+</div><a class="lightgallery" href="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur.png" title="captchas_5UFQ_blur" data-thumbnail="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur.png"
+            data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur.png 2x"
+            data-sizes="auto"
+            alt="captchas_5UFQ_blur" width="400" height="246" />
+    </a>
 <p>Then Binarize again to eliminate the noise such as streaks</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -327,24 +332,26 @@
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur_binary.png"
-        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur_binary.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur_binary.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur_binary.png 2x"
-        data-sizes="auto"
-        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur_binary.png"
-        title="captchas_5UFQ_blur_binary" width="754" height="242" /></p>
+</div><a class="lightgallery" href="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur_binary.png" title="captchas_5UFQ_blur_binary" data-thumbnail="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur_binary.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur_binary.png"
+            data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur_binary.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur_binary.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_5UFQ_blur_binary.png 2x"
+            data-sizes="auto"
+            alt="captchas_5UFQ_blur_binary" width="400" height="242" />
+    </a>
 <h3 id="3-manual-labeling">3. Manual labeling</h3>
 <p>Manually identify each original sample and rename it as the characters.</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label.png"
-        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label.png 2x"
-        data-sizes="auto"
-        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label.png"
-        title="captchas_sample_label" width="1042" height="608" /></p>
+<a class="lightgallery" href="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label.png" title="captchas_sample_label" data-thumbnail="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label.png"
+            data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label.png 2x"
+            data-sizes="auto"
+            alt="captchas_sample_label" width="800" height="608" />
+    </a>
 <p>By looking at all the sample CAPTCHA images, it is easy to see that each character is in a very consistent area in the image, which greatly reduces the difficulty of determining the character regions and cutting the images.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -415,14 +422,15 @@
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">True</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label_cut.png"
-        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label_cut.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label_cut.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label_cut.png 2x"
-        data-sizes="auto"
-        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label_cut.png"
-        title="captchas_sample_label_cut" width="864" height="652" /></p>
+</div><a class="lightgallery" href="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label_cut.png" title="captchas_sample_label_cut" data-thumbnail="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label_cut.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label_cut.png"
+            data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label_cut.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label_cut.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_sample_label_cut.png 2x"
+            data-sizes="auto"
+            alt="captchas_sample_label_cut" width="600" height="652" />
+    </a>
 <h3 id="4-train-the-model">4. Train the model</h3>
 <p>Perform the OpenCV&rsquo;s built-in KNN similarity model to train a model that can recognize similar CAPTCHAs.</p>
 <div class="highlight"><div class="chroma">
@@ -571,14 +579,15 @@
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">True</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_results.png"
-        data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_results.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_results.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_results.png 2x"
-        data-sizes="auto"
-        alt="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_results.png"
-        title="captchas_results" width="926" height="456" /></p>
+</div><a class="lightgallery" href="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_results.png" title="captchas_results" data-thumbnail="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_results.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_results.png"
+            data-srcset="/en/2021/11/python-opencv-captcha-recognition-in-action/captchas_results.png, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_results.png 1.5x, /en/2021/11/python-opencv-captcha-recognition-in-action/captchas_results.png 2x"
+            data-sizes="auto"
+            alt="captchas_results" width="600" height="456" />
+    </a>
 <h2 id="summary">Summary</h2>
 <p>The CAPTCHA images in this competition were more distinctive and easier to feature engineer, so that in the end, although 10k CAPTCHA images were used as the test set, many colleagues still achieved recognition accuracy of over 90%, and the winner&rsquo;s accuracy even reached an incredible 100%.</p>
 <p>For me, the recognition principles and processes I have learned from the CAPTCHA recognition are really valuable.</p>
