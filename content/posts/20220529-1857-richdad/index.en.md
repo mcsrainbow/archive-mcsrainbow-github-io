@@ -39,7 +39,7 @@ Here is a summary from [Tess](https://tessang.com/personal-finance/rich-dad-poor
 > 
 > To pay yourself first means allocating your money to the assets column, before paying your monthly expenses and bills.
 > 
-> ![richdad_en](richdad_en.jpg)
+> {{< image src="richdad_en.jpg" alt="richdad_en" width=1200 >}}
 >
 > **Business vs Job**
 >
