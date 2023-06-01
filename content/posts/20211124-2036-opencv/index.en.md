@@ -58,7 +58,7 @@ To prevent people from using the existing codes on the Internet and counting the
 
 In practice, a lot more CAPTCHAs samples should be collected.
 
-![captchas_sample](captchas_sample.png)
+{{< image src="captchas_sample.png" alt="captchas_sample" width=1000 >}}
 
 ### 2. Feature engineering
 
@@ -83,7 +83,7 @@ plt.imshow(im[:,:,[2,1,0]])
 plt.show()
 ```
 
-![captchas_5UFQ_raw](captchas_5UFQ_raw.png)
+{{< image src="captchas_5UFQ_raw.png" alt="captchas_5UFQ_raw" width=400 >}}
 
 Convert the image from RGB to grayscale, to remove the color information.
 
@@ -95,7 +95,7 @@ plt.imshow(im_gray,cmap="gray")
 plt.show()
 ```
 
-![captchas_5UFQ_gray](captchas_5UFQ_gray.png)
+{{< image src="captchas_5UFQ_gray.png" alt="captchas_5UFQ_gray" width=400 >}}
 
 Binarize the image to give a distinct black and white effect.
 
@@ -107,7 +107,7 @@ plt.imshow(im_inv,cmap="gray")
 plt.show()
 ```
 
-![captchas_5UFQ_binary](captchas_5UFQ_binary.png)
+{{< image src="captchas_5UFQ_binary.png" alt="captchas_5UFQ_binary" width=400 >}}
 
 Use the Gaussian Blur to reduce noise and details, with the visual effect as looking at the image through a translucent frosted screen.
 
@@ -120,7 +120,7 @@ plt.imshow(im_blur,cmap="gray")
 plt.show()
 ```
 
-![captchas_5UFQ_blur](captchas_5UFQ_blur.png)
+{{< image src="captchas_5UFQ_blur.png" alt="captchas_5UFQ_blur" width=400 >}}
 
 Then Binarize again to eliminate the noise such as streaks
 
@@ -132,13 +132,13 @@ plt.imshow(im_res,cmap="gray")
 plt.show() 
 ```
 
-![captchas_5UFQ_blur_binary](captchas_5UFQ_blur_binary.png)
+{{< image src="captchas_5UFQ_blur_binary.png" alt="captchas_5UFQ_blur_binary" width=400 >}}
 
 ### 3. Manual labeling
 
 Manually identify each original sample and rename it as the characters.
 
-![captchas_sample_label](captchas_sample_label.png)
+{{< image src="captchas_sample_label.png" alt="captchas_sample_label" width=800 >}}
 
 By looking at all the sample CAPTCHA images, it is easy to see that each character is in a very consistent area in the image, which greatly reduces the difficulty of determining the character regions and cutting the images.
 
@@ -179,7 +179,7 @@ def cut_img(train_dir,cut_dir,suffix):
     return True
 ```
 
-![captchas_sample_label_cut](captchas_sample_label_cut.png)
+{{< image src="captchas_sample_label_cut.png" alt="captchas_sample_label_cut" width=600 >}}
 
 ### 4. Train the model
 
@@ -261,7 +261,7 @@ def rek_img(model_dict,rek_dir,suffix,results_csv):
     return True
 ```
 
-![captchas_results](captchas_results.png)
+{{< image src="captchas_results.png" alt="captchas_results" width=600 >}}
 
 ## Summary
 

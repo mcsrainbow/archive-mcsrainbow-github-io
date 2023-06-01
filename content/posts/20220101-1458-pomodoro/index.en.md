@@ -32,7 +32,7 @@ The basic unit of work in the Pomodoro Technique can be split into five simple s
 4. Take a 5 minute break (marks the completion of one Pomodoro)
 5. Every 4 Pomodoros take a 15-30 minute longer break
 
-![pomodoro_technique](pomodoro_technique.png)
+{{< image src="pomodoro_technique.png" alt="pomodoro_technique" width=1000 >}}
 
 PDCA is an iterative problem-solving process which represents Plan-Do-Check-Act.
 
@@ -45,7 +45,7 @@ This particular type of planning, monitoring, measuring, and improving is also t
 
 The Pomodoro Technique gets us to focus on execution. It could mean that we ignore Systems Thinking and holism. That’s why it’s often beneficial to let processes like Scrum, XP, or GTD enclose the Pomodoro Technique.
 
-![pomodoro_process_en](pomodoro_process_en.jpeg)
+{{< image src="pomodoro_process_en.jpeg" alt="pomodoro_process_en" width=1000 >}}
 
 ## Thinking
 
