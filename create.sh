@@ -1,4 +1,5 @@
 #!/bin/bash
+# Create posts step by step using the correct format
 
 echo -n "Input the Post Title: "
 read post_title

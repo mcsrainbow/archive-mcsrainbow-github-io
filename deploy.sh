@@ -1,4 +1,5 @@
 #!/bin/bash
+# Build the Hugo site and deploy it to the main branch
 
 if [[ $(git status -s) ]]; then
   echo "The working directory is dirty, please commit all pending changes."
