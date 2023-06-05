@@ -5,24 +5,27 @@ if [[ $(git status -s) ]]; then
   exit 1;
 fi
 
-echo -e "\033[0;32m0.Deploying updates to GitHub...\033[0m"
+tput_green=$(tput setaf 2)
+tput_reset=$(tput sgr0)
 
-echo -e "\033[0;32m1.Deleting old public folder...\033[0m"
+echo -e "${tput_green}0.Deploying updates to GitHub...${tput_reset}"
+
+echo -e "${tput_green}1.Deleting old public folder...${tput_reset}"
 rm -rf public
 mkdir public
 git worktree prune
 rm -rf .git/worktrees/public/
 
-echo -e "\033[0;32m2.Checking out main branch into public...\033[0m"
+echo -e "${tput_green}2.Checking out main branch into public...${tput_reset}"
 git worktree add -B main public origin/main
 
-echo -e "\033[0;32m3.Removing existing files in public folder...\033[0m"
+echo -e "${tput_green}3.Removing existing files in public folder...${tput_reset}"
 rm -rf public/*
 
-echo -e "\033[0;32m4.Generating blog...\033[0m"
+echo -e "${tput_green}4.Generating blog...${tput_reset}"
 hugo
 
-echo -e "\033[0;32m5.Updating main branch...\033[0m"
+echo -e "${tput_green}5.Updating main branch...${tput_reset}"
 cd public && git add --all 
 
 msg="Rebuild blog on $(date '+%b %d, %Y')"
@@ -35,4 +38,4 @@ git push -f origin main
 
 cd ..
 
-echo -e "\033[0;32m6.Done\033[0m"
+echo -e "${tput_green}6.Done${tput_reset}"
