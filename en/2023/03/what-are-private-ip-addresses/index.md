@@ -15,7 +15,7 @@ Almost all textbooks tell us that there are three types of private IP addresses:
 +  Class B: 172.16.0.0 - 172.31.255.255
 +  Class C: 192.168.0.0 - 192.168.255.255
 
-But in fact, private IP addresses are more than these. From the Wikipedia page [Reserved_IP_addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses), in the Internet addressing architecture, the Internet Engineering Task Force (IETF) and the Internet Assigned Numbers Authority (IANA) have reserved various IP addresses for special purposes.
+But in fact, private IP addresses are more than these. From the Wikipedia page [Reserved IP addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses), in the Internet addressing architecture, the Internet Engineering Task Force (IETF) and the Internet Assigned Numbers Authority (IANA) have reserved various IP addresses for special purposes.
 
 ## List of Reserved IPv4 Addresses
 
