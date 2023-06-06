@@ -46,6 +46,4 @@
 
 https://en.wikipedia.org/wiki/Reserved_IP_addresse  
 https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml  
-https://blog.csdn.net/winter_wu_1998/article/details/103626640  
-https://www.biaodianfu.com/ip.html
 
