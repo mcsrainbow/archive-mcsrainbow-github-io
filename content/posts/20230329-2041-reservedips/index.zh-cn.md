@@ -27,7 +27,7 @@ lightgallery: true
 + B类：172.16.0.0 - 172.31.255.255
 + C类：192.168.0.0 - 192.168.255.255
 
-但事实上不止这些，从Wikipedia的[Reserved_IP_addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses)页面可以了解到在互联网寻址结构中，互联网工程任务组IETF和互联网号码分配局IANA保留了许多用于特殊目的的IP地址。
+但事实上不止这些，从Wikipedia的[Reserved IP addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses)页面可以了解到在互联网寻址结构中，互联网工程任务组IETF和互联网号码分配局IANA保留了许多用于特殊目的的IP地址。
 
 ## IPv4保留地址列表
 
