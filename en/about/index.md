@@ -7,7 +7,7 @@
 
 ### About Me
 
-+ <i class="fas fa-user fa-fw"></i> **Bio**: A Hands-On SRE Lead, a Solutions Architect, and a Lifelong Learner
++ <i class="fas fa-user fa-fw"></i> **Bio**: A Hands-On Solutions Architect, a DevOps Manager and a Lifelong Learner
 + <i class="fas fa-user-tie fa-fw"></i> **Specialties**: <i class="fas fa-cloud-upload-alt fa-fw"></i> Hybrid Cloud <i class="fas fa-layer-group"></i> Big Data <i class="fas fa-code-branch fa-fw"></i> DevOps <i class="fas fa-user-shield fa-fw"></i> Cybersecurity
 
 ### [TO DO LIST]^(Since Feburary 2021)
