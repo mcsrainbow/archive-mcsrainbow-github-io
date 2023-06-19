@@ -14,7 +14,7 @@ math:
 
 ### 关于我
 
-+ <i class="fas fa-user fa-fw"></i>**简介**：实操型运维负责人、解决方案架构师、终身学习者
++ <i class="fas fa-user fa-fw"></i>**简介**：实操型解决方案架构师、运维经理、终身学习者
 + <i class="fas fa-user-tie fa-fw"></i>**领域**：<i class="fas fa-cloud-upload-alt fa-fw"></i> 混合云 <i class="fas fa-layer-group"></i> 大数据 <i class="fas fa-code-branch fa-fw"></i> 运维开发 <i class="fas fa-user-shield fa-fw"></i> 网络安全
 
 ### [TO DO LIST]^(始于2021年2月)
