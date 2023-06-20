@@ -14,7 +14,7 @@ math:
 
 ### About Me
 
-+ <i class="fas fa-user fa-fw"></i> **Bio**: A Hands-On Solutions Architect, a DevOps Manager and a Lifelong Learner
++ <i class="fas fa-user fa-fw"></i> **Bio**: A Hands-On Solutions Architect, a DevOps Manager, and a Lifelong Learner
 + <i class="fas fa-user-tie fa-fw"></i> **Specialties**: <i class="fas fa-cloud-upload-alt fa-fw"></i> Hybrid Cloud <i class="fas fa-layer-group"></i> Big Data <i class="fas fa-code-branch fa-fw"></i> DevOps <i class="fas fa-user-shield fa-fw"></i> Cybersecurity
 
 ### [TO DO LIST]^(Since Feburary 2021)
@@ -25,7 +25,7 @@ math:
 - [x] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 Foundation** - IT Service Management
 - [x] <i class="fas fa-dharmachakra fa-fw"></i> **CKA** - Certified Kubernetes Administrator
 - [x] <i class="fas fa-language fa-fw"></i> **CET6** - College English Test Band 6
-- [x] <i class="fas fa-graduation-cap fa-fw"></i> **Thesis** - Master of Engineering Management
+- [x] <i class="fas fa-graduation-cap fa-fw"></i> **Degree** - Master of Engineering Management
 - [x] <i class="fa-brands fa-gitlab fa-fw"></i> **GitLab** - JiHu GitLab DevOps Expert
 - [ ] <i class="fas fa-cloud fa-fw"></i> **ACP** - Alibaba Cloud Certified Professional
 - [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - Certified Information Systems Security Professional
