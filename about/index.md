@@ -18,7 +18,7 @@
 - [x] <i class="fas fa-cogs fa-fw"></i> **ITIL 4 Foundation** - IT服务管理基础级
 - [x] <i class="fas fa-dharmachakra fa-fw"></i> **CKA** - Kubernetes管理员认证
 - [x] <i class="fas fa-language fa-fw"></i> **CET6** - 英语六级
-- [x] <i class="fas fa-graduation-cap fa-fw"></i> **Thesis** - 工程管理硕士
+- [x] <i class="fas fa-graduation-cap fa-fw"></i> **Degree** - 工程管理硕士
 - [x] <i class="fa-brands fa-gitlab fa-fw"></i> **GitLab** - 极狐GitLab DevOps高级专家
 - [ ] <i class="fas fa-cloud fa-fw"></i> **ACP** - 阿里云云计算专业认证
 - [ ] <i class="fas fa-user-shield fa-fw"></i> **CISSP** - 信息系统安全认证专家
