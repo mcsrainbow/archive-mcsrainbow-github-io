@@ -1,4 +1,4 @@
-# What are private IP addresses
+# What are Private IP addresses
 
 
 In the Internet addressing architecture, the Internet Engineering Task Force (IETF) and the Internet Assigned Numbers Authority (IANA) have reserved various IP addresses for special purposes.
