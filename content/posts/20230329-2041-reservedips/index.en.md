@@ -1,5 +1,5 @@
 ---
-title: "What are Private IP addresses"
+title: "What are Private IP Addresses"
 date: 2023-03-29T20:41:35+08:00
 author: "Dong Guo | Damon"
 description: "In the Internet addressing architecture, the Internet Engineering Task Force (IETF) and the Internet Assigned Numbers Authority (IANA) have reserved various IP addresses for special purposes."
